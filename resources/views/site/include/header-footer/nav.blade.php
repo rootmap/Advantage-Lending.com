@@ -40,18 +40,18 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a class="navbar-brand" href="index.html">
+                        <a class="navbar-brand" href="{{url('/home')}}">
                                 <img src="{{asset('module/images/logo.png')}}" alt="">
                             </a>
                         </div>
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" data-hover="dropdown" data-animations="fadeInUp">
                             <ul class="nav navbar-nav navbar-right">
                                 <li class="active"><a href="#">Home</a></li>
-                                <li><a href="about.html">How It Works</a></li>
-                                <li><a href="about.html">Types Of Funding</a></li>
-                                <li><a href="about.html">About A.L.</a></li>
-                                <li><a href="about.html">Faq</a></li>
-                                <li><a href="about.html">For Attorneys</a></li>
+                                <li><a href="{{url('how-it-works')}}">How It Works</a></li>
+                                <li><a href="{{url('types-of-funding')}}">Types Of Funding</a></li>
+                                <li><a href="{{url('about-advantage-lending')}}">About A.L.</a></li>
+                                <li><a href="{{url('faq')}}">Faq</a></li>
+                                <li><a href="{{url('for-attorneys')}}">For Attorneys</a></li>
                             </ul>
                         </div>
                     </nav>
