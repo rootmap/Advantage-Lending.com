@@ -76,32 +76,27 @@
         .bg-white {
             background-color: #fff !important;
         }
-        @media (min-width: 768px)
-        .pr-md-4, .px-md-4 {
-            padding-right: 1.5rem !important;
-        }
-        @media (min-width: 768px)
-        .pl-md-4, .px-md-4 {
-            padding-left: 1.5rem !important;
-        }
-        @media (min-width: 768px)
-        .pt-md-6, .py-md-6 {
-            padding-top: 4rem !important;
-        }
-        @media (min-width: 768px)
-        .pb-md-6, .py-md-6 {
-            padding-bottom: 4rem !important;
+        
+        
+        @media (min-width: 768px){
+            .pl-md-4, .px-md-4 {
+                padding-left: 1.5rem !important;
+            }
+            .pt-md-6, .py-md-6 {
+                padding-top: 4rem !important;
+            }
+            .pb-md-6, .py-md-6 {
+                padding-bottom: 4rem !important;
+            }
+            .pb-md-5, .py-md-5 {
+                padding-bottom: 3rem !important;
+            }
+            .mb-md-5, .my-md-5 {
+                margin-bottom: 3rem !important;
+            }
         }
         .font-size-16 {
             font-size: 16px;
-        }
-        @media (min-width: 768px)
-        .pb-md-5, .py-md-5 {
-            padding-bottom: 3rem !important;
-        }
-        @media (min-width: 768px)
-        .mb-md-5, .my-md-5 {
-            margin-bottom: 3rem !important;
         }
         .no-gutters {
             margin-right: 0;
@@ -136,10 +131,8 @@
             -webkit-transition: all linear .15s;
             transition: all linear .15s;
         }
-        @media (min-width: 768px)
-        .mt-md-0, .my-md-0 {
-            margin-top: 0 !important;
-        }
+        
+        
         .pt-6, .py-6 {
             padding-top: 4rem !important;
         }
@@ -153,13 +146,17 @@
         .mt-3, .my-3 {
             margin-top: 1rem !important;
         }
-        @media (min-width: 768px)
-        .pt-md-4, .py-md-4 {
-            padding-top: 1.5rem !important;
-        }
-        @media (min-width: 768px)
-        .h-md-100 {
-            height: 100% !important;
+        @media (min-width: 768px){
+            .mt-md-0, .my-md-0 {
+                margin-top: 0 !important;
+            }
+            .pt-md-4, .py-md-4 {
+                padding-top: 1.5rem !important;
+            }
+            
+            .h-md-100 {
+                height: 100% !important;
+            }
         }
         .text-center {
             text-align: center !important;

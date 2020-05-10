@@ -57,65 +57,85 @@
                                             <h4><strong>All fields required</strong></h4>
                                         </div>
                                     </div>
+                                     <div class="row">
+                                        <div class="col-md-6 col-xs-12 col-sm-12 col-lg-6">
+                                            <div class="form-group">
+                                                <label class="gfield_label" for="exampleFirstName">First Name<span class='text-danger'>*</span></label>
+                                                <input type="text" class="form-control" value="Enter First Name" autocomplete="off" id="exampleFirstName">
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-xs-12 col-sm-12 col-lg-6">
+                                            <div class="form-group">
+                                                <label class="gfield_label" for="exampleFirstLast">Last Name</label>
+                                                <input type="text" class="form-control" value="Enter Last Name" autocomplete="off" id="exampleFirstLast">
+                                                
+                                            </div>
+                                        </div>
+                                  </div>
+
                                     <div class="row">
-                                        <div class="col-md-4 col-xs-12 col-sm-12 col-lg-4">
+                                        <div class="col-md-6 col-xs-12 col-sm-12 col-lg-6">
                                             <div class="form-group">
-                                                <label class="gfield_label" for="exampleFormControlInput1">First Name<span class='text-danger'>*</span></label>
-                                                <input type="text" class="form-control" autocomplete="off" id="exampleFormControlInput1">
+                                                <label class="gfield_label" for="exampleFormCase">What kind of case do you have?</label>
+                                                <select  class="form-control" id="exampleFormCase">
+                                                <option>Select One</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                                </select>
                                             </div>
                                         </div>
-                                        <div class="col-md-4 col-xs-12 col-sm-12 col-lg-4">
+                                        <div class="col-md-6 col-xs-12 col-sm-12 col-lg-6">
                                             <div class="form-group">
-                                                <label class="gfield_label" for="exampleFormControlInput1">Last Name<span class='text-danger'>*</span></label>
-                                                <input type="text" class="form-control" autocomplete="off" id="exampleFormControlInput1">
+                                                <label class="gfield_label" for="exampleFormSateCase">What state is your case in?</label>
+                                            <select  class="form-control" id="exampleFormSateCase">
+                                                <option>Select One</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                                </select>
+                                                <small>
+                                                    <p>
+                                                        View Oasis Financial’s<a href="#">state-specific licenses</a>, including South Carolina.
+                                                    </p>
+                                                </small>
                                             </div>
                                         </div>
-                                        <div class="col-md-4 col-xs-12 col-sm-12 col-lg-4">
-                                            <div class="form-group">
-                                                <label class="gfield_label" for="exampleFormControlInput1">Email<span class='text-danger'>*</span></label>
-                                                <input type="email" class="form-control" autocomplete="off" id="exampleFormControlInput1">
-                                            </div>
-                                        </div>
+                                     
                                     </div>
+
                                     <div class="row">
-                                        <div class="col-md-4 col-xs-12 col-sm-12 col-lg-4">
+                                        <div class="col-md-6 col-xs-12 col-sm-12 col-lg-6">
                                             <div class="form-group">
-                                                <label class="gfield_label" for="exampleFormControlInput1">Phone<span class='text-danger'>*</span></label>
-                                                <input type="tel" class="form-control" autocomplete="off" id="exampleFormControlInput1">
+                                                <label class="gfield_label" for="examplePhone">Phone<span class='text-danger'>*</span></label>
+                                                <input type="text" class="form-control" value="Enter Phone Number" autocomplete="off" id="examplePhone">
+                                                
                                             </div>
                                         </div>
-                                        <div class="col-md-4 col-xs-12 col-sm-12 col-lg-4">
+                                        <div class="col-md-6 col-xs-12 col-sm-12 col-lg-6">
                                             <div class="form-group">
-                                                <label class="gfield_label" for="exampleFormControlInput1">ZIP Code<span class='text-danger'>*</span></label>
-                                                <input type="text" class="form-control" autocomplete="off" id="exampleFormControlInput1">
+                                                <label class="gfield_label" for="exampleEmail">Email</label>
+                                                <input type="text" class="form-control" value="Enter Email Address" autocomplete="off" id="exampleEmail">
                                             </div>
                                         </div>
-                                        <div class="col-md-4 col-xs-12 col-sm-12 col-lg-4">
-                                            <div class="form-group">
-                                                <label class="gfield_label" for="exampleFormControlInput1">Law Firm Name<span class='text-danger'>*</span></label>
-                                                <input type="text" class="form-control" autocomplete="off" id="exampleFormControlInput1">
-                                            </div>
-                                        </div>
-                                    </div>
+                                  </div>
                                     <div class="row">
-                                        <div class="col-md-4 col-xs-12 col-sm-12 col-lg-4">
+                                        <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
                                             <div class="form-group">
-                                                <label class="gfield_label" for="exampleFormControlInput1">Attorney’s Name<span class='text-danger'>*</span></label>
-                                                <input type="tel" class="form-control" placeholder="First Name" autocomplete="off" id="exampleFormControlInput1">
+                                                <label for="exampleMessage">Message</label>
+                                                <textarea class="form-control" id="exampleMessage" rows="3" style=height: 160px; width: 100%;></textarea>
+                                                <p>
+                                                    Currently, Oasis is not able to refer residents of the following
+                                                    states to an attorney: California, Indiana, Nevada, Oklahoma,
+                                                    Tennessee, Vermont and West Virginia.
+                                                </p>
                                             </div>
                                         </div>
-                                        <div class="col-md-4 col-xs-12 col-sm-12 col-lg-4">
-                                            <div class="form-group">
-                                                <label class="gfield_label" for="exampleFormControlInput1"></label>
-                                                <input type="text" class="form-control"  placeholder="Last Name" autocomplete="off" id="exampleFormControlInput1">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 col-xs-12 col-sm-12 col-lg-4">
-                                            <div class="form-group">
-                                                <label class="gfield_label" for="exampleFormControlInput1">Law Firm Phone<span class='text-danger'>*</span></label>
-                                                <input type="text" class="form-control" autocomplete="off" id="exampleFormControlInput1">
-                                            </div>
-                                        </div>
+                                     
+                                      
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12 text-right">

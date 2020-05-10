@@ -29,7 +29,7 @@
         
         a.arrow-right {
             display: inline-block;
-            background-image: url(//www.oasisfinancial.com/wp-content/themes/oasis/img/arrow.svg);
+            background-image: url({{ url('module/images/arrow.svg') }});
             background-repeat: no-repeat;
             background-position: right 7px;
             padding-right: 2.5rem;
@@ -40,9 +40,10 @@
             -webkit-transition: all linear .15s;
             transition: all linear .15s;
         }
-        @media (min-width: 768px)
-        .mb-md-4, .my-md-4 {
-            margin-bottom: 1.5rem !important;
+        @media (min-width: 768px){
+            .mb-md-4, .my-md-4 {
+                margin-bottom: 1.5rem !important;
+            }
         }
         .mb-5, .my-5 {
             margin-bottom: 3rem !important;
@@ -82,12 +83,6 @@
         h2, h3, h4, h5, h6, .h2, .h3, .h4, .h5, .h6 {
             text-transform: none !important;
         }
-        .animated {
-            -webkit-animation-duration: 1s;
-            -webkit-animation-fill-mode: both;
-            animation-duration: 1s;
-            animation-fill-mode: both;
-        }
         body, body * {
             font-display: auto;
         }
@@ -101,19 +96,88 @@
         }
         .pre li {
             padding-left: 5.5rem;
-            padding-top: .6rem;
+            padding-top: 1.6rem;
             padding-bottom: .6rem;
             margin-bottom: 1rem;
-            background-image: url(//www.oasisfinancial.com/wp-content/themes/oasis/img/check.svg);
+            background-image: url({{ url('module/images/check.svg') }});
             background-position: 0 center;
             background-repeat: no-repeat;
             background-size: auto;
             font-size: 20px;
             font-weight: 600;
         }
-        .fadeIn {
-            -webkit-animation-name: fadeIn;
-            animation-name: fadeIn;
+        .text-md-left {
+            text-align: left !important;
+        }
+        .d-md-none {
+            display: none !important;
+        }
+        .casesWe h1{
+            font-weight: 700;
+        }
+        .bg-info {
+            background-color: #eef9ff !important;
+        }
+        .expert-img {
+            background: #fff;
+        }
+        
+        .rounded {
+            border-radius: 5px !important;
+        }
+        .border-secondary {
+            border-color: #133d8d !important;
+        }
+        .border {
+            border: 1px solid #133d8d !important;
+        }
+        .expert-img img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
+        }
+        .expert-img {
+            background: #fff;
+        }
+        
+        
+        .expert-img {
+            position: relative;
+            height: 100px;
+        }
+        @media (min-width: 768px){
+            .expert-img {
+                height: 160px;
+            }
+        }
+        .pr-md-2, .px-md-2 {
+            padding-right: .5rem !important;
+        }
+        .mt-md-4, .my-md-4 {
+            margin-top: 1.5rem !important;
+        }
+        .pl-md-2, .px-md-2 {
+            padding-left: .5rem !important;
+        }
+        .pt-md-3, .py-md-3 {
+            padding-top: 1rem !important;
+        }
+        .pb-md-3, .py-md-3 {
+            padding-bottom: 1rem !important;
+        }
+        .pl-3, .px-3 {
+            padding-left: 1rem !important;
+        }
+        .pr-3, .px-3 {
+            padding-right: 1rem !important;
+        }
+        .pb-2, .py-2 {
+            padding-bottom: .5rem !important;
+        }
+        .pt-2, .py-2 {
+            padding-top: .5rem !important;
         }
     </style>
 @endsection
@@ -212,23 +276,41 @@
                     <img src="{{ url('module/images/extra/Depositphotos_214193542_xl-2015.jpg') }}" alt="Oasis support Image" class="img-fluid d-block m-auto object-fit-cover w-100 rounded">
                  </div>
                  <div class="col-md-5 pre casesWe">
-                    <h2 class="separator-right wow h3 animated" style="visibility: visible;">Pre-settlement funding is a good option for you if:</h2>
+                    <h1 class="separator-right color_or">Pre-settlement funding is a good option for you if:</h1>
                     <ul>
-                       <li class="wow fadeIn" style="visibility: visible; animation-name: fadeIn;">You have been injured</li>
-                       <li class="wow fadeIn" data-wow-delay="1s" style="visibility: visible; animation-delay: 1s; animation-name: fadeIn;">You have an attorney</li>
-                       <li class="wow fadeIn" data-wow-delay="2s" style="visibility: visible; animation-delay: 2s; animation-name: fadeIn;">You are struggling to make ends meet while waiting for your settlement</li>
+                       <li>You have been injured</li>
+                       <li>You have an attorney</li>
+                       <li>You are struggling to make ends meet while waiting for your settlement</li>
                     </ul>
-                    <div class="text-center text-md-left"><a class="arrow-right" href="/need-an-attorney/">Don’t have an attorney? <br class="d-md-none">Oasis can help.</a></div>
+                    <div class="text-md-left"><a class="arrow-right" href="">Don’t have an attorney? <br class="d-md-none">Oasis can help.</a></div>
                  </div>
-                {{-- <div class="col-lg-6 col-md-6">
-                   <div class="about-col">
-                       <div class="about-image">
-                            <img src="http://192.168.0.3/advantage-lending/public/module/images/extra/Depositphotos_214193542_xl-2015.jpg" alt="">
-                        </div>
-                   </div>
-                </div> --}}
             </div>
             
+        </div>
+    </section>
+    <section class="counter-area about-area-two bg-info" id="about" style="padding:40px 0 30px !important;">
+        <div class="container">
+            <div class="row">
+               <div class="col-md-6">
+                    <h1 class="color_or">Don’t hesitate – take the first step to securing the money you need</h1>
+                    <p><span style="font-weight: 400;">You have a lot of options when it comes to pre-settlement funding, but our competitors can’t match our simple, affordable, risk-free process. As experts in the field, we have earned an&nbsp; A+ rating from the Better Business Bureau, and our four-star rating from Trustpilot. We have also helped thousands of people by providing financial relief when they need it the most.&nbsp;</span></p>
+                    <p><span style="font-weight: 400;">At a time when you should be fully focused on your recovery, the last thing you need is to stress over financial troubles. </span></p>
+               </div>
+               <div style="padding-top: 120px;">
+                <div class="col-md-3 col-sm-6">
+                    <div class="rounded border border-secondary mt-md-4 expert-img" style="border-width: 2px !important;"> 
+                        <img src="{{ url('module/images/bbaplus.png') }}" alt="Expert Assistance" class="img-fluid" style="max-width:60%;">
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="rounded border border-secondary mt-md-4 expert-img py-2 py-md-3 px-3 px-md-2" style="border-width: 2px !important;">
+                       <div class="trustpilot-widget" data-locale="en-US" data-template-id="53aa8807dec7e10d38f59f32" data-businessunit-id="5bdc94abfbd6140001fa449c" data-style-height="150px" data-style-width="100%" data-theme="light" data-stars="1,2,3,4,5" style="position: relative;">
+                        <iframe frameborder="0" scrolling="no" title="Customer reviews powered by Trustpilot" loading="auto" src="https://widget.trustpilot.com/trustboxes/53aa8807dec7e10d38f59f32/index.html?templateId=53aa8807dec7e10d38f59f32&amp;businessunitId=5bdc94abfbd6140001fa449c#locale=en-US&amp;styleHeight=150px&amp;styleWidth=100%25&amp;theme=light&amp;stars=1%2C2%2C3%2C4%2C5" style="position: relative; height: 150px; width: 100%; border-style: none; display: block; overflow: hidden;"></iframe> 
+                        </div>
+                    </div>
+                 </div>
+               </div>
+            </div>
         </div>
     </section>
     <section class="appointment-area" id="appointment" style="padding:60px 0 60px;">
@@ -236,8 +318,8 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="about-col text-center">
-                        <h1 id="getstarted" class="separator-center">Let’s Get Started</h1>
-                        <h5>Apply now — It’s fast and free, with no obligation.</h5>
+                        <h1 id="getstarted" class="color_or">Need help? Ready to get started?</h1>
+                        <p>Contact our team toll-free at <a class="color_or" href="tel:877.333.6680">(877) 333-6680</a>, or start our free, no obligation application.</p>
                     </div>
                 </div>
                 <div class="col-lg-12 col-md-12">
