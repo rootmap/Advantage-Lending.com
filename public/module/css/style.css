@@ -3441,3 +3441,29 @@ input:-moz-placeholder {
     background: #FF741A;
     color: #ffffff;
 }
+
+.innerpage-titlebar:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #133d8d;
+    z-index: 1;
+    opacity: .6;
+}
+
+.fix-barcum-head {
+    font-size: 5.5rem;
+    font-weight: 600;
+    font-variant: small-caps;
+    font-family: initial;
+    color: #fff;
+    z-index: 9999999999999999;
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+}
