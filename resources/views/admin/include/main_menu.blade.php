@@ -26,6 +26,12 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
+            <a href="{{url('crud')}}" class="nav-link {{ Request::path() == 'crud' ? 'active' : '' }}">
+              <i class="nav-icon fas fa-igloo"></i>
+              <p>CRUD</p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="{{url('dashboard')}}" class="nav-link {{ Request::path() == 'dashboard' ? 'active' : '' }}">
               <i class="nav-icon fas fa-igloo"></i>
               <p>Dashboard</p>

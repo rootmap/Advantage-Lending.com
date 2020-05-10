@@ -142,7 +142,7 @@
                                                 <label class="gfield_label" for="exampleFormPhone">Phone<span class='text-danger'>*</span></label>
                                                 <input type="email" class="form-control" autocomplete="off" id="exampleFormPhone">
                                                  <small>
-                                                  <p class="description" style="font-size: 11px;line-height:11px;color:black;">
+                                                  <p class="description" style="font-size: 11px;line-height:11px;color:black;margin-top:-20px;">
                                                     By providing your phone number on this application, you consent to receive autodialed informational phone calls to the number you 
                                                     provided to Oasis about the status of your application or related funding.
                                                 </p>
@@ -189,7 +189,7 @@
                                     <div class="row">
                                         <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
                                            <div class="form-group">
-                                                <p>
+                                                <p style="font-size:20px;">
                                                     Please be aware that not all inheritances meet our purchase criteria. 
                                                     In those instances where we may not purchase your inheritance,
                                                     we work with group of non-affiliated companies that may be able to

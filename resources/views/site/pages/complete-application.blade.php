@@ -105,7 +105,7 @@
                                                 <option>5</option>
                                                 </select>
                                                 <small>
-                                                    <p class="description" style="font-size: 11px;line-height:11px;color:black;">View Oasis Financial’s<a href="#"> state-specific licenses,</a> including South Carolina.</p>
+                                                    <p class="description" style="font-size: 11px;line-height:11px;color:black; margin-top:-20px;">View  advantage lending  Financial’s<a href="#"> state-specific licenses,</a> including South Carolina.</p>
                                                 </small>
                                             </div>
                                         </div>
@@ -125,7 +125,7 @@
                                         <div class="col-md-4 col-xs-12 col-sm-12 col-lg-4">
                                             <div class="form-group">
                                                 <label class="gfield_label" for="exampleFormControlInput3">
-                                                    How did you hear about Oasis?<span class='text-danger'>*</span>
+                                                    How did you hear about advantage lending?<span class='text-danger'>*</span>
                                                 </label>
                                                <select  class="form-control" id="exampleFormControlSelect3">
                                                 <option>Select One</option>
@@ -150,7 +150,7 @@
                                             <label for="exampleFormControlInput1">Phone<span>*</span></label>
                                               <input type="text" class="form-control" value="(018) 607-4802" autocomplete="off" id="exampleFormControlInput1">
                                               <small>
-                                                  <p class="description" style="font-size: 11px;line-height:11px;color:black;margin-buttom:0;">By providing your phone number on this application, you consent to receive autodialed informational phone calls to the number you provided to Oasis about the status of your application or related funding.</p>
+                                                  <p class="description" style="font-size: 11px;line-height:11px;color:black;margin-top:-20px;">By providing your phone number on this application, you consent to receive autodialed informational phone calls to the number you provided to Oasis about the status of your application or related funding.</p>
                                               </small>
                                             </div>
                                         </div>
@@ -169,7 +169,7 @@
                                                 </div>
                                             </div>
                                             <small>
-                                                <p style="font-size: 11px;line-height:11px;color:black; margin-buttom:0;">
+                                                <p style="font-size: 11px;line-height:11px;color:black;margin-top:-20px;">
                                                     If you check Text/SMS You authorize Oasis Financial and its agents to call and text message me at the phone number provided in my application for information and marketing purposes using live operators and automated dialing systems. Message and data rates may apply. I understand my consent to receive autodialed marketing calls and text messages is not a condition of receiving funding
                                                 </p>
                                             </small>
@@ -237,7 +237,7 @@
                                         <div class="col-md-6 col-xs-12 col-sm-12 col-lg-6">
                                             <div class="form-group">
                                                 <label class="gfield_label" for="exampleLawFirmName">Law Firm Name<span class='text-danger'>*</span></label>
-                                                <input type="text" class="form-control"  autocomplete="off" id="exampleLawFirmName">
+                                                <input type="text" class="form-control" value="Enter Law Firm Name"  autocomplete="off" id="exampleLawFirmName">
                                                
                                             </div>
                                         </div>
@@ -252,9 +252,10 @@
                                     </div>
                                        <div class="row">
                                         <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12 text-right">
-                                            <p style="text-align: left;"><strong>IMPORTANT: Once you've submitted your application you must contact your Attorney and tell them they have your permission to speak to us about your case.</strong> <br><br>Incorrect or incomplete attorney information can lead to a delay and even decline in the application.</p>
+                                            <p style="text-align: left; font-size:20px;"><strong>IMPORTANT: Once you've submitted your application you must contact your Attorney and tell them they have your permission to speak to us about your case.</strong> <br><br>Incorrect or incomplete attorney information can lead to a delay and even decline in the application.</p>
                                         </div>
                                     </div>
+                                    <br>
                                     <div class="row">
                                         <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12 text-right">
                                             <button class="btn btn-default simple-btn" type="submit">Continue <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>

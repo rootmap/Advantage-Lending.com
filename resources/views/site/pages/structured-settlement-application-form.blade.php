@@ -92,7 +92,7 @@
                                         <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
                                            <div class="form-group">
                                                 <label for="exampleStreetAddress">Address<span>*</span></label>
-                                              <input type="text" class="form-control" autocomplete="off" id="exampleStreetAddress">
+                                              <input type="text" class="form-control" value="Enter Address" autocomplete="off" id="exampleStreetAddress">
                                               
                                             </div>
                                         </div>
@@ -135,7 +135,7 @@
                                                 <label class="gfield_label" for="exampleCity">When did your case settle?<span>*</span></label>
                                                 <input type="Date" class="form-control" autocomplete="off" id="exampleCity">
                                                  <small>
-                                                  <p class="description" style="font-size: 11px;line-height:11px;color:black;">
+                                                  <p class="description" style="font-size: 11px;line-height:11px;color:black; margin-top:-20px;">
                                                     (If the case has not yet settled or settled within the past 30 days or so, it’s NOT a structured settlement.)</p>
                                               </small>
                                             </div>
@@ -152,7 +152,7 @@
                                                 <label class="gfield_label" for="examplePhone">Phone<span>*</span></label>
                                                 <input type="text" class="form-control" autocomplete="off" id="examplePhone">
                                             <small>
-                                                  <p class="description" style="font-size: 11px;line-height:11px;color:black;">
+                                                  <p class="description" style="font-size: 11px;line-height:11px;color:black;margin-top:-20px;">
                                                     By providing your phone number on this application, you consent to receive autodialed informational phone calls to the number you provided to Oasis about the status of your application or related funding.
                                                 </p>
                                               </small>
@@ -191,7 +191,8 @@
                                     <div class="row">
                                         <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
                                            <div class="form-group">
-                                                <p>
+                                                <p style="font-size:20px;">
+                                                    
                                                     Please be aware that not all structured settlements meet our 
                                                     purchase criteria. In those instances where we may not purchase your 
                                                     settlement, we work with group of non-affiliated companies that may be able to provide
@@ -199,7 +200,9 @@
                                                     you acknowledge that Oasis, consistent with its <a href="#">Privacy Policy</a>, may refer your 
                                                     application to a non-affiliated company. For further information, 
                                                     including how to opt out, visit our <a href="#">Privacy Policy</a>.
+                                                    <br><br>
                                                     Would you like us to refer your application to a non-affiliated company if we do not process your case ourselves?*
+                                                    
                                                 </p>
                                             </div>
                                         </div>

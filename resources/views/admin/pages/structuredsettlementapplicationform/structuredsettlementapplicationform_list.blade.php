@@ -63,12 +63,20 @@
                         <tr>
                             <th class="text-center">ID</th>
                             <th class="text-center">First Name</th>
-                            <th class="text-center">Last Name</th>
-                            <th class="text-center">Are you over the age of 18</th>
+                            <th class="text-center">Last name</th>
+                            <th class="text-center">Age Over 18</th>
+                            <th class="text-center">Address</th>
+                            <th class="text-center">Street Address</th>
+                            <th class="text-center">State Name</th>
+                            <th class="text-center">ZIP CODE</th>
+                            <th class="text-center">When did your case settle</th>
                             <th class="text-center">Email</th>
                             <th class="text-center">Phone</th>
-                            <th class="text-center">Application Status</th>
-                            <th class="text-center">Applicant Verification Status</th>
+                            <th class="text-center">Total Amount Of The Award</th>
+                            <th class="text-center">How Much Receive Each Payment</th>
+                            <th class="text-center">How Much Do You Need Now</th>
+                            <th class="text-center">Refer Your Application</th>
+                            <th class="text-center">Settlement Status</th>
                             <th class="text-center">Created At</th>
                             <th class="text-center">Actions</th>
 
@@ -78,7 +86,7 @@
                         @if(count($dataRow))
                             @foreach($dataRow as $row)  
                                 <tr>
-                                    <td class="text-center">{{$row->id}}</td><td class="text-center">{{$row->first_name}}</td><td class="text-center">{{$row->last_name}}</td><td class="text-center">{{$row->are_you_over_the_age_of_18}}</td><td class="text-center">{{$row->email}}</td><td class="text-center">{{$row->phone}}</td><td class="text-center">{{$row->application_status}}</td><td class="text-center">{{$row->applicant_verification_status}}</td>
+                                    <td class="text-center">{{$row->id}}</td><td class="text-center">{{$row->first_name}}</td><td class="text-center">{{$row->last_name}}</td><td class="text-center">{{$row->age_over_18}}</td><td class="text-center">{{$row->address}}</td><td class="text-center">{{$row->street_address}}</td><td class="text-center">{{$row->state_name}}</td><td class="text-center">{{$row->zip_code}}</td><td class="text-center">{{$row->when_did_your_case_settle}}</td><td class="text-center">{{$row->email}}</td><td class="text-center">{{$row->phone}}</td><td class="text-center">{{$row->total_amount_of_the_award}}</td><td class="text-center">{{$row->how_much_receive_each_payment}}</td><td class="text-center">{{$row->how_much_do_you_need_now}}</td><td class="text-center">{{$row->refer_your_application}}</td><td class="text-center">{{$row->settlement_status}}</td>
                                     <td>{{formatDate($row->created_at)}}</td>
                                     <td>
                                         <div class="btn-group">
@@ -102,12 +110,20 @@
                     <tr>
                         <th class="text-center">ID</th>
                         <th class="text-center">First Name</th>
-                        <th class="text-center">Last Name</th>
-                        <th class="text-center">Are you over the age of 18</th>
+                        <th class="text-center">Last name</th>
+                        <th class="text-center">Age Over 18</th>
+                        <th class="text-center">Address</th>
+                        <th class="text-center">Street Address</th>
+                        <th class="text-center">State Name</th>
+                        <th class="text-center">ZIP CODE</th>
+                        <th class="text-center">When did your case settle</th>
                         <th class="text-center">Email</th>
                         <th class="text-center">Phone</th>
-                        <th class="text-center">Application Status</th>
-                        <th class="text-center">Applicant Verification Status</th>
+                        <th class="text-center">Total Amount Of The Award</th>
+                        <th class="text-center">How Much Receive Each Payment</th>
+                        <th class="text-center">How Much Do You Need Now</th>
+                        <th class="text-center">Refer Your Application</th>
+                        <th class="text-center">Settlement Status</th>
                         <th class="text-center">Created At</th>
                         <th class="text-center">Actions</th>
 

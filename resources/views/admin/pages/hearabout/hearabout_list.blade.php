@@ -1,17 +1,17 @@
 
 @extends("admin.layout.master")
-@section("title","Case Type")
+@section("title","Hear About")
 @section("content")
         <section class="content-header">
           <div class="container-fluid">
             <div class="row mb-2">
               <div class="col-sm-6">
-                <h1>Case Type</h1>
+                <h1>Hear About</h1>
               </div>
               <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                  <li class="breadcrumb-item"><a href="{{url('casetype/create')}}">Create New </a></li>
-                  <li class="breadcrumb-item active">Case Type Data</li>
+                  <li class="breadcrumb-item"><a href="{{url('hearabout/create')}}">Create New </a></li>
+                  <li class="breadcrumb-item active">Hear About Data</li>
                 </ol>
               </div>
             </div>
@@ -30,23 +30,23 @@
               <div class="card">
 
                 <div class="card-header">
-                  <h3 class="card-title">Case Type Data</h3>
+                  <h3 class="card-title">Hear About Data</h3>
 
                     <div class="card-tools">
                       <ul class="pagination pagination-sm float-right">
                         <li class="page-item">
-                            <a class="page-link bg-primary" href="{{url('casetype/create')}}"> 
+                            <a class="page-link bg-primary" href="{{url('hearabout/create')}}"> 
                                 Add New 
                                 <i class="fas fa-plus"></i> 
                             </a>
                         </li>
                         <li class="page-item">
-                          <a class="page-link" target="_blank" href="{{url('casetype/export/pdf')}}">
+                          <a class="page-link" target="_blank" href="{{url('hearabout/export/pdf')}}">
                             <i class="fas fa-file-pdf" data-toggle="tooltip" data-html="true"title="Pdf"></i>
                           </a>
                         </li>
                         <li class="page-item">
-                          <a class="page-link" target="_blank" href="{{url('casetype/export/excel')}}">
+                          <a class="page-link" target="_blank" href="{{url('hearabout/export/excel')}}">
                             <i class="fas fa-file-excel" data-toggle="tooltip" data-html="true"title="Excel"></i>
                           </a>
                         </li>
@@ -72,15 +72,16 @@
                         @if(count($dataRow))
                             @foreach($dataRow as $row)  
                                 <tr>
-                                    <td class="text-center">{{$row->id}}</td><td class="text-center">{{$row->name}}</td>
+                                    <td class="text-center">{{$row->id}}</td>
+                                    <td class="text-center">{{$row->name}}</td>
                                     <td>{{formatDate($row->created_at)}}</td>
                                     <td>
                                         <div class="btn-group">
-                                            <a href="{{url('casetype/edit/'.$row->id)}}" type="button" class="btn btn-default">
+                                            <a href="{{url('hearabout/edit/'.$row->id)}}" type="button" class="btn btn-default">
                                                 Edit 
                                                 <i class="fas fa-edit"></i>
                                             </a>
-                                            <a href="{{url('casetype/delete/'.$row->id)}}" type="button" class="btn btn-default">
+                                            <a href="{{url('hearabout/delete/'.$row->id)}}" type="button" class="btn btn-default">
                                                 Delete 
                                                 <i class="fas fa-trash-alt"></i>
                                             </a>

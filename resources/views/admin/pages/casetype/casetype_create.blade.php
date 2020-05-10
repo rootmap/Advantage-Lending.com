@@ -60,33 +60,11 @@
                       <!-- text input -->
                       <div class="form-group">
                         <label for="name">Name</label>
-                        <input type="text" class="form-control" placeholder="Enter Case Name" id="name" name="name">
+                        <input type="text" class="form-control" placeholder="Enter Name" id="name" name="name">
                       </div>
                     </div>
                 </div>
-                
-        <div class="row">
-            <div class="col-sm-12">
-              <!-- radio -->
-              <div class="form-group">
-              <label>Choose Case Type Status</label>
-        
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" 
-                          id="case_type_status_0" name="case_type_status" value="Active">
-                          <label class="form-check-label">Active</label>
-                        </div>
-                
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" 
-                          id="case_type_status_1" name="case_type_status" value="Inactive">
-                          <label class="form-check-label">Inactive</label>
-                        </div>
-                
-                    </div>
-                </div>
-            </div>
-                   
+                       
             </div>
             <!-- /.card-body -->
 

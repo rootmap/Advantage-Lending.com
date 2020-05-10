@@ -79,8 +79,8 @@
                     <div class="col-sm-12">
                       <!-- text input -->
                       <div class="form-group">
-                        <label for="how_much_money_you_need">How Much Money You Need</label>
-                        <input type="text" class="form-control" placeholder="Enter Amount" id="how_much_money_you_need" name="how_much_money_you_need">
+                        <label for="how_much_money_do_you_need">How much money do you need</label>
+                        <input type="text" class="form-control" placeholder="How much money do you need?" id="how_much_money_do_you_need" name="how_much_money_do_you_need">
                       </div>
                     </div>
                 </div>
@@ -89,8 +89,8 @@
                     <div class="col-sm-12">
                       <!-- text input -->
                       <div class="form-group">
-                        <label for="date_of_accident">Date Of Accident</label>
-                        <input type="text" class="form-control" placeholder="What was the date of your accident?" id="date_of_accident" name="date_of_accident">
+                        <label for="what_was_the_date_of_your_accident">What was the date of your accident</label>
+                        <input type="text" class="form-control" placeholder="What was the date of your accident?" id="what_was_the_date_of_your_accident" name="what_was_the_date_of_your_accident">
                       </div>
                     </div>
                 </div>
@@ -99,12 +99,12 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                   <label>What state is your case in?</label>
-                                  <select class="form-control select2" style="width: 100%;"  id="what_state_case" name="what_state_case">
+                                  <select class="form-control select2" style="width: 100%;"  id="state_case" name="state_case">
                                         <option value="">Please Select</option>
-                                        @if(isset($dataRow_usa_states))    
-                                            @if(count($dataRow_usa_states)>0)
-                                                @foreach($dataRow_usa_states as $usa_states)
-                                                    <option value="{{$usa_states->id}}">{{$usa_states->name}}</option>
+                                        @if(isset($dataRow_USAState))    
+                                            @if(count($dataRow_USAState)>0)
+                                                @foreach($dataRow_USAState as $USAState)
+                                                    <option value="{{$USAState->id}}">{{$USAState->name}}</option>
                                                     
                                                 @endforeach
                                             @endif
@@ -118,8 +118,8 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                  <label>What kind of case do you have</label>
-                                  <select class="form-control select2" style="width: 100%;"  id="case_type_id" name="case_type_id">
+                                  <label>What kind of case do you have?</label>
+                                  <select class="form-control select2" style="width: 100%;"  id="case_type" name="case_type">
                                         <option value="">Please Select</option>
                                         @if(isset($dataRow_CaseType))    
                                             @if(count($dataRow_CaseType)>0)
@@ -138,13 +138,13 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                  <label>How did you hear about advantage lending</label>
-                                  <select class="form-control select2" style="width: 100%;"  id="hear_about_us_id" name="hear_about_us_id">
+                                  <label>How did you hear about  advantage lending?</label>
+                                  <select class="form-control select2" style="width: 100%;"  id="how_did_you_heard" name="how_did_you_heard">
                                         <option value="">Please Select</option>
-                                        @if(isset($dataRow_HearAboutUs))    
-                                            @if(count($dataRow_HearAboutUs)>0)
-                                                @foreach($dataRow_HearAboutUs as $HearAboutUs)
-                                                    <option value="{{$HearAboutUs->id}}">{{$HearAboutUs->name}}</option>
+                                        @if(isset($dataRow_HearAbout))    
+                                            @if(count($dataRow_HearAbout)>0)
+                                                @foreach($dataRow_HearAbout as $HearAbout)
+                                                    <option value="{{$HearAbout->id}}">{{$HearAbout->name}}</option>
                                                     
                                                 @endforeach
                                             @endif
@@ -183,14 +183,14 @@
         
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" 
-                          id="how_should_we_contact_0" name="how_should_we_contact" value="Email me!">
-                          <label class="form-check-label">Email me!</label>
+                          id="how_should_we_contact_you_0" name="how_should_we_contact_you" value="Email Me">
+                          <label class="form-check-label">Email Me</label>
                         </div>
                 
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" 
-                          id="how_should_we_contact_1" name="how_should_we_contact" value="Text/SMS me!">
-                          <label class="form-check-label">Text/SMS me!</label>
+                          id="how_should_we_contact_you_1" name="how_should_we_contact_you" value="SMS Me">
+                          <label class="form-check-label">SMS Me</label>
                         </div>
                 
                     </div>
@@ -201,18 +201,8 @@
                     <div class="col-sm-12">
                       <!-- text input -->
                       <div class="form-group">
-                        <label for="address">Address</label>
-                        <input type="text" class="form-control" placeholder="Enter Street Address" id="address" name="address">
-                      </div>
-                    </div>
-                </div>
-                
-                <div class="row">
-                    <div class="col-sm-12">
-                      <!-- text input -->
-                      <div class="form-group">
-                        <label for="city">City</label>
-                        <input type="text" class="form-control" placeholder="Enter City" id="city" name="city">
+                        <label for="street_address">Street Address</label>
+                        <input type="text" class="form-control" placeholder="Enter Street Address" id="street_address" name="street_address">
                       </div>
                     </div>
                 </div>
@@ -223,10 +213,10 @@
                                   <label>Enter State</label>
                                   <select class="form-control select2" style="width: 100%;"  id="state" name="state">
                                         <option value="">Please Select</option>
-                                        @if(isset($dataRow_usa_states))    
-                                            @if(count($dataRow_usa_states)>0)
-                                                @foreach($dataRow_usa_states as $usa_states)
-                                                    <option value="{{$usa_states->id}}">{{$usa_states->name}}</option>
+                                        @if(isset($dataRow_USAState))    
+                                            @if(count($dataRow_USAState)>0)
+                                                @foreach($dataRow_USAState as $USAState)
+                                                    <option value="{{$USAState->id}}">{{$USAState->name}}</option>
                                                     
                                                 @endforeach
                                             @endif
@@ -242,7 +232,7 @@
                       <!-- text input -->
                       <div class="form-group">
                         <label for="zip_code">ZIP Code</label>
-                        <input type="text" class="form-control" placeholder="Enter ZIP Code" id="zip_code" name="zip_code">
+                        <input type="text" class="form-control" placeholder="Enter  ZIP Code" id="zip_code" name="zip_code">
                       </div>
                     </div>
                 </div>
@@ -251,8 +241,8 @@
                     <div class="col-sm-12">
                       <!-- text input -->
                       <div class="form-group">
-                        <label for="attorney_first_name">Attorney First Name</label>
-                        <input type="text" class="form-control" placeholder="Enter First Name" id="attorney_first_name" name="attorney_first_name">
+                        <label for="attorney__first_name">Attorney  First Name</label>
+                        <input type="text" class="form-control" placeholder="Enter First Name" id="attorney__first_name" name="attorney__first_name">
                       </div>
                     </div>
                 </div>
@@ -261,8 +251,8 @@
                     <div class="col-sm-12">
                       <!-- text input -->
                       <div class="form-group">
-                        <label for="attorney_last_name">Attorney Last Name</label>
-                        <input type="text" class="form-control" placeholder="Enter Last Name" id="attorney_last_name" name="attorney_last_name">
+                        <label for="attorney__last_name">Attorney  Last Name</label>
+                        <input type="text" class="form-control" placeholder="Enter Last Name" id="attorney__last_name" name="attorney__last_name">
                       </div>
                     </div>
                 </div>
@@ -291,24 +281,42 @@
             <div class="col-sm-12">
               <!-- radio -->
               <div class="form-group">
-              <label>Choose Application Status</label>
+              <label>Choose Case Status</label>
         
                         <div class="form-check">
                             <input class="form-check-input" type="radio" 
-                          id="application_status_0" name="application_status" value="New">
+                          id="case_status_0" name="case_status" value="New">
                           <label class="form-check-label">New</label>
                         </div>
                 
                         <div class="form-check">
                             <input class="form-check-input" type="radio" 
-                          id="application_status_1" name="application_status" value="Processing">
-                          <label class="form-check-label">Processing</label>
+                          id="case_status_1" name="case_status" value="Reviewing">
+                          <label class="form-check-label">Reviewing</label>
                         </div>
                 
                         <div class="form-check">
                             <input class="form-check-input" type="radio" 
-                          id="application_status_2" name="application_status" value="Close">
-                          <label class="form-check-label">Close</label>
+                          id="case_status_2" name="case_status" value="Reviewed">
+                          <label class="form-check-label">Reviewed</label>
+                        </div>
+                
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" 
+                          id="case_status_3" name="case_status" value="Rejected">
+                          <label class="form-check-label">Rejected</label>
+                        </div>
+                
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" 
+                          id="case_status_4" name="case_status" value="Approve">
+                          <label class="form-check-label">Approve</label>
+                        </div>
+                
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" 
+                          id="case_status_5" name="case_status" value="Closed">
+                          <label class="form-check-label">Closed</label>
                         </div>
                 
                     </div>
@@ -319,18 +327,24 @@
             <div class="col-sm-12">
               <!-- radio -->
               <div class="form-group">
-              <label>Choose Applicant Verification Status</label>
+              <label>Choose Application Status</label>
         
                         <div class="form-check">
                             <input class="form-check-input" type="radio" 
-                          id="applicant_verification_status_0" name="applicant_verification_status" value="Unverified">
-                          <label class="form-check-label">Unverified</label>
+                          id="application_status_0" name="application_status" value="New">
+                          <label class="form-check-label">New</label>
                         </div>
                 
                         <div class="form-check">
                             <input class="form-check-input" type="radio" 
-                          id="applicant_verification_status_1" name="applicant_verification_status" value="Verified">
+                          id="application_status_1" name="application_status" value="Verified">
                           <label class="form-check-label">Verified</label>
+                        </div>
+                
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" 
+                          id="application_status_2" name="application_status" value="Not Verified">
+                          <label class="form-check-label">Not Verified</label>
                         </div>
                 
                     </div>

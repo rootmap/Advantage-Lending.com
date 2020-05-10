@@ -91,7 +91,7 @@
                     <div class="col-sm-12">
                       <!-- text input -->
                       <div class="form-group">
-                        <label for="last_name">Last Name</label>
+                        <label for="last_name">Last name</label>
                         <input type="text" 
                             
                         <?php 
@@ -116,26 +116,26 @@
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox"  
                                 <?php 
-                                if($dataRow->are_you_over_the_age_of_18=="Yes"){
+                                if($dataRow->age_over_18=="Yes"){
                                     ?>
                                     checked="checked" 
                                     <?php 
                                 }
                                 ?>
-                          id="are_you_over_the_age_of_18_0" name="are_you_over_the_age_of_18" value="Yes">
+                          id="age_over_18_0" name="age_over_18" value="Yes">
                           <label class="form-check-label">Yes</label>
                         </div>
                 
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox"  
                                 <?php 
-                                if($dataRow->are_you_over_the_age_of_18=="No"){
+                                if($dataRow->age_over_18=="No"){
                                     ?>
                                     checked="checked" 
                                     <?php 
                                 }
                                 ?>
-                          id="are_you_over_the_age_of_18_1" name="are_you_over_the_age_of_18" value="No">
+                          id="age_over_18_1" name="age_over_18" value="No">
                           <label class="form-check-label">No</label>
                         </div>
                 
@@ -158,7 +158,7 @@
                         }
                         ?>
                         
-                        class="form-control" placeholder="Enter Street Address" id="address" name="address">
+                        class="form-control" placeholder="Enter Address" id="address" name="address">
                       </div>
                     </div>
                 </div>
@@ -167,18 +167,18 @@
                     <div class="col-sm-12">
                       <!-- text input -->
                       <div class="form-group">
-                        <label for="city">City</label>
+                        <label for="street_address">Street Address</label>
                         <input type="text" 
                             
                         <?php 
-                        if(isset($dataRow->city)){
+                        if(isset($dataRow->street_address)){
                             ?>
-                            value="{{$dataRow->city}}" 
+                            value="{{$dataRow->street_address}}" 
                             <?php 
                         }
                         ?>
                         
-                        class="form-control" placeholder="Enter Name" id="city" name="city">
+                        class="form-control" placeholder="Enter City Name" id="street_address" name="street_address">
                       </div>
                     </div>
                 </div>
@@ -186,19 +186,19 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                  <label>Enter State Name</label>
+                                  <label>Enter State</label>
                                   <select class="form-control select2" style="width: 100%;"  id="state" name="state">
                                     
                                         <option value="">Please Select</option>
-                                        @if(count($dataRow_usa_states)>0)
-                                            @foreach($dataRow_usa_states as $usa_states)
+                                        @if(count($dataRow_USAState)>0)
+                                            @foreach($dataRow_USAState as $USAState)
                                                 <option 
-                                        @if(isset($dataRow->Active))
-                                            @if($dataRow->Active==$usa_states->Active)
+                                        @if(isset($dataRow->id))
+                                            @if($dataRow->id==$USAState->id)
                                                 selected="selected" 
                                             @endif
                                         @endif 
-                                         value="{{$usa_states->Active}}">{{$usa_states->Inactive}}</option>
+                                         value="{{$USAState->id}}">{{$USAState->name}}</option>
                                                 
                                             @endforeach
                                         @endif
@@ -212,7 +212,7 @@
                     <div class="col-sm-12">
                       <!-- text input -->
                       <div class="form-group">
-                        <label for="zip_code">ZIP Code</label>
+                        <label for="zip_code">ZIP CODE</label>
                         <input type="text" 
                             
                         <?php 
@@ -223,7 +223,7 @@
                         }
                         ?>
                         
-                        class="form-control" placeholder="Enter ZIP Code" id="zip_code" name="zip_code">
+                        class="form-control" placeholder="Enter ZIP CODE" id="zip_code" name="zip_code">
                       </div>
                     </div>
                 </div>
@@ -288,61 +288,22 @@
                     </div>
                 </div>
                 
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                  <label>How often do you receive payments?</label>
-                                  <select class="form-control select2" style="width: 100%;"  id="how_often_do_you_receive_payments" name="how_often_do_you_receive_payments">
-                                    
-        <option value="">Please select</option>
-            <option 
-                    <?php 
-                    if($dataRow->how_often_do_you_receive_payments=="Weekly"){
-                        ?>
-                        selected="selected" 
-                        <?php 
-                    }
-                    ?> 
-            value="Weekly">Weekly</option>
-            <option 
-                    <?php 
-                    if($dataRow->how_often_do_you_receive_payments=="Monthly"){
-                        ?>
-                        selected="selected" 
-                        <?php 
-                    }
-                    ?> 
-            value="Monthly">Monthly</option>
-            <option 
-                    <?php 
-                    if($dataRow->how_often_do_you_receive_payments=="Yearly"){
-                        ?>
-                        selected="selected" 
-                        <?php 
-                    }
-                    ?> 
-            value="Yearly">Yearly</option>
-                                  </select>
-                                </div>
-                            </div>
-                        </div>
-                    
                 <div class="row">
                     <div class="col-sm-12">
                       <!-- text input -->
                       <div class="form-group">
-                        <label for="name_of_the_company_sending_your_payments">Name of the company sending your payments</label>
+                        <label for="total_amount_of_the_award">Total Amount Of The Award</label>
                         <input type="text" 
                             
                         <?php 
-                        if(isset($dataRow->name_of_the_company_sending_your_payments)){
+                        if(isset($dataRow->total_amount_of_the_award)){
                             ?>
-                            value="{{$dataRow->name_of_the_company_sending_your_payments}}" 
+                            value="{{$dataRow->total_amount_of_the_award}}" 
                             <?php 
                         }
                         ?>
                         
-                        class="form-control" placeholder="Name of the company sending your payments?" id="name_of_the_company_sending_your_payments" name="name_of_the_company_sending_your_payments">
+                        class="form-control" placeholder="What was the total amount of the award?" id="total_amount_of_the_award" name="total_amount_of_the_award">
                       </div>
                     </div>
                 </div>
@@ -351,51 +312,71 @@
                     <div class="col-sm-12">
                       <!-- text input -->
                       <div class="form-group">
-                        <label for="what_was_the_total_amount_of_the_award">What was the total amount of the award</label>
+                        <label for="how_much_receive_each_payment">How Much Receive Each Payment</label>
                         <input type="text" 
                             
                         <?php 
-                        if(isset($dataRow->what_was_the_total_amount_of_the_award)){
+                        if(isset($dataRow->how_much_receive_each_payment)){
                             ?>
-                            value="{{$dataRow->what_was_the_total_amount_of_the_award}}" 
+                            value="{{$dataRow->how_much_receive_each_payment}}" 
                             <?php 
                         }
                         ?>
                         
-                        class="form-control" placeholder="What was the total amount of the award?" id="what_was_the_total_amount_of_the_award" name="what_was_the_total_amount_of_the_award">
+                        class="form-control" placeholder="How much do you receive in each payment?" id="how_much_receive_each_payment" name="how_much_receive_each_payment">
+                      </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-sm-12">
+                      <!-- text input -->
+                      <div class="form-group">
+                        <label for="how_much_do_you_need_now">How Much Do You Need Now</label>
+                        <input type="text" 
+                            
+                        <?php 
+                        if(isset($dataRow->how_much_do_you_need_now)){
+                            ?>
+                            value="{{$dataRow->how_much_do_you_need_now}}" 
+                            <?php 
+                        }
+                        ?>
+                        
+                        class="form-control" placeholder="How much do you need now?" id="how_much_do_you_need_now" name="how_much_do_you_need_now">
                       </div>
                     </div>
                 </div>
                 
         <div class="row">
             <div class="col-sm-12">
-              <!-- radio -->
+              <!-- checkbox -->
               <div class="form-group">
-              <label>Would you like us to refer your application to a non-affiliated company if we do not process your case ourselves?</label>
+              <label>Would You Like To Refer Your Application</label>
         
                         <div class="form-check">
-                            <input class="form-check-input" type="radio"  
+                            <input class="form-check-input" type="checkbox"  
                                 <?php 
-                                if($dataRow->refer=="Yes"){
+                                if($dataRow->refer_your_application=="Yes"){
                                     ?>
                                     checked="checked" 
                                     <?php 
                                 }
                                 ?>
-                          id="refer_0" name="refer" value="Yes">
+                          id="refer_your_application_0" name="refer_your_application" value="Yes">
                           <label class="form-check-label">Yes</label>
                         </div>
                 
                         <div class="form-check">
-                            <input class="form-check-input" type="radio"  
+                            <input class="form-check-input" type="checkbox"  
                                 <?php 
-                                if($dataRow->refer=="No"){
+                                if($dataRow->refer_your_application=="No"){
                                     ?>
                                     checked="checked" 
                                     <?php 
                                 }
                                 ?>
-                          id="refer_1" name="refer" value="No">
+                          id="refer_your_application_1" name="refer_your_application" value="No">
                           <label class="form-check-label">No</label>
                         </div>
                 
@@ -407,81 +388,84 @@
             <div class="col-sm-12">
               <!-- radio -->
               <div class="form-group">
-              <label>Choose Application Status</label>
+              <label>Choose Settlement Status</label>
         
                         <div class="form-check">
                             <input class="form-check-input" type="radio"  
                                 <?php 
-                                if($dataRow->application_status=="New"){
+                                if($dataRow->settlement_status=="Submitted"){
                                     ?>
                                     checked="checked" 
                                     <?php 
                                 }
                                 ?>
-                          id="application_status_0" name="application_status" value="New">
-                          <label class="form-check-label">New</label>
+                          id="settlement_status_0" name="settlement_status" value="Submitted">
+                          <label class="form-check-label">Submitted</label>
                         </div>
                 
                         <div class="form-check">
                             <input class="form-check-input" type="radio"  
                                 <?php 
-                                if($dataRow->application_status=="Processing"){
+                                if($dataRow->settlement_status=="Reviewed"){
                                     ?>
                                     checked="checked" 
                                     <?php 
                                 }
                                 ?>
-                          id="application_status_1" name="application_status" value="Processing">
-                          <label class="form-check-label">Processing</label>
+                          id="settlement_status_1" name="settlement_status" value="Reviewed">
+                          <label class="form-check-label">Reviewed</label>
                         </div>
                 
                         <div class="form-check">
                             <input class="form-check-input" type="radio"  
                                 <?php 
-                                if($dataRow->application_status=="Close"){
+                                if($dataRow->settlement_status=="Agreed"){
                                     ?>
                                     checked="checked" 
                                     <?php 
                                 }
                                 ?>
-                          id="application_status_2" name="application_status" value="Close">
+                          id="settlement_status_2" name="settlement_status" value="Agreed">
+                          <label class="form-check-label">Agreed</label>
+                        </div>
+                
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio"  
+                                <?php 
+                                if($dataRow->settlement_status=="Rejected"){
+                                    ?>
+                                    checked="checked" 
+                                    <?php 
+                                }
+                                ?>
+                          id="settlement_status_3" name="settlement_status" value="Rejected">
+                          <label class="form-check-label">Rejected</label>
+                        </div>
+                
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio"  
+                                <?php 
+                                if($dataRow->settlement_status=="Refer To Another"){
+                                    ?>
+                                    checked="checked" 
+                                    <?php 
+                                }
+                                ?>
+                          id="settlement_status_4" name="settlement_status" value="Refer To Another">
+                          <label class="form-check-label">Refer To Another</label>
+                        </div>
+                
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio"  
+                                <?php 
+                                if($dataRow->settlement_status=="Close"){
+                                    ?>
+                                    checked="checked" 
+                                    <?php 
+                                }
+                                ?>
+                          id="settlement_status_5" name="settlement_status" value="Close">
                           <label class="form-check-label">Close</label>
-                        </div>
-                
-                    </div>
-                </div>
-            </div>
-            
-        <div class="row">
-            <div class="col-sm-12">
-              <!-- radio -->
-              <div class="form-group">
-              <label>Choose Applicant Verification Status</label>
-        
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio"  
-                                <?php 
-                                if($dataRow->applicant_verification_status=="Unverified"){
-                                    ?>
-                                    checked="checked" 
-                                    <?php 
-                                }
-                                ?>
-                          id="applicant_verification_status_0" name="applicant_verification_status" value="Unverified">
-                          <label class="form-check-label">Unverified</label>
-                        </div>
-                
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio"  
-                                <?php 
-                                if($dataRow->applicant_verification_status=="Verified"){
-                                    ?>
-                                    checked="checked" 
-                                    <?php 
-                                }
-                                ?>
-                          id="applicant_verification_status_1" name="applicant_verification_status" value="Verified">
-                          <label class="form-check-label">Verified</label>
                         </div>
                 
                     </div>

@@ -98,7 +98,7 @@
                                                 <option>5</option>
                                                 </select>
                                                 <small>
-                                                    <p>
+                                                    <p style="font-size: 11px;line-height:11px;color:black;margin-top:-20px;">
                                                         View Oasis Financial’s<a href="#">state-specific licenses</a>, including South Carolina.
                                                     </p>
                                                 </small>
@@ -127,7 +127,7 @@
                                             <div class="form-group">
                                                 <label for="exampleMessage">Message</label>
                                                 <textarea class="form-control" id="exampleMessage" rows="3" style=height: 160px; width: 100%;></textarea>
-                                                <p>
+                                                <p style="font-size:20px;">
                                                     Currently, Oasis is not able to refer residents of the following
                                                     states to an attorney: California, Indiana, Nevada, Oklahoma,
                                                     Tennessee, Vermont and West Virginia.

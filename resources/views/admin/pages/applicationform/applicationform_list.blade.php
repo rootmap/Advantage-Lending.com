@@ -64,24 +64,23 @@
                             <th class="text-center">ID</th>
                             <th class="text-center">First Name</th>
                             <th class="text-center">Last Name</th>
-                            <th class="text-center">How Much Money You Need</th>
-                            <th class="text-center">Date Of Accident</th>
-                            <th class="text-center">What State Case Name</th>
-                            <th class="text-center">Case Type ID Name</th>
-                            <th class="text-center">Hear About US ID Name</th>
+                            <th class="text-center">How much money do you need</th>
+                            <th class="text-center">What was the date of your accident</th>
+                            <th class="text-center">State Case Name</th>
+                            <th class="text-center">Case Type Name</th>
+                            <th class="text-center">How Did You Heard Name</th>
                             <th class="text-center">Email</th>
                             <th class="text-center">Phone</th>
-                            <th class="text-center">How should we contact</th>
-                            <th class="text-center">Address</th>
-                            <th class="text-center">City</th>
+                            <th class="text-center">How should we contact you</th>
+                            <th class="text-center">Street Address</th>
                             <th class="text-center">State Name</th>
                             <th class="text-center">ZIP Code</th>
-                            <th class="text-center">Attorney First Name</th>
-                            <th class="text-center">Attorney Last Name</th>
+                            <th class="text-center">Attorney  First Name</th>
+                            <th class="text-center">Attorney  Last Name</th>
                             <th class="text-center">Law Firm Name</th>
                             <th class="text-center">Law Firm Phone</th>
+                            <th class="text-center">Case Status</th>
                             <th class="text-center">Application Status</th>
-                            <th class="text-center">Applicant Verification Status</th>
                             <th class="text-center">Created At</th>
                             <th class="text-center">Actions</th>
 
@@ -91,7 +90,7 @@
                         @if(count($dataRow))
                             @foreach($dataRow as $row)  
                                 <tr>
-                                    <td class="text-center">{{$row->id}}</td><td class="text-center">{{$row->first_name}}</td><td class="text-center">{{$row->last_name}}</td><td class="text-center">{{$row->how_much_money_you_need}}</td><td class="text-center">{{$row->date_of_accident}}</td><td class="text-center">{{$row->what_state_case_name}}</td><td class="text-center">{{$row->case_type_id_name}}</td><td class="text-center">{{$row->hear_about_us_id_name}}</td><td class="text-center">{{$row->email}}</td><td class="text-center">{{$row->phone}}</td><td class="text-center">{{$row->how_should_we_contact}}</td><td class="text-center">{{$row->address}}</td><td class="text-center">{{$row->city}}</td><td class="text-center">{{$row->state_name}}</td><td class="text-center">{{$row->zip_code}}</td><td class="text-center">{{$row->attorney_first_name}}</td><td class="text-center">{{$row->attorney_last_name}}</td><td class="text-center">{{$row->law_firm_name}}</td><td class="text-center">{{$row->law_firm_phone}}</td><td class="text-center">{{$row->application_status}}</td><td class="text-center">{{$row->applicant_verification_status}}</td>
+                                    <td class="text-center">{{$row->id}}</td><td class="text-center">{{$row->first_name}}</td><td class="text-center">{{$row->last_name}}</td><td class="text-center">{{$row->how_much_money_do_you_need}}</td><td class="text-center">{{$row->what_was_the_date_of_your_accident}}</td><td class="text-center">{{$row->state_case_name}}</td><td class="text-center">{{$row->case_type_name}}</td><td class="text-center">{{$row->how_did_you_heard_name}}</td><td class="text-center">{{$row->email}}</td><td class="text-center">{{$row->phone}}</td><td class="text-center">{{$row->how_should_we_contact_you}}</td><td class="text-center">{{$row->street_address}}</td><td class="text-center">{{$row->state_name}}</td><td class="text-center">{{$row->zip_code}}</td><td class="text-center">{{$row->attorney__first_name}}</td><td class="text-center">{{$row->attorney__last_name}}</td><td class="text-center">{{$row->law_firm_name}}</td><td class="text-center">{{$row->law_firm_phone}}</td><td class="text-center">{{$row->case_status}}</td><td class="text-center">{{$row->application_status}}</td>
                                     <td>{{formatDate($row->created_at)}}</td>
                                     <td>
                                         <div class="btn-group">
@@ -116,24 +115,23 @@
                         <th class="text-center">ID</th>
                         <th class="text-center">First Name</th>
                         <th class="text-center">Last Name</th>
-                        <th class="text-center">How Much Money You Need</th>
-                        <th class="text-center">Date Of Accident</th>
-                        <th class="text-center">What State Case Name</th>
-                        <th class="text-center">Case Type ID Name</th>
-                        <th class="text-center">Hear About US ID Name</th>
+                        <th class="text-center">How much money do you need</th>
+                        <th class="text-center">What was the date of your accident</th>
+                        <th class="text-center">State Case Name</th>
+                        <th class="text-center">Case Type Name</th>
+                        <th class="text-center">How Did You Heard Name</th>
                         <th class="text-center">Email</th>
                         <th class="text-center">Phone</th>
-                        <th class="text-center">How should we contact</th>
-                        <th class="text-center">Address</th>
-                        <th class="text-center">City</th>
+                        <th class="text-center">How should we contact you</th>
+                        <th class="text-center">Street Address</th>
                         <th class="text-center">State Name</th>
                         <th class="text-center">ZIP Code</th>
-                        <th class="text-center">Attorney First Name</th>
-                        <th class="text-center">Attorney Last Name</th>
+                        <th class="text-center">Attorney  First Name</th>
+                        <th class="text-center">Attorney  Last Name</th>
                         <th class="text-center">Law Firm Name</th>
                         <th class="text-center">Law Firm Phone</th>
+                        <th class="text-center">Case Status</th>
                         <th class="text-center">Application Status</th>
-                        <th class="text-center">Applicant Verification Status</th>
                         <th class="text-center">Created At</th>
                         <th class="text-center">Actions</th>
 

@@ -64,11 +64,18 @@
         .pb-md-7, .py-md-7 {
             padding-bottom: 5rem !important;
         }
+        .d-md-flex {
+            display: -webkit-box !important;
+            display: -ms-flexbox !important;
+            display: flex !important;
+        }
+        .d-md-none {
+            display: none !important;
+        }
     }
     .pb-5, .py-5 {
         padding-bottom: 3rem !important;
     }
-
     .pt-5, .py-5 {
         padding-top: 3rem !important;
     }
@@ -241,8 +248,229 @@
         margin-left: auto;
         text-align: center;
         margin-right: auto;
+        padding-bottom: 20px;
+    }
+    .d-none {
+        display: none !important;
+    }
+    .flex-column {
+        -webkit-box-orient: vertical !important;
+        -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
+        flex-direction: column !important;
+    }
+    .nav {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        padding-left: 0;
+        margin-bottom: 0;
+        list-style: none;
+    }
+    .leaders .nav-pills .nav-link {
+        color: #fff;
+    }
+    .nav-pills .nav-link {
+        border-radius: 5px;
+    }
+    .nav-link {
+        display: block;
+        padding: 15px 1rem;
+    }
+    .nav-link {
+        display: block;
+        padding: .5rem 1rem;
+    }
+    .tab-content>.tab-pane {
+        display: none;
+    }
+    .fade:not(.show) {
+        opacity: 0;
+    }
+    @media screen and (prefers-reduced-motion: reduce){
+        .fade {
+            -webkit-transition: none;
+            transition: none;
+        }
+        .btn, .gform_wrapper .button {
+            -webkit-transition: none;
+            transition: none;
+        }
+    }
+    .fade {
+        -webkit-transition: opacity .15s linear;
+        transition: opacity .15s linear;
+    }
+    .tab-content>.active {
+        display: block;
+    }
+    .tab-content>.tab-pane {
+        display: none;
+    }
+    .col {
+        -ms-flex-preferred-size: 0;
+        flex-basis: 0;
+        -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        max-width: 100%;
+    }
+    .accordion .card:first-of-type {
+        border-bottom: 0;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+    .border-0 {
+        border: 0 !important;
+    }
+    .bg-transparent {
+        background-color: transparent !important;
+    }
+    .card {
+        position: relative;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        background-color: #fff;
+        background-clip: border-box;
+        border: 1px solid rgba(0,0,0,.125);
+        border-radius: 5px;
+    }
+    .card-header:first-child {
+        border-radius: calc(5px - 1px) calc(5px - 1px) 0 0;
+    }
+    .p-0 {
+        padding: 0 !important;
+    }
+    .card-header {
+        padding: .75rem 1.25rem;
+        margin-bottom: 0;
+        background-color: rgba(0,0,0,.03);
+        border-bottom: 1px solid rgba(0,0,0,.125);
+    }
+    .mb-0, .my-0 {
+        margin-bottom: 0 !important;
+    }
+    .leaders button {
+        color: #fff;
+        background-image: url(//www.oasisfinancial.com/wp-content/themes/oasis/img/down.svg);
+        background-position: 95% 1.8rem;
+        background-repeat: no-repeat;
+        border-bottom: solid 1px #fff;
+    }
+    .font-family-sans-serif {
+        font-family: proxima-nova,sans-serif;
+    }
+    .text-left {
+        text-align: left !important;
+    }
+    .w-100 {
+        width: 100% !important;
+    }
+    .btn-link {
+        font-weight: 400;
+        color: #f47820;
+        background-color: transparent;
+    }
+    .btn, .gform_wrapper .button {
+        display: inline-block;
+        font-weight: 400;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        border: 1px solid transparent;
+        padding: .375rem 2rem;
+        font-size: 1.25rem;
+        line-height: 1.35;
+        border-radius: 0;
+        -webkit-transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+        transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+        transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+    }
+    .pt-2, .py-2 {
+        padding-top: .5rem !important;
+    }
+    .font-weight-semibold {
+        font-weight: 600;
+    }
+    #myTabContent img {
+        float: left;
+        height: 150px;
+        margin: 0 20px 20px 0;
+        width: auto;
+        object-fit: cover;
+        border-radius: 5px;
+    }
+    #myTabContent .border-success {
+        clear: left;
+    }
+    .no-margin-bottom *:last-child {
+        margin-bottom: 0;
+    }
+    .leaders strong {
+        color: #007db3;
+    }
+    .font-size-16 {
+        font-size: 16px;
+    }
+    .pl-3, .px-3 {
+        padding-left: 1rem !important;
+    }
+    .border-success {
+        border-color: #007db3 !important;
+    }
+    .border-left {
+        border-left: 1px solid #dee2e6 !important;
+    }
+    .leaders .border-success ul {
+        /* margin-top: -15px; */
+    }
+    .leaders .nav-pills .nav-link.active, .leaders .nav-pills .show>.nav-link {
+        background-color: #fff;
+        color: #f47820;
+        background-image: url(//www.oasisfinancial.com/wp-content/themes/oasis/img/arrow.svg);
+        background-repeat: no-repeat;
+        background-position: 1rem center;
+        padding-left: 4rem;
+    }
+    .leaders .nav-pills .nav-link {
+        color: #fff;
+    }
+    .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+        color: #fff;
+        background-color: #f47820;
+    }
+    .nav-pills .nav-link {
+        border-radius: 5px;
+    }
+    .nav-link {
+        display: block;
+        padding: 15px 1rem;
+    }
+    .leaders .border-success ul {
+        margin-left: 15px;
+    }
+    .leaders .border-success ul li {
+        list-style: square;
     }
 </style>
+   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <link href="{{asset('module/lity/dist/lity.css')}}" rel="stylesheet">
 @endsection
 @section('content')
 <!-- Inner Page title Start -->
@@ -317,7 +545,127 @@
                     <h2 class="separator-center h3 text-white wow animated" style="visibility: visible;">Meet Our Leaders</h2>
                 </div>
             </div>
-            asdasdasd  
+            <div class="row justify-content-center d-md-flex">
+                <div class="col-md-5 pr-md-5">
+                   <ul class="nav flex-column nav-pills data-pills-init" id="myTab" role="tablist">
+                      <li class="nav-item"> <a class="nav-link data-team-member active show" id="leaders1-tab" data-toggle="tab" href="#leaders1" role="tab" aria-controls="leaders1" aria-selected="false"> <span class="font-weight-semibold"> Greg Zeeman</span> | <span class="font-size-14"> Chief Executive Officer</span></a></li>
+                      <li class="nav-item"> <a class="nav-link data-team-member" id="leaders2-tab" data-toggle="tab" href="#leaders2" role="tab" aria-controls="leaders2" aria-selected="false"> <span class="font-weight-semibold"> Robert Gallagher</span> | <span class="font-size-14"> Chief Financial Officer</span></a></li>
+                      <li class="nav-item"> <a class="nav-link data-team-member" id="leaders3-tab" data-toggle="tab" href="#leaders3" role="tab" aria-controls="leaders3" aria-selected="false"> <span class="font-weight-semibold"> Griffin Gordon</span> | <span class="font-size-14"> Chief Operating Officer</span></a></li>
+                      <li class="nav-item"> <a class="nav-link data-team-member" id="leaders4-tab" data-toggle="tab" href="#leaders4" role="tab" aria-controls="leaders4" aria-selected="true"> <span class="font-weight-semibold"> Mohammed Hanif</span> | <span class="font-size-14"> Chief Information Officer</span></a></li>
+                      <li class="nav-item"> <a class="nav-link data-team-member" id="leaders5-tab" data-toggle="tab" href="#leaders5" role="tab" aria-controls="leaders5" aria-selected="false"> <span class="font-weight-semibold"> Jeff Trigilio</span> | <span class="font-size-14"> Head of Medical Lien, CEO of Key Health</span></a></li>
+                      <li class="nav-item"> <a class="nav-link data-team-member" id="leaders6-tab" data-toggle="tab" href="#leaders6" role="tab" aria-controls="leaders6" aria-selected="false"> <span class="font-weight-semibold"> Phil Greenberg</span> | <span class="font-size-14"> General Counsel</span></a></li>
+                   </ul>
+                </div>
+                <div class="col-md-5">
+                   <div class="tab-content bg-white rounded px-4 py-4" id="myTabContent">
+                      <div class="tab-pane data-team-member-pane fade active show" id="leaders1" role="tabpanel" aria-labelledby="leaders1-tab">
+                         <img src="https://www.oasisfinancial.com/wp-content/uploads/2019/10/Greg-Z.jpg" alt="Greg Z">
+                         <p class="font-weight-semibold mb-4"> Responsible for Mission, Vision and Growth</p>
+                         <div class="font-size-16 border-left border-success pl-3 no-margin-bottom" style="border-width: 2px !important;">
+                            <p><strong>Relevant Experience</strong></p>
+                            <ul>
+                               <li>20+ years of leadership experience in consumer lending, specialty finance organizations including serving as COO for Enova International and COO for HSBC USA</li>
+                               <li>Former CEO for Main Street Renewal, a leading privately held multi-market single family real estate rental company</li>
+                            </ul>
+                            <hr>
+                            <p><strong>Education</strong></p>
+                            <ul>
+                               <li>B.A. Economics and Political Science, University of North Carolina</li>
+                               <li>M.B.A., Harvard Business School</li>
+                            </ul>
+                         </div>
+                      </div>
+                      <div class="tab-pane data-team-member-pane fade" id="leaders2" role="tabpanel" aria-labelledby="leaders2-tab">
+                         <img src="https://www.oasisfinancial.com/wp-content/uploads/2019/10/Bob-G.jpg" alt="Bob G">
+                         <p class="font-weight-semibold mb-4"> Responsible for Finance, Marketing, Human Resources and Facilities</p>
+                         <div class="font-size-16 border-left border-success pl-3 no-margin-bottom" style="border-width: 2px !important;">
+                            <p><strong>Relevant Experience</strong></p>
+                            <ul>
+                               <li>CFO of Cars.com/Classified Ventures for 12 years</li>
+                               <li><span class="s1">20+ years experience in high-tech businesses</span></li>
+                            </ul>
+                            <hr>
+                            <p><strong>Education</strong></p>
+                            <ul>
+                               <li>B.S. Accountancy, Northern Illinois University</li>
+                               <li>M.B.A., Northern Illinois University College of Business</li>
+                            </ul>
+                         </div>
+                      </div>
+                      <div class="tab-pane data-team-member-pane fade" id="leaders3" role="tabpanel" aria-labelledby="leaders3-tab">
+                         <img src="https://www.oasisfinancial.com/wp-content/uploads/2019/10/Griffin-G.jpg" alt="Griffin G">
+                         <p class="font-weight-semibold mb-4"> Responsible for Operations, Analytics and Business Strategy</p>
+                         <div class="font-size-16 border-left border-success pl-3 no-margin-bottom" style="border-width: 2px !important;">
+                            <p><strong>Relevant Experience</strong></p>
+                            <ul>
+                               <li><span class="s1">Led 500+ person business, Performant Recovery, that provides asset recovery services to federal agency, state government and corporate clients</span></li>
+                               <li><span class="s1">10+ years of financial services and technology experience as both as an operator and investor</span></li>
+                            </ul>
+                            <hr>
+                            <p><strong>Education</strong></p>
+                            <ul>
+                               <li>B.A., Dartmouth College</li>
+                               <li>M.B.A., University of Chicago Booth School of Business</li>
+                            </ul>
+                         </div>
+                      </div>
+                      <div class="tab-pane data-team-member-pane fade " id="leaders4" role="tabpanel" aria-labelledby="leaders4-tab">
+                         <img src="https://www.oasisfinancial.com/wp-content/uploads/2019/10/Mohammed-H.jpg" alt="Mohammed H">
+                         <p class="font-weight-semibold mb-4"> Responsible for Technology Strategy and Execution</p>
+                         <div class="font-size-16 border-left border-success pl-3 no-margin-bottom" style="border-width: 2px !important;">
+                            <p class="p1"><strong><span class="s1">Relevant Experience</span></strong></p>
+                            <ul>
+                               <li class="p1"><span class="s1">Diverse background in a variety of technology roles across several industries</span></li>
+                               <li class="p1"><span class="s1">Implemented several multi-million-dollar cost saving initiatives</span></li>
+                               <li class="p1"><span class="s1">Implemented multi-country ERP systems</span></li>
+                            </ul>
+                            <hr>
+                            <p><strong>Education</strong></p>
+                            <ul>
+                               <li>B.S. Computer Engineering, University of Illinois Urbana-Champaign</li>
+                               <li>M.B.A., Northwestern University – Kellogg School of Management</li>
+                            </ul>
+                         </div>
+                      </div>
+                      <div class="tab-pane data-team-member-pane fade" id="leaders5" role="tabpanel" aria-labelledby="leaders5-tab">
+                         <img src="https://www.oasisfinancial.com/wp-content/uploads/2019/10/Jeff-T.jpg" alt="Jeff T">
+                         <p class="font-weight-semibold mb-4"> Responsible for Medical Lien Sales</p>
+                         <div class="font-size-16 border-left border-success pl-3 no-margin-bottom" style="border-width: 2px !important;">
+                            <p class="p1"><strong><span class="s1">Relevant Experience</span></strong></p>
+                            <ul>
+                               <li class="p1"><span class="s1">Pioneer in developing the medical lien financing industry</span></li>
+                               <li class="p1"><span class="s1">40 years running successful businesses in medical financing and medical provider services</span></li>
+                               <li class="p1"><span class="s1">Founder of Key Health Group, Inc., the largest medical lien funding company in the U.S.</span></li>
+                            </ul>
+                            <hr>
+                            <p><strong>Education</strong></p>
+                            <ul>
+                               <li>B.S. Nuclear Medicine, Rochester Institute of Technology</li>
+                               <li>Graduate Research, SUNY Buffalo</li>
+                            </ul>
+                         </div>
+                      </div>
+                      <div class="tab-pane data-team-member-pane fade" id="leaders6" role="tabpanel" aria-labelledby="leaders6-tab">
+                         <img src="https://www.oasisfinancial.com/wp-content/uploads/2019/10/phil-g-684x1024.jpg" alt="Phil G">
+                         <p class="font-weight-semibold mb-4"> Responsible for Legal, Regulatory, Business Development and Strategy</p>
+                         <div class="font-size-16 border-left border-success pl-3 no-margin-bottom" style="border-width: 2px !important;">
+                            <p class="p1"><span class="s1"><strong>Relevant Experience</strong></span></p>
+                            <ul>
+                               <li class="p1"><span class="s1">Entrepreneur with 10+ years as CEO and founder of a successful plaintiff funding company</span></li>
+                               <li class="p1"><span class="s1">Developed a private label mortgage origination product for credit unions</span></li>
+                               <li class="p1"><span class="s1">M&amp;A and Structured Finance attorney, most recently with Cadwalader Wickersham &amp; Taft</span></li>
+                            </ul>
+                            <hr>
+                            <p><strong>Education</strong></p>
+                            <ul>
+                               <li>B.A., SUNY Stony Brook</li>
+                               <li>JD, Brooklyn Law School</li>
+                            </ul>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+             </div>  
         </div>
     </div>
 </section>
@@ -499,7 +847,7 @@
         </div>
     </div>
 </section>
-<section class="team-inner-area" style="padding: 0px;">
+<section class="team-inner-area" style="padding: 40px;">
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
@@ -532,14 +880,45 @@
             </div>
         </div>
         <div class="row justify-content-center" style="padding-left: 100px;">
-            <div class="col-md-4 px-4 text-center"> <a href="https://www.oasisfinancial.com/oasis-financial-and-key-health-team-up-with-los-angeles-trial-lawyers-charities/" class="d-block mediaLink py-4 py-md-0"> <img src="https://www.oasisfinancial.com/wp-content/uploads/2019/01/Videos-Copy.png" class="d-block ml-auto mr-auto img-fluid rounded mb-4" alt="Oasis media" style="height:90px; width:auto;"> <span class="font-size-24 font-weight-bold d-block"> Oasis Financial and Key Health team up with Los Angeles Trial Lawyers Charities </span> </a></div>
-            <div class="col-md-4 px-4 text-center"> <a href="https://www.oasisfinancial.com/oasis-partners-with-nonprofit-arc-to-increase-consumer-financial-wellness/" class="d-block mediaLink py-4 py-md-0"> <img src="https://www.oasisfinancial.com/wp-content/uploads/2019/01/ARC-LOGO-PNG.png" class="d-block ml-auto mr-auto img-fluid rounded mb-4" alt="Oasis media" style="height:90px; width:auto;"> <span class="font-size-24 font-weight-bold d-block"> Oasis Partners with Nonprofit ARC to Increase Consumer Financial Wellness </span> </a></div>
-            <div class="col-md-4 px-4 text-center"> <a href="https://www.oasisfinancial.com/oasis-receives-bbb-a-certification/" class="d-block mediaLink py-4 py-md-0"> <img src="https://www.oasisfinancial.com/wp-content/uploads/2019/01/BBB-A-rating-1.png" class="d-block ml-auto mr-auto img-fluid rounded mb-4" alt="Oasis media" style="height:90px; width:auto;"> <span class="font-size-24 font-weight-bold d-block"> Oasis Receives BBB A+ Certification </span> </a></div>
+            <div class="col-md-4 px-4 text-center"> <a href="https://www.oasisfinancial.com/oasis-financial-and-key-health-team-up-with-los-angeles-trial-lawyers-charities/" class="d-block mediaLink py-md-0"> <img src="https://www.oasisfinancial.com/wp-content/uploads/2019/01/Videos-Copy.png" class="d-block ml-auto mr-auto img-fluid rounded mb-4" alt="Oasis media" style="height:90px; width:auto;"> <span class="font-size-24 font-weight-bold d-block"> Oasis Financial and Key Health team up with Los Angeles Trial Lawyers Charities </span> </a></div>
+            <div class="col-md-4 px-4 text-center"> <a href="https://www.oasisfinancial.com/oasis-partners-with-nonprofit-arc-to-increase-consumer-financial-wellness/" class="d-block mediaLink py-md-0"> <img src="https://www.oasisfinancial.com/wp-content/uploads/2019/01/ARC-LOGO-PNG.png" class="d-block ml-auto mr-auto img-fluid rounded mb-4" alt="Oasis media" style="height:90px; width:auto;"> <span class="font-size-24 font-weight-bold d-block"> Oasis Partners with Nonprofit ARC to Increase Consumer Financial Wellness </span> </a></div>
+            <div class="col-md-4 px-4 text-center"> <a href="https://www.oasisfinancial.com/oasis-receives-bbb-a-certification/" class="d-block mediaLink py-md-0"> <img src="https://www.oasisfinancial.com/wp-content/uploads/2019/01/BBB-A-rating-1.png" class="d-block ml-auto mr-auto img-fluid rounded mb-4" alt="Oasis media" style="height:90px; width:auto;"> <span class="font-size-24 font-weight-bold d-block"> Oasis Receives BBB A+ Certification </span> </a></div>
          </div>
     </div>
     
 </section>
 @endsection
 @section('js')
-    
+    <script type="text/javascript">
+        $(document).ready(function(){
+            //nav-link data-team-member active show
+
+            
+            //$('.data-pills-init').children('li:eq(0)').addClass('show');
+            //$('.data-pills-init').children('li:eq(0)').attr('aria-selected','true');
+
+            $('.data-team-member').click(function(){
+                $.each($('.data-team-member'),function(key,row){
+                    $(row).attr('class','nav-link data-team-member');
+                    $(row).attr('aria-selected','false');
+                });
+
+                $(this).addClass('active');
+                $(this).addClass('show');
+                $(this).attr('aria-selected','true');
+
+                $.each($('.data-team-member-pane'),function(key,row){
+                    $(row).attr('class','tab-pane data-team-member-pane fade');
+                });
+
+                var panelID=$(this).attr('href');
+                $(panelID).addClass('active');
+                $(panelID).addClass('show');
+            });
+
+            window.location.href="#leaders1";
+
+            $('.data-pills-init').children('li:eq(0)').trigger('click');
+        });
+    </script>
 @endsection
