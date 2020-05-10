@@ -22,7 +22,99 @@
             -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
             box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
         }
+        a.arrow-right {
+            color: #bc560b;
+            border-color: #bc560b;
+        }
         
+        a.arrow-right {
+            display: inline-block;
+            background-image: url(//www.oasisfinancial.com/wp-content/themes/oasis/img/arrow.svg);
+            background-repeat: no-repeat;
+            background-position: right 7px;
+            padding-right: 2.5rem;
+            font-weight: 600;
+            font-size: 18px;
+            padding-bottom: .5rem;
+            border-bottom: solid 2px #f47820;
+            -webkit-transition: all linear .15s;
+            transition: all linear .15s;
+        }
+        @media (min-width: 768px)
+        .mb-md-4, .my-md-4 {
+            margin-bottom: 1.5rem !important;
+        }
+        .mb-5, .my-5 {
+            margin-bottom: 3rem !important;
+        }
+        .mt-2, .my-2 {
+            margin-top: .5rem !important;
+        }
+        .font-size-18 {
+            font-size: 18px;
+        }
+        .color_or{
+            color: #FF741A;
+        }
+        .separator-right.wow.animated:before {
+            left: 0;
+            -webkit-transition: left ease-out 1s;
+            transition: left ease-out 1s;
+        }
+        
+        .separator-right.wow:before {
+            left: 1000px;
+        }
+        .separator-right:before {
+            content: '';
+            position: absolute;
+            bottom: -2rem;
+            left: 0;
+            right: -1000px;
+            height: 3px;
+            background-color: #FF741A;
+        }
+        .separator-right {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 4rem;
+        }
+        h2, h3, h4, h5, h6, .h2, .h3, .h4, .h5, .h6 {
+            text-transform: none !important;
+        }
+        .animated {
+            -webkit-animation-duration: 1s;
+            -webkit-animation-fill-mode: both;
+            animation-duration: 1s;
+            animation-fill-mode: both;
+        }
+        body, body * {
+            font-display: auto;
+        }
+        h2, .h2 {
+            font-size: 2.5rem;
+        }
+        .pre ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .pre li {
+            padding-left: 5.5rem;
+            padding-top: .6rem;
+            padding-bottom: .6rem;
+            margin-bottom: 1rem;
+            background-image: url(//www.oasisfinancial.com/wp-content/themes/oasis/img/check.svg);
+            background-position: 0 center;
+            background-repeat: no-repeat;
+            background-size: auto;
+            font-size: 20px;
+            font-weight: 600;
+        }
+        .fadeIn {
+            -webkit-animation-name: fadeIn;
+            animation-name: fadeIn;
+        }
     </style>
 @endsection
 @section('content')
@@ -57,6 +149,7 @@
                         </div>
                         <div class="service-two-content">
                             <p>All you have to do is fill out the form on our website, but don’t worry, you are under no obligation by doing so. Simply begin by providing your name and contact information; the name of the law firm that’s handling your case; your lawyer’s name; and the law firm’s telephone number.</p>
+                            <a class="btn btn-default simple-btn" title="Apply Now" href="#"><i class="fa fa-file-text-o" aria-hidden="true"></i> Apply Now</a>
                         </div>
                     </div>
                 </div>
@@ -106,214 +199,131 @@
                     </div>
                 </div>
                 
-                
-            </div>
-            <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12 text-center">
-                    <a class="btn btn-default simple-btn" title="Apply Now" href="service-details.html"><i class="fa fa-file-text-o" aria-hidden="true"></i> Apply Now</a>
-                </div>   
-                
             </div>
         </div>
     </section>
-
-    <!-- About Three start -->
-    <section class="about-area about-area-three">
+    <section class="counter-area about-area-two" id="about" style="padding:40px 0 30px !important;">
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
-                    <div class="about-three-col">
-                        <img src="images/about/2.jpg" alt="">
-                    </div>
-                </div>
-                <div class="col-md-6">
-                   <div class="about-three-col">
-                       <h3>Our Mission</h3>
-                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, dolores, blanditiis. Ex animi rerum tempora possimus soluta accusantium incidunt at, quidem voluptatem. Perspiciatis placeat dolor temporibus vero itaque tenetur expedita, ad harum saepe facilis, qui vitae iure accusantium nulla labore. Aliquid deleniti quam, aspernatur quia expedita nobis, atque sunt beatae iure odio explicabo sed rerum odit magnam vel quidem vero voluptatibus. Sed molestiae quas officia reiciendis aut totam.</p>
+                <div class="col-md-7 ">
+                    <h1 class=" color_or">Cases We Fund</h1>
+                    <div class="font-size-18">Oasis offers financial assistance for a wide variety of personal injury case types, including auto accidents, workers’ comp, slip and fall, and many more.</div>
+                    <p><a class="arrow-right mt-2 mb-md-4 mb-5" href="">Learn more</a></p>
+                    <img src="{{ url('module/images/extra/Depositphotos_214193542_xl-2015.jpg') }}" alt="Oasis support Image" class="img-fluid d-block m-auto object-fit-cover w-100 rounded">
+                 </div>
+                 <div class="col-md-5 pre casesWe">
+                    <h2 class="separator-right wow h3 animated" style="visibility: visible;">Pre-settlement funding is a good option for you if:</h2>
+                    <ul>
+                       <li class="wow fadeIn" style="visibility: visible; animation-name: fadeIn;">You have been injured</li>
+                       <li class="wow fadeIn" data-wow-delay="1s" style="visibility: visible; animation-delay: 1s; animation-name: fadeIn;">You have an attorney</li>
+                       <li class="wow fadeIn" data-wow-delay="2s" style="visibility: visible; animation-delay: 2s; animation-name: fadeIn;">You are struggling to make ends meet while waiting for your settlement</li>
+                    </ul>
+                    <div class="text-center text-md-left"><a class="arrow-right" href="/need-an-attorney/">Don’t have an attorney? <br class="d-md-none">Oasis can help.</a></div>
+                 </div>
+                {{-- <div class="col-lg-6 col-md-6">
+                   <div class="about-col">
+                       <div class="about-image">
+                            <img src="http://192.168.0.3/advantage-lending/public/module/images/extra/Depositphotos_214193542_xl-2015.jpg" alt="">
+                        </div>
                    </div>
-                </div>
+                </div> --}}
             </div>
-            <div class="row">
-                <div class="col-md-6">
-                   <div class="about-three-col">
-                       <h3>Our Vision</h3>
-                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, dolores, blanditiis. Ex animi rerum tempora possimus soluta accusantium incidunt at, quidem voluptatem. Perspiciatis placeat dolor temporibus vero itaque tenetur expedita, ad harum saepe facilis, qui vitae iure accusantium nulla labore. Aliquid deleniti quam, aspernatur quia expedita nobis, atque sunt beatae iure odio explicabo sed rerum odit magnam vel quidem vero voluptatibus. Sed molestiae quas officia reiciendis aut totam.</p>
-                   </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="about-three-col">
-                        <img src="images/about/3.jpg" alt="">
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="about-three-col">
-                        <img src="images/about/4.jpg" alt="">
-                    </div>
-                </div>
-                <div class="col-md-6">
-                   <div class="about-three-col">
-                       <h3>Our Responsibility</h3>
-                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, dolores, blanditiis. Ex animi rerum tempora possimus soluta accusantium incidunt at, quidem voluptatem. Perspiciatis placeat dolor temporibus vero itaque tenetur expedita, ad harum saepe facilis, qui vitae iure accusantium nulla labore. Aliquid deleniti quam, aspernatur quia expedita nobis, atque sunt beatae iure odio explicabo sed rerum odit magnam vel quidem vero voluptatibus. Sed molestiae quas officia reiciendis aut totam.</p>
-                   </div>
-                </div>
-            </div>
+            
         </div>
     </section>
-
-    <!-- Separator Start -->
-    <section class="separator-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8">
-                    <div class="separator-col">
-                        <h2>please feel free to contact us</h2>
-                        <h4><span>Hotline:</span> +001-111-222-3344</h4>
-                        <h4><span>Mail Address:</span> yourmail@gmail.com</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Counter Start -->
-    <section class="counter-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 col-sm-6 col-xs-6 default-col">
-                    <div class="counter-box">
-                        <div class="counter-icon"><i class="icofont icofont-files"></i>
-                        </div>
-                        <div class="counter-item counter">5890</div>
-                        <div class="counter-title">
-                            <h4>completed jobs</h4>
-                        </div>
-                    </div>
-                    <!--counter-box-->
-                </div>
-                <div class="col-md-3 col-sm-6 col-xs-6 default-col">
-                    <div class="counter-box">
-                        <div class="counter-icon"><i class="icofont icofont-businessman"></i>
-                        </div>
-                        <div class="counter-item counter">5830</div>
-                        <div class="counter-title">
-                            <h4>Happy client</h4>
-                        </div>
-                    </div>
-                    <!--counter-box-->
-                </div>
-                <div class="col-md-3 col-sm-6 col-xs-6 default-col">
-                    <div class="counter-box">
-                        <div class="counter-icon"><i class="icofont icofont-coins"></i>
-                        </div>
-                        <div class="counter-item counter">1856</div>
-                        <div class="counter-title">
-                            <h4>Our staff</h4>
-                        </div>
-                    </div>
-                    <!--counter-box-->
-                </div>
-                <div class="col-md-3 col-sm-6 col-xs-6 default-col">
-                    <div class="counter-box">
-                        <div class="counter-icon"><i class="icofont icofont-award"></i>
-                        </div>
-                        <div class="counter-item counter">145</div>
-                        <div class="counter-title">
-                            <h4>Awards</h4>
-                        </div>
-                    </div>
-                    <!--counter-box-->
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonial Section --> 
-    <section class="testimonial-area bg-white">
+    <section class="appointment-area" id="appointment" style="padding:60px 0 60px;">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="defult-title text-center">
-                        <h1>What People <span>Says</span></h1>
-                        <h5>consectetur adipisicing elit alias</h5>
+                    <div class="about-col text-center">
+                        <h1 id="getstarted" class="separator-center">Let’s Get Started</h1>
+                        <h5>Apply now — It’s fast and free, with no obligation.</h5>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                    <div class="testimonial-carousel">
-                        <div class="testimonial">
-                            <div class="pic">
-                                <img src="images/testimonial/1.jpg" alt="">
-                            </div>
-                            <p class="description">
-                                There are many variations of passages of Lorem Ipsum available, but the majority majority have suffered alteration in some form, by injected humour. There are many variations of passages.
-                            </p>
-                            <div class="testimonial-content">
-                                <a href="#" class="title">Tom Latham</a>
-                                <span class="post">Web Developer</span>
-                            </div>
-                        </div>
-                        <div class="testimonial">
-                            <div class="pic">
-                                <img src="images/testimonial/2.jpg" alt="">
-                            </div>
-                            <p class="description">
-                                There are many variations of passages of Lorem Ipsum available, but the majority majority have suffered alteration in some form, by injected humour. There are many variations of passages.
-                            </p>
-                            <div class="testimonial-content">
-                                <a href="#" class="title">Merry Alvna</a>
-                                <span class="post">Web Designer</span>
-                            </div>
-                        </div>
-                        <div class="testimonial">
-                            <div class="pic">
-                                <img src="images/testimonial/3.jpg" alt="">
-                            </div>
-                            <p class="description">
-                                There are many variations of passages of Lorem Ipsum available, but the majority majority have suffered alteration in some form, by injected humour. There are many variations of passages.
-                            </p>
-                            <div class="testimonial-content">
-                                <a href="#" class="title">Keen Williamson</a>
-                                <span class="post">PHP Developer</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                <div class="col-lg-12 col-md-12">
+                    <div class="appointment-col">
+                        <form method="post" enctype="multipart/form-data" id="gform_1" action="/#gf_1">
+                                <div class="col-md-12">
+                                    <div class="row pb-3">
+                                        <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
+                                            <h4><strong>All fields required</strong></h4>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4 col-xs-12 col-sm-12 col-lg-4">
+                                            <div class="form-group">
+                                                <label class="gfield_label" for="exampleFormControlInput1">First Name<span class="text-danger">*</span></label>
+                                                <input type="text" class="form-control" autocomplete="off" id="exampleFormControlInput1">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-xs-12 col-sm-12 col-lg-4">
+                                            <div class="form-group">
+                                                <label class="gfield_label" for="exampleFormControlInput1">Last Name<span class="text-danger">*</span></label>
+                                                <input type="text" class="form-control" autocomplete="off" id="exampleFormControlInput1">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-xs-12 col-sm-12 col-lg-4">
+                                            <div class="form-group">
+                                                <label class="gfield_label" for="exampleFormControlInput1">Email<span class="text-danger">*</span></label>
+                                                <input type="email" class="form-control" autocomplete="off" id="exampleFormControlInput1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4 col-xs-12 col-sm-12 col-lg-4">
+                                            <div class="form-group">
+                                                <label class="gfield_label" for="exampleFormControlInput1">Phone<span class="text-danger">*</span></label>
+                                                <input type="tel" class="form-control" autocomplete="off" id="exampleFormControlInput1">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-xs-12 col-sm-12 col-lg-4">
+                                            <div class="form-group">
+                                                <label class="gfield_label" for="exampleFormControlInput1">ZIP Code<span class="text-danger">*</span></label>
+                                                <input type="text" class="form-control" autocomplete="off" id="exampleFormControlInput1">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-xs-12 col-sm-12 col-lg-4">
+                                            <div class="form-group">
+                                                <label class="gfield_label" for="exampleFormControlInput1">Law Firm Name<span class="text-danger">*</span></label>
+                                                <input type="text" class="form-control" autocomplete="off" id="exampleFormControlInput1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4 col-xs-12 col-sm-12 col-lg-4">
+                                            <div class="form-group">
+                                                <label class="gfield_label" for="exampleFormControlInput1">Attorney’s Name<span class="text-danger">*</span></label>
+                                                <input type="tel" class="form-control" placeholder="First Name" autocomplete="off" id="exampleFormControlInput1">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-xs-12 col-sm-12 col-lg-4">
+                                            <div class="form-group">
+                                                <label class="gfield_label" for="exampleFormControlInput1"></label>
+                                                <input type="text" class="form-control" placeholder="Last Name" autocomplete="off" id="exampleFormControlInput1">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-xs-12 col-sm-12 col-lg-4">
+                                            <div class="form-group">
+                                                <label class="gfield_label" for="exampleFormControlInput1">Law Firm Phone<span class="text-danger">*</span></label>
+                                                <input type="text" class="form-control" autocomplete="off" id="exampleFormControlInput1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12 text-right">
+                                            <button class="btn btn-default simple-btn" type="submit">Continue <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
 
-    <!-- Client start -->
-    <section class="client-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="client-carousel">
-                        <div class="item">
-                            <a href="#"><img src="images/client/1.jpg" alt=""></a>
-                        </div>
-                        <div class="item">
-                            <a href="#"><img src="images/client/2.jpg" alt=""></a>
-                        </div>
-                        <div class="item">
-                            <a href="#"><img src="images/client/3.jpg" alt=""></a>
-                        </div>
-                        <div class="item">
-                            <a href="#"><img src="images/client/4.jpg" alt=""></a>
-                        </div>
-                        <div class="item">
-                            <a href="#"><img src="images/client/5.jpg" alt=""></a>
-                        </div>
-                        <div class="item">
-                            <a href="#"><img src="images/client/6.jpg" alt=""></a>
-                        </div>
+                            </form>
+                       
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    
 @endsection
 @section('js')
     
