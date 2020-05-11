@@ -35,7 +35,7 @@ class CoreCustomController extends Facade {
 
     public static function storeName() 
     {
-        return "Simpleretailpos";
+        return "Advantage-Lending";
     }
 
     public static function UserID() 
@@ -52,18 +52,6 @@ class CoreCustomController extends Facade {
     {
         return 'Admin';
     }    
-
-    public static function menuInfo()
-    {
-
-        $pageInfo=\DB::select('SELECT 
-(SELECT a.module_status FROM our_history_page_infos AS a LIMIT 1) AS ourstory_status,
-(SELECT a.module_status FROM reservations AS a LIMIT 1) AS reservations_status');
-        
-        return $pageInfo[0];
-
-
-    }
 
     public static function SiteSetting()
     {

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\FrontModule;
+use App\Slider;
 use Illuminate\Http\Request;
 
 class FrontModuleController extends Controller
@@ -12,9 +13,18 @@ class FrontModuleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    private $moduleName = "";
+    private $sdc;
+    public function __construct()
+    {
+        $this->sdc = new CoreCustomController();
+    }
+
     public function index()
     {
-        return view('site.pages.index');
+        $slider= Slider::orderBy('id','DESC')->first();
+        return view('site.pages.index',compact('slider'));
     }
 
     public function howitworks()

@@ -63,19 +63,7 @@ Route::post('/casetype/ajax','CasetypeController@ajaxSave');
 Route::post('/casetype/datatable/ajax','CasetypeController@datatable');
 Route::post('/casetype/update/{id}','CasetypeController@update');
 //======================== Casetype Route End ===============================//
-//======================== Casetype Route Start ===============================//
-Route::get('/casetype/list','CasetypeController@show');
-Route::get('/casetype/create','CasetypeController@create');
-Route::get('/casetype/edit/{id}','CasetypeController@edit');
-Route::get('/casetype/delete/{id}','CasetypeController@destroy');
-Route::get('/casetype','CasetypeController@index');
-Route::get('/casetype/export/excel','CasetypeController@ExportExcel');
-Route::get('/casetype/export/pdf','CasetypeController@ExportPDF');
-Route::post('/casetype','CasetypeController@store');
-Route::post('/casetype/ajax','CasetypeController@ajaxSave');
-Route::post('/casetype/datatable/ajax','CasetypeController@datatable');
-Route::post('/casetype/update/{id}','CasetypeController@update');
-//======================== Casetype Route End ===============================//
+
 //======================== Hearabout Route Start ===============================//
 Route::get('/hearabout/list','HearaboutController@show');
 Route::get('/hearabout/create','HearaboutController@create');
@@ -154,6 +142,7 @@ Route::post('/contactmeabout/ajax','ContactmeaboutController@ajaxSave');
 Route::post('/contactmeabout/datatable/ajax','ContactmeaboutController@datatable');
 Route::post('/contactmeabout/update/{id}','ContactmeaboutController@update');
 //======================== Contactmeabout Route End ===============================//
+
 //======================== Contactrequest Route Start ===============================//
 Route::get('/contactrequest/list','ContactrequestController@show');
 Route::get('/contactrequest/create','ContactrequestController@create');
@@ -167,3 +156,82 @@ Route::post('/contactrequest/ajax','ContactrequestController@ajaxSave');
 Route::post('/contactrequest/datatable/ajax','ContactrequestController@datatable');
 Route::post('/contactrequest/update/{id}','ContactrequestController@update');
 //======================== Contactrequest Route End ===============================//
+//======================== Faqcategory Route Start ===============================//
+Route::get('/faqcategory/list','FaqcategoryController@show');
+Route::get('/faqcategory/create','FaqcategoryController@create');
+Route::get('/faqcategory/edit/{id}','FaqcategoryController@edit');
+Route::get('/faqcategory/delete/{id}','FaqcategoryController@destroy');
+Route::get('/faqcategory','FaqcategoryController@index');
+Route::get('/faqcategory/export/excel','FaqcategoryController@ExportExcel');
+Route::get('/faqcategory/export/pdf','FaqcategoryController@ExportPDF');
+Route::post('/faqcategory','FaqcategoryController@store');
+Route::post('/faqcategory/ajax','FaqcategoryController@ajaxSave');
+Route::post('/faqcategory/datatable/ajax','FaqcategoryController@datatable');
+Route::post('/faqcategory/update/{id}','FaqcategoryController@update');
+//======================== Faqcategory Route End ===============================//
+//======================== Resourcecontentinfo Route Start ===============================//
+Route::get('/resourcecontentinfo/list','ResourcecontentinfoController@show');
+Route::get('/resourcecontentinfo/create','ResourcecontentinfoController@create');
+Route::get('/resourcecontentinfo/edit/{id}','ResourcecontentinfoController@edit');
+Route::get('/resourcecontentinfo/delete/{id}','ResourcecontentinfoController@destroy');
+Route::get('/resourcecontentinfo','ResourcecontentinfoController@index');
+Route::get('/resourcecontentinfo/export/excel','ResourcecontentinfoController@ExportExcel');
+Route::get('/resourcecontentinfo/export/pdf','ResourcecontentinfoController@ExportPDF');
+Route::post('/resourcecontentinfo','ResourcecontentinfoController@store');
+Route::post('/resourcecontentinfo/ajax','ResourcecontentinfoController@ajaxSave');
+Route::post('/resourcecontentinfo/datatable/ajax','ResourcecontentinfoController@datatable');
+Route::post('/resourcecontentinfo/update/{id}','ResourcecontentinfoController@update');
+//======================== Resourcecontentinfo Route End ===============================//
+//======================== Resourcecontent Route Start ===============================//
+Route::get('/resourcecontent/list','ResourcecontentController@show');
+Route::get('/resourcecontent/create','ResourcecontentController@create');
+Route::get('/resourcecontent/edit/{id}','ResourcecontentController@edit');
+Route::get('/resourcecontent/delete/{id}','ResourcecontentController@destroy');
+Route::get('/resourcecontent','ResourcecontentController@index');
+Route::get('/resourcecontent/export/excel','ResourcecontentController@ExportExcel');
+Route::get('/resourcecontent/export/pdf','ResourcecontentController@ExportPDF');
+Route::post('/resourcecontent','ResourcecontentController@store');
+Route::post('/resourcecontent/ajax','ResourcecontentController@ajaxSave');
+Route::post('/resourcecontent/datatable/ajax','ResourcecontentController@datatable');
+Route::post('/resourcecontent/update/{id}','ResourcecontentController@update');
+//======================== Resourcecontent Route End ===============================//
+//======================== Faqcontent Route Start ===============================//
+Route::get('/faqcontent/list','FaqcontentController@show');
+Route::get('/faqcontent/create','FaqcontentController@create');
+Route::get('/faqcontent/edit/{id}','FaqcontentController@edit');
+Route::get('/faqcontent/delete/{id}','FaqcontentController@destroy');
+Route::get('/faqcontent','FaqcontentController@index');
+Route::get('/faqcontent/export/excel','FaqcontentController@ExportExcel');
+Route::get('/faqcontent/export/pdf','FaqcontentController@ExportPDF');
+Route::post('/faqcontent','FaqcontentController@store');
+Route::post('/faqcontent/ajax','FaqcontentController@ajaxSave');
+Route::post('/faqcontent/datatable/ajax','FaqcontentController@datatable');
+Route::post('/faqcontent/update/{id}','FaqcontentController@update');
+//======================== Faqcontent Route End ===============================//
+
+//======================== Sitesetting Route Start ===============================//
+Route::get('/sitesetting/list','SitesettingController@show');
+Route::get('/sitesetting/create','SitesettingController@create');
+Route::get('/sitesetting/edit/{id}','SitesettingController@edit');
+Route::get('/sitesetting/delete/{id}','SitesettingController@destroy');
+Route::get('/sitesetting','SitesettingController@index');
+Route::get('/sitesetting/export/excel','SitesettingController@ExportExcel');
+Route::get('/sitesetting/export/pdf','SitesettingController@ExportPDF');
+Route::post('/sitesetting','SitesettingController@store');
+Route::post('/sitesetting/ajax','SitesettingController@ajaxSave');
+Route::post('/sitesetting/datatable/ajax','SitesettingController@datatable');
+Route::post('/sitesetting/update/{id}','SitesettingController@update');
+//======================== Sitesetting Route End ===============================//
+//======================== Slider Route Start ===============================//
+Route::get('/slider/list','SliderController@show');
+Route::get('/slider/create','SliderController@create');
+Route::get('/slider/edit/{id}','SliderController@edit');
+Route::get('/slider/delete/{id}','SliderController@destroy');
+Route::get('/slider','SliderController@index');
+Route::get('/slider/export/excel','SliderController@ExportExcel');
+Route::get('/slider/export/pdf','SliderController@ExportPDF');
+Route::post('/slider','SliderController@store');
+Route::post('/slider/ajax','SliderController@ajaxSave');
+Route::post('/slider/datatable/ajax','SliderController@datatable');
+Route::post('/slider/update/{id}','SliderController@update');
+//======================== Slider Route End ===============================//

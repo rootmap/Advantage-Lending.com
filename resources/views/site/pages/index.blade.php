@@ -8,32 +8,48 @@
     <link href="{{asset('module/lity/dist/lity.css')}}" rel="stylesheet">
 @endsection
 @section('content')
-    <!-- Hero Start -->
-    <section class="hero-area" style="background-image: url('{{asset('module/images/extra/04d36791ff504e1ffe82199330c10a97.png')}}')">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="hero-col">
-                        <h1>Welcome !</h1>
-                        <h2>To Advantage - Lending.com</h2>
+    @isset($slider)
+        @if ($slider->module_status=="Active")
+            <!-- Hero Start -->
+            <section class="hero-area" style="--my-slider-back:{{$slider->slider_color_scheme}}; background-image: url('{{asset('upload/slider/'.$slider->slider_background_image)}}')">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="hero-col">
+                                <h1>{{$slider->heading_one}}</h1>
+                                <h2>{{$slider->heading_two}}</h2>
 
-                        <h1 class="cd-headline clip text-white">
-                            <span class="cd-words-wrapper">
-                                <b class="is-visible">What About Your Bill</b>
-                                <b>How Will You Pay Your House Rent</b>
-                                <b>Your Life is Most Important </b> 
-                            </span> 
-                        </h1>
-                        
-                        <h3>Don't settle for less than you deserve.</h3>
-                        <h4>Get cash now while you wait for your full settlement.</h4>
-                        <p class="pt50"></p>
-                        <a class="btn btn-default simple-btn" href="contact.html">Apply Now</a>
+                                <h1 class="cd-headline clip text-white">
+                                    <span class="cd-words-wrapper">
+                                        @if(!empty($slider->animated_text))
+                                            <?php 
+                                                $animationArray=explode(",",$slider->animated_text);
+                                                $animate_visible=1;
+                                            ?>
+                                            @foreach ($animationArray as $item)
+                                                @if ($animate_visible==1)
+                                                    <b class="is-visible">{{$item}}</b>
+                                                @else
+                                                    <b>{{$item}}</b>
+                                                @endif
+                                                <?php $animate_visible++; ?>
+                                            @endforeach
+                                        @endif
+                                    </span> 
+                                </h1>
+                                
+                                <h3>{{$slider->heading_three}}</h3>
+                                <h4>{{$slider->heading_four}}</h4>
+                                <p class="pt50"></p>
+                                <a class="btn btn-default simple-btn" href="{{url('/'.$slider->slider_button_url)}}">{{$slider->slider_button_text}}</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
+            </section>
+        @endif
+    @endisset
+    
 
     <!-- About start -->
     <section class="about-area about-area-two" id="about">
@@ -43,7 +59,7 @@
 
                     <div class="defult-title text-left bl-none" style="padding-bottom: 50px;">
                         <h1 class="mb-2">How We <span>Help</span></h1>
-                        <p class="">Pre-settlement financing puts money in your pocket before your case is settled. And because the money is repaid from your settlement, you can get it now, with no risk, no out-of-pocket costs, and your credit score is not a factor.</p>
+                        <p class="" style="margin-top: 2rem;">Pre-settlement financing puts money in your pocket before your case is settled. And because the money is repaid from your settlement, you can get it now, with no risk, no out-of-pocket costs, and your credit score is not a factor.</p>
                     </div>
 
                     <div class="about-col">

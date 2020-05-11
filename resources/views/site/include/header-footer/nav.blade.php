@@ -6,21 +6,21 @@
                 <div class="col-md-6 col-sm-12 col-xs-12">
                     <div class="herader-topbar-col tobar-leftside">
                         <i class="fa fa-phone" aria-hidden="true"></i>
-                        <span class="after-bdr">+0123 1205 1010</span>
+                        <span class="after-bdr">{{$site->contact_number}}</span>
                         <i class="fa fa-envelope-o" aria-hidden="true"></i>
-                        <span>yourmail@gmail.com</span>
+                        <span>{{$site->email}}</span>
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-12 col-xs-12">
                     <div class="herader-topbar-col tobar-rightside center991">
-                        <span class="ml0-991">Call toll free (877) 333-6680 anytime</span>
+                        <span class="ml0-991">{{$site->top_toll_free_call_message}}</span>
                         {{-- <span class="after-bdr ml0-991"><a href="account.html">Contact Us</a></span> --}}
                         {{-- <span class="ml0">
                             <span class="s-icon ml0">
                                 <a href="#" id="addClass"><span class="glyphicon glyphicon-search"></span></a>
                             </span>
                         </span> --}}
-                        <p><a href="{{Request::path() == '/' ? '#appointment' :url('/').'#appointment'}}" id="scroll"><span>Apply Now</span></a></p>
+                        <p><a href="{{Request::path() == '/' ? '#appointment' :url('/').'#appointment'}}" id="scroll"><span>{{$site->top_apply_button_text}}</span></a></p>
                     </div>
                 </div>
             </div>
@@ -41,7 +41,7 @@
                                 <span class="icon-bar"></span>
                             </button>
                             <a class="navbar-brand" href="{{url('/')}}">
-                                <img src="{{asset('module/resource/logo.png')}}" alt="">
+                                <img src="{{asset('upload/sitesetting/'.$site->top_logo)}}" alt="">
                             </a>
                         </div>
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" data-hover="dropdown" data-animations="fadeInUp">

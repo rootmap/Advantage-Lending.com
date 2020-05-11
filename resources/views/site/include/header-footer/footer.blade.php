@@ -5,7 +5,7 @@
             <div class="col-lg-2 col-md-2 col-sm-12">
                 <div class="footer-about-col mb50">
                     <div class="footer-logo">
-                        <a href="#"><img class="img-responsive" src="{{asset('module/resource/logo-2.png')}}" alt=""></a>
+                        <a href="#"><img class="img-responsive" src="{{asset('upload/sitesetting/'.$site->bottom_logo)}}" alt=""></a>
                     </div>
                 </div>
             </div>
@@ -77,7 +77,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" class="footer-menu-link">
+                                    <a href="{{ url('privacy-policy') }}" class="footer-menu-link">
                                         <i class="fa fa-angle-double-right" aria-hidden="true"></i> Privacy Policy
                                     </a>
                                 </li>
@@ -88,7 +88,7 @@
                         <div class="footer-post-col mb50 clearfix">
                             <ul>
                                 <li>
-                                    <a href="#" class="footer-menu-link">
+                                    <a href="{{ url('state-specific-licenses') }}" class="footer-menu-link">
                                         <i class="fa fa-angle-double-right" aria-hidden="true"></i> State-specific Licenses
                                     </a>
                                 </li>
@@ -126,11 +126,21 @@
             <div class="col-md-6">
                 <div class="copyright-col">
                     <ul class="social center991">
-                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                        @if(!empty($site->facebook_page_link))
+                            <li><a href="{{$site->facebook_page_link}}" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        @endif
+                        @if(!empty($site->twitter_page_link))
+                        <li><a href="{{$site->twitter_page_link}}" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                        @endif
+                        @if(!empty($site->linkedin_page_link))
+                        <li><a href="{{$site->linkedin_page_link}}" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                        @endif
+                        @if(!empty($site->youtube_page_link))
+                        <li><a href="{{$site->youtube_page_link}}" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+                        @endif
+                        @if(!empty($site->google_plus_page_link))
+                        <li><a href="{{$site->google_plus_page_link}}" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                        @endif
                     </ul>
                 </div>
             </div>

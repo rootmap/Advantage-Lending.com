@@ -65,33 +65,31 @@ class ContactRequestController extends Controller
                 
                 'first_name'=>'required',
                 'last_name'=>'required',
-                'contact__about'=>'required',
-                'state__case'=>'required',
+                'contact_about'=>'required',
+                'state_case'=>'required',
                 'phone'=>'required',
                 'email'=>'required',
-                'attorney’s_name'=>'required',
-                'request_status'=>'required',
+                'message'=>'required',
         ]);
 
         $this->SystemAdminLog("Contact Request","Save New","Create New");
 
         
-        $tab_2_ContactMeAbout=ContactMeAbout::where('id',$request->contact__about)->first();
-        $contact__about_2_ContactMeAbout=$tab_2_ContactMeAbout->name;
-        $tab_3_USAState=USAState::where('id',$request->state__case)->first();
-        $state__case_3_USAState=$tab_3_USAState->name;
+        $tab_2_ContactMeAbout=ContactMeAbout::where('id',$request->contact_about)->first();
+        $contact_about_2_ContactMeAbout=$tab_2_ContactMeAbout->Reviewed;
+        $tab_3_USAState=USAState::where('id',$request->state_case)->first();
+        $state_case_3_USAState=$tab_3_USAState->name;
         $tab=new ContactRequest();
         
         $tab->first_name=$request->first_name;
         $tab->last_name=$request->last_name;
-        $tab->contact__about_name=$contact__about_2_ContactMeAbout;
-        $tab->contact__about=$request->contact__about;
-        $tab->state__case_name=$state__case_3_USAState;
-        $tab->state__case=$request->state__case;
+        $tab->contact_about_Reviewed=$contact_about_2_ContactMeAbout;
+        $tab->contact_about=$request->contact_about;
+        $tab->state_case_name=$state_case_3_USAState;
+        $tab->state_case=$request->state_case;
         $tab->phone=$request->phone;
         $tab->email=$request->email;
-        $tab->attorney’s_name=$request->attorney’s_name;
-        $tab->request_status=$request->request_status;
+        $tab->message=$request->message;
         $tab->save();
 
         return redirect('contactrequest')->with('status','Added Successfully !');
@@ -104,26 +102,24 @@ class ContactRequestController extends Controller
                 
                 'first_name'=>'required',
                 'last_name'=>'required',
-                'contact__about'=>'required',
-                'state__case'=>'required',
+                'contact_about'=>'required',
+                'state_case'=>'required',
                 'phone'=>'required',
                 'email'=>'required',
-                'attorney’s_name'=>'required',
-                'request_status'=>'required',
+                'message'=>'required',
         ]);
 
         $tab=new ContactRequest();
         
         $tab->first_name=$request->first_name;
         $tab->last_name=$request->last_name;
-        $tab->contact__about_name=$contact__about_2_ContactMeAbout;
-        $tab->contact__about=$request->contact__about;
-        $tab->state__case_name=$state__case_3_USAState;
-        $tab->state__case=$request->state__case;
+        $tab->contact_about_Reviewed=$contact_about_2_ContactMeAbout;
+        $tab->contact_about=$request->contact_about;
+        $tab->state_case_name=$state_case_3_USAState;
+        $tab->state_case=$request->state_case;
         $tab->phone=$request->phone;
         $tab->email=$request->email;
-        $tab->attorney’s_name=$request->attorney’s_name;
-        $tab->request_status=$request->request_status;
+        $tab->message=$request->message;
         $tab->save();
 
         echo json_encode(array("status"=>"success","msg"=>"Added Successfully."));
@@ -145,12 +141,11 @@ class ContactRequestController extends Controller
                         $query->where('id','LIKE','%'.$search.'%');
                             $query->orWhere('first_name','LIKE','%'.$search.'%');
                             $query->orWhere('last_name','LIKE','%'.$search.'%');
-                            $query->orWhere('contact__about','LIKE','%'.$search.'%');
-                            $query->orWhere('state__case','LIKE','%'.$search.'%');
+                            $query->orWhere('contact_about','LIKE','%'.$search.'%');
+                            $query->orWhere('state_case','LIKE','%'.$search.'%');
                             $query->orWhere('phone','LIKE','%'.$search.'%');
                             $query->orWhere('email','LIKE','%'.$search.'%');
-                            $query->orWhere('attorney’s_name','LIKE','%'.$search.'%');
-                            $query->orWhere('request_status','LIKE','%'.$search.'%');
+                            $query->orWhere('message','LIKE','%'.$search.'%');
                             $query->orWhere('created_at','LIKE','%'.$search.'%');
 
                         return $query;
@@ -168,12 +163,11 @@ class ContactRequestController extends Controller
                         $query->where('id','LIKE','%'.$search.'%');
                             $query->orWhere('first_name','LIKE','%'.$search.'%');
                             $query->orWhere('last_name','LIKE','%'.$search.'%');
-                            $query->orWhere('contact__about','LIKE','%'.$search.'%');
-                            $query->orWhere('state__case','LIKE','%'.$search.'%');
+                            $query->orWhere('contact_about','LIKE','%'.$search.'%');
+                            $query->orWhere('state_case','LIKE','%'.$search.'%');
                             $query->orWhere('phone','LIKE','%'.$search.'%');
                             $query->orWhere('email','LIKE','%'.$search.'%');
-                            $query->orWhere('attorney’s_name','LIKE','%'.$search.'%');
-                            $query->orWhere('request_status','LIKE','%'.$search.'%');
+                            $query->orWhere('message','LIKE','%'.$search.'%');
                             $query->orWhere('created_at','LIKE','%'.$search.'%');
 
                         return $query;
@@ -220,12 +214,12 @@ class ContactRequestController extends Controller
          $dataDateTimeIns=formatDateTime(date('d-M-Y H:i:s a'));
         $data=array();
         $array_column=array(
-                                'ID','First Name','Last Name','Contact  About','State  Case','Phone','Email','Attorney’s Name','Request Status','Created Date');
+                                'ID','First Name','Last Name','Contact About','State Case','Phone','Email','Message','Created Date');
         array_push($data, $array_column);
         $inv=$this->ContactRequestQuery($request);
         foreach($inv as $voi):
             $inv_arry=array(
-                                $voi->id,$voi->first_name,$voi->last_name,$voi->contact__about,$voi->state__case,$voi->phone,$voi->email,$voi->attorney’s_name,$voi->request_status,formatDate($voi->created_at));
+                                $voi->id,$voi->first_name,$voi->last_name,$voi->contact_about,$voi->state_case,$voi->phone,$voi->email,$voi->message,formatDate($voi->created_at));
             array_push($data, $inv_arry);
         endforeach;
 
@@ -251,17 +245,15 @@ class ContactRequestController extends Controller
                         
                             <th class='text-center' style='font-size:12px;' >Last Name</th>
                         
-                            <th class='text-center' style='font-size:12px;' >Contact  About</th>
+                            <th class='text-center' style='font-size:12px;' >Contact About</th>
                         
-                            <th class='text-center' style='font-size:12px;' >State  Case</th>
+                            <th class='text-center' style='font-size:12px;' >State Case</th>
                         
                             <th class='text-center' style='font-size:12px;' >Phone</th>
                         
                             <th class='text-center' style='font-size:12px;' >Email</th>
                         
-                            <th class='text-center' style='font-size:12px;' >Attorney’s Name</th>
-                        
-                            <th class='text-center' style='font-size:12px;' >Request Status</th>
+                            <th class='text-center' style='font-size:12px;' >Message</th>
                         
                 <th class='text-center' style='font-size:12px;'>Created Date</th>
                 </tr>
@@ -274,12 +266,11 @@ class ContactRequestController extends Controller
                         <td style='font-size:12px;' class='text-center'>".$voi->id."</td>
                         <td style='font-size:12px;' class='text-center'>".$voi->first_name."</td>
                         <td style='font-size:12px;' class='text-center'>".$voi->last_name."</td>
-                        <td style='font-size:12px;' class='text-center'>".$voi->contact__about."</td>
-                        <td style='font-size:12px;' class='text-center'>".$voi->state__case."</td>
+                        <td style='font-size:12px;' class='text-center'>".$voi->contact_about."</td>
+                        <td style='font-size:12px;' class='text-center'>".$voi->state_case."</td>
                         <td style='font-size:12px;' class='text-center'>".$voi->phone."</td>
                         <td style='font-size:12px;' class='text-center'>".$voi->email."</td>
-                        <td style='font-size:12px;' class='text-center'>".$voi->attorney’s_name."</td>
-                        <td style='font-size:12px;' class='text-center'>".$voi->request_status."</td>
+                        <td style='font-size:12px;' class='text-center'>".$voi->message."</td>
                         <td style='font-size:12px; text-align:center;' class='text-center'>".formatDate($voi->created_at)."</td>
                         </tr>";
 
@@ -330,33 +321,31 @@ class ContactRequestController extends Controller
                 
                 'first_name'=>'required',
                 'last_name'=>'required',
-                'contact__about'=>'required',
-                'state__case'=>'required',
+                'contact_about'=>'required',
+                'state_case'=>'required',
                 'phone'=>'required',
                 'email'=>'required',
-                'attorney’s_name'=>'required',
-                'request_status'=>'required',
+                'message'=>'required',
         ]);
 
         $this->SystemAdminLog("Contact Request","Update","Edit / Modify");
 
         
-        $tab_2_ContactMeAbout=ContactMeAbout::where('id',$request->contact__about)->first();
-        $contact__about_2_ContactMeAbout=$tab_2_ContactMeAbout->name;
-        $tab_3_USAState=USAState::where('id',$request->state__case)->first();
-        $state__case_3_USAState=$tab_3_USAState->name;
+        $tab_2_ContactMeAbout=ContactMeAbout::where('id',$request->contact_about)->first();
+        $contact_about_2_ContactMeAbout=$tab_2_ContactMeAbout->Reviewed;
+        $tab_3_USAState=USAState::where('id',$request->state_case)->first();
+        $state_case_3_USAState=$tab_3_USAState->name;
         $tab=ContactRequest::find($id);
         
         $tab->first_name=$request->first_name;
         $tab->last_name=$request->last_name;
-        $tab->contact__about_name=$contact__about_2_ContactMeAbout;
-        $tab->contact__about=$request->contact__about;
-        $tab->state__case_name=$state__case_3_USAState;
-        $tab->state__case=$request->state__case;
+        $tab->contact_about_Reviewed=$contact_about_2_ContactMeAbout;
+        $tab->contact_about=$request->contact_about;
+        $tab->state_case_name=$state_case_3_USAState;
+        $tab->state_case=$request->state_case;
         $tab->phone=$request->phone;
         $tab->email=$request->email;
-        $tab->attorney’s_name=$request->attorney’s_name;
-        $tab->request_status=$request->request_status;
+        $tab->message=$request->message;
         $tab->save();
 
         return redirect('contactrequest')->with('status','Updated Successfully !');

@@ -336,8 +336,8 @@
               <p>Contact</p>
             </a>
           </li>
-          <li class="nav-item has-treeview {{ in_array(Request::path(),array('sitesettings','pagesetting','cardpointestoresetting','websitesettings/create'))?'menu-open':'' }}">
-            <a href="#" class="nav-link {{ in_array(Request::path(),array('sitesettings','pagesetting','cardpointestoresetting','websitesettings/create'))?'active':'' }}">
+          <li class="nav-item has-treeview {{ in_array(Request::path(),array('sitesetting','pagesetting','cardpointestoresetting','websitesettings/create'))?'menu-open':'' }}">
+            <a href="#" class="nav-link {{ in_array(Request::path(),array('sitesetting','pagesetting','cardpointestoresetting','websitesettings/create'))?'active':'' }}">
               <i class="nav-icon fas fa-cogs"></i>
               <p>
                 Setting
@@ -346,7 +346,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{url('sitesettings')}}" class="nav-link {{ Request::path() == 'sitesettings' ? 'active' : '' }}">
+                <a href="{{url('sitesetting')}}" class="nav-link {{ Request::path() == 'sitesetting' ? 'active' : '' }}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Site Setting</p>
                 </a>

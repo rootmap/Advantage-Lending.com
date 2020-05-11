@@ -1049,7 +1049,8 @@ input:-moz-placeholder {
     width: 60%;
     height: 100%;
     margin-left: -5%;
-    background: rgba(255, 116, 26, 0.8);
+    background-color: var(--my-slider-back);
+    /* background: rgba(255, 116, 26, 0.8); */
     -ms-transform: skewX(12deg);
     -webkit-transform: skewX(12deg);
     transform: skewX(12deg);

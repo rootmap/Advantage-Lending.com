@@ -1,14 +1,17 @@
+<?php 
+$site=CoreCustomController::SiteSetting();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>@yield('title') | advantage-lending.com</title>
-    @include('site.include.header-footer.header')
+    <title>@yield('title') | {{$site->site_title}} | advantage-lending.com</title>
+    @include('site.include.header-footer.header',compact('site'))
     @yield('css')
 </head>
 <body>
     <!-- Preloader -->
     <div id="preloader"></div>
-    @include('site.include.header-footer.nav')
+    @include('site.include.header-footer.nav',compact('site'))
     <!-- Popup Search Area -->
     {{-- <div id="qnimate" class="off">
         <div id="search" class="open">
@@ -19,8 +22,30 @@
         </form>
         </div>
     </div> --}}
-    @yield('content')
-    @include('site.include.header-footer.footer')
+        @if($site->module_status=="Active")
+            @yield('content')
+        @else
+                <!-- Separator Start -->
+                <section class="separator-area">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="separator-col">
+                                    <div class="col-md-10">
+                                        <div class="defult-title text-center bl-none" style="padding-bottom: 50px;">
+                                            <h1 class="mb-2 text-white"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Our Site is <span>Offline</span></h1>
+                                        </div>
+                                        <h2>We are sorry for your inconvenience <i class="fa fa-cog fa-spin"></i></h2>
+                                        <p class="text-white">We are running some upgradation, Please come back few minutes later.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section> 
+        @endif
+
+    @include('site.include.header-footer.footer',compact('site'))
     @include('site.include.header-footer.footerjs')
     @yield('js')
 </body>

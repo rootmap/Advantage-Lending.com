@@ -78,13 +78,13 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                  <label>Contact me about?</label>
-                                  <select class="form-control select2" style="width: 100%;"  id="contact__about" name="contact__about">
+                                  <label>Contact me about</label>
+                                  <select class="form-control select2" style="width: 100%;"  id="contact_about" name="contact_about">
                                         <option value="">Please Select</option>
                                         @if(isset($dataRow_ContactMeAbout))    
                                             @if(count($dataRow_ContactMeAbout)>0)
                                                 @foreach($dataRow_ContactMeAbout as $ContactMeAbout)
-                                                    <option value="{{$ContactMeAbout->id}}">{{$ContactMeAbout->name}}</option>
+                                                    <option value="{{$ContactMeAbout->Submitted}}">{{$ContactMeAbout->Reviewed}}</option>
                                                     
                                                 @endforeach
                                             @endif
@@ -98,8 +98,8 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                  <label>What state is your case in?</label>
-                                  <select class="form-control select2" style="width: 100%;"  id="state__case" name="state__case">
+                                  <label>What state is your case in</label>
+                                  <select class="form-control select2" style="width: 100%;"  id="state_case" name="state_case">
                                         <option value="">Please Select</option>
                                         @if(isset($dataRow_USAState))    
                                             @if(count($dataRow_USAState)>0)
@@ -135,34 +135,16 @@
                     </div>
                 </div>
                 
-        <div class="row">
-            <div class="col-sm-12">
-              <!-- radio -->
-              <div class="form-group">
-              <label>Enter Request Status</label>
-        
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" 
-                          id="request_status_0" name="request_status" value="Submitted">
-                          <label class="form-check-label">Submitted</label>
-                        </div>
-                
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" 
-                          id="request_status_1" name="request_status" value="Reviewed">
-                          <label class="form-check-label">Reviewed</label>
-                        </div>
-                
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" 
-                          id="request_status_2" name="request_status" value="Close">
-                          <label class="form-check-label">Close</label>
-                        </div>
-                
+                <div class="row">
+                    <div class="col-sm-12">
+                      <!-- text input -->
+                      <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea class="form-control" rows="3"  placeholder="Enter Message" id="message" name="message"></textarea>
+                      </div>
                     </div>
                 </div>
-            </div>
-                   
+                       
             </div>
             <!-- /.card-body -->
 

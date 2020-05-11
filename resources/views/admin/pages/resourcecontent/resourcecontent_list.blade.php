@@ -1,17 +1,17 @@
 
 @extends("admin.layout.master")
-@section("title","Contact Request")
+@section("title","Resource Content")
 @section("content")
         <section class="content-header">
           <div class="container-fluid">
             <div class="row mb-2">
               <div class="col-sm-6">
-                <h1>Contact Request</h1>
+                <h1>Resource Content</h1>
               </div>
               <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                  <li class="breadcrumb-item"><a href="{{url('contactrequest/create')}}">Create New </a></li>
-                  <li class="breadcrumb-item active">Contact Request Data</li>
+                  <li class="breadcrumb-item"><a href="{{url('resourcecontent/create')}}">Create New </a></li>
+                  <li class="breadcrumb-item active">Resource Content Data</li>
                 </ol>
               </div>
             </div>
@@ -30,23 +30,23 @@
               <div class="card">
 
                 <div class="card-header">
-                  <h3 class="card-title">Contact Request Data</h3>
+                  <h3 class="card-title">Resource Content Data</h3>
 
                     <div class="card-tools">
                       <ul class="pagination pagination-sm float-right">
                         <li class="page-item">
-                            <a class="page-link bg-primary" href="{{url('contactrequest/create')}}"> 
+                            <a class="page-link bg-primary" href="{{url('resourcecontent/create')}}"> 
                                 Add New 
                                 <i class="fas fa-plus"></i> 
                             </a>
                         </li>
                         <li class="page-item">
-                          <a class="page-link" target="_blank" href="{{url('contactrequest/export/pdf')}}">
+                          <a class="page-link" target="_blank" href="{{url('resourcecontent/export/pdf')}}">
                             <i class="fas fa-file-pdf" data-toggle="tooltip" data-html="true"title="Pdf"></i>
                           </a>
                         </li>
                         <li class="page-item">
-                          <a class="page-link" target="_blank" href="{{url('contactrequest/export/excel')}}">
+                          <a class="page-link" target="_blank" href="{{url('resourcecontent/export/excel')}}">
                             <i class="fas fa-file-excel" data-toggle="tooltip" data-html="true"title="Excel"></i>
                           </a>
                         </li>
@@ -62,13 +62,9 @@
                     <thead>
                         <tr>
                             <th class="text-center">ID</th>
-                            <th class="text-center">First Name</th>
-                            <th class="text-center">Last Name</th>
-                            <th class="text-center">Contact About Reviewed</th>
-                            <th class="text-center">State Case Name</th>
-                            <th class="text-center">Phone</th>
-                            <th class="text-center">Email</th>
-                            <th class="text-center">Message</th>
+                            <th class="text-center">Title</th>
+                            <th class="text-center">Image</th>
+                            <th class="text-center">Short Detail</th>
                             <th class="text-center">Created At</th>
                             <th class="text-center">Actions</th>
 
@@ -78,15 +74,15 @@
                         @if(count($dataRow))
                             @foreach($dataRow as $row)  
                                 <tr>
-                                    <td class="text-center">{{$row->id}}</td><td class="text-center">{{$row->first_name}}</td><td class="text-center">{{$row->last_name}}</td><td class="text-center">{{$row->contact_about_Reviewed}}</td><td class="text-center">{{$row->state_case_name}}</td><td class="text-center">{{$row->phone}}</td><td class="text-center">{{$row->email}}</td><td class="text-center">{{$row->message}}</td>
+                                    <td class="text-center">{{$row->id}}</td><td class="text-center">{{$row->title}}</td><td class="text-center">{{$row->image}}</td><td class="text-center">{{$row->short_detail}}</td>
                                     <td>{{formatDate($row->created_at)}}</td>
                                     <td>
                                         <div class="btn-group">
-                                            <a href="{{url('contactrequest/edit/'.$row->id)}}" type="button" class="btn btn-default">
+                                            <a href="{{url('resourcecontent/edit/'.$row->id)}}" type="button" class="btn btn-default">
                                                 Edit 
                                                 <i class="fas fa-edit"></i>
                                             </a>
-                                            <a href="{{url('contactrequest/delete/'.$row->id)}}" type="button" class="btn btn-default">
+                                            <a href="{{url('resourcecontent/delete/'.$row->id)}}" type="button" class="btn btn-default">
                                                 Delete 
                                                 <i class="fas fa-trash-alt"></i>
                                             </a>
@@ -101,13 +97,9 @@
                     <tfoot>
                     <tr>
                         <th class="text-center">ID</th>
-                        <th class="text-center">First Name</th>
-                        <th class="text-center">Last Name</th>
-                        <th class="text-center">Contact About Reviewed</th>
-                        <th class="text-center">State Case Name</th>
-                        <th class="text-center">Phone</th>
-                        <th class="text-center">Email</th>
-                        <th class="text-center">Message</th>
+                        <th class="text-center">Title</th>
+                        <th class="text-center">Image</th>
+                        <th class="text-center">Short Detail</th>
                         <th class="text-center">Created At</th>
                         <th class="text-center">Actions</th>
 

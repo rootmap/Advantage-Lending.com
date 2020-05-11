@@ -118,7 +118,7 @@
                                         <div class="col-md-6 col-xs-12 col-sm-12 col-lg-6">
                                             <div class="form-group">
                                                 <label class="gfield_label" for="exampleFormControlInput1">Please contact me about<span class='text-danger'>*</span></label>
-                                                <select name="contact__about" class="form-control">
+                                                <select name="contact_about" class="form-control">
                                                     <option value="">Select One</option>
                                                     <option value="Applying for money">Applying for money</option>
                                                     <option value="Status of my application">Status of my application</option>
@@ -136,7 +136,7 @@
                                         <div class="col-md-6 col-xs-12 col-sm-12 col-lg-6">
                                             <div class="form-group">
                                                 <label class="gfield_label" for="exampleFormControlInput1">What state is your case in?<span class='text-danger'>*</span></label>
-                                                <select name="state__case" class="form-control" style="margin-bottom:0px">
+                                                <select name="state_case" class="form-control" style="margin-bottom:0px">
                                                     <option value="">Select One</option>
                                                     <option value="Alabama">Alabama</option>
                                                     <option value="Alaska">Alaska</option>
@@ -202,20 +202,20 @@
                                         <div class="col-md-6 col-xs-12 col-sm-12 col-lg-6">
                                             <div class="form-group">
                                                 <label class="gfield_label" for="exampleFormControlInput1">Phone<span class='text-danger'>*</span></label>
-                                                <input type="tel" class="form-control" autocomplete="off" name="zip_code" id="exampleFormControlInput1">
+                                                <input type="tel" class="form-control" autocomplete="off" name="phone" id="exampleFormControlInput1">
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-xs-12 col-sm-12 col-lg-6">
                                             <div class="form-group">
                                                 <label class="gfield_label" for="exampleFormControlInput1">Email<span class='text-danger'>*</span></label>
-                                                <input type="email" class="form-control" autocomplete="off" name="law_firm_name" id="exampleFormControlInput1">
+                                                <input type="email" class="form-control" autocomplete="off" name="email" id="exampleFormControlInput1">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
                                             <div class="form-group">
-                                                <label class="gfield_label" for="exampleFormControlInput1">Attorney’s Name<span class='text-danger'>*</span></label>
+                                                <label class="gfield_label" for="exampleFormControlInput1">Message<span class='text-danger'>*</span></label>
                                                 <textarea class="form-control textarea-hight-full" id="message" name="message" rows="5" placeholder="Message" required=""></textarea>
                                             </div>
                                         </div>
