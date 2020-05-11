@@ -20,7 +20,7 @@
                                 <a href="#" id="addClass"><span class="glyphicon glyphicon-search"></span></a>
                             </span>
                         </span> --}}
-                        <p><a href="#appointment" id="scroll"><span>Apply Now</span></a></p>
+                        <p><a href="{{Request::path() == '/' ? '#appointment' :url('/').'#appointment'}}" id="scroll"><span>Apply Now</span></a></p>
                     </div>
                 </div>
             </div>
@@ -40,18 +40,18 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                        <a class="navbar-brand" href="{{url('/home')}}">
-                                <img src="{{asset('module/images/logo.png')}}" alt="">
+                            <a class="navbar-brand" href="{{url('/')}}">
+                                <img src="{{asset('module/resource/logo.png')}}" alt="">
                             </a>
                         </div>
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" data-hover="dropdown" data-animations="fadeInUp">
                             <ul class="nav navbar-nav navbar-right">
-                                <li class="active"><a href="#">Home</a></li>
-                                <li><a href="{{url('how-it-works')}}">How It Works</a></li>
-                                <li><a href="{{url('types-of-funding')}}">Types Of Funding</a></li>
-                                <li><a href="{{url('about-advantage-lending')}}">About A.L.</a></li>
-                                <li><a href="{{url('faq')}}">Faq</a></li>
-                                <li><a href="{{url('for-attorneys')}}">For Attorneys</a></li>
+                                <li class="{{ Request::path() == '/' ? 'active' : '' }}"><a href="{{url('/')}}">Home</a></li>
+                                <li class="{{ Request::path() == 'how-it-works' ? 'active' : '' }}"><a href="{{url('how-it-works')}}">How It Works</a></li>
+                                <li class="{{ Request::path() == 'types-of-funding' ? 'active' : '' }}"><a href="{{url('types-of-funding')}}">Types Of Funding</a></li>
+                                <li class="{{ Request::path() == 'about-advantage-lending' ? 'active' : '' }}"><a href="{{url('about-advantage-lending')}}">About A.L.</a></li>
+                                <li class="{{ Request::path() == 'faq' ? 'active' : '' }}"><a href="{{url('faq')}}">Faq</a></li>
+                                <li class="{{ Request::path() == 'for-attorneys' ? 'active' : '' }}"><a href="{{url('for-attorneys')}}">For Attorneys</a></li>
                             </ul>
                         </div>
                     </nav>

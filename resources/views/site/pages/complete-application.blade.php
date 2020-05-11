@@ -59,13 +59,13 @@
                                         <div class="col-md-6 col-xs-12 col-sm-12 col-lg-6">
                                             <div class="form-group">
                                                 <label class="gfield_label" for="exampleFormControlInput1">First Name<span class='text-danger'>*</span></label>
-                                                <input type="text" class="form-control" autocomplete="off" value="Enter Fiest Name" id="exampleFormControlInput1">
+                                                <input type="text" class="form-control" autocomplete="off" name="first_name" value="Enter Fiest Name" id="exampleFormControlInput1">
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-xs-12 col-sm-12 col-lg-6">
                                             <div class="form-group">
                                                 <label class="gfield_label" for="exampleFormControlInput1">Last Name<span class='text-danger'>*</span></label>
-                                                <input type="text" class="form-control" autocomplete="off" value="Enter Last Name" id="exampleFormControlInput1">
+                                                <input type="text" class="form-control" autocomplete="off" name="last_name" value="Enter Last Name" id="exampleFormControlInput1">
                                             </div>
                                         </div>
  
@@ -74,20 +74,20 @@
                                         <div class="col-md-4 col-xs-12 col-sm-12 col-lg-4">
                                             <div class="form-group">
                                                 <label class="gfield_label" for="exampleFormControlInput1">How much money do you need?<span class='text-danger'>*</span></label>
-                                                <input type="tel" class="form-control" autocomplete="off" id="exampleFormControlInput1">
+                                                <input type="tel" class="form-control" autocomplete="off" name="how_much_money_do_you_need" id="exampleFormControlInput1">
                                             </div>
                                         </div>
                                         <div class="col-md-4 col-xs-12 col-sm-12 col-lg-4">
                                             <div class="form-group">
                                                 <label class="gfield_label" for="exampleFormControlInput1">
                                                             What was the date of your accident?<span class='text-danger'>*</span></label>
-                                                <input type="text" class="form-control" autocomplete="off" id="exampleFormControlInput1">
+                                                <input type="text" class="form-control" autocomplete="off" name="what_was_the_date_of_your_accident" id="exampleFormControlInput1">
                                             </div>
                                         </div>
                                         <div class="col-md-4 col-xs-12 col-sm-12 col-lg-4">
                                             <div class="form-group">
                                                   <div class="form-group form-check">
-                                                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                                        <input type="checkbox" class="form-check-input"  id="exampleCheck1">
                                                         <label class="form-check-label" for="exampleCheck1">Unknown date</label>
                                                     </div>
                                             </div>
@@ -97,7 +97,7 @@
                                         <div class="col-md-4 col-xs-12 col-sm-12 col-lg-4">
                                            <div class="form-group">
                                                 <label for="exampleFormControlSelect1">What state is your case in?<span>*</span></label>
-                                                <select  class="form-control" id="exampleFormControlSelect1">
+                                                <select  class="form-control" name="state_case" id="exampleFormControlSelect1">
                                                 <option>Select One</option>
                                                 <option>2</option>
                                                 <option>3</option>
@@ -111,7 +111,7 @@
                                         </div>
                                         <div class="col-md-4 col-xs-12 col-sm-12 col-lg-4">
                                             <div class="form-group">
-                                                <label class="gfield_label" for="exampleFormControlInput2">What kind of case do you have<span>*</span></label>
+                                                <label class="gfield_label" name="case_type" for="exampleFormControlInput2">What kind of case do you have<span>*</span></label>
                                                 <select  class="form-control" id="exampleFormControlSelect2">
                                                 <option>Select One</option>
                                                 <option>2</option>
@@ -127,7 +127,7 @@
                                                 <label class="gfield_label" for="exampleFormControlInput3">
                                                     How did you hear about advantage lending?<span class='text-danger'>*</span>
                                                 </label>
-                                               <select  class="form-control" id="exampleFormControlSelect3">
+                                               <select  class="form-control" name="how_did_you_heard" id="exampleFormControlSelect3">
                                                 <option>Select One</option>
                                                 <option>2</option>
                                                 <option>3</option>
@@ -142,13 +142,13 @@
                                         <div class="col-md-4 col-xs-12 col-sm-12 col-lg-4">
                                            <div class="form-group">
                                                 <label for="exampleFormControlInput1">Email<span>*</span></label>
-                                              <input type="text" class="form-control" value="Enter Email Address" autocomplete="off" id="exampleFormControlInput1">
+                                              <input type="text" class="form-control" name="email" value="Enter Email Address" autocomplete="off" id="exampleFormControlInput1">
                                             </div>
                                         </div>
                                         <div class="col-md-4 col-xs-12 col-sm-12 col-lg-4">
                                             <div class="form-group">
                                             <label for="exampleFormControlInput1">Phone<span>*</span></label>
-                                              <input type="text" class="form-control" value="(018) 607-4802" autocomplete="off" id="exampleFormControlInput1">
+                                              <input type="text" class="form-control" name="phone" value="(018) 607-4802" autocomplete="off" id="exampleFormControlInput1">
                                               <small>
                                                   <p class="description" style="font-size: 11px;line-height:11px;color:black;margin-top:-20px;">By providing your phone number on this application, you consent to receive autodialed informational phone calls to the number you provided to Oasis about the status of your application or related funding.</p>
                                               </small>
@@ -160,11 +160,11 @@
                                                    How should we contact you?<span class='text-danger'>*</span>
                                                 </label>
                                                <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                                                    <input class="form-check-input" name="how_should_we_contact_you" type="checkbox" id="how_should_we_contact_you_0" value="option1">
                                                     <label class="form-check-label" for="inlineCheckbox1">Email Me!</label>
                                                 </div>
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                                                    <input class="form-check-input" id="how_should_we_contact_you_1" name="how_should_we_contact_you" type="checkbox" id="inlineCheckbox2" value="option2">
                                                     <label class="form-check-label" for="inlineCheckbox2">Text/SMS!</label>
                                                 </div>
                                             </div>
@@ -180,7 +180,7 @@
                                         <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
                                            <div class="form-group">
                                                 <label for="exampleFormControl4">Address<span>*</span></label>
-                                              <input type="text" class="form-control" value="Enter Address" autocomplete="off" id="exampleFormControl4">
+                                              <input type="text" class="form-control" name="street_address" value="Enter Address" autocomplete="off" id="exampleFormControl4">
                                                
                                             </div>
                                         </div>
@@ -191,14 +191,14 @@
                                         <div class="col-md-4 col-xs-12 col-sm-12 col-lg-4">
                                             <div class="form-group">
                                                 <label for="StreetAddress">Street Address<span>*</span></label>
-                                                <input type="text" class="form-control" value="Enter City"autocomplete="off" id="StreetAddress">
+                                                <input type="text" class="form-control" name="street_address" value="Enter City"autocomplete="off" id="StreetAddress">
 
                                             </div>
                                         </div>
                                         <div class="col-md-4 col-xs-12 col-sm-12 col-lg-4">
                                             <div class="form-group">
                                                 <label class="gfield_label" for="exampleState">State</label>
-                                                <select  class="form-control" id="exampleState">
+                                                <select  class="form-control" name="state" id="exampleState">
                                                 <option>Select State</option>
                                                 <option>2</option>
                                                 <option>3</option>
@@ -211,7 +211,7 @@
                                         <div class="col-md-4 col-xs-12 col-sm-12 col-lg-4">
                                             <div class="form-group">
                                                 <label class="gfield_label" for="exampleFormZIPCode">ZIP Code</label>
-                                                <input type="text" class="form-control" value="Enter ZIP Code" autocomplete="off" id="exampleFormZIPCode">
+                                                <input type="text" class="form-control" name="zip_code" value="Enter ZIP Code" autocomplete="off" id="exampleFormZIPCode">
                                                 
                                             </div>
                                         </div>
@@ -221,14 +221,14 @@
                                         <div class="col-md-6 col-xs-12 col-sm-12 col-lg-6">
                                             <div class="form-group">
                                                 <label class="gfield_label" for="exampleAttorneyName">Attorney's Name<span class='text-danger'>*</span></label>
-                                                <input type="text" class="form-control" value="Enter First Name" autocomplete="off" id="exampleAttorneyName">
+                                                <input type="text" class="form-control" value="Enter First Name" name="attorney__first_name" autocomplete="off" id="exampleAttorneyName">
                                                 <label class="gfield_label" for="exampleAttorneyName"></label>
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-xs-12 col-sm-12 col-lg-6">
                                             <div class="form-group">
                                                 <label class="gfield_label" for="exampleFormLast"></label>
-                                                <input type="text" class="form-control" value="Enter Last Name" autocomplete="off" id="exampleFormLast">
+                                                <input type="text" class="form-control" value="Enter Last Name" name="attorney__last_name" autocomplete="off" id="exampleFormLast">
                                                
                                             </div>
                                         </div>
@@ -237,14 +237,14 @@
                                         <div class="col-md-6 col-xs-12 col-sm-12 col-lg-6">
                                             <div class="form-group">
                                                 <label class="gfield_label" for="exampleLawFirmName">Law Firm Name<span class='text-danger'>*</span></label>
-                                                <input type="text" class="form-control" value="Enter Law Firm Name"  autocomplete="off" id="exampleLawFirmName">
+                                                <input type="text" class="form-control" value="Enter Law Firm Name" name="law_firm_name"  autocomplete="off" id="exampleLawFirmName">
                                                
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-xs-12 col-sm-12 col-lg-6">
                                             <div class="form-group">
                                                 <label class="gfield_label" for="exampleLawFirmPhone">Law Firm Phone<span class='text-danger'>*</span></label>
-                                                <input type="text" class="form-control" value="(018) 607-4802" autocomplete="off" id="exampleLawFirmPhone">
+                                                <input type="text" class="form-control" value="(018) 607-4802" name="law_firm_phone" autocomplete="off" id="exampleLawFirmPhone">
                                                 
                                             </div>
                                         </div>

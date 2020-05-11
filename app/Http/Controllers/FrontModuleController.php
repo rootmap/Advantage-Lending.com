@@ -47,6 +47,11 @@ class FrontModuleController extends Controller
         return view('site.pages.resource');
     }
 
+    public function resourcesDetails()
+    {
+        return view('site.pages.resource-details');
+    }
+
     public function contactus()
     {
         return view('site.pages.contactus');
@@ -80,6 +85,18 @@ class FrontModuleController extends Controller
     public function needanattorney()
     {
         return view('site.pages.need-an-attorney');
+    }
+    public function termsOfUse()
+    {
+        return view('site.pages.terms-of-use');
+    }
+    public function privacyPolicy()
+    {
+        return view('site.pages.privacy-policy');
+    }
+    public function stateSpecificLicenses()
+    {
+        return view('site.pages.state-specific-licenses');
     }
 
     /**

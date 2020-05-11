@@ -335,19 +335,19 @@
                                         <div class="col-md-4 col-xs-12 col-sm-12 col-lg-4">
                                             <div class="form-group">
                                                 <label class="gfield_label" for="exampleFormControlInput1">First Name<span class="text-danger">*</span></label>
-                                                <input type="text" class="form-control" autocomplete="off" id="exampleFormControlInput1">
+                                                <input type="text" class="form-control" autocomplete="off" name="first_name" id="exampleFormControlInput1">
                                             </div>
                                         </div>
                                         <div class="col-md-4 col-xs-12 col-sm-12 col-lg-4">
                                             <div class="form-group">
                                                 <label class="gfield_label" for="exampleFormControlInput1">Last Name<span class="text-danger">*</span></label>
-                                                <input type="text" class="form-control" autocomplete="off" id="exampleFormControlInput1">
+                                                <input type="text" class="form-control" autocomplete="off" name="last_name" id="exampleFormControlInput1">
                                             </div>
                                         </div>
                                         <div class="col-md-4 col-xs-12 col-sm-12 col-lg-4">
                                             <div class="form-group">
                                                 <label class="gfield_label" for="exampleFormControlInput1">Email<span class="text-danger">*</span></label>
-                                                <input type="email" class="form-control" autocomplete="off" id="exampleFormControlInput1">
+                                                <input type="email" class="form-control" autocomplete="off" name="email" id="exampleFormControlInput1">
                                             </div>
                                         </div>
                                     </div>
@@ -355,19 +355,19 @@
                                         <div class="col-md-4 col-xs-12 col-sm-12 col-lg-4">
                                             <div class="form-group">
                                                 <label class="gfield_label" for="exampleFormControlInput1">Phone<span class="text-danger">*</span></label>
-                                                <input type="tel" class="form-control" autocomplete="off" id="exampleFormControlInput1">
+                                                <input type="tel" class="form-control" autocomplete="off" name="phone" id="exampleFormControlInput1">
                                             </div>
                                         </div>
                                         <div class="col-md-4 col-xs-12 col-sm-12 col-lg-4">
                                             <div class="form-group">
                                                 <label class="gfield_label" for="exampleFormControlInput1">ZIP Code<span class="text-danger">*</span></label>
-                                                <input type="text" class="form-control" autocomplete="off" id="exampleFormControlInput1">
+                                                <input type="text" class="form-control" autocomplete="off" name="zip_code" id="exampleFormControlInput1">
                                             </div>
                                         </div>
                                         <div class="col-md-4 col-xs-12 col-sm-12 col-lg-4">
                                             <div class="form-group">
                                                 <label class="gfield_label" for="exampleFormControlInput1">Law Firm Name<span class="text-danger">*</span></label>
-                                                <input type="text" class="form-control" autocomplete="off" id="exampleFormControlInput1">
+                                                <input type="text" class="form-control" autocomplete="off" name="law_firm_name" id="exampleFormControlInput1">
                                             </div>
                                         </div>
                                     </div>
@@ -375,19 +375,19 @@
                                         <div class="col-md-4 col-xs-12 col-sm-12 col-lg-4">
                                             <div class="form-group">
                                                 <label class="gfield_label" for="exampleFormControlInput1">Attorney’s Name<span class="text-danger">*</span></label>
-                                                <input type="tel" class="form-control" placeholder="First Name" autocomplete="off" id="exampleFormControlInput1">
+                                                <input type="tel" class="form-control" placeholder="First Name"  name="attorney__first_name" autocomplete="off" id="exampleFormControlInput1">
                                             </div>
                                         </div>
                                         <div class="col-md-4 col-xs-12 col-sm-12 col-lg-4">
                                             <div class="form-group">
                                                 <label class="gfield_label" for="exampleFormControlInput1"></label>
-                                                <input type="text" class="form-control" placeholder="Last Name" autocomplete="off" id="exampleFormControlInput1">
+                                                <input type="text" class="form-control" placeholder="Last Name" name="attorney__last_name" autocomplete="off" id="exampleFormControlInput1">
                                             </div>
                                         </div>
                                         <div class="col-md-4 col-xs-12 col-sm-12 col-lg-4">
                                             <div class="form-group">
                                                 <label class="gfield_label" for="exampleFormControlInput1">Law Firm Phone<span class="text-danger">*</span></label>
-                                                <input type="text" class="form-control" autocomplete="off" id="exampleFormControlInput1">
+                                                <input type="text" class="form-control" autocomplete="off" name="law_firm_phone" id="exampleFormControlInput1">
                                             </div>
                                         </div>
                                     </div>

@@ -61,14 +61,14 @@
                                         <div class="col-md-6 col-xs-12 col-sm-12 col-lg-6">
                                             <div class="form-group">
                                                 <label class="gfield_label" for="exampleFirstName">First Name<span class='text-danger'>*</span></label>
-                                                <input type="text" class="form-control" value="Enter First Name" autocomplete="off" id="exampleFirstName">
+                                                <input type="text" class="form-control" name="first_name" value="Enter First Name" autocomplete="off" id="exampleFirstName">
                                                 
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-xs-12 col-sm-12 col-lg-6">
                                             <div class="form-group">
                                                 <label class="gfield_label" for="exampleFirstLast">Last Name</label>
-                                                <input type="text" class="form-control" value="Enter Last Name" autocomplete="off" id="exampleFirstLast">
+                                                <input type="text" class="form-control" name="last_name" value="Enter Last Name" autocomplete="off" id="exampleFirstLast">
                                                 
                                             </div>
                                         </div>
@@ -77,8 +77,8 @@
                                     <div class="row">
                                         <div class="col-md-6 col-xs-12 col-sm-12 col-lg-6">
                                             <div class="form-group">
-                                                <label class="gfield_label" for="exampleFormCase">What kind of case do you have?</label>
-                                                <select  class="form-control" id="exampleFormCase">
+                                                <label class="gfield_label" for="case_type">What kind of case do you have?</label>
+                                                <select  class="form-control" name="case_type" id="case_type">
                                                 <option>Select One</option>
                                                 <option>2</option>
                                                 <option>3</option>
@@ -89,8 +89,8 @@
                                         </div>
                                         <div class="col-md-6 col-xs-12 col-sm-12 col-lg-6">
                                             <div class="form-group">
-                                                <label class="gfield_label" for="exampleFormSateCase">What state is your case in?</label>
-                                            <select  class="form-control" id="exampleFormSateCase">
+                                                <label class="gfield_label" for="state_case">What state is your case in?</label>
+                                            <select  class="form-control" name="state_case" id="state_case">
                                                 <option>Select One</option>
                                                 <option>2</option>
                                                 <option>3</option>
@@ -110,23 +110,23 @@
                                     <div class="row">
                                         <div class="col-md-6 col-xs-12 col-sm-12 col-lg-6">
                                             <div class="form-group">
-                                                <label class="gfield_label" for="examplePhone">Phone<span class='text-danger'>*</span></label>
-                                                <input type="text" class="form-control" value="Enter Phone Number" autocomplete="off" id="examplePhone">
+                                                <label class="gfield_label" for="phone">Phone<span class='text-danger'>*</span></label>
+                                                <input type="text" class="form-control" name="phone" value="Enter Phone Number" autocomplete="off" id="phone">
                                                 
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-xs-12 col-sm-12 col-lg-6">
                                             <div class="form-group">
-                                                <label class="gfield_label" for="exampleEmail">Email</label>
-                                                <input type="text" class="form-control" value="Enter Email Address" autocomplete="off" id="exampleEmail">
+                                                <label class="gfield_label" for="email">Email</label>
+                                                <input type="text" class="form-control" name="email" value="Enter Email Address" autocomplete="off" id="email">
                                             </div>
                                         </div>
                                   </div>
                                     <div class="row">
                                         <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
                                             <div class="form-group">
-                                                <label for="exampleMessage">Message</label>
-                                                <textarea class="form-control" id="exampleMessage" rows="3" style=height: 160px; width: 100%;></textarea>
+                                                <label for="message">Message</label>
+                                                <textarea class="form-control" name="message" id="message" rows="3" style=height: 160px; width: 100%;></textarea>
                                                 <p style="font-size:20px;">
                                                     Currently, Oasis is not able to refer residents of the following
                                                     states to an attorney: California, Indiana, Nevada, Oklahoma,
