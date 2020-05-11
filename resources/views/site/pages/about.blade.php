@@ -361,7 +361,7 @@
     }
     .leaders button {
         color: #fff;
-        background-image: url(//www.oasisfinancial.com/wp-content/themes/oasis/img/down.svg);
+        background-image: url('{{asset('module/images/extra/down.svg')}}');
         background-position: 95% 1.8rem;
         background-repeat: no-repeat;
         border-bottom: solid 1px #fff;
@@ -380,7 +380,7 @@
         color: #f47820;
         background-color: transparent;
     }
-    .btn, .gform_wrapper .button {
+    .gform_wrapper .button {
         display: inline-block;
         font-weight: 400;
         text-align: center;
@@ -421,7 +421,7 @@
         margin-bottom: 0;
     }
     .leaders strong {
-        color: #007db3;
+        color: #FF741A;
     }
     .font-size-16 {
         font-size: 16px;
@@ -430,7 +430,7 @@
         padding-left: 1rem !important;
     }
     .border-success {
-        border-color: #007db3 !important;
+        border-color: #FF741A !important;
     }
     .border-left {
         border-left: 1px solid #dee2e6 !important;
@@ -441,7 +441,7 @@
     .leaders .nav-pills .nav-link.active, .leaders .nav-pills .show>.nav-link {
         background-color: #fff;
         color: #f47820;
-        background-image: url(//www.oasisfinancial.com/wp-content/themes/oasis/img/arrow.svg);
+        background-image: url('{{asset('module/images/extra/arrow.svg')}}');
         background-repeat: no-repeat;
         background-position: 1rem center;
         padding-left: 4rem;
@@ -466,17 +466,175 @@
     .leaders .border-success ul li {
         list-style: square;
     }
+
+    .nav-link:hover{
+        background: none;
+        opacity: 1;
+    }
+
+    .nav-item:hover{
+        background: none;
+        opacity: 1;
+    }
+
+    @media only screen and (max-width:995px) {
+    .miles img {
+        margin-top: 30px !important;
+        margin-bottom: 30px !important
+    }
+    }
+
+    .team-full {
+        padding: 130px 0;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-color: #FF741A
+    }
+
+    .team-full .team-left {
+        background: #fff;
+        border-radius: 5px;
+        padding: 25px
+    }
+
+    .team-wrapper img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        padding: 5px;
+        border: 5px solid #FF741A
+    }
+
+    .team-wrapper .single-team {
+        background-size: cover;
+        background-position: center center;
+        background-repeat;
+        no-repeat;
+        margin: 15px 0;
+        height: 250px;
+        padding: 50px 20px 20px;
+        text-align: center;
+        position: relative;
+        z-index: 0
+    }
+
+    .team-wrapper .single-team .team-content {
+        opacity: 0;
+        -webkit-transition: all .3s ease-in-out;
+        -moz-transition: all .3s ease-in-out;
+        -o-transition: all .3s ease-in-out;
+        -ms-transition: all .3s ease-in-out;
+        transition: all .3s ease-in-out;
+        color: #fff;
+        z-index: 1
+    }
+
+    .team-wrapper .single-team:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #FF741A;
+        opacity: 0;
+        -webkit-transition: all .3s ease-in-out;
+        -moz-transition: all .3s ease-in-out;
+        -o-transition: all .3s ease-in-out;
+        -ms-transition: all .3s ease-in-out;
+        transition: all .3s ease-in-out;
+        z-index: -1
+    }
+
+    .team-wrapper .single-team:hover .team-content {
+        opacity: 1
+    }
+
+    .team-wrapper .single-team .team-content p {
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 300;
+        font-family: "Usual", sans-serif
+    }
+
+    .team-wrapper .single-team .team-content .team-name {
+        display: block;
+        font-family: "Sofia Pro", sans-serif;
+        text-transform: uppercase;
+        font-size: 20px;
+        line-height: 26px;
+        font-weight: 700;
+        padding-bottom: 16px;
+        margin-bottom: 16px;
+        position: relative
+    }
+
+    .team-wrapper .single-team .team-content .team-name:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        height: 2px;
+        width: 69px;
+        background: #FF741A;
+        left: 50%;
+        transform: translateX(-50%)
+    }
+
+    .data-pull-overlay::after{
+        background: #FF741A;
+        position: absolute;
+        display: block;
+    }
+
+    .team-wrapper .single-team:hover:after {
+        opacity: .8
+    }
+
+    @media (max-width:767px) {
+        .team-wrapper .single-team {
+            margin: 1.5px 0
+        }
+        .team-wrapper .single-team:after {
+            opacity: .8
+        }
+        .team-wrapper .single-team .team-content {
+            opacity: 1
+        }
+        .team-full {
+            background-position: top center;
+            background-size: 100%;
+            padding: 160px 0 30px
+        }
+    }
+
+
+    .align-items-center {
+        -webkit-box-align: center !important;
+        -ms-flex-align: center !important;
+        align-items: center !important;
+    }
+
+    .justify-content-center {
+        -webkit-box-pack: center !important;
+        -ms-flex-pack: center !important;
+        justify-content: center !important;
+    }
+
+    .d-lg-flex {
+        display: -webkit-box !important;
+        display: -ms-flexbox !important;
+        display: flex !important;
+    }
+
+
 </style>
-   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-    <!-- Add the slick-theme.css if you want default styling -->
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
-    <link href="{{asset('module/lity/dist/lity.css')}}" rel="stylesheet">
 @endsection
 @section('content')
 <!-- Inner Page title Start -->
 <section class="innerpage-titlebar">
     <div class="container">
-        <h3 class="fix-barcum-head">About Oasis</h3>
+        <h3 class="fix-barcum-head">About Advantage-Lending</h3>
     </div>
 </section>
 <section class="services-area-two" style="padding-top: 0px;">
@@ -510,7 +668,7 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-md-10 px-0 px-md-3"  style="padding-left:120px;"> 
-                <img src="https://www.oasisfinancial.com/wp-content/uploads/2019/01/Depositphotos_169383864_xl-2015.jpg" alt="Oasis Values" class="d-block valuesImg position-relative img-fluid" style="z-index: 1;">
+                <img src="{{asset('module/images/Depositphotos_169383864_xl-2015.jpg')}}" alt="Oasis Values" class="d-block valuesImg position-relative img-fluid" style="z-index: 1;">
             </div>
         </div> 
      </div>
@@ -527,18 +685,18 @@
                 </div>
                 <div class="col-md-6">
                     <div class=" d-flex justify-content-center align-iems-center flex-wrap  px-4">
-                        <div class="w-50 px-3"> <a href="https://www.keyhealth.net/" target="_blank"> <img src="https://www.oasisfinancial.com/wp-content/uploads/2019/03/Key-Health-horizontal-cmyk.png" alt="Key" class="img-fluid d-block m-auto"> </a></div>
-                        <div class="w-50  px-3"> <a href="https://www.accidentmeds.com/" target="_blank"> <img src="https://www.oasisfinancial.com/wp-content/uploads/2019/03/AccidentMeds-horizontal-cmyk.png" alt="AcciedentMeds" class="img-fluid d-block m-auto"> </a></div>
-                        <div class="w-50  px-3"> <a href="https://www.accidentmeds.com/" target="_blank"> <img src="https://www.oasisfinancial.com/wp-content/uploads/2019/03/AccidentMeds-horizontal-cmyk.png" alt="AcciedentMeds" class="img-fluid d-block m-auto"> </a></div>
-                        <div class="w-50  px-3"> <a href="https://www.accidentmeds.com/" target="_blank"> <img src="https://www.oasisfinancial.com/wp-content/uploads/2019/03/AccidentMeds-horizontal-cmyk.png" alt="AcciedentMeds" class="img-fluid d-block m-auto"> </a></div>
-                        <div class="w-50  px-3"> <a href="https://www.accidentmeds.com/" target="_blank"> <img src="https://www.oasisfinancial.com/wp-content/uploads/2019/03/AccidentMeds-horizontal-cmyk.png" alt="AcciedentMeds" class="img-fluid d-block m-auto"> </a></div>
-                        <div class="w-50  px-3"> <a href="https://www.accidentmeds.com/" target="_blank"> <img src="https://www.oasisfinancial.com/wp-content/uploads/2019/03/AccidentMeds-horizontal-cmyk.png" alt="AcciedentMeds" class="img-fluid d-block m-auto"> </a></div>
+                        <div class="w-50 px-3"> <a href="https://www.keyhealth.net/" target="_blank"> <img src="{{asset('module/images/extra/Key-Health-horizontal-cmyk.png')}}" alt="Key" class="img-fluid d-block m-auto"> </a></div>
+                        <div class="w-50  px-3"> <a href="https://www.accidentmeds.com/" target="_blank"> <img src="{{asset('module/images/extra/Key-Health-horizontal-cmyk.png')}}" alt="AcciedentMeds" class="img-fluid d-block m-auto"> </a></div>
+                        <div class="w-50  px-3"> <a href="https://www.accidentmeds.com/" target="_blank"> <img src="{{asset('module/images/extra/Key-Health-horizontal-cmyk.png')}}" alt="AcciedentMeds" class="img-fluid d-block m-auto"> </a></div>
+                        <div class="w-50  px-3"> <a href="https://www.accidentmeds.com/" target="_blank"> <img src="{{asset('module/images/extra/Key-Health-horizontal-cmyk.png')}}" alt="AcciedentMeds" class="img-fluid d-block m-auto"> </a></div>
+                        <div class="w-50  px-3"> <a href="https://www.accidentmeds.com/" target="_blank"> <img src="{{asset('module/images/extra/Key-Health-horizontal-cmyk.png')}}" alt="AcciedentMeds" class="img-fluid d-block m-auto"> </a></div>
+                        <div class="w-50  px-3"> <a href="https://www.accidentmeds.com/" target="_blank"> <img src="{{asset('module/images/extra/Key-Health-horizontal-cmyk.png')}}" alt="AcciedentMeds" class="img-fluid d-block m-auto"> </a></div>
                     </div>
                 </div>
             </div>
         </div>
     </div>   
-    <div class="bg-secondary leaders" style="background-image: url(https://www.oasisfinancial.com/wp-content/uploads/2019/01/Depositphotos_211232802_xl-2015.jpg);">
+    <div class="bg-secondary data-pull-overlay leaders" style="background-image: url({{asset('module/images/extra/Depositphotos_211232802_xl-2015.jpg')}});">
         <div class="container pt-5 pb-4 pt-md-5 pb-md-6">
             <div class="row">
                 <div class="col-md-12 text-center">
@@ -559,7 +717,7 @@
                 <div class="col-md-5">
                    <div class="tab-content bg-white rounded px-4 py-4" id="myTabContent">
                       <div class="tab-pane data-team-member-pane fade active show" id="leaders1" role="tabpanel" aria-labelledby="leaders1-tab">
-                         <img src="https://www.oasisfinancial.com/wp-content/uploads/2019/10/Greg-Z.jpg" alt="Greg Z">
+                         <img src="{{asset('module/images/extra/Greg-Z.jpg')}}" alt="Greg Z">
                          <p class="font-weight-semibold mb-4"> Responsible for Mission, Vision and Growth</p>
                          <div class="font-size-16 border-left border-success pl-3 no-margin-bottom" style="border-width: 2px !important;">
                             <p><strong>Relevant Experience</strong></p>
@@ -576,7 +734,7 @@
                          </div>
                       </div>
                       <div class="tab-pane data-team-member-pane fade" id="leaders2" role="tabpanel" aria-labelledby="leaders2-tab">
-                         <img src="https://www.oasisfinancial.com/wp-content/uploads/2019/10/Bob-G.jpg" alt="Bob G">
+                         <img src="{{asset('module/images/extra/Bob-G.jpg')}}" alt="Bob G">
                          <p class="font-weight-semibold mb-4"> Responsible for Finance, Marketing, Human Resources and Facilities</p>
                          <div class="font-size-16 border-left border-success pl-3 no-margin-bottom" style="border-width: 2px !important;">
                             <p><strong>Relevant Experience</strong></p>
@@ -593,7 +751,7 @@
                          </div>
                       </div>
                       <div class="tab-pane data-team-member-pane fade" id="leaders3" role="tabpanel" aria-labelledby="leaders3-tab">
-                         <img src="https://www.oasisfinancial.com/wp-content/uploads/2019/10/Griffin-G.jpg" alt="Griffin G">
+                         <img src="{{asset('module/images/extra/Griffin-G.jpg')}}" alt="Griffin G">
                          <p class="font-weight-semibold mb-4"> Responsible for Operations, Analytics and Business Strategy</p>
                          <div class="font-size-16 border-left border-success pl-3 no-margin-bottom" style="border-width: 2px !important;">
                             <p><strong>Relevant Experience</strong></p>
@@ -610,7 +768,7 @@
                          </div>
                       </div>
                       <div class="tab-pane data-team-member-pane fade " id="leaders4" role="tabpanel" aria-labelledby="leaders4-tab">
-                         <img src="https://www.oasisfinancial.com/wp-content/uploads/2019/10/Mohammed-H.jpg" alt="Mohammed H">
+                         <img src="{{asset('module/images/extra/Mohammed-H.jpg')}}" alt="Mohammed H">
                          <p class="font-weight-semibold mb-4"> Responsible for Technology Strategy and Execution</p>
                          <div class="font-size-16 border-left border-success pl-3 no-margin-bottom" style="border-width: 2px !important;">
                             <p class="p1"><strong><span class="s1">Relevant Experience</span></strong></p>
@@ -628,7 +786,7 @@
                          </div>
                       </div>
                       <div class="tab-pane data-team-member-pane fade" id="leaders5" role="tabpanel" aria-labelledby="leaders5-tab">
-                         <img src="https://www.oasisfinancial.com/wp-content/uploads/2019/10/Jeff-T.jpg" alt="Jeff T">
+                         <img src="{{asset('module/images/extra/Jeff-T.jpg')}}" alt="Jeff T">
                          <p class="font-weight-semibold mb-4"> Responsible for Medical Lien Sales</p>
                          <div class="font-size-16 border-left border-success pl-3 no-margin-bottom" style="border-width: 2px !important;">
                             <p class="p1"><strong><span class="s1">Relevant Experience</span></strong></p>
@@ -646,7 +804,7 @@
                          </div>
                       </div>
                       <div class="tab-pane data-team-member-pane fade" id="leaders6" role="tabpanel" aria-labelledby="leaders6-tab">
-                         <img src="https://www.oasisfinancial.com/wp-content/uploads/2019/10/phil-g-684x1024.jpg" alt="Phil G">
+                         <img src="{{asset('module/images/extra/phil-g-684x1024.jpg')}}" alt="Phil G">
                          <p class="font-weight-semibold mb-4"> Responsible for Legal, Regulatory, Business Development and Strategy</p>
                          <div class="font-size-16 border-left border-success pl-3 no-margin-bottom" style="border-width: 2px !important;">
                             <p class="p1"><span class="s1"><strong>Relevant Experience</strong></span></p>
@@ -680,170 +838,75 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-3 col-sm-6 col-xs-6 fw600">
-                <div class="our-team">
-                    <div class="team-pic">
-                        <img src="{{ url('module/images/team/1.jpg')}}" alt="">
-                    </div>
-                    <div class="team-profile">
-                        <h3 class="team-title">
-                            <a href="team-details.html">Lan Cooper</a>
-                            <small>Manager</small>
-                        </h3>
-                        <ul class="team-social">
-                            <li><a href="#" class="fa fa-facebook"></a></li>
-                            <li><a href="#" class="fa fa-twitter"></a></li>
-                            <li><a href="#" class="fa fa-google-plus"></a></li>
-                            <li><a href="#" class="fa fa-instagram"></a></li>
-                        </ul>
+        <div class="row team-wrapper">
+            <div class="col-md-4 col-sm-6 col-xs-6 fw600">
+                <div class="single-team" style="background-image: url('{{asset('module/images/extra/Business-Strategy-Analytics-2-10-9-19.jpg')}}');">
+                    <div class="team-content"> 
+                        <span class="team-name">Business Strategy and Analytics</span>
+                        <p>The Business Strategy and Analytics team monitors business performance, identifies trends, and helps the business improve through data-driven solutions.</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-6 col-xs-6 fw60">
-                <div class="our-team">
-                    <div class="team-pic">
-                        <img src="{{ url('module/images/team/2.jpg')}}" alt="">
-                    </div>
-                    <div class="team-profile">
-                        <h3 class="team-title">
-                            <a href="team-details.html">Ezra Oliva</a>
-                            <small>Engineer</small>
-                        </h3>
-                        <ul class="team-social">
-                            <li><a href="#" class="fa fa-facebook"></a></li>
-                            <li><a href="#" class="fa fa-twitter"></a></li>
-                            <li><a href="#" class="fa fa-google-plus"></a></li>
-                            <li><a href="#" class="fa fa-instagram"></a></li>
-                        </ul>
+            <div class="col-md-4 col-sm-6 col-xs-6 fw600">
+                <div class="single-team" style="background-image: url('{{asset('module/images/extra/Business-Strategy-Analytics-2-10-9-19.jpg')}}');">
+                    <div class="team-content"> 
+                        <span class="team-name">Business Strategy and Analytics</span>
+                        <p>The Business Strategy and Analytics team monitors business performance, identifies trends, and helps the business improve through data-driven solutions.</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-6 col-xs-6 fw60">
-                <div class="our-team">
-                    <div class="team-pic">
-                        <img src="{{ url('module/images/team/3.jpg')}}" alt="">
-                    </div>
-                    <div class="team-profile">
-                        <h3 class="team-title">
-                            <a href="team-details.html">Jose Easton</a>
-                            <small>Engineer</small>
-                        </h3>
-                        <ul class="team-social">
-                            <li><a href="#" class="fa fa-facebook"></a></li>
-                            <li><a href="#" class="fa fa-twitter"></a></li>
-                            <li><a href="#" class="fa fa-google-plus"></a></li>
-                            <li><a href="#" class="fa fa-instagram"></a></li>
-                        </ul>
+            <div class="col-md-4 col-sm-6 col-xs-6 fw600">
+                <div class="single-team" style="background-image: url('{{asset('module/images/extra/Business-Strategy-Analytics-2-10-9-19.jpg')}}');">
+                    <div class="team-content"> 
+                        <span class="team-name">Business Strategy and Analytics</span>
+                        <p>The Business Strategy and Analytics team monitors business performance, identifies trends, and helps the business improve through data-driven solutions.</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-6 col-xs-6 fw60">
-                <div class="our-team">
-                    <div class="team-pic">
-                        <img src="{{ url('module/images/team/4.jpg')}}" alt="">
-                    </div>
-                    <div class="team-profile">
-                        <h3 class="team-title">
-                            <a href="team-details.html">Brandon Tyler</a>
-                            <small>CEO</small>
-                        </h3>
-                        <ul class="team-social">
-                            <li><a href="#" class="fa fa-facebook"></a></li>
-                            <li><a href="#" class="fa fa-twitter"></a></li>
-                            <li><a href="#" class="fa fa-google-plus"></a></li>
-                            <li><a href="#" class="fa fa-instagram"></a></li>
-                        </ul>
+            <div class="col-md-4 col-sm-6 col-xs-6 fw600">
+                <div class="single-team" style="background-image: url('{{asset('module/images/extra/Business-Strategy-Analytics-2-10-9-19.jpg')}}');">
+                    <div class="team-content"> 
+                        <span class="team-name">Business Strategy and Analytics</span>
+                        <p>The Business Strategy and Analytics team monitors business performance, identifies trends, and helps the business improve through data-driven solutions.</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-6 col-xs-6 fw60">
-                <div class="our-team">
-                    <div class="team-pic">
-                        <img src="{{ url('module/images/team/5.jpg')}}" alt="">
-                    </div>
-                    <div class="team-profile">
-                        <h3 class="team-title">
-                            <a href="team-details.html">Xavier Leo</a>
-                            <small>Engineer</small>
-                        </h3>
-                        <ul class="team-social">
-                            <li><a href="#" class="fa fa-facebook"></a></li>
-                            <li><a href="#" class="fa fa-twitter"></a></li>
-                            <li><a href="#" class="fa fa-google-plus"></a></li>
-                            <li><a href="#" class="fa fa-instagram"></a></li>
-                        </ul>
+            <div class="col-md-4 col-sm-6 col-xs-6 fw600">
+                    <img style="padding: 5px 5px 5px; margin: 15px 0;" src="{{asset('module/images/extra/Business-Strategy-Analytics-2-10-9-19.jpg')}}" />
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-6 fw600">
+                <div class="single-team" style="background-image: url('{{asset('module/images/extra/Business-Strategy-Analytics-2-10-9-19.jpg')}}');">
+                    <div class="team-content"> 
+                        <span class="team-name">Business Strategy and Analytics</span>
+                        <p>The Business Strategy and Analytics team monitors business performance, identifies trends, and helps the business improve through data-driven solutions.</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-6 col-xs-6 fw60">
-                <div class="our-team">
-                    <div class="team-pic">
-                        <img src="{{ url('module/images/team/6.jpg')}}" alt="">
-                    </div>
-                    <div class="team-profile">
-                        <h3 class="team-title">
-                            <a href="team-details.html">Jason Carson</a>
-                            <small>CEO</small>
-                        </h3>
-                        <ul class="team-social">
-                            <li><a href="#" class="fa fa-facebook"></a></li>
-                            <li><a href="#" class="fa fa-twitter"></a></li>
-                            <li><a href="#" class="fa fa-google-plus"></a></li>
-                            <li><a href="#" class="fa fa-instagram"></a></li>
-                        </ul>
+            <div class="col-md-4 col-sm-6 col-xs-6 fw600">
+                <div class="single-team" style="background-image: url('{{asset('module/images/extra/Business-Strategy-Analytics-2-10-9-19.jpg')}}');">
+                    <div class="team-content"> 
+                        <span class="team-name">Business Strategy and Analytics</span>
+                        <p>The Business Strategy and Analytics team monitors business performance, identifies trends, and helps the business improve through data-driven solutions.</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-6 col-xs-6 fw60">
-                <div class="our-team">
-                    <div class="team-pic">
-                        <img src="{{ url('module/images/team/7.jpg')}}" alt="">
-                    </div>
-                    <div class="team-profile">
-                        <h3 class="team-title">
-                            <a href="team-details.html">Lio Maria</a>
-                            <small>CEO</small>
-                        </h3>
-                        <ul class="team-social">
-                            <li><a href="#" class="fa fa-facebook"></a></li>
-                            <li><a href="#" class="fa fa-twitter"></a></li>
-                            <li><a href="#" class="fa fa-google-plus"></a></li>
-                            <li><a href="#" class="fa fa-instagram"></a></li>
-                        </ul>
+            <div class="col-md-4 col-sm-6 col-xs-6 fw600">
+                <div class="single-team" style="background-image: url('{{asset('module/images/extra/Business-Strategy-Analytics-2-10-9-19.jpg')}}');">
+                    <div class="team-content"> 
+                        <span class="team-name">Business Strategy and Analytics</span>
+                        <p>The Business Strategy and Analytics team monitors business performance, identifies trends, and helps the business improve through data-driven solutions.</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-6 col-xs-6 fw60">
-                <div class="our-team">
-                    <div class="team-pic">
-                        <img src="{{ url('module/images/team/8.jpg')}}" alt="">
-                    </div>
-                    <div class="team-profile">
-                        <h3 class="team-title">
-                            <a href="team-details.html">Jason Roy</a>
-                            <small>CEO</small>
-                        </h3>
-                        <ul class="team-social">
-                            <li><a href="#" class="fa fa-facebook"></a></li>
-                            <li><a href="#" class="fa fa-twitter"></a></li>
-                            <li><a href="#" class="fa fa-google-plus"></a></li>
-                            <li><a href="#" class="fa fa-instagram"></a></li>
-                        </ul>
+            <div class="col-md-4 col-sm-6 col-xs-6 fw600">
+                <div class="single-team" style="background-image: url('{{asset('module/images/extra/Business-Strategy-Analytics-2-10-9-19.jpg')}}');">
+                    <div class="team-content"> 
+                        <span class="team-name">Business Strategy and Analytics</span>
+                        <p>The Business Strategy and Analytics team monitors business performance, identifies trends, and helps the business improve through data-driven solutions.</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-12 col-sm-12 col-xs-12 text-center">
-                <ul class="pagination">
-                    <li class="disabled"><a href="#">«</a></li>
-                    <li class="active"><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li><a href="#">»</a></li>
-                </ul>
-            </div>
+            
         </div>
     </div>
 </section>
@@ -858,19 +921,21 @@
             </div>
         </div>
     </div>
-    <div class="team-full mb-5" style="background-image:url( 'https://www.oasisfinancial.com/wp-content/uploads/2019/11/oasis-team.jpg' );">
+    <div class="team-full mb-5" style="background-image:url('{{asset('module/images/extra/oasis-team.jpg')}}');">
         <div class="container">
            <div class="row">
               <div class="col-lg-5 col-md-6">
                  <div class="team-left">
-                    <p>If you crave a high energy culture, possess a strong work ethic, and seek rewards that match achievement, review our <a href="http://www.oasisfinancial.com/about-oasis/careers/"><span style="text-decoration: underline;"><strong>open jobs</strong></span></a> and apply today!</p>
+                    <p>If you crave a high energy culture, possess a strong work ethic, and seek rewards that match achievement, review our <a href="{{url('careers')}}"><span style="text-decoration: underline;"><strong>open jobs</strong></span></a> and apply today!</p>
                  </div>
               </div>
            </div>
         </div>
      </div>
 </section>
-<section class="team-inner-area" style="padding: 0px;">
+
+
+<section class="team-inner-area" style="padding: 0px; margin-bottom:20px;">
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
@@ -880,13 +945,28 @@
             </div>
         </div>
         <div class="row justify-content-center" style="padding-left: 100px;">
-            <div class="col-md-4 px-4 text-center"> <a href="https://www.oasisfinancial.com/oasis-financial-and-key-health-team-up-with-los-angeles-trial-lawyers-charities/" class="d-block mediaLink py-md-0"> <img src="https://www.oasisfinancial.com/wp-content/uploads/2019/01/Videos-Copy.png" class="d-block ml-auto mr-auto img-fluid rounded mb-4" alt="Oasis media" style="height:90px; width:auto;"> <span class="font-size-24 font-weight-bold d-block"> Oasis Financial and Key Health team up with Los Angeles Trial Lawyers Charities </span> </a></div>
-            <div class="col-md-4 px-4 text-center"> <a href="https://www.oasisfinancial.com/oasis-partners-with-nonprofit-arc-to-increase-consumer-financial-wellness/" class="d-block mediaLink py-md-0"> <img src="https://www.oasisfinancial.com/wp-content/uploads/2019/01/ARC-LOGO-PNG.png" class="d-block ml-auto mr-auto img-fluid rounded mb-4" alt="Oasis media" style="height:90px; width:auto;"> <span class="font-size-24 font-weight-bold d-block"> Oasis Partners with Nonprofit ARC to Increase Consumer Financial Wellness </span> </a></div>
-            <div class="col-md-4 px-4 text-center"> <a href="https://www.oasisfinancial.com/oasis-receives-bbb-a-certification/" class="d-block mediaLink py-md-0"> <img src="https://www.oasisfinancial.com/wp-content/uploads/2019/01/BBB-A-rating-1.png" class="d-block ml-auto mr-auto img-fluid rounded mb-4" alt="Oasis media" style="height:90px; width:auto;"> <span class="font-size-24 font-weight-bold d-block"> Oasis Receives BBB A+ Certification </span> </a></div>
+            
+            <div class="col-md-4 px-4 text-center"> 
+                <a href="#" class="d-block mediaLink py-md-0"> 
+                    <img src="{{asset('module/images/extra/Videos-Copy.png')}}" class="d-block ml-auto mr-auto img-fluid rounded mb-4" alt="Oasis media" style="height:90px; width:auto;"> <span class="font-size-24 font-weight-bold d-block"> Oasis Financial and Key Health team up with Los Angeles Trial Lawyers Charities </span> </a></div>
+            <div class="col-md-4 px-4 text-center"> 
+                <a href="#" class="d-block mediaLink py-md-0"> 
+                    <img src="{{asset('module/images/extra/ARC-LOGO-PNG.png')}}" class="d-block ml-auto mr-auto img-fluid rounded mb-4" alt="Oasis media" style="height:90px; width:auto;"> <span class="font-size-24 font-weight-bold d-block"> 
+                Oasis Partners with Nonprofit ARC to Increase Consumer Financial Wellness </span> </a></div>
+            <div class="col-md-4 px-4 text-center"> <a href="#" class="d-block mediaLink py-md-0"> 
+                <img src="{{asset('module/images/extra/BBB-A-rating-1.png')}}" class="d-block ml-auto mr-auto img-fluid rounded mb-4" alt="Oasis media" style="height:90px; width:auto;"> <span class="font-size-24 font-weight-bold d-block"> Oasis Receives BBB A+ Certification </span> </a></div>
          </div>
+         <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                    <a href="{{url('contact-us')}}" class="btn btn-danger simple-btn"> Media inquiries: Contact Us <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+                </div>   
+                
+            </div>
     </div>
     
 </section>
+
+
 @endsection
 @section('js')
     <script type="text/javascript">
@@ -898,6 +978,7 @@
             //$('.data-pills-init').children('li:eq(0)').attr('aria-selected','true');
 
             $('.data-team-member').click(function(){
+                console.log('Click Initiated');
                 $.each($('.data-team-member'),function(key,row){
                     $(row).attr('class','nav-link data-team-member');
                     $(row).attr('aria-selected','false');
@@ -916,9 +997,8 @@
                 $(panelID).addClass('show');
             });
 
-            window.location.href="#leaders1";
 
-            $('.data-pills-init').children('li:eq(0)').trigger('click');
+            $('#leaders1-tab').trigger('click');
         });
     </script>
 @endsection

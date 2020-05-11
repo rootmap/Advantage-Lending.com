@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'FrontModuleController@index');
 
 Auth::routes();
 
@@ -25,6 +23,7 @@ Route::get('/about-advantage-lending', 'FrontModuleController@about');
 Route::get('/faq', 'FrontModuleController@faq');
 Route::get('/for-attorneys', 'FrontModuleController@forattorneys');
 Route::get('/resource', 'FrontModuleController@resources');
+Route::get('/resource-details', 'FrontModuleController@resourcesDetails');
 Route::get('/contact-us', 'FrontModuleController@contactus');
 Route::get('/careers', 'FrontModuleController@careers');
 Route::get('/for-brokers', 'FrontModuleController@forbrokers');
@@ -32,6 +31,9 @@ Route::get('/complete-application', 'FrontModuleController@completeapplication')
 Route::get('/structured-settlement-application-form', 'FrontModuleController@structuredsettlementapplicationform');
 Route::get('/inheritance-funding', 'FrontModuleController@inheritancefunding');
 Route::get('/need-an-attorney', 'FrontModuleController@needanattorney');
+Route::get('/terms-of-use', 'FrontModuleController@termsOfUse');
+Route::get('/privacy-policy', 'FrontModuleController@privacyPolicy');
+Route::get('/state-specific-licenses', 'FrontModuleController@stateSpecificLicenses');
 Route::get('/crud', 'CrudController@crud')->name('crud');
 Route::post('/crud', 'CrudController@crudgenarate')->name('crudgenarate');
 
@@ -113,3 +115,55 @@ Route::post('/structuredsettlementapplicationform/ajax','Structuredsettlementapp
 Route::post('/structuredsettlementapplicationform/datatable/ajax','StructuredsettlementapplicationformController@datatable');
 Route::post('/structuredsettlementapplicationform/update/{id}','StructuredsettlementapplicationformController@update');
 //======================== Structuredsettlementapplicationform Route End ===============================//
+//======================== Inheritancefundingform Route Start ===============================//
+Route::get('/inheritancefundingform/list','InheritancefundingformController@show');
+Route::get('/inheritancefundingform/create','InheritancefundingformController@create');
+Route::get('/inheritancefundingform/edit/{id}','InheritancefundingformController@edit');
+Route::get('/inheritancefundingform/delete/{id}','InheritancefundingformController@destroy');
+Route::get('/inheritancefundingform','InheritancefundingformController@index');
+Route::get('/inheritancefundingform/export/excel','InheritancefundingformController@ExportExcel');
+Route::get('/inheritancefundingform/export/pdf','InheritancefundingformController@ExportPDF');
+Route::post('/inheritancefundingform','InheritancefundingformController@store');
+Route::post('/inheritancefundingform/ajax','InheritancefundingformController@ajaxSave');
+Route::post('/inheritancefundingform/datatable/ajax','InheritancefundingformController@datatable');
+Route::post('/inheritancefundingform/update/{id}','InheritancefundingformController@update');
+//======================== Inheritancefundingform Route End ===============================//
+//======================== Needanattorney Route Start ===============================//
+Route::get('/needanattorney/list','NeedanattorneyController@show');
+Route::get('/needanattorney/create','NeedanattorneyController@create');
+Route::get('/needanattorney/edit/{id}','NeedanattorneyController@edit');
+Route::get('/needanattorney/delete/{id}','NeedanattorneyController@destroy');
+Route::get('/needanattorney','NeedanattorneyController@index');
+Route::get('/needanattorney/export/excel','NeedanattorneyController@ExportExcel');
+Route::get('/needanattorney/export/pdf','NeedanattorneyController@ExportPDF');
+Route::post('/needanattorney','NeedanattorneyController@store');
+Route::post('/needanattorney/ajax','NeedanattorneyController@ajaxSave');
+Route::post('/needanattorney/datatable/ajax','NeedanattorneyController@datatable');
+Route::post('/needanattorney/update/{id}','NeedanattorneyController@update');
+//======================== Needanattorney Route End ===============================//
+//======================== Contactmeabout Route Start ===============================//
+Route::get('/contactmeabout/list','ContactmeaboutController@show');
+Route::get('/contactmeabout/create','ContactmeaboutController@create');
+Route::get('/contactmeabout/edit/{id}','ContactmeaboutController@edit');
+Route::get('/contactmeabout/delete/{id}','ContactmeaboutController@destroy');
+Route::get('/contactmeabout','ContactmeaboutController@index');
+Route::get('/contactmeabout/export/excel','ContactmeaboutController@ExportExcel');
+Route::get('/contactmeabout/export/pdf','ContactmeaboutController@ExportPDF');
+Route::post('/contactmeabout','ContactmeaboutController@store');
+Route::post('/contactmeabout/ajax','ContactmeaboutController@ajaxSave');
+Route::post('/contactmeabout/datatable/ajax','ContactmeaboutController@datatable');
+Route::post('/contactmeabout/update/{id}','ContactmeaboutController@update');
+//======================== Contactmeabout Route End ===============================//
+//======================== Contactrequest Route Start ===============================//
+Route::get('/contactrequest/list','ContactrequestController@show');
+Route::get('/contactrequest/create','ContactrequestController@create');
+Route::get('/contactrequest/edit/{id}','ContactrequestController@edit');
+Route::get('/contactrequest/delete/{id}','ContactrequestController@destroy');
+Route::get('/contactrequest','ContactrequestController@index');
+Route::get('/contactrequest/export/excel','ContactrequestController@ExportExcel');
+Route::get('/contactrequest/export/pdf','ContactrequestController@ExportPDF');
+Route::post('/contactrequest','ContactrequestController@store');
+Route::post('/contactrequest/ajax','ContactrequestController@ajaxSave');
+Route::post('/contactrequest/datatable/ajax','ContactrequestController@datatable');
+Route::post('/contactrequest/update/{id}','ContactrequestController@update');
+//======================== Contactrequest Route End ===============================//

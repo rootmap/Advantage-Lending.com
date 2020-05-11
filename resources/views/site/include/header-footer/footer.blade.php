@@ -5,7 +5,7 @@
             <div class="col-lg-2 col-md-2 col-sm-12">
                 <div class="footer-about-col mb50">
                     <div class="footer-logo">
-                        <a href="#"><img class="img-responsive" src="{{asset('module/images/logo-2.png')}}" alt=""></a>
+                        <a href="#"><img class="img-responsive" src="{{asset('module/resource/logo-2.png')}}" alt=""></a>
                     </div>
                 </div>
             </div>
@@ -15,22 +15,22 @@
                         <div class="footer-post-col clearfix">
                             <ul>
                                 <li>
-                                    <a href="#" class="footer-menu-link">
+                                    <a href="{{ url('how-it-works') }}" class="footer-menu-link">
                                         <i class="fa fa-angle-double-right" aria-hidden="true"></i> How It Works
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" class="footer-menu-link">
+                                    <a href="{{ url('types-of-funding') }}" class="footer-menu-link">
                                         <i class="fa fa-angle-double-right" aria-hidden="true"></i> Types of Funding
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" class="footer-menu-link">
-                                        <i class="fa fa-angle-double-right" aria-hidden="true"></i> About Oasis
+                                    <a href="{{ url('about-advantage-lending') }}" class="footer-menu-link">
+                                        <i class="fa fa-angle-double-right" aria-hidden="true"></i> About Us
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" class="footer-menu-link">
+                                    <a href="{{ url('resource') }}" class="footer-menu-link">
                                         <i class="fa fa-angle-double-right" aria-hidden="true"></i> Resources
                                     </a>
                                 </li>
@@ -41,22 +41,22 @@
                         <div class="footer-post-col clearfix">
                             <ul>
                                 <li>
-                                    <a href="#" class="footer-menu-link">
+                                    <a href="{{ url('for-attorneys') }}" class="footer-menu-link">
                                         <i class="fa fa-angle-double-right" aria-hidden="true"></i> For Attorneys
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" class="footer-menu-link">
+                                    <a href="{{ url('for-brokers') }}" class="footer-menu-link">
                                         <i class="fa fa-angle-double-right" aria-hidden="true"></i> For Brokers
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" class="footer-menu-link">
+                                    <a href="{{ url('faq') }}" class="footer-menu-link">
                                         <i class="fa fa-angle-double-right" aria-hidden="true"></i> FAQ 
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" class="footer-menu-link">
+                                    <a href="{{ url('contact-us') }}" class="footer-menu-link">
                                         <i class="fa fa-angle-double-right" aria-hidden="true"></i> Contact Us
                                     </a>
                                 </li>
@@ -67,12 +67,12 @@
                         <div class="footer-post-col clearfix">
                             <ul>
                                 <li>
-                                    <a href="#" class="footer-menu-link">
+                                    <a href="{{ url('careers') }}" class="footer-menu-link">
                                         <i class="fa fa-angle-double-right" aria-hidden="true"></i> Careers
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" class="footer-menu-link">
+                                    <a href="{{url('terms-of-use')}}" class="footer-menu-link">
                                         <i class="fa fa-angle-double-right" aria-hidden="true"></i> Terms of Use
                                     </a>
                                 </li>
