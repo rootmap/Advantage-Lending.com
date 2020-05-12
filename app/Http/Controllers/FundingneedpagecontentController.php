@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\ResourceContentInfo;
+use App\FundingNeedPageContent;
 use App\AdminLog;
 use Illuminate\Http\Request;
 
-class ResourceContentInfoController extends Controller
+class FundingNeedPageContentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,20 +14,19 @@ class ResourceContentInfoController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    private $moduleName="Resource Content Info";
+    private $moduleName="Funding Need Page Content";
     private $sdc;
     public function __construct(){ $this->sdc = new CoreCustomController(); }
     
     public function index(){
-        $tabCount=ResourceContentInfo::count();
-        
+        $tabCount=FundingNeedPageContent::count();
         if($tabCount==0)
         {
-            return redirect(url('resourcecontentinfo/create'));
+            return redirect(url('fundingneedpagecontent/create'));
         }else{
-            $tab=ResourceContentInfo::orderBy('id','DESC')->first();
-            //dd($tab);   
-        return view('admin.pages.resourcecontentinfo.resourcecontentinfo_edit',['dataRow'=>$tab,'edit'=>true]); 
+
+            $tab=FundingNeedPageContent::orderBy('id','DESC')->first();      
+        return view('admin.pages.fundingneedpagecontent.fundingneedpagecontent_edit',['dataRow'=>$tab,'edit'=>true]); 
         }
         
     }
@@ -41,15 +40,15 @@ class ResourceContentInfoController extends Controller
 
 
         
-        $tabCount=ResourceContentInfo::count();
+        $tabCount=FundingNeedPageContent::count();
         if($tabCount==0)
         {            
-        return view('admin.pages.resourcecontentinfo.resourcecontentinfo_create');
+        return view('admin.pages.fundingneedpagecontent.fundingneedpagecontent_create');
             
         }else{
 
-            $tab=ResourceContentInfo::orderBy('id','DESC')->first();      
-        return view('admin.pages.resourcecontentinfo.resourcecontentinfo_edit',['dataRow'=>$tab,'edit'=>true]); 
+            $tab=FundingNeedPageContent::orderBy('id','DESC')->first();      
+        return view('admin.pages.fundingneedpagecontent.fundingneedpagecontent_edit',['dataRow'=>$tab,'edit'=>true]); 
         }
         
     }
@@ -76,17 +75,26 @@ class ResourceContentInfoController extends Controller
     {
         $this->validate($request,[
                 
+                'title'=>'required',
+                'detail'=>'required',
+                'bottom_button_text'=>'required',
+                'bottom_button_url'=>'required',
+                'module_status'=>'required',
         ]);
 
-        $this->SystemAdminLog("Resource Content Info","Save New","Create New");
+        $this->SystemAdminLog("Funding Need Page Content","Save New","Create New");
 
         
-        $tab=new ResourceContentInfo();
+        $tab=new FundingNeedPageContent();
         
+        $tab->title=$request->title;
         $tab->detail=$request->detail;
+        $tab->bottom_button_text=$request->bottom_button_text;
+        $tab->bottom_button_url=$request->bottom_button_url;
+        $tab->module_status=$request->module_status;
         $tab->save();
 
-        return redirect('resourcecontentinfo')->with('status','Added Successfully !');
+        return redirect('fundingneedpagecontent')->with('status','Added Successfully !');
 
     }
 
@@ -94,11 +102,20 @@ class ResourceContentInfoController extends Controller
     {
         $this->validate($request,[
                 
+                'title'=>'required',
+                'detail'=>'required',
+                'bottom_button_text'=>'required',
+                'bottom_button_url'=>'required',
+                'module_status'=>'required',
         ]);
 
-        $tab=new ResourceContentInfo();
+        $tab=new FundingNeedPageContent();
         
+        $tab->title=$request->title;
         $tab->detail=$request->detail;
+        $tab->bottom_button_text=$request->bottom_button_text;
+        $tab->bottom_button_url=$request->bottom_button_url;
+        $tab->module_status=$request->module_status;
         $tab->save();
 
         echo json_encode(array("status"=>"success","msg"=>"Added Successfully."));
@@ -108,7 +125,7 @@ class ResourceContentInfoController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\ResourceContentInfo  $resourcecontentinfo
+     * @param  \App\FundingNeedPageContent  $fundingneedpagecontent
      * @return \Illuminate\Http\Response
      */
 
@@ -118,7 +135,11 @@ class ResourceContentInfoController extends Controller
                      ->where('store_id',$this->sdc->storeID())->orderBy('id','DESC')
                      ->when($search, function ($query) use ($search) {
                         $query->where('id','LIKE','%'.$search.'%');
+                            $query->orWhere('title','LIKE','%'.$search.'%');
                             $query->orWhere('detail','LIKE','%'.$search.'%');
+                            $query->orWhere('bottom_button_text','LIKE','%'.$search.'%');
+                            $query->orWhere('bottom_button_url','LIKE','%'.$search.'%');
+                            $query->orWhere('module_status','LIKE','%'.$search.'%');
                             $query->orWhere('created_at','LIKE','%'.$search.'%');
 
                         return $query;
@@ -134,7 +155,11 @@ class ResourceContentInfoController extends Controller
                      ->where('store_id',$this->sdc->storeID())->orderBy('id','DESC')
                      ->when($search, function ($query) use ($search) {
                         $query->where('id','LIKE','%'.$search.'%');
+                            $query->orWhere('title','LIKE','%'.$search.'%');
                             $query->orWhere('detail','LIKE','%'.$search.'%');
+                            $query->orWhere('bottom_button_text','LIKE','%'.$search.'%');
+                            $query->orWhere('bottom_button_url','LIKE','%'.$search.'%');
+                            $query->orWhere('module_status','LIKE','%'.$search.'%');
                             $query->orWhere('created_at','LIKE','%'.$search.'%');
 
                         return $query;
@@ -167,11 +192,11 @@ class ResourceContentInfoController extends Controller
     }
 
     
-    public function ResourceContentInfoQuery($request)
+    public function FundingNeedPageContentQuery($request)
     {
-        $ResourceContentInfo_data=ResourceContentInfo::orderBy('id','DESC')->get();
+        $FundingNeedPageContent_data=FundingNeedPageContent::orderBy('id','DESC')->get();
 
-        return $ResourceContentInfo_data;
+        return $FundingNeedPageContent_data;
     }
     
    
@@ -181,18 +206,18 @@ class ResourceContentInfoController extends Controller
          $dataDateTimeIns=formatDateTime(date('d-M-Y H:i:s a'));
         $data=array();
         $array_column=array(
-                                'ID','Detail','Created Date');
+                                'ID','Title','Detail','Bottom Button Text','Bottom Button URL','Module Status','Created Date');
         array_push($data, $array_column);
-        $inv=$this->ResourceContentInfoQuery($request);
+        $inv=$this->FundingNeedPageContentQuery($request);
         foreach($inv as $voi):
             $inv_arry=array(
-                                $voi->id,$voi->detail,formatDate($voi->created_at));
+                                $voi->id,$voi->title,$voi->detail,$voi->bottom_button_text,$voi->bottom_button_url,$voi->module_status,formatDate($voi->created_at));
             array_push($data, $inv_arry);
         endforeach;
 
         $excelArray=array(
-            'report_name'=>'Resource Content Info Report',
-            'report_title'=>'Resource Content Info Report',
+            'report_name'=>'Funding Need Page Content Report',
+            'report_title'=>'Funding Need Page Content Report',
             'report_description'=>'Report Genarated : '.$dataDateTimeIns,
             'data'=>$data
         );
@@ -208,18 +233,30 @@ class ResourceContentInfoController extends Controller
                 <thead>
                 <tr>
                 <th class='text-center' style='font-size:12px;'>ID</th>
+                            <th class='text-center' style='font-size:12px;' >Title</th>
+                        
                             <th class='text-center' style='font-size:12px;' >Detail</th>
+                        
+                            <th class='text-center' style='font-size:12px;' >Bottom Button Text</th>
+                        
+                            <th class='text-center' style='font-size:12px;' >Bottom Button URL</th>
+                        
+                            <th class='text-center' style='font-size:12px;' >Module Status</th>
                         
                 <th class='text-center' style='font-size:12px;'>Created Date</th>
                 </tr>
                 </thead>
                 <tbody>";
 
-                    $inv=$this->ResourceContentInfoQuery($request);
+                    $inv=$this->FundingNeedPageContentQuery($request);
                     foreach($inv as $voi):
                         $html .="<tr>
                         <td style='font-size:12px;' class='text-center'>".$voi->id."</td>
+                        <td style='font-size:12px;' class='text-center'>".$voi->title."</td>
                         <td style='font-size:12px;' class='text-center'>".$voi->detail."</td>
+                        <td style='font-size:12px;' class='text-center'>".$voi->bottom_button_text."</td>
+                        <td style='font-size:12px;' class='text-center'>".$voi->bottom_button_url."</td>
+                        <td style='font-size:12px;' class='text-center'>".$voi->module_status."</td>
                         <td style='font-size:12px; text-align:center;' class='text-center'>".formatDate($voi->created_at)."</td>
                         </tr>";
 
@@ -233,64 +270,72 @@ class ResourceContentInfoController extends Controller
 
                 ";
 
-                $this->sdc->PDFLayout('Resource Content Info Report',$html);
+                $this->sdc->PDFLayout('Funding Need Page Content Report',$html);
 
 
     }
-    public function show(ResourceContentInfo $resourcecontentinfo)
+    public function show(FundingNeedPageContent $fundingneedpagecontent)
     {
         
-        $tab=ResourceContentInfo::all();return view('admin.pages.resourcecontentinfo.resourcecontentinfo_list',['dataRow'=>$tab]);
+        $tab=FundingNeedPageContent::all();return view('admin.pages.fundingneedpagecontent.fundingneedpagecontent_list',['dataRow'=>$tab]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\ResourceContentInfo  $resourcecontentinfo
+     * @param  \App\FundingNeedPageContent  $fundingneedpagecontent
      * @return \Illuminate\Http\Response
      */
-    public function edit(ResourceContentInfo $resourcecontentinfo,$id=0)
+    public function edit(FundingNeedPageContent $fundingneedpagecontent,$id=0)
     {
-        $tab=ResourceContentInfo::find($id);      
-        return view('admin.pages.resourcecontentinfo.resourcecontentinfo_edit',['dataRow'=>$tab,'edit'=>true]);  
+        $tab=FundingNeedPageContent::find($id);      
+        return view('admin.pages.fundingneedpagecontent.fundingneedpagecontent_edit',['dataRow'=>$tab,'edit'=>true]);  
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\ResourceContentInfo  $resourcecontentinfo
+     * @param  \App\FundingNeedPageContent  $fundingneedpagecontent
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ResourceContentInfo $resourcecontentinfo,$id=0)
+    public function update(Request $request, FundingNeedPageContent $fundingneedpagecontent,$id=0)
     {
         $this->validate($request,[
                 
+                'title'=>'required',
+                'detail'=>'required',
+                'bottom_button_text'=>'required',
+                'bottom_button_url'=>'required',
+                'module_status'=>'required',
         ]);
 
-        $this->SystemAdminLog("Resource Content Info","Update","Edit / Modify");
+        $this->SystemAdminLog("Funding Need Page Content","Update","Edit / Modify");
 
         
-        $tab=ResourceContentInfo::find($id);
+        $tab=FundingNeedPageContent::find($id);
         
+        $tab->title=$request->title;
         $tab->detail=$request->detail;
-        //dd($tab);
+        $tab->bottom_button_text=$request->bottom_button_text;
+        $tab->bottom_button_url=$request->bottom_button_url;
+        $tab->module_status=$request->module_status;
         $tab->save();
 
-        return redirect('resourcecontentinfo')->with('status','Updated Successfully !');
+        return redirect('fundingneedpagecontent')->with('status','Updated Successfully !');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\ResourceContentInfo  $resourcecontentinfo
+     * @param  \App\FundingNeedPageContent  $fundingneedpagecontent
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ResourceContentInfo $resourcecontentinfo,$id=0)
+    public function destroy(FundingNeedPageContent $fundingneedpagecontent,$id=0)
     {
-        $this->SystemAdminLog("Resource Content Info","Destroy","Delete");
+        $this->SystemAdminLog("Funding Need Page Content","Destroy","Delete");
 
-        $tab=ResourceContentInfo::find($id);
+        $tab=FundingNeedPageContent::find($id);
         $tab->delete();
-        return redirect('resourcecontentinfo')->with('status','Deleted Successfully !');}
+        return redirect('fundingneedpagecontent')->with('status','Deleted Successfully !');}
 }

@@ -1,17 +1,17 @@
 
 @extends("admin.layout.master")
-@section("title","Resource Content")
+@section("title","Funding Need Page Content")
 @section("content")
         <section class="content-header">
           <div class="container-fluid">
             <div class="row mb-2">
               <div class="col-sm-6">
-                <h1>Resource Content</h1>
+                <h1>Funding Need Page Content</h1>
               </div>
               <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                  <li class="breadcrumb-item"><a href="{{url('resourcecontent/create')}}">Create New </a></li>
-                  <li class="breadcrumb-item active">Resource Content Data</li>
+                  <li class="breadcrumb-item"><a href="{{url('fundingneedpagecontent/create')}}">Create New </a></li>
+                  <li class="breadcrumb-item active">Funding Need Page Content Data</li>
                 </ol>
               </div>
             </div>
@@ -30,23 +30,23 @@
               <div class="card">
 
                 <div class="card-header">
-                  <h3 class="card-title">Resource Content Data</h3>
+                  <h3 class="card-title">Funding Need Page Content Data</h3>
 
                     <div class="card-tools">
                       <ul class="pagination pagination-sm float-right">
                         <li class="page-item">
-                            <a class="page-link bg-primary" href="{{url('resourcecontent/create')}}"> 
+                            <a class="page-link bg-primary" href="{{url('fundingneedpagecontent/create')}}"> 
                                 Add New 
                                 <i class="fas fa-plus"></i> 
                             </a>
                         </li>
                         <li class="page-item">
-                          <a class="page-link" target="_blank" href="{{url('resourcecontent/export/pdf')}}">
+                          <a class="page-link" target="_blank" href="{{url('fundingneedpagecontent/export/pdf')}}">
                             <i class="fas fa-file-pdf" data-toggle="tooltip" data-html="true"title="Pdf"></i>
                           </a>
                         </li>
                         <li class="page-item">
-                          <a class="page-link" target="_blank" href="{{url('resourcecontent/export/excel')}}">
+                          <a class="page-link" target="_blank" href="{{url('fundingneedpagecontent/export/excel')}}">
                             <i class="fas fa-file-excel" data-toggle="tooltip" data-html="true"title="Excel"></i>
                           </a>
                         </li>
@@ -62,8 +62,6 @@
                     <thead>
                         <tr>
                             <th class="text-center">ID</th>
-                            <th class="text-center">Title</th>
-                            <th class="text-center">Image</th>
                             <th class="text-center">Created At</th>
                             <th class="text-center">Actions</th>
 
@@ -74,19 +72,14 @@
                             @foreach($dataRow as $row)  
                                 <tr>
                                     <td class="text-center">{{$row->id}}</td>
-                                    <td class="text-center">{{$row->title}}</td>
-                                    <td class="text-center">
-                                      <img class="img-thumbnail" src="{{url('upload/resourcecontent/'.$row->image)}}" width="70">
-                                    
-                                    </td>
                                     <td>{{formatDate($row->created_at)}}</td>
                                     <td>
                                         <div class="btn-group">
-                                            <a href="{{url('resourcecontent/edit/'.$row->id)}}" type="button" class="btn btn-default">
+                                            <a href="{{url('fundingneedpagecontent/edit/'.$row->id)}}" type="button" class="btn btn-default">
                                                 Edit 
                                                 <i class="fas fa-edit"></i>
                                             </a>
-                                            <a href="{{url('resourcecontent/delete/'.$row->id)}}" type="button" class="btn btn-default">
+                                            <a href="{{url('fundingneedpagecontent/delete/'.$row->id)}}" type="button" class="btn btn-default">
                                                 Delete 
                                                 <i class="fas fa-trash-alt"></i>
                                             </a>
@@ -101,8 +94,6 @@
                     <tfoot>
                     <tr>
                         <th class="text-center">ID</th>
-                        <th class="text-center">Title</th>
-                        <th class="text-center">Image</th>
                         <th class="text-center">Created At</th>
                         <th class="text-center">Actions</th>
 

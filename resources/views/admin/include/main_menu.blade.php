@@ -37,8 +37,8 @@
               <p>Dashboard</p>
             </a>
           </li>
-          <li class="nav-item has-treeview {{ in_array(Request::path(),array('slideranimatedtext','slidercontent','howwehelp','betterdaysstarttoday','fundingyouneedcontent','fundingyouneeddata','youarenotalonecontent','youarenotalonevideos','helpcasetypes','helpcasetypesdata','glossarycontent','glossarydata'))?'menu-open':'' }}">
-            <a href="#" class="nav-link {{ in_array(Request::path(),array('slideranimatedtext','slidercontent','howwehelp','betterdaysstarttoday','fundingyouneedcontent','fundingyouneeddata','youarenotalonecontent','youarenotalonevideos','helpcasetypes','helpcasetypesdata','glossarycontent','glossarydata'))?'active':'' }}">
+          <li class="nav-item has-treeview {{ in_array(Request::path(),array('slider','howwehelp','betterdaysstart','fundingneedpagecontent','fundingyouneed','youarenotalone','youarenotalonevideo','helpcasetypes','helpcasetypesdata','glossarycontent','glossarydata'))?'menu-open':'' }}">
+            <a href="#" class="nav-link {{ in_array(Request::path(),array('slider','howwehelp','betterdaysstart','fundingneedpagecontent','fundingyouneed','youarenotalone','youarenotalonevideo','helpcasetypes','helpcasetypesdata','glossarycontent','glossarydata'))?'active':'' }}">
               <i class="nav-icon fas fa-home"></i>
               <p>
                 Home Page
@@ -47,15 +47,9 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{url('slideranimatedtext')}}" class="nav-link {{ Request::path() == 'slideranimatedtext' ? 'active' : '' }}">
+                <a href="{{url('slider')}}" class="nav-link {{ Request::path() == 'slider' ? 'active' : '' }}">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Slider Animation Text</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{url('slidercontent')}}" class="nav-link {{ Request::path() == 'slidercontent' ? 'active' : '' }}">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Slider Content</p>
+                  <p>Slider</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -65,10 +59,56 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{url('betterdaysstarttoday')}}" class="nav-link {{ Request::path() == 'betterdaysstarttoday' ? 'active' : '' }}">
+                <a href="{{url('betterdaysstart')}}" class="nav-link {{ Request::path() == 'betterdaysstart' ? 'active' : '' }}">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Better Days Start Today</p>
+                  <p>Better Days Start</p>
                 </a>
+              </li>
+              <li class="nav-item has-treeview  {{ in_array(Request::path(),array('fundingneedpagecontent','fundingyouneed'))?'menu-open':'' }}">
+                <a href="javascript:void(0);" class="nav-link  {{ in_array(Request::path(),array('fundingneedpagecontent','fundingyouneed'))?'active':'' }}">
+                  <i class="nav-icon fas fa-bars"></i>
+                  <p>
+                    Funding You Need Now
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="{{url('fundingneedpagecontent')}}" class="nav-link {{ Request::path() == 'fundingneedpagecontent' ? 'active' : '' }}">
+                      <i class="fas fa-minus-square nav-icon"></i>
+                      <p>Page Settings</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{{url('fundingyouneed')}}" class="nav-link {{ Request::path() == 'fundingyouneed' ? 'active' : '' }}">
+                      <i class="fas fa-minus-square nav-icon"></i>
+                      <p>Funding You Need Block</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item has-treeview  {{ in_array(Request::path(),array('youarenotalone','youarenotalonevideo'))?'menu-open':'' }}">
+                <a href="javascript:void(0);" class="nav-link  {{ in_array(Request::path(),array('youarenotalone','youarenotalonevideo'))?'active':'' }}">
+                  <i class="nav-icon fas fa-bars"></i>
+                  <p>
+                    You Are Not Alone
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="{{url('youarenotalone')}}" class="nav-link {{ Request::path() == 'youarenotalone' ? 'active' : '' }}">
+                      <i class="fas fa-minus-square nav-icon"></i>
+                      <p>Page Settings</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{{url('youarenotalonevideo')}}" class="nav-link {{ Request::path() == 'youarenotalonevideo' ? 'active' : '' }}">
+                      <i class="fas fa-minus-square nav-icon"></i>
+                      <p>Video Contents</p>
+                    </a>
+                  </li>
+                </ul>
               </li>
               <li class="nav-item">
                 <a href="{{url('fundingyouneedcontent')}}" class="nav-link {{ Request::path() == 'fundingyouneedcontent' ? 'active' : '' }}">

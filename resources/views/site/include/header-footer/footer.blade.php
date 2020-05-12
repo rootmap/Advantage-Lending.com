@@ -1,5 +1,5 @@
 
-<footer class="main-footer">
+<footer class="main-footer" style=" --my-rootmap-fotter-color-first-back:#2f344e; --my-rootmap-fotter-color-second-back:#262a40;">
     <div class="container">
         <div class="row">
             <div class="col-lg-2 col-md-2 col-sm-12">

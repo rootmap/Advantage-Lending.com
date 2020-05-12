@@ -1,16 +1,16 @@
 
 @extends("admin.layout.master")
-@section("title","Edit Slider")
+@section("title","Edit How We Help")
 @section("content")
 <section class="content-header">
   <div class="container-fluid">
     <div class="row mb-2">
       <div class="col-sm-6">
-        <h1>Slider</h1>
+        <h1>How We Help</h1>
       </div>
       <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item active">Update Slider</li>
+              <li class="breadcrumb-item active">Update How We Help</li>
             </ol>
       </div>
     </div>
@@ -30,49 +30,31 @@
         <!-- general form elements -->
         <div class="card card-primary">
           <div class="card-header">
-            <h3 class="card-title">Edit / Modify Slider</h3>
+            <h3 class="card-title">Edit / Modify How We Help</h3>
         </div>
           <!-- /.card-header -->
           <!-- form start -->
-          <form action="{{url('slider/update/'.$dataRow->id)}}" method="post" enctype="multipart/form-data">
+          <form action="{{url('howwehelp/update/'.$dataRow->id)}}" method="post" enctype="multipart/form-data">
           {{csrf_field()}}
           
             <div class="card-body">
                 
                 <div class="row">
-                    <div class="col-sm-6">
+                    <div class="col-sm-12">
                       <!-- text input -->
                       <div class="form-group">
-                        <label for="heading_one">Heading One</label>
+                        <label for="section_title">Section Title</label>
                         <input type="text" 
                             
                         <?php 
-                        if(isset($dataRow->heading_one)){
+                        if(isset($dataRow->section_title)){
                             ?>
-                            value="{{$dataRow->heading_one}}" 
+                            value="{{$dataRow->section_title}}" 
                             <?php 
                         }
                         ?>
                         
-                        class="form-control" placeholder="Enter Heading One" id="heading_one" name="heading_one">
-                      </div>
-                    </div>
-
-                    <div class="col-sm-6">
-                      <!-- text input -->
-                      <div class="form-group">
-                        <label for="heading_two">Heading Two</label>
-                        <input type="text" 
-                            
-                        <?php 
-                        if(isset($dataRow->heading_two)){
-                            ?>
-                            value="{{$dataRow->heading_two}}" 
-                            <?php 
-                        }
-                        ?>
-                        
-                        class="form-control" placeholder="Enter Heading Two" id="heading_two" name="heading_two">
+                        class="form-control" placeholder="Enter Section Title" id="section_title" name="section_title">
                       </div>
                     </div>
                 </div>
@@ -81,121 +63,174 @@
                     <div class="col-sm-12">
                       <!-- text input -->
                       <div class="form-group">
-                        <label for="animated_text">Animated Text</label>
-                        <input type="text" 
-                            
-                        <?php 
-                        if(isset($dataRow->animated_text)){
-                            ?>
-                            value="{{$dataRow->animated_text}}" 
-                            <?php 
-                        }
-                        ?>
-                        
-                        class="form-control" placeholder="Enter Animated Text" id="animated_text" name="animated_text">
+                        <label for="section_detail">Section Detail</label>
+                        <textarea class="form-control" rows="3"  placeholder="Enter Section Detail" id="section_detail" name="section_detail"><?php 
+                                if(isset($dataRow->section_detail)){
+                                    
+                                    echo $dataRow->section_detail;
+                                    
+                                }
+                                ?></textarea>
                       </div>
                     </div>
                 </div>
                 
                 <div class="row">
-                    <div class="col-sm-6">
+                    <div class="col-sm-12">
                       <!-- text input -->
                       <div class="form-group">
-                        <label for="heading_three">Heading Three</label>
+                        <label for="section_one_icon">Section One Icon | <a href="https://fontawesome.com/v4.7.0/icons/" target="_blank">Find Icon in Library</a> | Click Icon then it will show icon code like below</label>
                         <input type="text" 
                             
                         <?php 
-                        if(isset($dataRow->heading_three)){
+                        if(isset($dataRow->section_one_icon)){
                             ?>
-                            value="{{$dataRow->heading_three}}" 
+                            value="{{$dataRow->section_one_icon}}" 
                             <?php 
                         }
                         ?>
                         
-                        class="form-control" placeholder="Enter Heading Three" id="heading_three" name="heading_three">
-                      </div>
-                    </div>
-
-                    <div class="col-sm-6">
-                      <!-- text input -->
-                      <div class="form-group">
-                        <label for="heading_four">Heading Four</label>
-                        <input type="text" 
-                            
-                        <?php 
-                        if(isset($dataRow->heading_four)){
-                            ?>
-                            value="{{$dataRow->heading_four}}" 
-                            <?php 
-                        }
-                        ?>
-                        
-                        class="form-control" placeholder="Enter Heading Four" id="heading_four" name="heading_four">
+                        class="form-control" placeholder="Enter Section One Icon" id="section_one_icon" name="section_one_icon">
                       </div>
                     </div>
                 </div>
                 
                 <div class="row">
-                    <div class="col-sm-6">
+                    <div class="col-sm-12">
                       <!-- text input -->
                       <div class="form-group">
-                        <label for="slider_button_text">Slider Button Text</label>
+                        <label for="section_one_content">Section One Content</label>
                         <input type="text" 
                             
                         <?php 
-                        if(isset($dataRow->slider_button_text)){
+                        if(isset($dataRow->section_one_content)){
                             ?>
-                            value="{{$dataRow->slider_button_text}}" 
+                            value="{{$dataRow->section_one_content}}" 
                             <?php 
                         }
                         ?>
                         
-                        class="form-control" placeholder="Enter Slider Button Text" id="slider_button_text" name="slider_button_text">
-                      </div>
-                    </div>
-
-                    <div class="col-sm-6">
-                      <!-- text input -->
-                      <div class="form-group">
-                        <label for="slider_button_url">Slider Button URL</label>
-                        <input type="text" 
-                            
-                        <?php 
-                        if(isset($dataRow->slider_button_url)){
-                            ?>
-                            value="{{$dataRow->slider_button_url}}" 
-                            <?php 
-                        }
-                        ?>
-                        
-                        class="form-control" placeholder="Enter Slider Button URL" id="slider_button_url" name="slider_button_url">
+                        class="form-control" placeholder="Enter Section One Content" id="section_one_content" name="section_one_content">
                       </div>
                     </div>
                 </div>
                 
                 <div class="row">
-                    <div class="col-sm-6">
+                    <div class="col-sm-12">
                       <!-- text input -->
                       <div class="form-group">
-                        <label for="slider_color_scheme">Slider Color Scheme | Please Find Color <a href="https://htmlcolorcodes.com/color-picker/" target="_blank"> Here </a></label>
+                        <label for="section_two_icon">Section Two Icon  | <a href="https://fontawesome.com/v4.7.0/icons/" target="_blank">Find Icon in Library</a> | Click Icon then it will show icon code like below</label>
                         <input type="text" 
                             
                         <?php 
-                        if(isset($dataRow->slider_color_scheme)){
+                        if(isset($dataRow->section_two_icon)){
                             ?>
-                            value="{{$dataRow->slider_color_scheme}}" 
+                            value="{{$dataRow->section_two_icon}}" 
                             <?php 
                         }
                         ?>
                         
-                        class="form-control" placeholder="Enter Slider Color Scheme" id="slider_color_scheme" name="slider_color_scheme">
+                        class="form-control" placeholder="Enter Section Two Icon" id="section_two_icon" name="section_two_icon">
                       </div>
                     </div>
-                    <div class="col-sm-6">
+                </div>
+                
+                <div class="row">
+                    <div class="col-sm-12">
                       <!-- text input -->
                       <div class="form-group">
-                        <label for="slider_color_scheme"> Choose RGB 3 Code, last , Use 0 to 1 for Opacity </label>
-                        <div  style=" height: 35px; width:35px; background:{{$dataRow->slider_color_scheme}};">&nbsp;</div>
+                        <label for="section_two_content">Section Two Content</label>
+                        <input type="text" 
+                            
+                        <?php 
+                        if(isset($dataRow->section_two_content)){
+                            ?>
+                            value="{{$dataRow->section_two_content}}" 
+                            <?php 
+                        }
+                        ?>
+                        
+                        class="form-control" placeholder="Enter Section Two Content" id="section_two_content" name="section_two_content">
+                      </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-sm-12">
+                      <!-- text input -->
+                      <div class="form-group">
+                        <label for="section_three_icon">Section Three Icon  | <a href="https://fontawesome.com/v4.7.0/icons/" target="_blank">Find Icon in Library</a> | Click Icon then it will show icon code like below</label>
+                        <input type="text" 
+                            
+                        <?php 
+                        if(isset($dataRow->section_three_icon)){
+                            ?>
+                            value="{{$dataRow->section_three_icon}}" 
+                            <?php 
+                        }
+                        ?>
+                        
+                        class="form-control" placeholder="Enter Section Three Icon" id="section_three_icon" name="section_three_icon">
+                      </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-sm-12">
+                      <!-- text input -->
+                      <div class="form-group">
+                        <label for="section_three_content">Section Three Content</label>
+                        <input type="text" 
+                            
+                        <?php 
+                        if(isset($dataRow->section_three_content)){
+                            ?>
+                            value="{{$dataRow->section_three_content}}" 
+                            <?php 
+                        }
+                        ?>
+                        
+                        class="form-control" placeholder="Enter Section Three Content" id="section_three_content" name="section_three_content">
+                      </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-sm-12">
+                      <!-- text input -->
+                      <div class="form-group">
+                        <label for="section_four_icon">Section Four Icon  | <a href="https://fontawesome.com/v4.7.0/icons/" target="_blank">Find Icon in Library</a> | Click Icon then it will show icon code like below</label>
+                        <input type="text" 
+                            
+                        <?php 
+                        if(isset($dataRow->section_four_icon)){
+                            ?>
+                            value="{{$dataRow->section_four_icon}}" 
+                            <?php 
+                        }
+                        ?>
+                        
+                        class="form-control" placeholder="Enter Section Four Icon" id="section_four_icon" name="section_four_icon">
+                      </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-sm-12">
+                      <!-- text input -->
+                      <div class="form-group">
+                        <label for="section_four_content">Section Four Content</label>
+                        <input type="text" 
+                            
+                        <?php 
+                        if(isset($dataRow->section_four_content)){
+                            ?>
+                            value="{{$dataRow->section_four_content}}" 
+                            <?php 
+                        }
+                        ?>
+                        
+                        class="form-control" placeholder="Enter Section Four Content" id="section_four_content" name="section_four_content">
                       </div>
                     </div>
                 </div>
@@ -203,19 +238,19 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>Choose Slider Background Image</label>
-                                    <!-- <label for="customFile">Choose Slider Background Image</label> -->
+                                    <label>Choose Section Image</label>
+                                    <!-- <label for="customFile">Choose Section Image</label> -->
                                     <div class="custom-file">
-                                      <input type="file" class="custom-file-input"  id="slider_background_image" name="slider_background_image">
-                                      <input type="hidden" value="{{$dataRow->slider_background_image}}" name="ex_slider_background_image" />
-                                      <label class="custom-file-label" for="customFile">Choose Slider Background Image</label>
+                                      <input type="file" class="custom-file-input"  id="section_image" name="section_image">
+                                      <input type="hidden" value="{{$dataRow->section_image}}" name="ex_section_image" />
+                                      <label class="custom-file-label" for="customFile">Choose Section Image</label>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                @if(isset($dataRow->slider_background_image))
-                                    @if(!empty($dataRow->slider_background_image))
-                                        <img class="img-thumbnail" src="{{url('upload/slider/'.$dataRow->slider_background_image)}}" width="150">
+                                @if(isset($dataRow->section_image))
+                                    @if(!empty($dataRow->section_image))
+                                        <img class="img-thumbnail" src="{{url('upload/howwehelp/'.$dataRow->section_image)}}" width="150">
                                     @endif
                                 @endif
                             </div>
@@ -224,7 +259,7 @@
             <div class="col-sm-12">
               <!-- radio -->
               <div class="form-group">
-              <label>Choose Slider Status</label>
+              <label>Choose Module Status</label>
         
                         <div class="form-check">
                             <input class="form-check-input" type="radio"  
@@ -264,7 +299,7 @@
                 <i class="fas fa-save"></i> 
                 Update
               </button>
-              <a class="btn btn-danger" href="{{url('slider/edit/'.$dataRow->id)}}">
+              <a class="btn btn-danger" href="{{url('howwehelp/edit/'.$dataRow->id)}}">
                 <i class="far fa-times-circle"></i> 
                 Reset
               </a>

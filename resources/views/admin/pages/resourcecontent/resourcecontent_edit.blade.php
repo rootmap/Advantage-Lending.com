@@ -112,7 +112,7 @@
                       <!-- text input -->
                       <div class="form-group">
                         <label for="short_detail">Short Detail</label>
-                        <textarea class="form-control" rows="3"  placeholder="Enter Short Detail" id="short_detail" name="short_detail"><?php 
+                        <textarea id="compose-textarea" class="form-control" rows="3"  placeholder="Enter Short Detail" id="short_detail" name="short_detail"><?php 
                                 if(isset($dataRow->short_detail)){
                                     
                                     echo $dataRow->short_detail;
@@ -128,7 +128,7 @@
                       <!-- text input -->
                       <div class="form-group">
                         <label for="long_detail">Long Detail</label>
-                        <textarea class="form-control" rows="3"  placeholder="Enter Long Detail" id="long_detail" name="long_detail"><?php 
+                        <textarea id="composes-textarea" class="form-control" rows="3"  placeholder="Enter Long Detail" id="long_detail" name="long_detail"><?php 
                                 if(isset($dataRow->long_detail)){
                                     
                                     echo $dataRow->long_detail;
@@ -163,6 +163,10 @@
   </div><!-- /.container-fluid -->
 </section>
 @endsection
+@section('css')
+<link rel="stylesheet" href="{{url('admin/plugins/summernote/summernote-bs4.css')}}">
+@endsection
+
 @section("js")
 
     <script src="{{url('admin/plugins/bs-custom-file-input/bs-custom-file-input.min.js')}}"></script>
@@ -171,6 +175,12 @@
         bsCustomFileInput.init();
     });
     </script>
-
+  <script src="{{url('admin/plugins/summernote/summernote-bs4.min.js')}}"></script>
+  <script>
+   $(function () {
+     // Summernote
+     $('#compose-textarea,#composes-textarea').summernote()
+   })
+  </script>
 @endsection
-        
+

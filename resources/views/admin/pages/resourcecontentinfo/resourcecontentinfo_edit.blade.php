@@ -44,7 +44,7 @@
                       <!-- text input -->
                       <div class="form-group">
                         <label for="detail">Detail</label>
-                        <textarea class="form-control" rows="3"  placeholder="Enter Resource Content Info" id="detail" name="detail"><?php 
+                        <textarea id="compose-textarea" class="form-control" rows="3"  placeholder="Enter Resource Content Info" id="detail" name="detail"><?php 
                                 if(isset($dataRow->detail)){
                                     
                                     echo $dataRow->detail;
@@ -78,4 +78,16 @@
     <!-- /.row -->
   </div><!-- /.container-fluid -->
 </section>
+@endsection
+@section('css')
+   <link rel="stylesheet" href="{{url('admin/plugins/summernote/summernote-bs4.css')}}">
+@endsection
+@section('js')
+  <script src="{{url('admin/plugins/summernote/summernote-bs4.min.js')}}"></script>
+  <script>
+    $(function () {
+      // Summernote
+      $('#compose-textarea').summernote()
+    })
+  </script>
 @endsection

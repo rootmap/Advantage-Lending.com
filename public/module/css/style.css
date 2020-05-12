@@ -1032,7 +1032,7 @@ input:-moz-placeholder {
 
 .hero-area {
     padding: 200px 0;
-    /* background: url(../images/bg/3.jpg); */
+    background: var(--my-rootmap-area-back);
     background-position: left;
     background-repeat: no-repeat;
     background-size: cover;
@@ -1243,7 +1243,7 @@ input:-moz-placeholder {
     z-index: 0;
     width: 50%;
     height: 100%;
-    background: url(../images/bg/1.jpg);
+    background: var(--my-separator-area-after-back);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -1388,7 +1388,7 @@ input:-moz-placeholder {
 }
 
 .service-two-content {
-    background: #f5f5f5;
+    background: var(--my-rootmap-service-two-content-back);
     padding: 20px;
     position: relative;
 }
@@ -3254,7 +3254,7 @@ input:-moz-placeholder {
 
 .main-footer {
     padding: 54px 0 0px;
-    background: #2f344e;
+    background: var(--my-rootmap-fotter-color-first-back);
     overflow: hidden;
     position: relative;
 }
@@ -3268,7 +3268,7 @@ input:-moz-placeholder {
     width: 60%;
     height: 180%;
     margin-left: -5%;
-    background: #262a40;
+    background: var(--my-rootmap-fotter-color-second-back);
     -ms-transform: skewX(40deg);
     -webkit-transform: skewX(40deg);
     transform: skewX(40deg);

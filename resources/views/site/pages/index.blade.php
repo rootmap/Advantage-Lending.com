@@ -11,7 +11,7 @@
     @isset($slider)
         @if ($slider->module_status=="Active")
             <!-- Hero Start -->
-            <section class="hero-area" style="--my-slider-back:{{$slider->slider_color_scheme}}; background-image: url('{{asset('upload/slider/'.$slider->slider_background_image)}}')">
+            <section class="hero-area" style="--my-slider-back:{{$slider->slider_color_scheme}}; --my-rootmap-area-back:url('{{asset('upload/slider/'.$slider->slider_background_image)}}');">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
@@ -50,281 +50,242 @@
         @endif
     @endisset
     
+    @isset($HowWeHelp)
+        @if ($HowWeHelp->module_status=="Active")
+            <!-- About start -->
+            <section class="about-area about-area-two" id="about">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6">
 
-    <!-- About start -->
-    <section class="about-area about-area-two" id="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-md-6">
-
-                    <div class="defult-title text-left bl-none" style="padding-bottom: 50px;">
-                        <h1 class="mb-2">How We <span>Help</span></h1>
-                        <p class="" style="margin-top: 2rem;">Pre-settlement financing puts money in your pocket before your case is settled. And because the money is repaid from your settlement, you can get it now, with no risk, no out-of-pocket costs, and your credit score is not a factor.</p>
-                    </div>
-
-                    <div class="about-col">
-
-
-                        <div class="choose-box">
-                            <div class="choose-icon">
-                                <i class="fa fa-money"></i>
-                                <p style="font-weight: 700; line-height:50px;"> Get a $500 – $100,000 advance on your settlement </p>
+                            <div class="defult-title text-left bl-none" style="padding-bottom: 50px;">
+                                <?php 
+                                    $heading=$HowWeHelp->section_title; 
+                                    $heading_ar=explode(" ",$heading);
+                                    $focusText=$heading_ar[key(array_slice($heading_ar, -1, 1, true))];
+                                    $unFocusText=str_replace($focusText,"",$heading); 
+                                ?>
+                                <h1 class="mb-2">{{$unFocusText}} <span>{{$focusText}}</span></h1>
+                                <p class="" style="margin-top: 2rem;">{{$HowWeHelp->section_detail}}</p>
                             </div>
-                        </div>
-                        
-                        <div class="choose-box">
-                            <div class="choose-icon">
-                                <i class="fa fa-clock-o"></i>
-                                <p style="font-weight: 700; line-height:50px;"> Get cash in as little as 24 hours once approved </p>
-                            </div>
-                        </div>
-                        
-                        <div class="choose-box">
-                            <div class="choose-icon">
-                                <i class="fa fa-shield"></i>
-                                <p style="font-weight: 700;"> No risk — If you lose your case, you owe us nothing; pay us back only from your settlement </p>
-                            </div>
-                        </div>
 
-                        <div class="choose-box">
-                            <div class="choose-icon">
-                                <i class="fa fa-briefcase"></i>
-                                <p style="font-weight: 700;"> BBB A+ Rating, trusted by more than 250,000 people like you </p>
-                            </div>
-                        </div>
-                        
-                    </div>
-
-
-
-                </div>
-                <div class="col-lg-6 col-md-6">
-                   <div class="about-col">
-                       <div class="about-image">
-                            <img src="{{asset('module/images/about/1.png')}}" alt="">
-                        </div>
-                   </div>
-                </div>
-            </div>
-            
-        </div>
-    </section>
-
-    <!-- Separator Start -->
-    <section class="separator-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8">
-                    <div class="separator-col">
-                        <div class="col-md-10">
-                            <h2>Better Days Start Today</h2>
-                            <p class="text-white">When you’ve been injured in an accident, it can be difficult to make ends meet while you wait for your settlement money. You don’t have to struggle to pay bills — take control today and find peace of mind with help from Oasis.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> 
-  
-    <!--services two start-->
-    <section class="services-area-two" style="padding-top: 58px;">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class=" defult-title text-center" style="padding-bottom: 2em;">
-                        <h1>Funding You Need<span> Now.</span></h1>
-                        <p class="">We can help you access part of your settlement faster in a few simple steps.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4 col-sm-6 col-xs-6 fw600">
-                    <div class="service-col-two wow bounceInLeft" data-wow-duration="1s" data-wow-delay="0s">
-                        <img src="{{asset('module/images/service/1.jpg')}}" alt="">
-                        <div class="service-two-content">
-                            <h4>General Constructing</h4>
-                            <p>There are many variations of passages of Lorem Ipsum available, suffered alteration in some form.</p>
-                            
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-6 fw600">
-                    <div class="service-col-two wow bounceInUp" data-wow-duration="1s" data-wow-delay="0s">
-                        <img src="{{asset('module/images/service/2.jpg')}}" alt="">
-                        <div class="service-two-content">
-                            <h4>Making Bridge</h4>
-                            <p>There are many variations of passages of Lorem Ipsum available, suffered alteration in some form.</p>
-                            
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-6 fw600">
-                    <div class="service-col-two wow bounceInRight" data-wow-duration="1s" data-wow-delay="0s">
-                        <img src="{{asset('module/images/service/3.jpg')}}" alt="">
-                        <div class="service-two-content">
-                            <h4>Design Build</h4>
-                            <p>There are many variations of passages of Lorem Ipsum available, suffered alteration in some form.</p>
-                            
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
-            <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12 text-center">
-                    <a class="btn btn-default simple-btn" title="Apply Now" href="service-details.html"><i class="fa fa-file-text-o" aria-hidden="true"></i> Apply Now</a>
-                </div>   
-                
-            </div>
-            
-        </div>
-    </section>
-
-    <section class="main-footer about-area-two" id="about" style="padding-top: 60px !important;">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-md-6">
-
-                    <div class="defult-title text-left bl-none" style="padding-top: 20px; padding-bottom: 50px;">
-                        <h1 class="mb-2 text-white" style="padding-bottom: 2rem;">You Are Not <span> Alone </span> </h1>
-                        <p class="text-white" style="padding-bottom: 2rem;">Last month we helped more than 3,000 people just like you, providing funding during trying times. Our lawsuit settlement funding helps put you back in command of your finances, your responsibilities, and your life.</p>
-                        <p style="margin-top: 20px;">
-                            <a href="#" class="btn simple-btn">Learn How It Works <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                   <div class="about-col notAlone">
-                        <div class="about-image testimonial">
-                            <div class="test-content text-white py-4 px-4">
-                                <div class="row justify-content-between">
-                                        <div class="col-md-3 visible-md visible-lg hidden-xs hidden-sm border-right border-white d-none d-md-block"> 
-                                            <a href="https://www.youtube.com/watch?v=NsP9kLDy-Qg" data-lity="" class="text-center text-white play d-block" title="Play video" tabindex="0"> 
-                                                <svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="mb-3 mt-1"> 
-                                                    <g id="Mockup" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> 
-                                                        <g id="Desktop-//-Homepage-" transform="translate(-717.000000, -2894.000000)"> 
-                                                            <g id="You're-Not-Alone" transform="translate(1.000000, 2650.000000)"> 
-                                                                <g id="Videos" transform="translate(651.000000, 0.000000)"> 
-                                                                    <g id="Video"> 
-                                                                        <g id="Text" transform="translate(48.000000, 233.000000)"> 
-                                                                            <g id="Play-video" transform="translate(0.000000, 11.000000)"> 
-                                                                                <g id="Play" transform="translate(17.000000, 0.000000)"> 
-                                                                                    <circle id="Oval" fill="#BC560B" fill-rule="nonzero" cx="32" cy="32" r="32"></circle> 
-                                                                                    <g id="noun_play_2062732_000000" transform="translate(22.000000, 22.000000)" fill="#FFFFFF"> 
-                                                                                        <path d="M5.71428571,0.677419355 L17.8571429,7.4516129 C20.7142857,8.80645161 20.7142857,12.1935484 17.8571429,13.5483871 L5.71428571,20.3225806 C3.57142857,21.6774194 0,21 0,18.2903226 L0,2.70967742 C0,0 3.57142857,-0.677419355 5.71428571,0.677419355 Z" id="Path"></path> 
-                                                                                    </g> 
-                                                                                </g> 
-                                                                            </g> 
-                                                                        </g> 
-                                                                    </g> 
-                                                                </g> 
-                                                            </g> 
-                                                        </g> 
-                                                    </g> 
-                                                </svg>
-                                                <br> Play Video 
-                                            </a>
-                                        </div>
-                                        <div class="col-md-9 col-xs-12">
-                                            <p>“I wasn’t receiving any money at all, not even from the insurance company, and Oasis came through… They’re just fantastic!”</p>
-                                            <p class="visible-md visible-lg hidden-xs hidden-sm  d-md-block" style="font-style: normal"> <strong>Joyce</strong> — Palm Bay, FL</p>
-                                            <div class="row visible-xs visible-sm align-items-center hidden-md hidden-lg" style="padding-top: 20px;">
-                                                <div class="col-sm-7 col-xs-7">
-                                                    <p style="font-size:15px"> 
-                                                        <strong>Joyce</strong> — Palm Bay, FL
-                                                    </p>
-                                                </div>
-                                                <div class="col-sm-5 col-xs-5"> 
-                                                    <a href="https://www.youtube.com/watch?v=NsP9kLDy-Qg" data-lity="" class="text-center text-white play d-block" style="font-size: 14px;" title="Play video" tabindex="0"> 
-                                                        <svg width="31px" height="32px" viewBox="0 0 31 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="mr-1"> 
-                                                            <g id="Mockup" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> 
-                                                                <g id="Mobile-Mockup-//-Homepage-(->768px)" transform="translate(-210.000000, -3793.000000)"> 
-                                                                    <g id="Group-9" transform="translate(210.000000, 3793.000000)"> 
-                                                                        <g id="Group-10"> 
-                                                                            <ellipse id="Oval" fill="#BC560B" fill-rule="nonzero" cx="15.5" cy="16" rx="15.5" ry="16"></ellipse> 
-                                                                            <path d="M13.1428571,11.3548387 L19.8214286,14.9032258 C21.3928571,15.6129032 21.3928571,17.3870968 19.8214286,18.0967742 L13.1428571,21.6451613 C11.9642857,22.3548387 10,22 10,20.5806452 L10,12.4193548 C10,11 11.9642857,10.6451613 13.1428571,11.3548387 Z" id="Path" fill="#FFFFFF"></path> 
-                                                                        </g> 
-                                                                    </g> 
-                                                                </g> 
-                                                            </g> 
-                                                        </svg> Play Video
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-                            </div>
-                            <img src="{{asset('module/images/about/1.png')}}" alt="">
-                        </div>
-                        <div class="about-image testimonial" style=" ">
-                            <div class="test-content text-white py-4 px-4">
-                                <div class="row justify-content-between">
-                                        <div class="col-md-3 visible-md visible-lg hidden-xs hidden-sm border-right border-white d-none d-md-block"> 
-                                            <a href="https://www.youtube.com/watch?v=NsP9kLDy-Qg" data-lity="" class="text-center text-white play d-block" title="Play video" tabindex="0"> 
-                                                <svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="mb-3 mt-1"> 
-                                                    <g id="Mockup" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> 
-                                                        <g id="Desktop-//-Homepage-" transform="translate(-717.000000, -2894.000000)"> 
-                                                            <g id="You're-Not-Alone" transform="translate(1.000000, 2650.000000)"> 
-                                                                <g id="Videos" transform="translate(651.000000, 0.000000)"> 
-                                                                    <g id="Video"> 
-                                                                        <g id="Text" transform="translate(48.000000, 233.000000)"> 
-                                                                            <g id="Play-video" transform="translate(0.000000, 11.000000)"> 
-                                                                                <g id="Play" transform="translate(17.000000, 0.000000)"> 
-                                                                                    <circle id="Oval" fill="#BC560B" fill-rule="nonzero" cx="32" cy="32" r="32"></circle> 
-                                                                                    <g id="noun_play_2062732_000000" transform="translate(22.000000, 22.000000)" fill="#FFFFFF"> 
-                                                                                        <path d="M5.71428571,0.677419355 L17.8571429,7.4516129 C20.7142857,8.80645161 20.7142857,12.1935484 17.8571429,13.5483871 L5.71428571,20.3225806 C3.57142857,21.6774194 0,21 0,18.2903226 L0,2.70967742 C0,0 3.57142857,-0.677419355 5.71428571,0.677419355 Z" id="Path"></path> 
-                                                                                    </g> 
-                                                                                </g> 
-                                                                            </g> 
-                                                                        </g> 
-                                                                    </g> 
-                                                                </g> 
-                                                            </g> 
-                                                        </g> 
-                                                    </g> 
-                                                </svg>
-                                                <br> Play Video 
-                                            </a>
-                                        </div>
-                                        <div class="col-md-9 col-xs-12">
-                                            <p>“I wasn’t receiving any money at all, not even from the insurance company, and Oasis came through… They’re just fantastic!”</p>
-                                            <p class="visible-md visible-lg hidden-xs hidden-sm  d-md-block" style="font-style: normal"> <strong>Joyce</strong> — Palm Bay, FL</p>
-                                            <div class="row visible-xs visible-sm align-items-center hidden-md hidden-lg" style="padding-top: 20px;">
-                                                <div class="col-sm-7 col-xs-7">
-                                                    <p style="font-size:15px"> 
-                                                        <strong>Joyce</strong> — Palm Bay, FL
-                                                    </p>
-                                                </div>
-                                                <div class="col-sm-5 col-xs-5"> 
-                                                    <a href="https://www.youtube.com/watch?v=NsP9kLDy-Qg" data-lity="" class="text-center text-white play d-block" style="font-size: 14px;" title="Play video" tabindex="0"> 
-                                                        <svg width="31px" height="32px" viewBox="0 0 31 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="mr-1"> 
-                                                            <g id="Mockup" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> 
-                                                                <g id="Mobile-Mockup-//-Homepage-(->768px)" transform="translate(-210.000000, -3793.000000)"> 
-                                                                    <g id="Group-9" transform="translate(210.000000, 3793.000000)"> 
-                                                                        <g id="Group-10"> 
-                                                                            <ellipse id="Oval" fill="#BC560B" fill-rule="nonzero" cx="15.5" cy="16" rx="15.5" ry="16"></ellipse> 
-                                                                            <path d="M13.1428571,11.3548387 L19.8214286,14.9032258 C21.3928571,15.6129032 21.3928571,17.3870968 19.8214286,18.0967742 L13.1428571,21.6451613 C11.9642857,22.3548387 10,22 10,20.5806452 L10,12.4193548 C10,11 11.9642857,10.6451613 13.1428571,11.3548387 Z" id="Path" fill="#FFFFFF"></path> 
-                                                                        </g> 
-                                                                    </g> 
-                                                                </g> 
-                                                            </g> 
-                                                        </svg> Play Video
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
+                            <div class="about-col">
+                                <div class="choose-box">
+                                    <div class="choose-icon">
+                                        {!!$HowWeHelp->section_one_icon!!}
+                                        <p style="font-weight: 700; line-height:50px;">{{$HowWeHelp->section_one_content}}</p>
                                     </div>
                                 </div>
-                            <img src="{{asset('module/images/about/1.png')}}" alt="">
+                                
+                                <div class="choose-box">
+                                    <div class="choose-icon">
+                                        {!!$HowWeHelp->section_two_icon!!}
+                                        <p style="font-weight: 700; line-height:50px;">{{$HowWeHelp->section_two_content}}</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="choose-box">
+                                    <div class="choose-icon">
+                                        {!!$HowWeHelp->section_three_icon!!}
+                                        <p style="font-weight: 700;">{{$HowWeHelp->section_three_content}}</p>
+                                    </div>
+                                </div>
+
+                                <div class="choose-box">
+                                    <div class="choose-icon">
+                                        {!!$HowWeHelp->section_four_icon!!}
+                                        <p style="font-weight: 700;">{{$HowWeHelp->section_four_content}}</p>
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+
+
                         </div>
-                   </div>
+                        <div class="col-lg-6 col-md-6">
+                        <div class="about-col">
+                            <div class="about-image">
+                                    <img src="{{asset('upload/howwehelp/'.$HowWeHelp->section_image)}}" alt="{{$HowWeHelp->section_image}}">
+                                </div>
+                        </div>
+                        </div>
+                    </div>
+                    
                 </div>
-            </div>
-            
-        </div>
-    </section>
+            </section>
+        @endif
+    @endisset
+
+    @isset($BetterDaysStart)
+        @if ($BetterDaysStart->module_status=='Active')
+                <!-- Separator Start -->
+                <section class="separator-area" style="--my-separator-area-after-back:url('{{asset('upload/betterdaysstart/'.$BetterDaysStart->content_image)}}')">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="separator-col">
+                                    <div class="col-md-10">
+                                        <h2>{{$BetterDaysStart->content_title}}</h2>
+                                        <p class="text-white">{{$BetterDaysStart->content_detail}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section> 
+        @endif
+    @endisset
+
+
+    @isset($FundingNeedPageContent)
+        @if ($FundingNeedPageContent->module_status=='Active')
+            <!--services two start-->
+            <section class="services-area-two" style="padding-top: 58px;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class=" defult-title text-center" style="padding-bottom: 2em;">
+                                <?php 
+                                    $heading=$FundingNeedPageContent->title; 
+                                    $heading_ar=explode(" ",$heading);
+                                    $focusText=$heading_ar[key(array_slice($heading_ar, -1, 1, true))];
+                                    $unFocusText=str_replace($focusText,"",$heading); 
+                                ?>
+                                <h1 class="mb-2">{{$unFocusText}} <span>{{$focusText}}</span></h1>
+                                <p class="">{{$FundingNeedPageContent->detail}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    @isset($FundingYouNeed)
+                        <div class="row">
+                            @foreach ($FundingYouNeed as $item)
+                                <div class="col-md-4 col-sm-6 col-xs-6 fw600">
+                                    <div class="service-col-two wow bounceInLeft" data-wow-duration="1s" data-wow-delay="0s">
+                                        <img src="{{asset('upload/fundingyouneed/'.$item->image)}}" alt="{{$item->title}}">
+                                        <div class="service-two-content" style="--my-rootmap-service-two-content-back:{!!$item->block_forecolor!!};">
+                                            <h4>{{$item->title}}</h4>
+                                            <p>{{$item->short_detail}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach                            
+                        </div>
+                    @endisset
+                    
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                        <a class="btn btn-default simple-btn" title="Apply Now" href="{{url('/'.$FundingNeedPageContent->bottom_button_url)}}"> {!!$FundingNeedPageContent->bottom_button_text!!}    </a>
+                        </div>   
+                        
+                    </div>
+                    
+                </div>
+            </section>
+        @endif
+    @endisset
+    
+    @isset($YouAreNotAlone)
+        @if ($YouAreNotAlone->module_status=="Active")
+        <section class="main-footer about-area-two" id="about" style="padding-top: 60px !important; padding-bottom: 50px !important; --my-rootmap-fotter-color-first-back:{{$YouAreNotAlone->background_first_color}}; --my-rootmap-fotter-color-second-back:{{$YouAreNotAlone->background_second_color}};">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6">
+                            <div class="defult-title text-left bl-none" style="padding-top: 20px; padding-bottom: 50px;">
+                                <?php 
+                                    $heading=$YouAreNotAlone->title; 
+                                    $heading_ar=explode(" ",$heading);
+                                    $focusText=$heading_ar[key(array_slice($heading_ar, -1, 1, true))];
+                                    $unFocusText=str_replace($focusText,"",$heading); 
+                                ?>
+                                <h1 class="mb-2 text-white" style="padding-bottom: 2rem;">{{$unFocusText}} <span> {{$focusText}}</span> </h1>
+                                <p class="text-white" style="padding-bottom: 2rem;">{{$YouAreNotAlone->detail}}</p>
+                                <p style="margin-top: 20px;">
+                                    <a href="{{url('/'.$YouAreNotAlone->section_button_url)}}" class="btn simple-btn"> {!!$YouAreNotAlone->section_button_text!!}</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            @isset($YouAreNotAloneVideo)
+                                <div class="about-col notAlone">
+                                       
+                                        
+                                
+                                @foreach ($YouAreNotAloneVideo as $item)
+                                    <div class="about-image testimonial" style="width: 602px; height: 350px; background-image:url('{{asset('upload/youarenotalonevideo/'.$item->video_image)}}')">
+                                            <div class="test-content text-white py-4 px-4">
+                                                <div class="row justify-content-between">
+                                                        <div class="col-md-3 visible-md visible-lg hidden-xs hidden-sm border-right border-white d-none d-md-block"> 
+                                                            <a href="{{$item->youtube_video_link}}" data-lity="" class="text-center text-white play d-block" title="Play video" tabindex="0"> 
+                                                                <svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="mb-3 mt-1"> 
+                                                                    <g id="Mockup" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> 
+                                                                        <g id="Desktop-//-Homepage-" transform="translate(-717.000000, -2894.000000)"> 
+                                                                            <g id="You're-Not-Alone" transform="translate(1.000000, 2650.000000)"> 
+                                                                                <g id="Videos" transform="translate(651.000000, 0.000000)"> 
+                                                                                    <g id="Video"> 
+                                                                                        <g id="Text" transform="translate(48.000000, 233.000000)"> 
+                                                                                            <g id="Play-video" transform="translate(0.000000, 11.000000)"> 
+                                                                                                <g id="Play" transform="translate(17.000000, 0.000000)"> 
+                                                                                                    <circle id="Oval" fill="#BC560B" fill-rule="nonzero" cx="32" cy="32" r="32"></circle> 
+                                                                                                    <g id="noun_play_2062732_000000" transform="translate(22.000000, 22.000000)" fill="#FFFFFF"> 
+                                                                                                        <path d="M5.71428571,0.677419355 L17.8571429,7.4516129 C20.7142857,8.80645161 20.7142857,12.1935484 17.8571429,13.5483871 L5.71428571,20.3225806 C3.57142857,21.6774194 0,21 0,18.2903226 L0,2.70967742 C0,0 3.57142857,-0.677419355 5.71428571,0.677419355 Z" id="Path"></path> 
+                                                                                                    </g> 
+                                                                                                </g> 
+                                                                                            </g> 
+                                                                                        </g> 
+                                                                                    </g> 
+                                                                                </g> 
+                                                                            </g> 
+                                                                        </g> 
+                                                                    </g> 
+                                                                </svg>
+                                                                <br> {{$item->play_video_text}}
+                                                            </a>
+                                                        </div>
+                                                        <div class="col-md-9 col-xs-12">
+                                                            <p>{{$item->short_detail}}</p>
+                                                            <p class="visible-md visible-lg hidden-xs hidden-sm  d-md-block" style="font-style: normal"> <strong>{{$item->video_by}}</strong> — {{$item->video_from_location}}</p>
+                                                            <div class="row visible-xs visible-sm align-items-center hidden-md hidden-lg" style="padding-top: 20px;">
+                                                                <div class="col-sm-7 col-xs-7">
+                                                                    <p style="font-size:15px"> 
+                                                                        <strong>{{$item->video_by}}</strong> — {{$item->video_from_location}}
+                                                                    </p>
+                                                                </div>
+                                                                <div class="col-sm-5 col-xs-5"> 
+                                                                    <a href="{{$item->youtube_video_link}}" data-lity="" class="text-center text-white play d-block" style="font-size: 14px;" title="Play video" tabindex="0"> 
+                                                                        <svg width="31px" height="32px" viewBox="0 0 31 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="mr-1"> 
+                                                                            <g id="Mockup" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> 
+                                                                                <g id="Mobile-Mockup-//-Homepage-(->768px)" transform="translate(-210.000000, -3793.000000)"> 
+                                                                                    <g id="Group-9" transform="translate(210.000000, 3793.000000)"> 
+                                                                                        <g id="Group-10"> 
+                                                                                            <ellipse id="Oval" fill="#BC560B" fill-rule="nonzero" cx="15.5" cy="16" rx="15.5" ry="16"></ellipse> 
+                                                                                            <path d="M13.1428571,11.3548387 L19.8214286,14.9032258 C21.3928571,15.6129032 21.3928571,17.3870968 19.8214286,18.0967742 L13.1428571,21.6451613 C11.9642857,22.3548387 10,22 10,20.5806452 L10,12.4193548 C10,11 11.9642857,10.6451613 13.1428571,11.3548387 Z" id="Path" fill="#FFFFFF"></path> 
+                                                                                        </g> 
+                                                                                    </g> 
+                                                                                </g> 
+                                                                            </g> 
+                                                                        </svg> {{$item->play_video_text}}
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                    </div>
+                                                </div>
+                                            {{-- <img src="{{asset('upload/youarenotalonevideo/'.$item->video_image)}}" alt="{{$item->video_by}} - {{$item->video_from_location}}"> --}}
+                                        </div>
+                                @endforeach
+                                </div>
+                            @endisset
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+            </section>
+        @endif
+    @endisset
+    
 
 
         <!-- Team Start -->
@@ -340,7 +301,7 @@
             </div>
             <div class="row">
                 <div class="col-md-4 col-sm-6 col-xs-6 fw600">
-                    <div class="service-col-two wow bounceInLeft our-team" data-wow-duration="1s" data-wow-delay="0s">
+                    <div class="service-col-two wow bounceInLeft our-team" style="--my-rootmap-service-two-content-back:#F5F5F5;" data-wow-duration="1s" data-wow-delay="0s">
                         <div class="service-two-content text-center">
                             <img class="img-responsive" style="width:10rem; margin: 0 auto; padding-top:20px;" src="{{asset('module/svg/people.svg')}}" alt="">
                         </div>

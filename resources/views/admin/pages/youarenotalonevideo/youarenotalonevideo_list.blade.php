@@ -1,17 +1,17 @@
 
 @extends("admin.layout.master")
-@section("title","Resource Content")
+@section("title","You Are Not Alone Video")
 @section("content")
         <section class="content-header">
           <div class="container-fluid">
             <div class="row mb-2">
               <div class="col-sm-6">
-                <h1>Resource Content</h1>
+                <h1>You Are Not Alone Video</h1>
               </div>
               <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                  <li class="breadcrumb-item"><a href="{{url('resourcecontent/create')}}">Create New </a></li>
-                  <li class="breadcrumb-item active">Resource Content Data</li>
+                  <li class="breadcrumb-item"><a href="{{url('youarenotalonevideo/create')}}">Create New </a></li>
+                  <li class="breadcrumb-item active">You Are Not Alone Video Data</li>
                 </ol>
               </div>
             </div>
@@ -30,23 +30,23 @@
               <div class="card">
 
                 <div class="card-header">
-                  <h3 class="card-title">Resource Content Data</h3>
+                  <h3 class="card-title">You Are Not Alone Video Data</h3>
 
                     <div class="card-tools">
                       <ul class="pagination pagination-sm float-right">
                         <li class="page-item">
-                            <a class="page-link bg-primary" href="{{url('resourcecontent/create')}}"> 
+                            <a class="page-link bg-primary" href="{{url('youarenotalonevideo/create')}}"> 
                                 Add New 
                                 <i class="fas fa-plus"></i> 
                             </a>
                         </li>
                         <li class="page-item">
-                          <a class="page-link" target="_blank" href="{{url('resourcecontent/export/pdf')}}">
+                          <a class="page-link" target="_blank" href="{{url('youarenotalonevideo/export/pdf')}}">
                             <i class="fas fa-file-pdf" data-toggle="tooltip" data-html="true"title="Pdf"></i>
                           </a>
                         </li>
                         <li class="page-item">
-                          <a class="page-link" target="_blank" href="{{url('resourcecontent/export/excel')}}">
+                          <a class="page-link" target="_blank" href="{{url('youarenotalonevideo/export/excel')}}">
                             <i class="fas fa-file-excel" data-toggle="tooltip" data-html="true"title="Excel"></i>
                           </a>
                         </li>
@@ -62,8 +62,12 @@
                     <thead>
                         <tr>
                             <th class="text-center">ID</th>
-                            <th class="text-center">Title</th>
+                            <th class="text-center">By</th>
+                            <th class="text-center">Location</th>
                             <th class="text-center">Image</th>
+                            <th class="text-center">Video Text</th>
+                            <th class="text-center">Video Link</th>
+                            <th class="text-center">Module Status</th>
                             <th class="text-center">Created At</th>
                             <th class="text-center">Actions</th>
 
@@ -74,19 +78,26 @@
                             @foreach($dataRow as $row)  
                                 <tr>
                                     <td class="text-center">{{$row->id}}</td>
-                                    <td class="text-center">{{$row->title}}</td>
+                                    <td class="text-center">{{$row->video_by}}</td>
+                                    <td class="text-center">{{$row->video_from_location}}</td>
                                     <td class="text-center">
-                                      <img class="img-thumbnail" src="{{url('upload/resourcecontent/'.$row->image)}}" width="70">
-                                    
+                                      @if (!empty($row->video_image))
+                                          <img height="100" src="{{asset('upload/youarenotalonevideo/'.$row->video_image)}}" />
+                                      @endif
                                     </td>
+                                    <td class="text-center">{{$row->play_video_text}}</td>
+                                    <td class="text-center">
+                                      <a href="{{$row->youtube_video_link}}" class="btn btn-warning">View Link</a>
+                                    </td>
+                                    <td class="text-center">{{$row->module_status}}</td>
                                     <td>{{formatDate($row->created_at)}}</td>
                                     <td>
                                         <div class="btn-group">
-                                            <a href="{{url('resourcecontent/edit/'.$row->id)}}" type="button" class="btn btn-default">
+                                            <a href="{{url('youarenotalonevideo/edit/'.$row->id)}}" type="button" class="btn btn-default">
                                                 Edit 
                                                 <i class="fas fa-edit"></i>
                                             </a>
-                                            <a href="{{url('resourcecontent/delete/'.$row->id)}}" type="button" class="btn btn-default">
+                                            <a href="{{url('youarenotalonevideo/delete/'.$row->id)}}" type="button" class="btn btn-default">
                                                 Delete 
                                                 <i class="fas fa-trash-alt"></i>
                                             </a>
@@ -101,11 +112,14 @@
                     <tfoot>
                     <tr>
                         <th class="text-center">ID</th>
-                        <th class="text-center">Title</th>
+                        <th class="text-center">By</th>
+                        <th class="text-center">Location</th>
                         <th class="text-center">Image</th>
+                        <th class="text-center">Video Text</th>
+                        <th class="text-center">Video Link</th>
+                        <th class="text-center">Module Status</th>
                         <th class="text-center">Created At</th>
                         <th class="text-center">Actions</th>
-
                     </tr>
                     </tfoot>
                   </table>

@@ -235,3 +235,81 @@ Route::post('/slider/ajax','SliderController@ajaxSave');
 Route::post('/slider/datatable/ajax','SliderController@datatable');
 Route::post('/slider/update/{id}','SliderController@update');
 //======================== Slider Route End ===============================//
+//======================== Howwehelp Route Start ===============================//
+Route::get('/howwehelp/list','HowwehelpController@show');
+Route::get('/howwehelp/create','HowwehelpController@create');
+Route::get('/howwehelp/edit/{id}','HowwehelpController@edit');
+Route::get('/howwehelp/delete/{id}','HowwehelpController@destroy');
+Route::get('/howwehelp','HowwehelpController@index');
+Route::get('/howwehelp/export/excel','HowwehelpController@ExportExcel');
+Route::get('/howwehelp/export/pdf','HowwehelpController@ExportPDF');
+Route::post('/howwehelp','HowwehelpController@store');
+Route::post('/howwehelp/ajax','HowwehelpController@ajaxSave');
+Route::post('/howwehelp/datatable/ajax','HowwehelpController@datatable');
+Route::post('/howwehelp/update/{id}','HowwehelpController@update');
+//======================== Howwehelp Route End ===============================//
+//======================== Betterdaysstart Route Start ===============================//
+Route::get('/betterdaysstart/list','BetterdaysstartController@show');
+Route::get('/betterdaysstart/create','BetterdaysstartController@create');
+Route::get('/betterdaysstart/edit/{id}','BetterdaysstartController@edit');
+Route::get('/betterdaysstart/delete/{id}','BetterdaysstartController@destroy');
+Route::get('/betterdaysstart','BetterdaysstartController@index');
+Route::get('/betterdaysstart/export/excel','BetterdaysstartController@ExportExcel');
+Route::get('/betterdaysstart/export/pdf','BetterdaysstartController@ExportPDF');
+Route::post('/betterdaysstart','BetterdaysstartController@store');
+Route::post('/betterdaysstart/ajax','BetterdaysstartController@ajaxSave');
+Route::post('/betterdaysstart/datatable/ajax','BetterdaysstartController@datatable');
+Route::post('/betterdaysstart/update/{id}','BetterdaysstartController@update');
+//======================== Betterdaysstart Route End ===============================//
+//======================== Fundingneedpagecontent Route Start ===============================//
+Route::get('/fundingneedpagecontent/list','FundingneedpagecontentController@show');
+Route::get('/fundingneedpagecontent/create','FundingneedpagecontentController@create');
+Route::get('/fundingneedpagecontent/edit/{id}','FundingneedpagecontentController@edit');
+Route::get('/fundingneedpagecontent/delete/{id}','FundingneedpagecontentController@destroy');
+Route::get('/fundingneedpagecontent','FundingneedpagecontentController@index');
+Route::get('/fundingneedpagecontent/export/excel','FundingneedpagecontentController@ExportExcel');
+Route::get('/fundingneedpagecontent/export/pdf','FundingneedpagecontentController@ExportPDF');
+Route::post('/fundingneedpagecontent','FundingneedpagecontentController@store');
+Route::post('/fundingneedpagecontent/ajax','FundingneedpagecontentController@ajaxSave');
+Route::post('/fundingneedpagecontent/datatable/ajax','FundingneedpagecontentController@datatable');
+Route::post('/fundingneedpagecontent/update/{id}','FundingneedpagecontentController@update');
+//======================== Fundingneedpagecontent Route End ===============================//
+//======================== Fundingyouneed Route Start ===============================//
+Route::get('/fundingyouneed/list','FundingyouneedController@show');
+Route::get('/fundingyouneed/create','FundingyouneedController@create');
+Route::get('/fundingyouneed/edit/{id}','FundingyouneedController@edit');
+Route::get('/fundingyouneed/delete/{id}','FundingyouneedController@destroy');
+Route::get('/fundingyouneed','FundingyouneedController@index');
+Route::get('/fundingyouneed/export/excel','FundingyouneedController@ExportExcel');
+Route::get('/fundingyouneed/export/pdf','FundingyouneedController@ExportPDF');
+Route::post('/fundingyouneed','FundingyouneedController@store');
+Route::post('/fundingyouneed/ajax','FundingyouneedController@ajaxSave');
+Route::post('/fundingyouneed/datatable/ajax','FundingyouneedController@datatable');
+Route::post('/fundingyouneed/update/{id}','FundingyouneedController@update');
+//======================== Fundingyouneed Route End ===============================//
+//======================== Youarenotalone Route Start ===============================//
+Route::get('/youarenotalone/list','YouarenotaloneController@show');
+Route::get('/youarenotalone/create','YouarenotaloneController@create');
+Route::get('/youarenotalone/edit/{id}','YouarenotaloneController@edit');
+Route::get('/youarenotalone/delete/{id}','YouarenotaloneController@destroy');
+Route::get('/youarenotalone','YouarenotaloneController@index');
+Route::get('/youarenotalone/export/excel','YouarenotaloneController@ExportExcel');
+Route::get('/youarenotalone/export/pdf','YouarenotaloneController@ExportPDF');
+Route::post('/youarenotalone','YouarenotaloneController@store');
+Route::post('/youarenotalone/ajax','YouarenotaloneController@ajaxSave');
+Route::post('/youarenotalone/datatable/ajax','YouarenotaloneController@datatable');
+Route::post('/youarenotalone/update/{id}','YouarenotaloneController@update');
+//======================== Youarenotalone Route End ===============================//
+//======================== Youarenotalonevideo Route Start ===============================//
+Route::get('/youarenotalonevideo/list','YouarenotalonevideoController@show');
+Route::get('/youarenotalonevideo/create','YouarenotalonevideoController@create');
+Route::get('/youarenotalonevideo/edit/{id}','YouarenotalonevideoController@edit');
+Route::get('/youarenotalonevideo/delete/{id}','YouarenotalonevideoController@destroy');
+Route::get('/youarenotalonevideo','YouarenotalonevideoController@index');
+Route::get('/youarenotalonevideo/export/excel','YouarenotalonevideoController@ExportExcel');
+Route::get('/youarenotalonevideo/export/pdf','YouarenotalonevideoController@ExportPDF');
+Route::post('/youarenotalonevideo','YouarenotalonevideoController@store');
+Route::post('/youarenotalonevideo/ajax','YouarenotalonevideoController@ajaxSave');
+Route::post('/youarenotalonevideo/datatable/ajax','YouarenotalonevideoController@datatable');
+Route::post('/youarenotalonevideo/update/{id}','YouarenotalonevideoController@update');
+//======================== Youarenotalonevideo Route End ===============================//

@@ -4,6 +4,14 @@ namespace App\Http\Controllers;
 
 use App\FrontModule;
 use App\Slider;
+use App\HowWeHelp;
+use App\BetterDaysStart;
+use App\FundingNeedPageContent;
+use App\FundingYouNeed;
+
+use App\YOUARENOTALONE;
+use App\YouAreNotAloneVideo;
+
 use Illuminate\Http\Request;
 
 class FrontModuleController extends Controller
@@ -24,7 +32,26 @@ class FrontModuleController extends Controller
     public function index()
     {
         $slider= Slider::orderBy('id','DESC')->first();
-        return view('site.pages.index',compact('slider'));
+        $HowWeHelp= HowWeHelp::orderBy('id', 'DESC')->first();
+        $BetterDaysStart= BetterDaysStart::orderBy('id', 'DESC')->first();
+        $FundingNeedPageContent= FundingNeedPageContent::orderBy('id', 'DESC')->first();
+        $FundingYouNeed= FundingYouNeed::where('module_status','Active')->orderBy('id', 'ASC')->get();
+        $YouAreNotAlone= YOUARENOTALONE::orderBy('id', 'DESC')->first();
+        $YouAreNotAloneVideo= YouAreNotAloneVideo::where('module_status','Active')->orderBy('id', 'ASC')->get();
+        
+        
+        //dd($BetterDaysStart);
+        return view('site.pages.index',
+                        compact(
+                            'slider', 
+                            'HowWeHelp', 
+                            'BetterDaysStart', 
+                            'FundingNeedPageContent', 
+                            'FundingYouNeed',
+                            'YouAreNotAlone',
+                            'YouAreNotAloneVideo'
+                        )
+                    );
     }
 
     public function howitworks()
