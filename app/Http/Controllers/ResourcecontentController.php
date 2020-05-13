@@ -82,6 +82,7 @@ class ResourceContentController extends Controller
         $tab->image=$filename_resourcecontent_1;
         $tab->short_detail=$request->short_detail;
         $tab->long_detail=$request->long_detail;
+        $tab->module_status=$request->module_status;
         $tab->save();
 
         return redirect('resourcecontent')->with('status','Added Successfully !');
@@ -104,6 +105,7 @@ class ResourceContentController extends Controller
         $tab->image=$filename_resourcecontent_1;
         $tab->short_detail=$request->short_detail;
         $tab->long_detail=$request->long_detail;
+        $tab->module_status=$request->module_status;
         $tab->save();
 
         echo json_encode(array("status"=>"success","msg"=>"Added Successfully."));
@@ -310,6 +312,7 @@ class ResourceContentController extends Controller
         $tab->image=$filename_resourcecontent_1;
         $tab->short_detail=$request->short_detail;
         $tab->long_detail=$request->long_detail;
+        $tab->module_status=$request->module_status;
         $tab->save();
 
         return redirect('resourcecontent')->with('status','Updated Successfully !');

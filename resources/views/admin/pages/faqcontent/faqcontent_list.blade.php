@@ -62,7 +62,7 @@
                     <thead>
                         <tr>
                             <th class="text-center">ID</th>
-                            <th class="text-center">Category Id Name</th>
+                            <th class="text-center">Category</th>
                             <th class="text-center">Content Title</th>
                             <th class="text-center">Module Status</th>
                             <th class="text-center">Created At</th>
@@ -97,7 +97,7 @@
                     <tfoot>
                     <tr>
                         <th class="text-center">ID</th>
-                        <th class="text-center">Category Id Name</th>
+                        <th class="text-center">Category</th>
                         <th class="text-center">Content Title</th>
                         <th class="text-center">Module Status</th>
                         <th class="text-center">Created At</th>

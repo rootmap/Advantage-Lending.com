@@ -97,7 +97,27 @@
                       </div>
                     </div>
                 </div>
-                       
+                <div class="row">
+                  <div class="col-sm-12">
+                    <!-- radio -->
+                    <div class="form-group">
+                    <label>Choose Page Status</label>
+              
+                              <div class="form-check">
+                                  <input class="form-check-input" type="radio" 
+                                id="module_status_0" name="module_status" value="Active">
+                                <label class="form-check-label">Active</label>
+                              </div>
+                      
+                              <div class="form-check">
+                                  <input class="form-check-input" type="radio" 
+                                id="module_status_1" name="module_status" value="Inactive">
+                                <label class="form-check-label">Inactive</label>
+                              </div>
+                      
+                          </div>
+                      </div>
+                  </div>        
             </div>
             <!-- /.card-body -->
 

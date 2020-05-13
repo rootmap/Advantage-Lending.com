@@ -136,7 +136,7 @@ svg {
     right: 0;
     width: 100%;
     height: 100%;
-    background-color: #133d8d;
+    background-color: var(--my-innerpage-titlebar-color);
     z-index: 1;
     opacity: .6;
 }

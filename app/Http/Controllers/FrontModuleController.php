@@ -12,6 +12,37 @@ use App\FundingYouNeed;
 use App\YOUARENOTALONE;
 use App\YouAreNotAloneVideo;
 
+use App\HelpOnManyCase;
+use App\HelpOnManyCaseTypes;
+use App\NeverSettleForLess;
+
+use App\ResourceContent;
+use App\ResourcePageSetting;
+
+use App\GlossarySectionContent;
+use App\Glossary;
+
+use App\FAQCategory;
+use App\FAQContent;
+use App\FaqPageSetting;
+
+use App\PrivacyPolicyPage;
+
+use App\TermsOfUse;
+
+use App\StateSpecificLicenses;
+
+use App\HowitWorksPageSetting;
+use App\HowItWorkCasesWeFund;
+use App\howitworksdonotsettleforless;
+use App\HowItWorkSecuringTheMoney;
+use App\HowItWorksDoNotSettleStep;
+
+use App\TypeofFundPage;
+use App\Typesoffundingpresettlement;
+use App\FundingForm;
+use App\TypesOfFundCasesWeFundType;
+
 use Illuminate\Http\Request;
 
 class FrontModuleController extends Controller
@@ -29,6 +60,23 @@ class FrontModuleController extends Controller
         $this->sdc = new CoreCustomController();
     }
 
+    private function faqData(){
+        $data=[];
+        $FAQCategory= FAQCategory::where('module_status','Active')->get();
+        foreach ($FAQCategory as $key => $row) {
+            $FAQContent= FAQContent::where('module_status','Active')->where('category_id', $row->id)->get();
+            $array=[
+                'id'=>$row->id,
+                'name'=>$row->name,
+                'contentData'=> $FAQContent,
+            ];
+            $data[]=$array;
+        }
+
+        return $data;
+
+    }
+
     public function index()
     {
         $slider= Slider::orderBy('id','DESC')->first();
@@ -38,6 +86,13 @@ class FrontModuleController extends Controller
         $FundingYouNeed= FundingYouNeed::where('module_status','Active')->orderBy('id', 'ASC')->get();
         $YouAreNotAlone= YOUARENOTALONE::orderBy('id', 'DESC')->first();
         $YouAreNotAloneVideo= YouAreNotAloneVideo::where('module_status','Active')->orderBy('id', 'ASC')->get();
+        $HelpOnManyCase= HelpOnManyCase::orderBy('id', 'DESC')->first();
+        $NeverSettleForLess= NeverSettleForLess::orderBy('id', 'DESC')->first();
+        $HelpOnManyCaseTypes= HelpOnManyCaseTypes::where('module_status','Active')->orderBy('id', 'ASC')->get();
+
+
+        $GlossarySectionContent= GlossarySectionContent::orderBy('id', 'DESC')->first();
+        $Glossary= Glossary::where('module_status','Active')->orderBy('id', 'ASC')->get();
         
         
         //dd($BetterDaysStart);
@@ -49,19 +104,52 @@ class FrontModuleController extends Controller
                             'FundingNeedPageContent', 
                             'FundingYouNeed',
                             'YouAreNotAlone',
-                            'YouAreNotAloneVideo'
+                            'YouAreNotAloneVideo',
+                            'HelpOnManyCase',
+                            'HelpOnManyCaseTypes',
+                            'NeverSettleForLess',
+                            'GlossarySectionContent',
+                            'Glossary'
                         )
                     );
     }
 
     public function howitworks()
     {
-        return view('site.pages.how-it-works');
+        $HowitWorksPageSetting= HowitWorksPageSetting::where('module_status','Active')->orderBy('id', 'DESC')->first();
+        $howitworksdonotsettleforless= howitworksdonotsettleforless::orderBy('id', 'DESC')->first();
+        $HowItWorksDoNotSettleStep= HowItWorksDoNotSettleStep::where('module_status','Active')->orderBy('id', 'ASC')->get();
+        $HowItWorkCasesWeFund= HowItWorkCasesWeFund::orderBy('id', 'DESC')->first();
+        $HowItWorkSecuringTheMoney= HowItWorkSecuringTheMoney::orderBy('id', 'DESC')->first();
+        //dd($HowitWorksPageSetting);
+        return view('site.pages.how-it-works',
+                        compact(
+                            'HowitWorksPageSetting',
+                            'howitworksdonotsettleforless',
+                            'HowItWorksDoNotSettleStep',
+                            'HowItWorkCasesWeFund',
+                            'HowItWorkSecuringTheMoney'
+                        )
+                    );
     }
 
     public function typesoffunding()
     {
-        return view('site.pages.types-of-funding');
+        $typeoffundpage= TypeofFundPage::where('module_status','Active')->orderBy('id', 'DESC')->first();
+        $caseswefundtype= Typesoffundingpresettlement::orderBy('id', 'DESC')->first();
+        $FundingForm= FundingForm::where('module_status','Active')->orderBy('id', 'ASC')->get();
+        $CasesWeFundType= TypesOfFundCasesWeFundType::orderBy('id', 'DESC')->first();
+        $HelpOnManyCaseTypes= HelpOnManyCaseTypes::where('module_status','Active')->orderBy('id', 'ASC')->get();
+        //dd($HelpOnManyCaseTypes);
+        return view('site.pages.types-of-funding',
+                        compact(
+                            'typeoffundpage',
+                            'caseswefundtype',
+                            'FundingForm',
+                            'CasesWeFundType',
+                            'HelpOnManyCaseTypes'
+                            )
+                    );
     }
 
     public function about()
@@ -71,7 +159,10 @@ class FrontModuleController extends Controller
 
     public function faq()
     {
-        return view('site.pages.faq');
+        $faq = $this->faqData();
+        $faqinfo = FaqPageSetting::where('module_status','Active')->orderBy('id', 'DESC')->first();
+       // dd($faqinfo);
+        return view('site.pages.faq',compact('faq','faqinfo'));
     }
 
     public function forattorneys()
@@ -81,12 +172,30 @@ class FrontModuleController extends Controller
 
     public function resources()
     {
-        return view('site.pages.resource');
+        $ResourceContentInfo= ResourcePageSetting::where('module_status','Active')->orderBy('id', 'DESC')->first();
+        $ResourceContent= ResourceContent::where('module_status','Active')->orderBy('id', 'DESC')->get();
+        //dd($ResourceContent);
+        return view('site.pages.resource',
+                    compact(
+                        'ResourceContentInfo',
+                        'ResourceContent'
+                    )
+                );
     }
 
-    public function resourcesDetails()
+    public function resourcesDetails(request $request, $id=0,$title='')
     {
-        return view('site.pages.resource-details');
+        $details= ResourceContent::find($id);
+        $ResourceContent= ResourceContent::where('module_status','Active')->orderBy('id', 'DESC')->get();
+        //dd($details);
+        return view('site.pages.resource-details',compact('details','ResourceContent'));
+    }
+    public function resourcesSearch(request $request)
+    {
+        $serach = $request->search_field;
+        $query = ResourceContent::where('title', 'LIKE', '%' . $serach . '%')->orderBy('id', 'DESC')->get();
+        //dd($query);
+        return view('site.pages.resource-search',compact('query'));
     }
 
     public function contactus()
@@ -125,15 +234,42 @@ class FrontModuleController extends Controller
     }
     public function termsOfUse()
     {
-        return view('site.pages.terms-of-use');
+        $tabCount=TermsOfUse::where('module_status','Active')->count();
+        if($tabCount==0)
+        {
+            return redirect(url('home'));
+        }
+        else
+        {
+            $TermsOfUse= TermsOfUse::where('module_status','Active')->first();
+            return view('site.pages.terms-of-use',compact('TermsOfUse'));
+        }
     }
     public function privacyPolicy()
     {
-        return view('site.pages.privacy-policy');
+        $tabCount=PrivacyPolicyPage::where('module_status','Active')->count();
+        if($tabCount==0)
+        {
+            return redirect(url('home'));
+        }
+        else
+        {
+            $PrivacyPolicy= PrivacyPolicyPage::where('module_status','Active')->first();
+            return view('site.pages.privacy-policy',compact('PrivacyPolicy'));
+        }
     }
     public function stateSpecificLicenses()
     {
-        return view('site.pages.state-specific-licenses');
+        $tabCount=StateSpecificLicenses::where('module_status','Active')->count();
+        if($tabCount==0)
+        {
+            return redirect(url('home'));
+        }
+        else
+        {
+            $licenses= StateSpecificLicenses::where('module_status','Active')->first();
+            return view('site.pages.state-specific-licenses',compact('licenses'));
+        }
     }
 
     /**

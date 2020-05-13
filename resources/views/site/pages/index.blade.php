@@ -287,85 +287,81 @@
     @endisset
     
 
+    @isset($HelpOnManyCase)
+        @if ($HelpOnManyCase->module_status=="Active")
+            <!-- Team Start HelpOnManyCase HelpOnManyCaseTypes -->
+            <section class="team-area" style="padding:58px 0;">
+                <div class="container">
+                    <div class="row" style="padding-bottom: 20px;">
+                        <div class="col-md-12">
+                            <div class="defult-title text-center">
+                                <?php 
+                                    $heading=$HelpOnManyCase->title; 
+                                    $heading_ar=explode(" ",$heading);
+                                    $focusText=$heading_ar[key(array_slice($heading_ar, -1, 1, true))];
+                                    $unFocusText=str_replace($focusText,"",$heading); 
+                                ?>
+                                <h1 style="padding-bottom: 20px;">{{$unFocusText}}<span> {{$focusText}}</span></h1>
+                                <p class="" style="padding-bottom: 20px;">{{$HelpOnManyCase->detail}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    @isset($HelpOnManyCaseTypes)
+                    <div class="row">
+                        @foreach ($HelpOnManyCaseTypes as $item)
+                            <div class="col-md-4 col-sm-6 col-xs-6 fw600">
+                                <div class="service-col-two wow bounceInLeft our-team" style="--my-rootmap-service-two-content-back:{{$HelpOnManyCase->case_block_forecolor}};" data-wow-duration="1s" data-wow-delay="0s">
+                                    <div class="service-two-content text-center">
+                                        <img class="img-responsive" style="width:10rem; margin: 0 auto; padding-top:20px;" src="{{asset('upload/helponmanycasetypes/'.$item->image)}}" alt="">
+                                    </div>
+                                    <div class="team-profile" style="--my-rootmap-team-profile-back:{{$HelpOnManyCase->case_block_bottom_forecolor}};">
+                                        <h4 style="color:{{$HelpOnManyCase->case_block_bottom_text_color}};">{{$item->title}}</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                    @endisset
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                            <a href="{{url('/'.$HelpOnManyCase->button_url)}}" class="btn simple-btn">{!!$HelpOnManyCase->button_text!!}</a>
+                        </div>   
+                        
+                    </div>
+                </div>
+            </section>
+        @endif
+    @endisset
+    
+    @isset($NeverSettleForLess)
+        @if ($NeverSettleForLess->module_status=="Active")
+            <!-- Never Settle for Less start -->
+            <section class="counter-area about-area-two" id="about" style="padding:40px 0 30px !important;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6" style="padding-top:50px;">
+                            <div class="about-col">
+                                <h2 class="separator-left" style="color: #FF741A; font-weight: bolder; font-size: xxx-large;">{{$NeverSettleForLess->title}}</h2>
+                            </div>
 
-        <!-- Team Start -->
-    <section class="team-area" style="padding:58px 0;">
-        <div class="container">
-            <div class="row" style="padding-bottom: 20px;">
-                <div class="col-md-12">
-                    <div class="defult-title text-center">
-                        <h1 style="padding-bottom: 20px;">Help For Many <span> Case Types</span></h1>
-                        <p class="" style="padding-bottom: 20px;">Oasis provides financial support when you need it most, funding a variety of personal injury case types.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4 col-sm-6 col-xs-6 fw600">
-                    <div class="service-col-two wow bounceInLeft our-team" style="--my-rootmap-service-two-content-back:#F5F5F5;" data-wow-duration="1s" data-wow-delay="0s">
-                        <div class="service-two-content text-center">
-                            <img class="img-responsive" style="width:10rem; margin: 0 auto; padding-top:20px;" src="{{asset('module/svg/people.svg')}}" alt="">
+                            <div class="about-col">
+                                <p style="font-size:2rem; font-weight: 600;">{{$NeverSettleForLess->detail}}</p>
+                            </div>
                         </div>
-                        <div class="team-profile">
-                            <h4>Auto Accident</h4>
+                        <div class="col-lg-6 col-md-6">
+                        <div class="about-col">
+                            <div class="about-image">
+                                    <img src="{{asset('upload/neversettleforless/'.$NeverSettleForLess->image)}}" alt="{{$NeverSettleForLess->title}}">
+                                </div>
+                        </div>
                         </div>
                     </div>
+                    
                 </div>
-                <div class="col-md-4 col-sm-6 col-xs-6 fw600">
-                    <div class="service-col-two wow bounceInLeft our-team" data-wow-duration="1s" data-wow-delay="0s">
-                        <div class="service-two-content text-center">
-                            <img class="img-responsive" style="width:10rem; margin: 0 auto; padding-top:20px;" src="{{asset('module/svg/professions-and-jobs.svg')}}" alt="">
-                        </div>
-                        <div class="team-profile">
-                            <h4>Workers Camp</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-6 fw600">
-                    <div class="service-col-two wow bounceInLeft our-team" data-wow-duration="1s" data-wow-delay="0s">
-                        <div class="service-two-content text-center">
-                            <img class="img-responsive" style="width:10rem; margin: 0 auto; padding-top:20px;" src="{{asset('module/svg/people_accident.svg')}}" alt="">
-                        </div>
-                        <div class="team-profile">
-                            <h4> Premises Negligence</h4>
-                        </div>
-                    </div>
-                </div>
-                
-                
-            </div>
-            <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12 text-center">
-                    <a href="#" class="btn simple-btn">View All Types Of Cases <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
-                </div>   
-                
-            </div>
-        </div>
-    </section>
-
-    <!-- Never Settle for Less start -->
-    <section class="counter-area about-area-two" id="about" style="padding:40px 0 30px !important;">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-md-6" style="padding-top:50px;">
-                    <div class="about-col">
-                        <h2 class="separator-left" style="color: #FF741A; font-weight: bolder; font-size: xxx-large;">Never Settle For Less</h2>
-                    </div>
-
-                    <div class="about-col">
-                        <p style="font-size:2rem; font-weight: 600;">Oasis understands that bills don’t wait — and cases don’t settle quickly. We’ll work to get you a cash advance now, allowing your attorney more time to fight for the full value of your case.</p>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                   <div class="about-col">
-                       <div class="about-image">
-                            <img src="{{asset('module/images/extra/Depositphotos_214193542_xl-2015.jpg')}}" alt="">
-                        </div>
-                   </div>
-                </div>
-            </div>
-            
-        </div>
-    </section>
+            </section>
+        @endif
+    @endisset
+    
 
     <!-- Appointment Start -->
     <section class="appointment-area" id="appointment" style="padding:60px 0 60px;">
@@ -461,101 +457,131 @@
         </div>
     </section>
 
-    <!-- Appointment Start -->
-    <section class="about-area" id="appointment" style="padding:60px 0 60px;">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                    <div class="about-col text-center">
-                        <h1 id="getstarted" class="separator-center-default">Glossary</h1>
-                        <p>There is a lot of terminology used in referring to pre-settlement and personal injury cases. The below glossary of terms and phrases is meant to provide some clarification around what each means and how they relate to the products and services offered by Oasis Financial.</p>
+    @isset($GlossarySectionContent)
+        @if ($GlossarySectionContent->module_status=="Active")
+            <!-- GlossarySectionContent -->
+            <section class="about-area" id="appointment" style="padding:60px 0 60px;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2">
+                            <div class="about-col text-center">
+                                <h1 id="getstarted" class="separator-center-default">{{$GlossarySectionContent->title}}</h1>
+                                <p>{{$GlossarySectionContent->detail}}</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12">
+                            <div class="appointment-col">
+                                
+                                {{-- <div class="row">
+                                    <div class="col-md-8 col-md-offset-2">
+                                        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading" role="tab" id="headingOne">
+                                                    <h4 class="panel-title">
+                                                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                            What is web design?
+                                                        </a>
+                                                    </h4>
+                                                </div>
+                                                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                                    <div class="panel-body">
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl lorem, dictum id pellentesque at, vestibulum ut arcu. Curabitur erat libero, egestas eu tincidunt ac, rutrum ac justo. Vivamus condimentum laoreet lectus, blandit posuere tortor aliquam vitae. Curabitur molestie eros. </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading" role="tab" id="headingTwo">
+                                                    <h4 class="panel-title">
+                                                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                            What is web development?
+                                                        </a>
+                                                    </h4>
+                                                </div>
+                                                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                                    <div class="panel-body">
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl lorem, dictum id pellentesque at, vestibulum ut arcu. Curabitur erat libero, egestas eu tincidunt ac, rutrum ac justo. Vivamus condimentum laoreet lectus, blandit posuere tortor aliquam vitae. Curabitur molestie eros. </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading" role="tab" id="headingThree">
+                                                    <h4 class="panel-title">
+                                                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                            How can I be a developer?
+                                                        </a>
+                                                    </h4>
+                                                </div>
+                                                <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                                    <div class="panel-body">
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl lorem, dictum id pellentesque at, vestibulum ut arcu. Curabitur erat libero, egestas eu tincidunt ac, rutrum ac justo. Vivamus condimentum laoreet lectus, blandit posuere tortor aliquam vitae. Curabitur molestie eros. </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading" role="tab" id="headingFour">
+                                                    <h4 class="panel-title">
+                                                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                                            How can I be a developer?
+                                                        </a>
+                                                    </h4>
+                                                </div>
+                                                <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                                                    <div class="panel-body">
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl lorem, dictum id pellentesque at, vestibulum ut arcu. Curabitur erat libero, egestas eu tincidunt ac, rutrum ac justo. Vivamus condimentum laoreet lectus, blandit posuere tortor aliquam vitae. Curabitur molestie eros. </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading" role="tab" id="headingFive">
+                                                    <h4 class="panel-title">
+                                                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                                            How can I be a developer?
+                                                        </a>
+                                                    </h4>
+                                                </div>
+                                                <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+                                                    <div class="panel-body">
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl lorem, dictum id pellentesque at, vestibulum ut arcu. Curabitur erat libero, egestas eu tincidunt ac, rutrum ac justo. Vivamus condimentum laoreet lectus, blandit posuere tortor aliquam vitae. Curabitur molestie eros. </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> --}}
+
+                                @isset($Glossary)
+                                    <div class="row">
+                                        <div class="col-md-8 col-md-offset-2">
+                                            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                                            @foreach ($Glossary as $key=>$item)
+                                                <div class="panel panel-default">
+                                                    <div class="panel-heading" role="tab" id="heading{{$key}}">
+                                                        <h4 class="panel-title">
+                                                            <a class="{{$key==0?'':'collapsed'}}" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{$key}}"  aria-expanded="{{$key==0?'true':'false'}}" aria-controls="collapse{{$key}}">
+                                                               {{$item->title}}
+                                                            </a>
+                                                        </h4>
+                                                    </div>
+                                                    <div id="collapse{{$key}}" class="panel-collapse collapse {{$key==0?'in':''}}" aria-expanded="{{$key==0?'true':'false'}}" role="tabpanel" aria-labelledby="heading{{$key}}">
+                                                        <div class="panel-body">
+                                                            <p>{{$item->detail}} </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            @endforeach
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endisset
+                            
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-12 col-md-12">
-                    <div class="appointment-col">
-                        
-                        <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingOne">
-                                <h4 class="panel-title">
-                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        What is web design?
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-                                <div class="panel-body">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl lorem, dictum id pellentesque at, vestibulum ut arcu. Curabitur erat libero, egestas eu tincidunt ac, rutrum ac justo. Vivamus condimentum laoreet lectus, blandit posuere tortor aliquam vitae. Curabitur molestie eros. </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingTwo">
-                                <h4 class="panel-title">
-                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        What is web development?
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                                <div class="panel-body">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl lorem, dictum id pellentesque at, vestibulum ut arcu. Curabitur erat libero, egestas eu tincidunt ac, rutrum ac justo. Vivamus condimentum laoreet lectus, blandit posuere tortor aliquam vitae. Curabitur molestie eros. </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingThree">
-                                <h4 class="panel-title">
-                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                        How can I be a developer?
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-                                <div class="panel-body">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl lorem, dictum id pellentesque at, vestibulum ut arcu. Curabitur erat libero, egestas eu tincidunt ac, rutrum ac justo. Vivamus condimentum laoreet lectus, blandit posuere tortor aliquam vitae. Curabitur molestie eros. </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingFour">
-                                <h4 class="panel-title">
-                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                        How can I be a developer?
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
-                                <div class="panel-body">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl lorem, dictum id pellentesque at, vestibulum ut arcu. Curabitur erat libero, egestas eu tincidunt ac, rutrum ac justo. Vivamus condimentum laoreet lectus, blandit posuere tortor aliquam vitae. Curabitur molestie eros. </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingFive">
-                                <h4 class="panel-title">
-                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                                        How can I be a developer?
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
-                                <div class="panel-body">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl lorem, dictum id pellentesque at, vestibulum ut arcu. Curabitur erat libero, egestas eu tincidunt ac, rutrum ac justo. Vivamus condimentum laoreet lectus, blandit posuere tortor aliquam vitae. Curabitur molestie eros. </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-                       
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+            </section>
+        @endif
+    @endisset
+    
 @endsection
 @section('js')
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>

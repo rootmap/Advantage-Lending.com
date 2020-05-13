@@ -1,7 +1,7 @@
 @extends('admin.layout.master')
 @section('title','CRUD Form Page')
 @section('content')
-
+        
         <div class="content add-details">
                 <div class="in-content-wrapper">
                     <div class="box">

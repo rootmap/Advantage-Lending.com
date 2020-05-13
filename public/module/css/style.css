@@ -1699,7 +1699,7 @@ input:-moz-placeholder {
 
 .our-team .team-profile {
     text-align: center;
-    background: #FF741A;
+    background: var(--my-rootmap-team-profile-back);
     position: relative;
     width: 100%;
     padding: 20px 20px;
@@ -1723,7 +1723,7 @@ input:-moz-placeholder {
 
 .our-team .team-profile:before {
     content: "";
-    border-bottom: 28px solid #FF741A;
+    border-bottom: 28px solid var(--my-rootmap-team-profile-back);
     border-right: 120px solid transparent;
     position: absolute;
     top: -25px;

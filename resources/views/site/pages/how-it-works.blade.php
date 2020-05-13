@@ -5,7 +5,7 @@
         .innerpage-titlebar {
             padding: 80px 0 80px;
             position: relative;
-            background: url('{{asset('module/images/extra/What-can-I-do-for-you_-590052924_6248x4912.jpeg')}}');
+        background: url("{{asset('upload/howitworkspagesetting/'.$HowitWorksPageSetting->background_image)}}");
             background-position: center;
             background-size: cover;
             background-repeat: no-repeat;
@@ -183,9 +183,9 @@
 @endsection
 @section('content')
     <!-- Inner Page title Start -->
-    <section class="innerpage-titlebar">
+    <section class="innerpage-titlebar"  style="--my-innerpage-titlebar-color:{{$HowitWorksPageSetting->background_forecolor}}; ">
         <div class="container">
-            <h3 class="fix-barcum-head">How it Works</h3>
+            <h3 class="fix-barcum-head">{{$HowitWorksPageSetting->title}}</h3>
         </div>
     </section>
 
@@ -193,133 +193,112 @@
     <section class="about-area" id="appointment" style="padding:60px 0 60px;">
         <div class="container">
             <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                    <div class="about-col text-center">
-                        <h1 id="getstarted" class="separator-center">Don’t Settle for Less</h1>
-                        <p>There is a lot of terminology used in referring to pre-settlement and personal injury cases. The below glossary of terms and phrases is meant to provide some clarification around what each means and how they relate to the products and services offered by Oasis Financial.</p>
-                    </div>
-                </div>
-                
+                @isset($howitworksdonotsettleforless)
+                    @if ($howitworksdonotsettleforless->module_status=="Active")
+                        <div class="col-md-8 col-md-offset-2">
+                            <div class="about-col text-center">
+                            <h1 id="getstarted" class="separator-center">{{$howitworksdonotsettleforless->title}}</h1>
+                                <p>{!!$howitworksdonotsettleforless->detail!!}</p>
+                            </div>
+                        </div>
+                    @endif
+                @endisset  
             </div>
             <div class="row">
-                <div class="col-md-3 col-sm-6 col-xs-6 fw600 ">
-                    <div class="service-col-two serviceHoberBox wow bounceInLeft" data-wow-duration="1s" data-wow-delay="0s">
-                        <div class="service-two-content text-center">
-                            <img class="img-responsive" style="width:10rem; margin: 0 auto; padding-top:20px;" src="{{asset('module/svg/people.svg')}}" alt="">
-                        </div>
-                        <div class="service-two-content text-center" style="padding: 0 20px;">
-                            <h3>1. You Apply</h3>
-                            <div class="heading-under-line-full"></div>
-                        </div>
-                        <div class="service-two-content">
-                            <p>All you have to do is fill out the form on our website, but don’t worry, you are under no obligation by doing so. Simply begin by providing your name and contact information; the name of the law firm that’s handling your case; your lawyer’s name; and the law firm’s telephone number.</p>
-                            <a class="btn btn-default simple-btn" title="Apply Now" href="#"><i class="fa fa-file-text-o" aria-hidden="true"></i> Apply Now</a>
+                @isset($HowItWorksDoNotSettleStep)
+                    @foreach ($HowItWorksDoNotSettleStep as $item)
+                    <div class="col-md-3 col-sm-6 col-xs-6 fw600 ">
+                        <div class="service-col-two serviceHoberBox wow bounceInLeft" data-wow-duration="1s" data-wow-delay="0s">
+                            <div class="service-two-content text-center">
+                                <img class="img-responsive" style="width:10rem; margin: 0 auto; padding-top:20px;" src="{{asset('upload/howitworksdonotsettlestep/'.$item->image)}}" alt="">
+                            </div>
+                            <div class="service-two-content text-center" style="padding: 0 20px;">
+                                <h3>{{$item->title}}</h3>
+                                <div class="heading-under-line-full"></div>
+                            </div>
+                            <div class="service-two-content">
+                                <p>{!!$item->detail!!}</p>
+                                @if ($item->button_status == "Enable")
+                                <a class="btn btn-default simple-btn" title="{{$item->button_text}}" href="{{$item->button_url}}"><i class="fa fa-file-text-o" aria-hidden="true"></i> {{$item->button_text}}</a>
+                                @endif
+                            </div>
                         </div>
                     </div>
-                </div>
+                    @endforeach
+                @endisset
+                
 
-                <div class="col-md-3 col-sm-6 col-xs-6 fw600">
-                    <div class="service-col-two wow bounceInLeft" data-wow-duration="1s" data-wow-delay="0s">
-                        <div class="service-two-content text-center">
-                            <img class="img-responsive" style="width:10rem; margin: 0 auto; padding-top:20px;" src="{{asset('module/svg/people.svg')}}" alt="">
-                        </div>
-                        <div class="service-two-content text-center" style="padding: 0 20px;">
-                            <h3>2. We Review</h3>
-                            <div class="heading-under-line-full"></div>
-                        </div>
-                        <div class="service-two-content">
-                            <p>We’ll evaluate your application as it is submitted. We’ll also consult with your attorney. To facilitate this part of the process, we’ll only ask him or her to provide key documents necessary to help us assess your case.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-3 col-sm-6 col-xs-6 fw600">
-                    <div class="service-col-two wow bounceInLeft" data-wow-duration="1s" data-wow-delay="0s">
-                        <div class="service-two-content text-center">
-                            <img class="img-responsive" style="width:10rem; margin: 0 auto; padding-top:20px;" src="{{asset('module/svg/people.svg')}}" alt="">
-                        </div>
-                        <div class="service-two-content text-center" style="padding: 0 20px;">
-                            <h3>3. We Pay</h3>
-                            <div class="heading-under-line-full"></div>
-                        </div>
-                        <div class="service-two-content">
-                            <p>If we determine that you qualify for pre-settlement funding, we’ll provide cash from your final settlement. Qualified applicants generally receive $500 to $100,000, sometimes within 24 hours after approval.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-3 col-sm-6 col-xs-6 fw600">
-                    <div class="service-col-two wow bounceInLeft" data-wow-duration="1s" data-wow-delay="0s">
-                        <div class="service-two-content text-center">
-                            <img class="img-responsive" style="width:10rem; margin: 0 auto; padding-top:20px;" src="{{asset('module/svg/people.svg')}}" alt="">
-                        </div>
-                        <div class="service-two-content text-center" style="padding: 0 20px;">
-                            <h3>4. You Benefit</h3>
-                            <div class="heading-under-line-full"></div>
-                        </div>
-                        <div class="service-two-content">
-                            <p>You can use your money to cover routine expenses or costs stemming from your injury/injuries. It’s as simple as that. Oasis Financial helps you get cash quickly when you need it the most. With this peace of mind, you can concentrate on your recovery.</p>
-                        </div>
-                    </div>
-                </div>
+                
                 
             </div>
         </div>
     </section>
-    <section class="counter-area about-area-two" id="about" style="padding:40px 0 30px !important;">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-7 ">
-                    <h1 class=" color_or">Cases We Fund</h1>
-                    <div class="font-size-18">Oasis offers financial assistance for a wide variety of personal injury case types, including auto accidents, workers’ comp, slip and fall, and many more.</div>
-                    <p><a class="arrow-right mt-2 mb-md-4 mb-5" href="">Learn more</a></p>
-                    <img src="{{ url('module/images/extra/Depositphotos_214193542_xl-2015.jpg') }}" alt="Oasis support Image" class="img-fluid d-block m-auto object-fit-cover w-100 rounded">
-                 </div>
-                 <div class="col-md-5 pre casesWe">
-                    <h1 class="separator-right color_or">Pre-settlement funding is a good option for you if:</h1>
-                    <ul>
-                       <li>You have been injured</li>
-                       <li>You have an attorney</li>
-                       <li>You are struggling to make ends meet while waiting for your settlement</li>
-                    </ul>
-                    <div class="text-md-left"><a class="arrow-right" href="">Don’t have an attorney? <br class="d-md-none">Oasis can help.</a></div>
-                 </div>
-            </div>
-            
-        </div>
-    </section>
-    <section class="counter-area about-area-two bg-info" id="about" style="padding:40px 0 30px !important;">
-        <div class="container">
-            <div class="row">
-               <div class="col-md-6">
-                    <h1 class="color_or">Don’t hesitate – take the first step to securing the money you need</h1>
-                    <p><span style="font-weight: 400;">You have a lot of options when it comes to pre-settlement funding, but our competitors can’t match our simple, affordable, risk-free process. As experts in the field, we have earned an&nbsp; A+ rating from the Better Business Bureau, and our four-star rating from Trustpilot. We have also helped thousands of people by providing financial relief when they need it the most.&nbsp;</span></p>
-                    <p><span style="font-weight: 400;">At a time when you should be fully focused on your recovery, the last thing you need is to stress over financial troubles. </span></p>
-               </div>
-               <div style="padding-top: 120px;">
-                <div class="col-md-3 col-sm-6">
-                    <div class="rounded border border-secondary mt-md-4 expert-img" style="border-width: 2px !important;"> 
-                        <img src="{{ url('module/images/bbaplus.png') }}" alt="Expert Assistance" class="img-fluid" style="max-width:60%;">
+    @isset($HowItWorkCasesWeFund)
+    @if ($HowItWorkCasesWeFund->module_status=="Active")
+        <section class="counter-area about-area-two" id="about" style="padding:40px 0 30px !important; background: {{$HowItWorkCasesWeFund->section_background_forecolor}};">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7 ">
+                        <h1 class=" color_or">{{$HowItWorkCasesWeFund->title}}</h1>
+                        <div class="font-size-18">{!!$HowItWorkCasesWeFund->detail!!}</div>
+                        <p><a class="arrow-right mt-2 mb-md-4 mb-5" href="">{{$HowItWorkCasesWeFund->button_text}}</a></p>
+                        <img src="{{asset('upload/howitworkcaseswefund/'.$HowItWorkCasesWeFund->section_image)}}" alt="{{$HowItWorkCasesWeFund->title}}" class="img-fluid d-block m-auto object-fit-cover w-100 rounded">
                     </div>
+                    <div class="col-md-5 pre casesWe">
+                        <h1 class="separator-right color_or">{{$HowItWorkCasesWeFund->heading_two_title}}</h1>
+                        <ul>
+                            @if ($HowItWorkCasesWeFund->heading_options != "")
+                                @foreach(explode(',', $HowItWorkCasesWeFund->heading_options) as $info) 
+                                    <li>{{$info}}</li>
+                                @endforeach
+                            @endif
+                        </ul>    
+                        
+                        <div class="text-md-left"><a class="arrow-right" href="{{$HowItWorkCasesWeFund->link_url}}">{{$HowItWorkCasesWeFund->link_text}} </a></div>
+                    </div>
+                    
                 </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="rounded border border-secondary mt-md-4 expert-img py-2 py-md-3 px-3 px-md-2" style="border-width: 2px !important;">
-                       <div class="trustpilot-widget" data-locale="en-US" data-template-id="53aa8807dec7e10d38f59f32" data-businessunit-id="5bdc94abfbd6140001fa449c" data-style-height="150px" data-style-width="100%" data-theme="light" data-stars="1,2,3,4,5" style="position: relative;">
-                        <iframe frameborder="0" scrolling="no" title="Customer reviews powered by Trustpilot" loading="auto" src="https://widget.trustpilot.com/trustboxes/53aa8807dec7e10d38f59f32/index.html?templateId=53aa8807dec7e10d38f59f32&amp;businessunitId=5bdc94abfbd6140001fa449c#locale=en-US&amp;styleHeight=150px&amp;styleWidth=100%25&amp;theme=light&amp;stars=1%2C2%2C3%2C4%2C5" style="position: relative; height: 150px; width: 100%; border-style: none; display: block; overflow: hidden;"></iframe> 
-                        </div>
-                    </div>
-                 </div>
-               </div>
+                
             </div>
-        </div>
-    </section>
+        </section>
+    @endif
+    @endisset
+    @isset($HowItWorkSecuringTheMoney)
+    @if ($HowItWorkSecuringTheMoney->module_status=="Active")
+        <section class="counter-area about-area-two bg-info" id="about" style="padding:40px 0 30px !important; background: {{$HowItWorkSecuringTheMoney->section_background_forecolor}};">
+            <div class="container">
+                <div class="row">  
+                    <div class="col-md-6">
+                        <h1 class="color_or">{{$HowItWorkSecuringTheMoney->title}}</h1>
+                        <p>
+                            {!!$HowItWorkSecuringTheMoney->detail!!}
+                        </p>
+                    </div>
+                    <div style="padding-top: 120px;">
+                        <div class="col-md-3 col-sm-6">
+                            <div class="rounded border border-secondary mt-md-4 expert-img" style="border-width: 2px !important;"> 
+                                <img src="{{asset('upload/howitworksecuringthemoney/'.$HowItWorkSecuringTheMoney->content_image_one)}}" alt="Expert Assistance" class="img-fluid" style="max-width:60%;">
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="rounded border border-secondary mt-md-4 expert-img" style="border-width: 2px !important;"> 
+                                <img src="{{asset('upload/howitworksecuringthemoney/'.$HowItWorkSecuringTheMoney->content_image_two)}}" alt="Expert Assistance" class="img-fluid" style="max-width:60%;">
+                            </div>
+                        </div>
+                </div>
+                </div>
+            </div>
+        </section>
+    @endif
+    @endisset
     <section class="appointment-area" id="appointment" style="padding:60px 0 60px;">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="about-col text-center">
-                        <h1 id="getstarted" class="color_or">Need help? Ready to get started?</h1>
-                        <p>Contact our team toll-free at <a class="color_or" href="tel:877.333.6680">(877) 333-6680</a>, or start our free, no obligation application.</p>
+                        <h1 id="getstarted" class="color_or">{{$HowitWorksPageSetting->form_title}}</h1>
+                        {{-- <p>Contact our team toll-free at <a class="color_or" href="tel:877.333.6680">(877) 333-6680</a>, or start our free, no obligation application.</p> --}}
+                        {!!$HowitWorksPageSetting->form_detail!!}
                     </div>
                 </div>
                 <div class="col-lg-12 col-md-12">
@@ -393,7 +372,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12 text-right">
-                                            <button class="btn btn-default simple-btn" type="submit">Continue <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+                                            <button class="btn btn-default simple-btn" type="submit">{{$HowitWorksPageSetting->form_button_text}} <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
                                         </div>
                                     </div>
                                 </div>

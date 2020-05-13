@@ -23,7 +23,8 @@ Route::get('/about-advantage-lending', 'FrontModuleController@about');
 Route::get('/faq', 'FrontModuleController@faq');
 Route::get('/for-attorneys', 'FrontModuleController@forattorneys');
 Route::get('/resource', 'FrontModuleController@resources');
-Route::get('/resource-details', 'FrontModuleController@resourcesDetails');
+Route::get('/resource-details/{id}/{title}', 'FrontModuleController@resourcesDetails');
+Route::post('/search', 'FrontModuleController@resourcesSearch');
 Route::get('/contact-us', 'FrontModuleController@contactus');
 Route::get('/careers', 'FrontModuleController@careers');
 Route::get('/for-brokers', 'FrontModuleController@forbrokers');
@@ -313,3 +314,332 @@ Route::post('/youarenotalonevideo/ajax','YouarenotalonevideoController@ajaxSave'
 Route::post('/youarenotalonevideo/datatable/ajax','YouarenotalonevideoController@datatable');
 Route::post('/youarenotalonevideo/update/{id}','YouarenotalonevideoController@update');
 //======================== Youarenotalonevideo Route End ===============================//
+
+//======================== Helponmanycase Route Start ===============================//
+Route::get('/helponmanycase/list','HelponmanycaseController@show');
+Route::get('/helponmanycase/create','HelponmanycaseController@create');
+Route::get('/helponmanycase/edit/{id}','HelponmanycaseController@edit');
+Route::get('/helponmanycase/delete/{id}','HelponmanycaseController@destroy');
+Route::get('/helponmanycase','HelponmanycaseController@index');
+Route::get('/helponmanycase/export/excel','HelponmanycaseController@ExportExcel');
+Route::get('/helponmanycase/export/pdf','HelponmanycaseController@ExportPDF');
+Route::post('/helponmanycase','HelponmanycaseController@store');
+Route::post('/helponmanycase/ajax','HelponmanycaseController@ajaxSave');
+Route::post('/helponmanycase/datatable/ajax','HelponmanycaseController@datatable');
+Route::post('/helponmanycase/update/{id}','HelponmanycaseController@update');
+//======================== Helponmanycase Route End ===============================//
+//======================== Helponmanycasetypes Route Start ===============================//
+Route::get('/helponmanycasetypes/list','HelponmanycasetypesController@show');
+Route::get('/helponmanycasetypes/create','HelponmanycasetypesController@create');
+Route::get('/helponmanycasetypes/edit/{id}','HelponmanycasetypesController@edit');
+Route::get('/helponmanycasetypes/delete/{id}','HelponmanycasetypesController@destroy');
+Route::get('/helponmanycasetypes','HelponmanycasetypesController@index');
+Route::get('/helponmanycasetypes/export/excel','HelponmanycasetypesController@ExportExcel');
+Route::get('/helponmanycasetypes/export/pdf','HelponmanycasetypesController@ExportPDF');
+Route::post('/helponmanycasetypes','HelponmanycasetypesController@store');
+Route::post('/helponmanycasetypes/ajax','HelponmanycasetypesController@ajaxSave');
+Route::post('/helponmanycasetypes/datatable/ajax','HelponmanycasetypesController@datatable');
+Route::post('/helponmanycasetypes/update/{id}','HelponmanycasetypesController@update');
+//======================== Helponmanycasetypes Route End ===============================//
+//======================== Neversettleforless Route Start ===============================//
+Route::get('/neversettleforless/list','NeversettleforlessController@show');
+Route::get('/neversettleforless/create','NeversettleforlessController@create');
+Route::get('/neversettleforless/edit/{id}','NeversettleforlessController@edit');
+Route::get('/neversettleforless/delete/{id}','NeversettleforlessController@destroy');
+Route::get('/neversettleforless','NeversettleforlessController@index');
+Route::get('/neversettleforless/export/excel','NeversettleforlessController@ExportExcel');
+Route::get('/neversettleforless/export/pdf','NeversettleforlessController@ExportPDF');
+Route::post('/neversettleforless','NeversettleforlessController@store');
+Route::post('/neversettleforless/ajax','NeversettleforlessController@ajaxSave');
+Route::post('/neversettleforless/datatable/ajax','NeversettleforlessController@datatable');
+Route::post('/neversettleforless/update/{id}','NeversettleforlessController@update');
+//======================== Neversettleforless Route End ===============================//
+//======================== Glossarysectioncontent Route Start ===============================//
+Route::get('/glossarysectioncontent/list','GlossarysectioncontentController@show');
+Route::get('/glossarysectioncontent/create','GlossarysectioncontentController@create');
+Route::get('/glossarysectioncontent/edit/{id}','GlossarysectioncontentController@edit');
+Route::get('/glossarysectioncontent/delete/{id}','GlossarysectioncontentController@destroy');
+Route::get('/glossarysectioncontent','GlossarysectioncontentController@index');
+Route::get('/glossarysectioncontent/export/excel','GlossarysectioncontentController@ExportExcel');
+Route::get('/glossarysectioncontent/export/pdf','GlossarysectioncontentController@ExportPDF');
+Route::post('/glossarysectioncontent','GlossarysectioncontentController@store');
+Route::post('/glossarysectioncontent/ajax','GlossarysectioncontentController@ajaxSave');
+Route::post('/glossarysectioncontent/datatable/ajax','GlossarysectioncontentController@datatable');
+Route::post('/glossarysectioncontent/update/{id}','GlossarysectioncontentController@update');
+//======================== Glossarysectioncontent Route End ===============================//
+//======================== Glossary Route Start ===============================//
+Route::get('/glossary/list','GlossaryController@show');
+Route::get('/glossary/create','GlossaryController@create');
+Route::get('/glossary/edit/{id}','GlossaryController@edit');
+Route::get('/glossary/delete/{id}','GlossaryController@destroy');
+Route::get('/glossary','GlossaryController@index');
+Route::get('/glossary/export/excel','GlossaryController@ExportExcel');
+Route::get('/glossary/export/pdf','GlossaryController@ExportPDF');
+Route::post('/glossary','GlossaryController@store');
+Route::post('/glossary/ajax','GlossaryController@ajaxSave');
+Route::post('/glossary/datatable/ajax','GlossaryController@datatable');
+Route::post('/glossary/update/{id}','GlossaryController@update');
+//======================== Glossary Route End ===============================//
+
+//======================== Privacypolicypage Route Start ===============================//
+Route::get('/privacypolicypage/list','PrivacypolicypageController@show');
+Route::get('/privacypolicypage/create','PrivacypolicypageController@create');
+Route::get('/privacypolicypage/edit/{id}','PrivacypolicypageController@edit');
+Route::get('/privacypolicypage/delete/{id}','PrivacypolicypageController@destroy');
+Route::get('/privacypolicypage','PrivacypolicypageController@index');
+Route::get('/privacypolicypage/export/excel','PrivacypolicypageController@ExportExcel');
+Route::get('/privacypolicypage/export/pdf','PrivacypolicypageController@ExportPDF');
+Route::post('/privacypolicypage','PrivacypolicypageController@store');
+Route::post('/privacypolicypage/ajax','PrivacypolicypageController@ajaxSave');
+Route::post('/privacypolicypage/datatable/ajax','PrivacypolicypageController@datatable');
+Route::post('/privacypolicypage/update/{id}','PrivacypolicypageController@update');
+//======================== Privacypolicypage Route End ===============================//
+//======================== Termsofuse Route Start ===============================//
+Route::get('/termsofuse/list','TermsofuseController@show');
+Route::get('/termsofuse/create','TermsofuseController@create');
+Route::get('/termsofuse/edit/{id}','TermsofuseController@edit');
+Route::get('/termsofuse/delete/{id}','TermsofuseController@destroy');
+Route::get('/termsofuse','TermsofuseController@index');
+Route::get('/termsofuse/export/excel','TermsofuseController@ExportExcel');
+Route::get('/termsofuse/export/pdf','TermsofuseController@ExportPDF');
+Route::post('/termsofuse','TermsofuseController@store');
+Route::post('/termsofuse/ajax','TermsofuseController@ajaxSave');
+Route::post('/termsofuse/datatable/ajax','TermsofuseController@datatable');
+Route::post('/termsofuse/update/{id}','TermsofuseController@update');
+//======================== Termsofuse Route End ===============================//
+//======================== Statespecificlicenses Route Start ===============================//
+Route::get('/statespecificlicenses/list','StatespecificlicensesController@show');
+Route::get('/statespecificlicenses/create','StatespecificlicensesController@create');
+Route::get('/statespecificlicenses/edit/{id}','StatespecificlicensesController@edit');
+Route::get('/statespecificlicenses/delete/{id}','StatespecificlicensesController@destroy');
+Route::get('/statespecificlicenses','StatespecificlicensesController@index');
+Route::get('/statespecificlicenses/export/excel','StatespecificlicensesController@ExportExcel');
+Route::get('/statespecificlicenses/export/pdf','StatespecificlicensesController@ExportPDF');
+Route::post('/statespecificlicenses','StatespecificlicensesController@store');
+Route::post('/statespecificlicenses/ajax','StatespecificlicensesController@ajaxSave');
+Route::post('/statespecificlicenses/datatable/ajax','StatespecificlicensesController@datatable');
+Route::post('/statespecificlicenses/update/{id}','StatespecificlicensesController@update');
+//======================== Statespecificlicenses Route End ===============================//
+//======================== Howitworkspagesetting Route Start ===============================//
+Route::get('/howitworkspagesetting/list','HowitworkspagesettingController@show');
+Route::get('/howitworkspagesetting/create','HowitworkspagesettingController@create');
+Route::get('/howitworkspagesetting/edit/{id}','HowitworkspagesettingController@edit');
+Route::get('/howitworkspagesetting/delete/{id}','HowitworkspagesettingController@destroy');
+Route::get('/howitworkspagesetting','HowitworkspagesettingController@index');
+Route::get('/howitworkspagesetting/export/excel','HowitworkspagesettingController@ExportExcel');
+Route::get('/howitworkspagesetting/export/pdf','HowitworkspagesettingController@ExportPDF');
+Route::post('/howitworkspagesetting','HowitworkspagesettingController@store');
+Route::post('/howitworkspagesetting/ajax','HowitworkspagesettingController@ajaxSave');
+Route::post('/howitworkspagesetting/datatable/ajax','HowitworkspagesettingController@datatable');
+Route::post('/howitworkspagesetting/update/{id}','HowitworkspagesettingController@update');
+//======================== Howitworkspagesetting Route End ===============================//
+//======================== Faqpagesetting Route Start ===============================//
+Route::get('/faqpagesetting/list','FaqpagesettingController@show');
+Route::get('/faqpagesetting/create','FaqpagesettingController@create');
+Route::get('/faqpagesetting/edit/{id}','FaqpagesettingController@edit');
+Route::get('/faqpagesetting/delete/{id}','FaqpagesettingController@destroy');
+Route::get('/faqpagesetting','FaqpagesettingController@index');
+Route::get('/faqpagesetting/export/excel','FaqpagesettingController@ExportExcel');
+Route::get('/faqpagesetting/export/pdf','FaqpagesettingController@ExportPDF');
+Route::post('/faqpagesetting','FaqpagesettingController@store');
+Route::post('/faqpagesetting/ajax','FaqpagesettingController@ajaxSave');
+Route::post('/faqpagesetting/datatable/ajax','FaqpagesettingController@datatable');
+Route::post('/faqpagesetting/update/{id}','FaqpagesettingController@update');
+//======================== Faqpagesetting Route End ===============================//
+//======================== Typesoffundingpagesetting Route Start ===============================//
+Route::get('/typesoffundingpagesetting/list','TypesoffundingpagesettingController@show');
+Route::get('/typesoffundingpagesetting/create','TypesoffundingpagesettingController@create');
+Route::get('/typesoffundingpagesetting/edit/{id}','TypesoffundingpagesettingController@edit');
+Route::get('/typesoffundingpagesetting/delete/{id}','TypesoffundingpagesettingController@destroy');
+Route::get('/typesoffundingpagesetting','TypesoffundingpagesettingController@index');
+Route::get('/typesoffundingpagesetting/export/excel','TypesoffundingpagesettingController@ExportExcel');
+Route::get('/typesoffundingpagesetting/export/pdf','TypesoffundingpagesettingController@ExportPDF');
+Route::post('/typesoffundingpagesetting','TypesoffundingpagesettingController@store');
+Route::post('/typesoffundingpagesetting/ajax','TypesoffundingpagesettingController@ajaxSave');
+Route::post('/typesoffundingpagesetting/datatable/ajax','TypesoffundingpagesettingController@datatable');
+Route::post('/typesoffundingpagesetting/update/{id}','TypesoffundingpagesettingController@update');
+//======================== Typesoffundingpagesetting Route End ===============================//
+//======================== Resourcepagesetting Route Start ===============================//
+Route::get('/resourcepagesetting/list','ResourcepagesettingController@show');
+Route::get('/resourcepagesetting/create','ResourcepagesettingController@create');
+Route::get('/resourcepagesetting/edit/{id}','ResourcepagesettingController@edit');
+Route::get('/resourcepagesetting/delete/{id}','ResourcepagesettingController@destroy');
+Route::get('/resourcepagesetting','ResourcepagesettingController@index');
+Route::get('/resourcepagesetting/export/excel','ResourcepagesettingController@ExportExcel');
+Route::get('/resourcepagesetting/export/pdf','ResourcepagesettingController@ExportPDF');
+Route::post('/resourcepagesetting','ResourcepagesettingController@store');
+Route::post('/resourcepagesetting/ajax','ResourcepagesettingController@ajaxSave');
+Route::post('/resourcepagesetting/datatable/ajax','ResourcepagesettingController@datatable');
+Route::post('/resourcepagesetting/update/{id}','ResourcepagesettingController@update');
+//======================== Resourcepagesetting Route End ===============================//
+
+//======================== Typeoffundpage Route Start ===============================//
+Route::get('/typeoffundpage/list','TypeoffundpageController@show');
+Route::get('/typeoffundpage/create','TypeoffundpageController@create');
+Route::get('/typeoffundpage/edit/{id}','TypeoffundpageController@edit');
+Route::get('/typeoffundpage/delete/{id}','TypeoffundpageController@destroy');
+Route::get('/typeoffundpage','TypeoffundpageController@index');
+Route::get('/typeoffundpage/export/excel','TypeoffundpageController@ExportExcel');
+Route::get('/typeoffundpage/export/pdf','TypeoffundpageController@ExportPDF');
+Route::post('/typeoffundpage','TypeoffundpageController@store');
+Route::post('/typeoffundpage/ajax','TypeoffundpageController@ajaxSave');
+Route::post('/typeoffundpage/datatable/ajax','TypeoffundpageController@datatable');
+Route::post('/typeoffundpage/update/{id}','TypeoffundpageController@update');
+//======================== Typeoffundpage Route End ===============================//
+//======================== Howitworksdonotsettleforless Route Start ===============================//
+Route::get('/howitworksdonotsettleforless/list','HowitworksdonotsettleforlessController@show');
+Route::get('/howitworksdonotsettleforless/create','HowitworksdonotsettleforlessController@create');
+Route::get('/howitworksdonotsettleforless/edit/{id}','HowitworksdonotsettleforlessController@edit');
+Route::get('/howitworksdonotsettleforless/delete/{id}','HowitworksdonotsettleforlessController@destroy');
+Route::get('/howitworksdonotsettleforless','HowitworksdonotsettleforlessController@index');
+Route::get('/howitworksdonotsettleforless/export/excel','HowitworksdonotsettleforlessController@ExportExcel');
+Route::get('/howitworksdonotsettleforless/export/pdf','HowitworksdonotsettleforlessController@ExportPDF');
+Route::post('/howitworksdonotsettleforless','HowitworksdonotsettleforlessController@store');
+Route::post('/howitworksdonotsettleforless/ajax','HowitworksdonotsettleforlessController@ajaxSave');
+Route::post('/howitworksdonotsettleforless/datatable/ajax','HowitworksdonotsettleforlessController@datatable');
+Route::post('/howitworksdonotsettleforless/update/{id}','HowitworksdonotsettleforlessController@update');
+//======================== Howitworksdonotsettleforless Route End ===============================//
+
+//======================== Howitworksdonotsettlestep Route Start ===============================//
+Route::get('/howitworksdonotsettlestep/list','HowitworksdonotsettlestepController@show');
+Route::get('/howitworksdonotsettlestep/create','HowitworksdonotsettlestepController@create');
+Route::get('/howitworksdonotsettlestep/edit/{id}','HowitworksdonotsettlestepController@edit');
+Route::get('/howitworksdonotsettlestep/delete/{id}','HowitworksdonotsettlestepController@destroy');
+Route::get('/howitworksdonotsettlestep','HowitworksdonotsettlestepController@index');
+Route::get('/howitworksdonotsettlestep/export/excel','HowitworksdonotsettlestepController@ExportExcel');
+Route::get('/howitworksdonotsettlestep/export/pdf','HowitworksdonotsettlestepController@ExportPDF');
+Route::post('/howitworksdonotsettlestep','HowitworksdonotsettlestepController@store');
+Route::post('/howitworksdonotsettlestep/ajax','HowitworksdonotsettlestepController@ajaxSave');
+Route::post('/howitworksdonotsettlestep/datatable/ajax','HowitworksdonotsettlestepController@datatable');
+Route::post('/howitworksdonotsettlestep/update/{id}','HowitworksdonotsettlestepController@update');
+//======================== Howitworksdonotsettlestep Route End ===============================//
+//======================== Howitworkcaseswefund Route Start ===============================//
+Route::get('/howitworkcaseswefund/list','HowitworkcaseswefundController@show');
+Route::get('/howitworkcaseswefund/create','HowitworkcaseswefundController@create');
+Route::get('/howitworkcaseswefund/edit/{id}','HowitworkcaseswefundController@edit');
+Route::get('/howitworkcaseswefund/delete/{id}','HowitworkcaseswefundController@destroy');
+Route::get('/howitworkcaseswefund','HowitworkcaseswefundController@index');
+Route::get('/howitworkcaseswefund/export/excel','HowitworkcaseswefundController@ExportExcel');
+Route::get('/howitworkcaseswefund/export/pdf','HowitworkcaseswefundController@ExportPDF');
+Route::post('/howitworkcaseswefund','HowitworkcaseswefundController@store');
+Route::post('/howitworkcaseswefund/ajax','HowitworkcaseswefundController@ajaxSave');
+Route::post('/howitworkcaseswefund/datatable/ajax','HowitworkcaseswefundController@datatable');
+Route::post('/howitworkcaseswefund/update/{id}','HowitworkcaseswefundController@update');
+//======================== Howitworkcaseswefund Route End ===============================//
+//======================== Howitworksecuringthemoney Route Start ===============================//
+Route::get('/howitworksecuringthemoney/list','HowitworksecuringthemoneyController@show');
+Route::get('/howitworksecuringthemoney/create','HowitworksecuringthemoneyController@create');
+Route::get('/howitworksecuringthemoney/edit/{id}','HowitworksecuringthemoneyController@edit');
+Route::get('/howitworksecuringthemoney/delete/{id}','HowitworksecuringthemoneyController@destroy');
+Route::get('/howitworksecuringthemoney','HowitworksecuringthemoneyController@index');
+Route::get('/howitworksecuringthemoney/export/excel','HowitworksecuringthemoneyController@ExportExcel');
+Route::get('/howitworksecuringthemoney/export/pdf','HowitworksecuringthemoneyController@ExportPDF');
+Route::post('/howitworksecuringthemoney','HowitworksecuringthemoneyController@store');
+Route::post('/howitworksecuringthemoney/ajax','HowitworksecuringthemoneyController@ajaxSave');
+Route::post('/howitworksecuringthemoney/datatable/ajax','HowitworksecuringthemoneyController@datatable');
+Route::post('/howitworksecuringthemoney/update/{id}','HowitworksecuringthemoneyController@update');
+//======================== Howitworksecuringthemoney Route End ===============================//
+//======================== Typesoffundingpresettlement Route Start ===============================//
+Route::get('/typesoffundingpresettlement/list','TypesoffundingpresettlementController@show');
+Route::get('/typesoffundingpresettlement/create','TypesoffundingpresettlementController@create');
+Route::get('/typesoffundingpresettlement/edit/{id}','TypesoffundingpresettlementController@edit');
+Route::get('/typesoffundingpresettlement/delete/{id}','TypesoffundingpresettlementController@destroy');
+Route::get('/typesoffundingpresettlement','TypesoffundingpresettlementController@index');
+Route::get('/typesoffundingpresettlement/export/excel','TypesoffundingpresettlementController@ExportExcel');
+Route::get('/typesoffundingpresettlement/export/pdf','TypesoffundingpresettlementController@ExportPDF');
+Route::post('/typesoffundingpresettlement','TypesoffundingpresettlementController@store');
+Route::post('/typesoffundingpresettlement/ajax','TypesoffundingpresettlementController@ajaxSave');
+Route::post('/typesoffundingpresettlement/datatable/ajax','TypesoffundingpresettlementController@datatable');
+Route::post('/typesoffundingpresettlement/update/{id}','TypesoffundingpresettlementController@update');
+//======================== Typesoffundingpresettlement Route End ===============================//
+//======================== Typesoffundingpresettlement Route Start ===============================//
+Route::get('/typesoffundingpresettlement/list','TypesoffundingpresettlementController@show');
+Route::get('/typesoffundingpresettlement/create','TypesoffundingpresettlementController@create');
+Route::get('/typesoffundingpresettlement/edit/{id}','TypesoffundingpresettlementController@edit');
+Route::get('/typesoffundingpresettlement/delete/{id}','TypesoffundingpresettlementController@destroy');
+Route::get('/typesoffundingpresettlement','TypesoffundingpresettlementController@index');
+Route::get('/typesoffundingpresettlement/export/excel','TypesoffundingpresettlementController@ExportExcel');
+Route::get('/typesoffundingpresettlement/export/pdf','TypesoffundingpresettlementController@ExportPDF');
+Route::post('/typesoffundingpresettlement','TypesoffundingpresettlementController@store');
+Route::post('/typesoffundingpresettlement/ajax','TypesoffundingpresettlementController@ajaxSave');
+Route::post('/typesoffundingpresettlement/datatable/ajax','TypesoffundingpresettlementController@datatable');
+Route::post('/typesoffundingpresettlement/update/{id}','TypesoffundingpresettlementController@update');
+//======================== Typesoffundingpresettlement Route End ===============================//
+//======================== Fundingform Route Start ===============================//
+Route::get('/fundingform/list','FundingformController@show');
+Route::get('/fundingform/create','FundingformController@create');
+Route::get('/fundingform/edit/{id}','FundingformController@edit');
+Route::get('/fundingform/delete/{id}','FundingformController@destroy');
+Route::get('/fundingform','FundingformController@index');
+Route::get('/fundingform/export/excel','FundingformController@ExportExcel');
+Route::get('/fundingform/export/pdf','FundingformController@ExportPDF');
+Route::post('/fundingform','FundingformController@store');
+Route::post('/fundingform/ajax','FundingformController@ajaxSave');
+Route::post('/fundingform/datatable/ajax','FundingformController@datatable');
+Route::post('/fundingform/update/{id}','FundingformController@update');
+//======================== Fundingform Route End ===============================//
+//======================== Typesoffundcaseswefundtype Route Start ===============================//
+Route::get('/typesoffundcaseswefundtype/list','TypesoffundcaseswefundtypeController@show');
+Route::get('/typesoffundcaseswefundtype/create','TypesoffundcaseswefundtypeController@create');
+Route::get('/typesoffundcaseswefundtype/edit/{id}','TypesoffundcaseswefundtypeController@edit');
+Route::get('/typesoffundcaseswefundtype/delete/{id}','TypesoffundcaseswefundtypeController@destroy');
+Route::get('/typesoffundcaseswefundtype','TypesoffundcaseswefundtypeController@index');
+Route::get('/typesoffundcaseswefundtype/export/excel','TypesoffundcaseswefundtypeController@ExportExcel');
+Route::get('/typesoffundcaseswefundtype/export/pdf','TypesoffundcaseswefundtypeController@ExportPDF');
+Route::post('/typesoffundcaseswefundtype','TypesoffundcaseswefundtypeController@store');
+Route::post('/typesoffundcaseswefundtype/ajax','TypesoffundcaseswefundtypeController@ajaxSave');
+Route::post('/typesoffundcaseswefundtype/datatable/ajax','TypesoffundcaseswefundtypeController@datatable');
+Route::post('/typesoffundcaseswefundtype/update/{id}','TypesoffundcaseswefundtypeController@update');
+//======================== Typesoffundcaseswefundtype Route End ===============================//
+//======================== Aboutpagesetting Route Start ===============================//
+Route::get('/aboutpagesetting/list','AboutpagesettingController@show');
+Route::get('/aboutpagesetting/create','AboutpagesettingController@create');
+Route::get('/aboutpagesetting/edit/{id}','AboutpagesettingController@edit');
+Route::get('/aboutpagesetting/delete/{id}','AboutpagesettingController@destroy');
+Route::get('/aboutpagesetting','AboutpagesettingController@index');
+Route::get('/aboutpagesetting/export/excel','AboutpagesettingController@ExportExcel');
+Route::get('/aboutpagesetting/export/pdf','AboutpagesettingController@ExportPDF');
+Route::post('/aboutpagesetting','AboutpagesettingController@store');
+Route::post('/aboutpagesetting/ajax','AboutpagesettingController@ajaxSave');
+Route::post('/aboutpagesetting/datatable/ajax','AboutpagesettingController@datatable');
+Route::post('/aboutpagesetting/update/{id}','AboutpagesettingController@update');
+//======================== Aboutpagesetting Route End ===============================//
+//======================== Aboutmilestones Route Start ===============================//
+Route::get('/aboutmilestones/list','AboutmilestonesController@show');
+Route::get('/aboutmilestones/create','AboutmilestonesController@create');
+Route::get('/aboutmilestones/edit/{id}','AboutmilestonesController@edit');
+Route::get('/aboutmilestones/delete/{id}','AboutmilestonesController@destroy');
+Route::get('/aboutmilestones','AboutmilestonesController@index');
+Route::get('/aboutmilestones/export/excel','AboutmilestonesController@ExportExcel');
+Route::get('/aboutmilestones/export/pdf','AboutmilestonesController@ExportPDF');
+Route::post('/aboutmilestones','AboutmilestonesController@store');
+Route::post('/aboutmilestones/ajax','AboutmilestonesController@ajaxSave');
+Route::post('/aboutmilestones/datatable/ajax','AboutmilestonesController@datatable');
+Route::post('/aboutmilestones/update/{id}','AboutmilestonesController@update');
+//======================== Aboutmilestones Route End ===============================//
+//======================== Meetleadersetting Route Start ===============================//
+Route::get('/meetleadersetting/list','MeetleadersettingController@show');
+Route::get('/meetleadersetting/create','MeetleadersettingController@create');
+Route::get('/meetleadersetting/edit/{id}','MeetleadersettingController@edit');
+Route::get('/meetleadersetting/delete/{id}','MeetleadersettingController@destroy');
+Route::get('/meetleadersetting','MeetleadersettingController@index');
+Route::get('/meetleadersetting/export/excel','MeetleadersettingController@ExportExcel');
+Route::get('/meetleadersetting/export/pdf','MeetleadersettingController@ExportPDF');
+Route::post('/meetleadersetting','MeetleadersettingController@store');
+Route::post('/meetleadersetting/ajax','MeetleadersettingController@ajaxSave');
+Route::post('/meetleadersetting/datatable/ajax','MeetleadersettingController@datatable');
+Route::post('/meetleadersetting/update/{id}','MeetleadersettingController@update');
+//======================== Meetleadersetting Route End ===============================//
+//======================== Teammember Route Start ===============================//
+Route::get('/teammember/list','TeammemberController@show');
+Route::get('/teammember/create','TeammemberController@create');
+Route::get('/teammember/edit/{id}','TeammemberController@edit');
+Route::get('/teammember/delete/{id}','TeammemberController@destroy');
+Route::get('/teammember','TeammemberController@index');
+Route::get('/teammember/export/excel','TeammemberController@ExportExcel');
+Route::get('/teammember/export/pdf','TeammemberController@ExportPDF');
+Route::post('/teammember','TeammemberController@store');
+Route::post('/teammember/ajax','TeammemberController@ajaxSave');
+Route::post('/teammember/datatable/ajax','TeammemberController@datatable');
+Route::post('/teammember/update/{id}','TeammemberController@update');
+//======================== Teammember Route End ===============================//

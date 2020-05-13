@@ -1,5 +1,5 @@
 @extends('site.layout.master')
-@section('title','Resources')
+@section('title',$details->title)
 @section('css')
 <style type="text/css">
     .innerpage-titlebar {
@@ -28,7 +28,17 @@
         line-height: 1.2;
         color: #FF741A;
     }
-    
+    .blog-content  p {
+        margin-bottom: 1.5rem
+    }
+    .s1{
+        color: #000;
+    }
+    .blog-content  ul li{
+        list-style: square;
+        color: #000;
+        margin-left: 5rem
+    }
     
 </style>
 
@@ -46,27 +56,24 @@
                 <div class="col-md-8">
                     <div class="blog-box">
                         <div class="blog-img">
-                        <img src="{{url('module/images/blog/big.jpg')}}" alt="">
+                        <img src="{{url('upload/resourcecontent/'.$details->image)}}" alt="">
                         </div>
                         <ul class="post-bar">
-                            <li>Mar 08, 2018</li>
+                            <li>{{date('d M, Y', strtotime($details->created_at))}}</li>
                         </ul>
                     </div>
                     <div class="blog-content">
-                        <h2>Here Is The Blog Title</h2>
-                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years. Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years.</p>
-                        <div class="highlight-text">
-                            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum.</p>
-                        </div>
-                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint et suscipit officia esse laboriosam soluta illum molestiae repudiandae placeat similique reiciendis vel autem quod consequatur laborum impedit fuga voluptatem perferendis odit dicta distinctio, nobis necessitatibus. Inventore molestias cupiditate doloribus voluptatem commodi explicabo voluptatum, consequatur enim, qui illum dolores iusto rem eum doloremque voluptate fuga saepe odio impedit, nostrum nam? Voluptatibus esse impedit.</p>
+                        <h2>{{$details->title}}</h2>
+                        {!!$details->long_detail!!}   
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="sidebar">
                         <div class="sidebar-search">
-                            <form method="post">
+                            <form action="{{url('search')}}" method="post">
+                                {!! csrf_field() !!}
                                 <div class="input-group">
-                                    <input placeholder="Search Here....." class="form-control" name="search-field" type="text">
+                                    <input placeholder="Search Here....." class="form-control" name="search_field" type="text">
                                     <span class="input-group-btn">
                                   <button type="submit" class="btn"><i class="fa fa-search"></i></button>
                                   </span>
@@ -76,27 +83,22 @@
                         <div class="latest-news">
                             <h3 class="sedebar-title">latest Resources</h3>
                             <ul>
-                                <li>
-                                    <div class="news-item">
-                                    <img src="{{url('module/images/blog/post-1.jpg')}}" alt="">
-                                        <h4><a href="#">Lorem ipsum dolor sit, consectetur adipisicing.</a></h4>
-                                        <p><a href="#">28 August, 2018</a></p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="news-item">
-                                        <img src="{{url('module/images/blog/post-2.jpg')}}" alt="">
-                                        <h4><a href="#">Lorem ipsum dolor sit, consectetur adipisicing.</a></h4>
-                                        <p><a href="#">28 August, 2018</a></p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="news-item">
-                                        <img src="{{url('module/images/blog/post-3.jpg')}}" alt="">
-                                        <h4><a href="#">Lorem ipsum dolor sit, consectetur adipisicing.</a></h4>
-                                        <p><a href="#">28 August, 2018</a></p>
-                                    </div>
-                                </li>
+                                @isset($ResourceContent)
+                                @foreach ($ResourceContent as $item)
+                                <?php
+                                    $title = str_replace(" ","-",$item->title);
+                                ?>
+                                    <li>
+                                        <div class="news-item">
+                                        <img src="{{url('upload/resourcecontent/'.$item->image)}}" alt="">
+                                            <h4><a href="{{url('resource-details/'.$item->id.'/'.$title)}}">{{$item->title}}</a></h4>
+                                            <p><a href="{{url('resource-details/'.$item->id.'/'.$title)}}">{{date('d M, Y', strtotime($item->created_at))}}</a></p>
+                                        </div>
+                                    </li>
+                                @endforeach
+                                @endisset
+                                
+                                
                             </ul>
                         </div>
                         

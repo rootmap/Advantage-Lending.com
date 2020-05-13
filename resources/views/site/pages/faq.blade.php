@@ -5,7 +5,7 @@
         .innerpage-titlebar {
             padding: 80px 0 80px;
             position: relative;
-            background: url('{{asset('module/images/extra/What-can-I-do-for-you_-590052924_6248x4912.jpeg')}}');
+        background: url("{{asset('upload/faqpagesetting/'.$faqinfo->background_image)}}");
             background-position: center;
             background-size: cover;
             background-repeat: no-repeat;
@@ -124,14 +124,63 @@
 @section('content')
 
     <!-- Inner Page title Start -->
-    <section class="innerpage-titlebar">
+    <section class="innerpage-titlebar" style="--my-innerpage-titlebar-color:{{$faqinfo->background_forecolor}}">
         <div class="container">
-            <h3 class="fix-barcum-head">FAQ</h3>
+            <h3 class="fix-barcum-head">{{$faqinfo->title}}</h3>
         </div>
     </section>
 
+    @isset($faq)
+        <!-- Appointment Start -->
+        <section class="negative-margin mb-4 d-md-block" style="padding:0px;">
+            <div class="container">
+                <div class="row">
+                    @foreach ($faq as $key=>$item) 
+                        <div class="col-md-2 {{$key==0?'col-md-offset-1':''}}">
+                            <a href="#{{preg_replace('/[^A-Za-z0-9\-]/', '',str_replace(" ","",$item['name']))}}" class="page-scroll text-secondary faq-link bg-white py-4 px-4 d-flex flex-column justify-content-center font-family-serif font-size-24 h-100 shadow-sm text-center font-weight-bold">
+                                <p>{{$item['name']}}</p>
+                            </a>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </section>
+
+        @foreach ($faq as $key=>$item) 
+        <section class="faq-area" id="{{preg_replace('/[^A-Za-z0-9\-]/', '',str_replace(" ","",$item['name']))}}" style="padding: 40px">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h1>{{$item['name']}}</h1>
+                        @isset($item['contentData'])
+                            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                                @foreach ($item['contentData'] as $keyd=>$roteen)
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading" role="tab" id="headingTwo{{preg_replace('/[^A-Za-z0-9\-]/', '',str_replace(" ","",$item['name']))}}{{$keyd}}">
+                                            <h4 class="panel-title">
+                                                <a class="{{$keyd==0?'':'collapsed'}}" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo{{preg_replace('/[^A-Za-z0-9\-]/', '',str_replace(" ","",$item['name']))}}{{$keyd}}" aria-expanded="{{$keyd==0?'true':'false'}}" aria-controls="collapseTwo{{preg_replace('/[^A-Za-z0-9\-]/', '',str_replace(" ","",$item['name']))}}{{$keyd}}">
+                                                    {!!$roteen->content_title!!}
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapseTwo{{preg_replace('/[^A-Za-z0-9\-]/', '',str_replace(" ","",$item['name']))}}{{$keyd}}" class="panel-collapse collapse {{$keyd==0?'in':''}}" aria-expanded="{{$keyd==0?'true':'false'}}" role="tabpanel" aria-labelledby="headingTwo{{preg_replace('/[^A-Za-z0-9\-]/', '',str_replace(" ","",$item['name']))}}{{$keyd}}">
+                                            <div class="panel-body">
+                                                <p>{{$roteen->content_detail}} </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                        @endisset
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+        @endforeach
+    @endisset
     <!-- Appointment Start -->
-    <section class="negative-margin mb-4 d-md-block" style="padding:0px;">
+    {{-- <section class="negative-margin mb-4 d-md-block" style="padding:0px;">
         <div class="container">
             <div class="row">
                <div class="col-md-2 col-md-offset-1">
@@ -161,89 +210,9 @@
                </div>
             </div>
          </div>
-    </section>
-    <section class="faq-area" id="faq1" style="padding: 40px">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                    <h1>General Questions</h1>
-                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingOne">
-                                <h4 class="panel-title">
-                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        What is web design?
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-                                <div class="panel-body">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl lorem, dictum id pellentesque at, vestibulum ut arcu. Curabitur erat libero, egestas eu tincidunt ac, rutrum ac justo. Vivamus condimentum laoreet lectus, blandit posuere tortor aliquam vitae. Curabitur molestie eros. </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingTwo">
-                                <h4 class="panel-title">
-                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        What is web development?
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                                <div class="panel-body">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl lorem, dictum id pellentesque at, vestibulum ut arcu. Curabitur erat libero, egestas eu tincidunt ac, rutrum ac justo. Vivamus condimentum laoreet lectus, blandit posuere tortor aliquam vitae. Curabitur molestie eros. </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingThree">
-                                <h4 class="panel-title">
-                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                        How can I be a developer?
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-                                <div class="panel-body">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl lorem, dictum id pellentesque at, vestibulum ut arcu. Curabitur erat libero, egestas eu tincidunt ac, rutrum ac justo. Vivamus condimentum laoreet lectus, blandit posuere tortor aliquam vitae. Curabitur molestie eros. </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingFour">
-                                <h4 class="panel-title">
-                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                        How can I be a developer?
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
-                                <div class="panel-body">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl lorem, dictum id pellentesque at, vestibulum ut arcu. Curabitur erat libero, egestas eu tincidunt ac, rutrum ac justo. Vivamus condimentum laoreet lectus, blandit posuere tortor aliquam vitae. Curabitur molestie eros. </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingFive">
-                                <h4 class="panel-title">
-                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                                        How can I be a developer?
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
-                                <div class="panel-body">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl lorem, dictum id pellentesque at, vestibulum ut arcu. Curabitur erat libero, egestas eu tincidunt ac, rutrum ac justo. Vivamus condimentum laoreet lectus, blandit posuere tortor aliquam vitae. Curabitur molestie eros. </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="faq-area bg-md-info" id="faq2" style="padding: 40px">
+    </section> --}}
+    
+    {{-- <section class="faq-area bg-md-info" id="faq2" style="padding: 40px">
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
@@ -566,15 +535,17 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
+
+
+
     <section class="appointment-area" id="appointment" style="padding:60px 0 60px;">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="about-col text-center">
-                        <h1 id="getstarted" class="color_blue">We’re Here to Help?</h1>
-                        <p>Contact our team toll-free at <a class="color_or" href="tel:877.333.6680">(877) 333-6680</a>, or start our free, no obligation application.</p>
-                        <p>Ready to get started? Apply for free in just seconds</p>
+                        <h1 id="getstarted" class="color_blue">{{$faqinfo->form_title}}</h1>
+                        <p>{!!$faqinfo->form_detail!!}</p>
                     </div>
                 </div>
                 <div class="col-lg-12 col-md-12">
@@ -648,7 +619,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12 text-right">
-                                            <button class="btn btn-default simple-btn" type="submit">Continue <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+                                            <button class="btn btn-default simple-btn" type="submit">{{$faqinfo->form_button_text}} <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
                                         </div>
                                     </div>
                                 </div>
