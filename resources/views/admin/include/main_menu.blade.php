@@ -2,10 +2,10 @@
     <!-- Brand Logo -->
     <a href="{{url('dashboard')}}" class="brand-link">
       <img src="{{ url('admin/dist/img/AdminLTELogo.png') }}"
-           alt="AdminLTE Logo"
+           alt="Admin Logo"
            class="brand-image img-circle elevation-3"
            style="opacity: .8">
-      <span class="brand-text font-weight-light">Admin Panel</span>
+      <span class="brand-text font-weight-light">A.L. Admin Panel</span>
     </a>
 
     <!-- Sidebar -->
@@ -25,12 +25,12 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item">
+          {{-- <li class="nav-item">
             <a href="{{url('crud')}}" class="nav-link {{ Request::path() == 'crud' ? 'active' : '' }}">
               <i class="nav-icon fas fa-igloo"></i>
               <p>CRUD</p>
             </a>
-          </li>
+          </li> --}}
           <li class="nav-item">
             <a href="{{url('dashboard')}}" class="nav-link {{ Request::path() == 'dashboard' ? 'active' : '' }}">
               <i class="nav-icon fas fa-igloo"></i>
@@ -256,8 +256,8 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item has-treeview {{ in_array(Request::path(),array('aboutpagesetting','aboutmilestones','meetleadersetting','teammember'))?'menu-open':'' }}">
-            <a href="#" class="nav-link {{ in_array(Request::path(),array('aboutpagesetting','aboutmilestones','meetleadersetting','teammember'))?'active':'' }}">
+          <li class="nav-item has-treeview {{ in_array(Request::path(),array('aboutpagesetting','aboutmilestones','meetleadersetting','teammember','aboutmeetourteam','aboutmeetourteammember','aboutworkatadvantagelending','aboutmediasetting'))?'menu-open':'' }}">
+            <a href="#" class="nav-link {{ in_array(Request::path(),array('aboutpagesetting','aboutmilestones','meetleadersetting','teammember','aboutmeetourteam','aboutmeetourteammember','aboutworkatadvantagelending','aboutmediasetting'))?'active':'' }}">
               <i class="nav-icon fas fa-book-open"></i>
               <p>
                 About Page
@@ -277,22 +277,90 @@
                   <p>Milestones</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="{{url('meetleadersetting')}}" class="nav-link {{ Request::path() == 'meetleadersetting' ? 'active' : '' }}">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Meet Leader Setting</p>
+              
+              <li class="nav-item has-treeview  {{ in_array(Request::path(),array('meetleadersetting','teammember'))?'menu-open':'' }}">
+                <a href="javascript:void(0);" class="nav-link  {{ in_array(Request::path(),array('meetleadersetting','teammember'))?'active':'' }}">
+                  <i class="nav-icon fas fa-bars"></i>
+                  <p>
+                    Leaders Info
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
                 </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="{{url('meetleadersetting')}}" class="nav-link {{ Request::path() == 'meetleadersetting' ? 'active' : '' }}">
+                      <i class="fas fa-minus-square nav-icon"></i>
+                      <p>Meet Leader Setting</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{{url('teammember')}}" class="nav-link {{ Request::path() == 'teammember' ? 'active' : '' }}">
+                      <i class="fas fa-minus-square nav-icon"></i>
+                      <p>Leaders Info</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item has-treeview  {{ in_array(Request::path(),array('aboutmeetourteam','aboutmeetourteammember'))?'menu-open':'' }}">
+                <a href="javascript:void(0);" class="nav-link  {{ in_array(Request::path(),array('aboutmeetourteam','aboutmeetourteammember'))?'active':'' }}">
+                  <i class="nav-icon fas fa-bars"></i>
+                  <p>
+                    Meet Our Team
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="{{url('aboutmeetourteam')}}" class="nav-link {{ Request::path() == 'aboutmeetourteam' ? 'active' : '' }}">
+                      <i class="fas fa-minus-square nav-icon"></i>
+                      <p>Section Settings</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{{url('aboutmeetourteammember')}}" class="nav-link {{ Request::path() == 'aboutmeetourteammember' ? 'active' : '' }}">
+                      <i class="fas fa-minus-square nav-icon"></i>
+                      <p>Meet Our Team</p>
+                    </a>
+                  </li>
+                  
+                </ul>
+              </li>
+              <li class="nav-item has-treeview  {{ in_array(Request::path(),array('aboutmediasetting','aboutmeetourteammember'))?'menu-open':'' }}">
+                <a href="javascript:void(0);" class="nav-link  {{ in_array(Request::path(),array('aboutmediasetting','aboutmeetourteammember'))?'active':'' }}">
+                  <i class="nav-icon fas fa-bars"></i>
+                  <p>
+                    Media Info
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="{{url('aboutmediasetting')}}" class="nav-link {{ Request::path() == 'aboutmediasetting' ? 'active' : '' }}">
+                      <i class="fas fa-minus-square nav-icon"></i>
+                      <p>Section Settings</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{{url('aboutmeetourteammember')}}" class="nav-link {{ Request::path() == 'aboutmeetourteammember' ? 'active' : '' }}">
+                      <i class="fas fa-minus-square nav-icon"></i>
+                      <p>Meet Our Team</p>
+                    </a>
+                  </li>
+                  
+                </ul>
               </li>
               <li class="nav-item">
-                <a href="{{url('teammember')}}" class="nav-link {{ Request::path() == 'teammember' ? 'active' : '' }}">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Team Members</p>
-                </a>
+                  <a href="{{url('aboutworkatadvantagelending')}}" class="nav-link {{ Request::path() == 'aboutworkatadvantagelending' ? 'active' : '' }}">
+                    <i class="fas fa-minus-square nav-icon"></i>
+                    <p>Work At Advantage Lending</p>
+                  </a>
               </li>
             </ul>
           </li>
-          <li class="nav-item has-treeview {{ in_array(Request::path(),array('faqpagesetting','package/create'))?'menu-open':'' }}">
-            <a href="#" class="nav-link {{ in_array(Request::path(),array('faqpagesetting','package/create'))?'active':'' }}">
+          
+
+          <li class="nav-item has-treeview {{ in_array(Request::path(),array('faqpagesetting','faqcategory','faqcontent'))?'menu-open':'' }}">
+            <a href="#" class="nav-link {{ in_array(Request::path(),array('faqpagesetting','faqcategory','faqcontent'))?'active':'' }}">
               <i class="nav-icon fas fa-book-open"></i>
               <p>
                 FAQ Page
@@ -307,106 +375,92 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{url('hardwarepackage')}}" class="nav-link {{ Request::path() == 'package' ? 'active' : '' }}">
+                <a href="{{url('faqcategory')}}" class="nav-link {{ Request::path() == 'faqcategory' ? 'active' : '' }}">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Hardware List</p>
+                  <p>FAQ Category </p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{url('purchasehardware/create')}}" class="nav-link {{ Request::path() == 'package/create' ? 'active' : '' }}">
+                <a href="{{url('faqcontent')}}" class="nav-link {{ Request::path() == 'faqcontent' ? 'active' : '' }}">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Purchase New Hardware</p>
+                  <p>FAQ Content</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="{{url('purchasehardware')}}" class="nav-link {{ Request::path() == 'package' ? 'active' : '' }}">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Purchase Hardware List</p>
-                </a>
-              </li>
+              
             </ul>
           </li>
-          <li class="nav-item has-treeview {{ in_array(Request::path(),array('retail','powerfulcapabilities','whatmakesbetter','couldboostprofitability','systemeasytouse','multipleemployeesaccess'))?'menu-open':'' }}">
-            <a href="#" class="nav-link {{ in_array(Request::path(),array('retail','powerfulcapabilities','whatmakesbetter','couldboostprofitability','systemeasytouse','multipleemployeesaccess'))?'active':'' }}">
+          <li class="nav-item has-treeview {{ in_array(Request::path(),array('forattorneypagesetting','foratterneyportalsimplify','forattorneyknownandrecognized','forattorneysettlementfundingprocess','forattorneyproductandservice'))?'menu-open':'' }}">
+            <a href="#" class="nav-link {{ in_array(Request::path(),array('forattorneypagesetting','foratterneyportalsimplify','forattorneyknownandrecognized','forattorneysettlementfundingprocess','forattorneyproductandservice'))?'active':'' }}">
+              <i class="nav-icon fas fa-book-open"></i>
+              <p>
+                For Attorneys Page
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{url('forattorneypagesetting')}}" class="nav-link {{ Request::path() == 'forattorneypagesetting' ? 'active' : '' }}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Page Detail</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{url('foratterneyportalsimplify')}}" class="nav-link {{ Request::path() == 'foratterneyportalsimplify' ? 'active' : '' }}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Portal Simplify</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{url('forattorneyknownandrecognized')}}" class="nav-link {{ Request::path() == 'forattorneyknownandrecognized' ? 'active' : '' }}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Known &amp; Recognized</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{url('forattorneysettlementfundingprocess')}}" class="nav-link {{ Request::path() == 'forattorneysettlementfundingprocess' ? 'active' : '' }}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Settlement Funding Process</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{url('forattorneyproductandservice')}}" class="nav-link {{ Request::path() == 'forattorneyproductandservice' ? 'active' : '' }}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Product &amp; Service</p>
+                </a>
+              </li>
+              
+            </ul>
+          </li>
+          <li class="nav-item has-treeview {{ in_array(Request::path(),array('contactus','contactrequest'))?'menu-open':'' }}">
+            <a href="#" class="nav-link {{ in_array(Request::path(),array('contactus','contactrequest'))?'active':'' }}">
               <i class="nav-icon fas fa-utensils"></i>
               <p>
-                Question
+                Contact Us
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{url('retail')}}" class="nav-link {{ Request::path() == 'retail' ? 'active' : '' }}">
+                <a href="{{url('contactus')}}" class="nav-link {{ Request::path() == 'contactus' ? 'active' : '' }}">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Retail</p>
+                  <p>Page Setting</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{url('powerfulcapabilities')}}" class="nav-link {{ Request::path() == 'powerfulcapabilities' ? 'active' : '' }}">
+                <a href="{{url('contactrequest')}}" class="nav-link {{ Request::path() == 'contactrequest' ? 'active' : '' }}">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Powerful Capabilities</p>
+                  <p>Contact Request List</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="{{url('whatmakesbetter')}}" class="nav-link {{ Request::path() == 'whatmakesbetter' ? 'active' : '' }}">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>What Makes Better </p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{url('couldboostprofitability')}}" class="nav-link {{ Request::path() == 'couldboostprofitability' ? 'active' : '' }}">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Could Boost Profitability </p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{url('systemeasytouse')}}" class="nav-link {{ Request::path() == 'systemeasytouse' ? 'active' : '' }}">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>System Easy to Use </p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{url('multipleemployeesaccess')}}" class="nav-link {{ Request::path() == 'multipleemployeesaccess' ? 'active' : '' }}">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Multiple Employees Access</p>
-                </a>
-              </li>
+              
             </ul>
           </li>
-          <li class="nav-item has-treeview {{ in_array(Request::path(),array('businesspossystem','coresoftwarecomponents','corehardwarecomponents'))?'menu-open':'' }}">
-            <a href="#" class="nav-link {{ in_array(Request::path(),array('businesspossystem','coresoftwarecomponents','corehardwarecomponents'))?'active':'' }}">
-              <i class="nav-icon fas fa-calendar-alt"></i>
-              <p>
-                Business POS System
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{url('businesspossystem')}}" class="nav-link {{ Request::path() == 'businesspossystem' ? 'active' : '' }}">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Modify Business POS </p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{url('coresoftwarecomponents')}}" class="nav-link {{ Request::path() == 'coresoftwarecomponents' ? 'active' : '' }}">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Core Software Components</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{url('corehardwarecomponents')}}" class="nav-link {{ Request::path() == 'corehardwarecomponents' ? 'active' : '' }}">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Core Hardware Components</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-item has-treeview {{ in_array(Request::path(),array('simplecashregister'))?'menu-open':'' }}">
-            <a href="{{url('simplecashregister')}}" class="nav-link {{ in_array(Request::path(),array('simplecashregister'))?'active':'' }}">
+         
+          <li class="nav-item has-treeview {{ in_array(Request::path(),array('forbrokerpagesetting'))?'menu-open':'' }}">
+            <a href="{{url('forbrokerpagesetting')}}" class="nav-link {{ in_array(Request::path(),array('forbrokerpagesetting'))?'active':'' }}">
               <i class="nav-icon fas fa-images"></i>
               <p>
-                Simple Cash Register
+                For Brokers
               </p>
             </a>
           </li>
@@ -466,12 +520,12 @@
             </ul>
           </li>
 
-          <li class="nav-item">
-            <a href="{{url('contactusrequest')}}" class="nav-link {{ Request::path() == 'contactusrequest' ? 'active' : '' }}">
+          {{-- <li class="nav-item">
+            <a href="{{url('contactus')}}" class="nav-link {{ Request::path() == 'contactus' ? 'active' : '' }}">
               <i class="nav-icon fas fa-phone-square-alt"></i>
               <p>Contact</p>
             </a>
-          </li>
+          </li> --}}
           <li class="nav-item has-treeview {{ in_array(Request::path(),array('sitesetting','pagesetting','cardpointestoresetting','websitesettings/create'))?'menu-open':'' }}">
             <a href="#" class="nav-link {{ in_array(Request::path(),array('sitesetting','pagesetting','cardpointestoresetting','websitesettings/create'))?'active':'' }}">
               <i class="nav-icon fas fa-cogs"></i>
@@ -487,18 +541,7 @@
                   <p>Site Setting</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="{{url('pagesetting')}}" class="nav-link {{ Request::path() == 'pagesetting' ? 'active' : '' }}">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Page Setting</p>
-                </a>
-              </li>              
-              <li class="nav-item">
-                <a href="{{url('cardpointestoresetting')}}" class="nav-link {{ Request::path() == 'cardpointestoresetting' ? 'active' : '' }}">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Cardpointe Store Setting</p>
-                </a>
-              </li>
+              
             </ul>
           </li>
 

@@ -5,7 +5,7 @@
     .innerpage-titlebar {
         padding: 80px 0 80px;
         position: relative;
-        background: url('{{asset('module/images/extra/What-can-I-do-for-you_-590052924_6248x4912.jpeg')}}');
+        background: url("{{asset('upload/forbrokerpagesetting/'.$ForBrokerPageSetting->background_image)}}");
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
@@ -47,9 +47,9 @@
 @endsection
 @section('content')
     <!-- Inner Page title Start -->
-    <section class="innerpage-titlebar">
+    <section class="innerpage-titlebar"  style="--my-innerpage-titlebar-color:{{$ForBrokerPageSetting->background_forecolor}}; ">
         <div class="container">
-            <h3 class="fix-barcum-head">For Attorneys</h3>
+            <h3 class="fix-barcum-head">{{$ForBrokerPageSetting->title}}</h3>
         </div>
     </section>
     <section class="faq-area" style="padding: 40px">
@@ -57,29 +57,10 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="for-brokers">
-                        <h2 class="h2 separator-left">The Industry Leader in Consumer Legal Funding</h2>
-                        <p>When you’re looking for a reliable funding resource for your legal network, there’s no better partner than Oasis.</p>
-                        <p>With Oasis as a funding partner, you can count on financial liquidity to fund your clients. We’re the largest U.S. company focusing on pre-settlement funding. Our deep financial resources mean we can directly fund qualified plaintiffs up to $100,000.</p>
-                        <h1>Favorable Terms</h1>
-                        <p>Oasis offers favorable terms, with competitive broker commissions and flexible payment structures, plus reasonable rates to plaintiffs. And e-signatures and secure transfers mean transactions are finalized quickly.</p>
-                        <h1>On-staff Underwriters</h1>
-                        <p>You’ll find it easy to work with our internal underwriting department, who can approve requests quickly – as little as two hours – and provide complete and accurate reports on all your submissions.</p>
-                        <p>More than 10,000 attorneys work with Oasis each year, and we’ve funded more than 250,000 satisfied clients. Let us help your clients too.</p>
+                        <h2 class="h2 separator-left">{{$ForBrokerPageSetting->page_title}}</h2>
+                        <p>{!!$ForBrokerPageSetting->page_detail!!}</p>
                     </div>
-                    <div class="for-brokers-clint">
-                        <h1>Crystal Jones</h1>
-                        <p>
-                            <a class="color_or" href="tel:866.353.1963" target="_blank" rel="noopener"><i class="fa fa-phone"></i> (866) 353-1963 </a>toll free<br> 
-                            <a class="color_or" href="mailto:"><i class="fa fa-envelope"></i> crjones@oasisfinancial.com</a>
-                        </p>
-                    </div>
-                    <div class="for-brokers-clint">
-                        <h1>Dave Ahrens</h1>
-                        <p>
-                            <a class="color_or" href="tel:866.353.1963" target="_blank" rel="noopener"><i class="fa fa-phone"></i> (866) 353-1963 </a>toll free<br> 
-                            <a class="color_or" href="mailto:"><i class="fa fa-envelope"></i> crjones@oasisfinancial.com</a>
-                        </p>
-                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -91,9 +72,8 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="about-col text-center">
-                        <h1 id="getstarted" class="color_blue">Work with Oasis</h1>
-                        <p>Looking for more information about a broker relationship with Oasis? Contact us below or toll-free at <a class="color_or" href="tel:877.333.6680">(877) 333-6680</a>.</p>
-                        <p>Note: Oasis does not work with brokers in the state of Missouri.</p>
+                        <h1 id="getstarted" class="color_blue">{{$ForBrokerPageSetting->form_title}}</h1>
+                        <p>{!!$ForBrokerPageSetting->form_detail!!}</p>
                     </div>
                 </div>
                 <div class="col-lg-12 col-md-12">

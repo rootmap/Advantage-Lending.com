@@ -2091,6 +2091,12 @@ $migContent .="
                 `".$this->genarateFieldName($field)."_".$keyParam."` VARCHAR(191) NULL  DEFAULT NULL COLLATE 'utf8mb4_unicode_ci',";    
 
     }
+    elseif($request->field_type[$key]==2){
+
+                $laraTableDB .= "
+                `" . $this->genarateFieldName($field) . "` longtext NULL  DEFAULT NULL COLLATE 'utf8mb4_unicode_ci',";        
+
+    }
     else
     {      
                 $laraTableDB .="

@@ -75,7 +75,15 @@
                         @if(count($dataRow))
                             @foreach($dataRow as $row)  
                                 <tr>
-                                    <td class="text-center">{{$row->id}}</td><td class="text-center">{{$row->member_name}}</td><td class="text-center">{{$row->member_designation}}</td><td class="text-center">{{$row->member_image}}</td><td class="text-center">{{$row->module_status}}</td>
+                                    <td class="text-center">{{$row->id}}</td>
+                                    <td class="text-center">{{$row->member_name}}</td>
+                                    <td class="text-center">{{$row->member_designation}}</td>
+                                    <td class="text-center">
+                                      @if (!empty($row->member_image))
+                                          <img height="100" src="{{asset('upload/teammember/'.$row->member_image)}}" />
+                                      @endif
+                                    </td>
+                                    <td class="text-center">{{$row->module_status}}</td>
                                     <td>{{formatDate($row->created_at)}}</td>
                                     <td>
                                         <div class="btn-group">

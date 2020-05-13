@@ -93,50 +93,66 @@
                           <thead>
                               <tr>
                                   <th>SL</th>
-                                  <th>Feature Detail</th>
-                                  <th>Feature Status</th>
+                                  <th>Relevant Experience</th>
                                   <th></th>
                               </tr>
                           </thead>
                           <tbody>
                               <tr class="crud-item" id="tr1">
                                 <td>1</td>
-                                <td><input type="text" class="form-control" placeholder="Enter Feature Detail" id="feature_detail" name="feature_detail[]"></td>
-                                <td>
-                                  <select class="form-control" style="width: 100%;"  id="feature_status" name="feature_status[]">
-                                    <option value="Active">Active</option>
-                                    <option value="Inactive">Inactive</option>
-                                  </select>
-                                </td>
+                                <td><input type="text" class="form-control" placeholder="Enter Relevant Experience" id="relevant_experience" name="relevant_experience[]"></td>
                                 <td>
                                   <button type="button" onclick="deleteRow('tr1')" data-id="tr1" class="btn btn-danger">&times;</button>
                                 </td>
                               </tr>
                           </tbody>
+                          <tfoot>
+                              <tr>
+                                <td colspan="3">
+                                  <a class="btn btn-success" href="javascript:addmore();"><i class="fas fa-plus"></i> More Relevant Experience Row</a>
+                                </td>
+                              </tr>
+                          </tfoot>
+                      </table>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12">
+                      <!-- text input donay -->
+
+                      <table class="table table-bordered">
+                          <thead>
+                              <tr>
+                                  <th>SL</th>
+                                  <th>Education</th>
+                                  <th></th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                              <tr class="crud-education-item" id="tr1">
+                                <td>1</td>
+                                <td>
+                                  <input type="text" class="form-control" placeholder="Enter Education" id="education" name="education[]">
+                                </td>
+                                <td>
+                                  <button type="button" onclick="deleteRowEducation('tr1')" data-id="tr1" class="btn btn-danger">&times;</button>
+                                </td>
+                              </tr>
+                          </tbody>
+                          <tfoot>
+                              <tr>
+                                <td colspan="3">
+                                  <a class="btn btn-success" href="javascript:addmoreEducation();"><i class="fas fa-plus"></i> More Education Row</a>
+                                </td>
+                              </tr>
+                          </tfoot>
                       </table>
 
                     </div>
                 </div>
                 
-                <div class="row">
-                    <div class="col-sm-12">
-                      <!-- text input -->
-                      <div class="form-group">
-                        <label for="relevant_experience">Relevant Experience</label>
-                        <textarea class="form-control" rows="3"  placeholder="Enter Relevant Experience" id="relevant_experience" name="relevant_experience"></textarea>
-                      </div>
-                    </div>
-                </div>
-                
-                <div class="row">
-                    <div class="col-sm-12">
-                      <!-- text input -->
-                      <div class="form-group">
-                        <label for="education">Education</label>
-                        <textarea class="form-control" rows="3"  placeholder="Enter Relevant Experience" id="education" name="education"></textarea>
-                      </div>
-                    </div>
-                </div>
                 
                         <div class="row">
                             <div class="col-md-12">
@@ -198,6 +214,59 @@
     $(document).ready(function(){
         bsCustomFileInput.init();
     });
+    </script>
+
+    <script>
+    function refreshSerial(){
+        var r=1;
+        $.each($(".crud-item"),function(key,row){
+            $(this).attr("id","tr"+r);
+            $(this).find("td:first").html(r);
+            $(this).find("td:eq(2)").find("button:eq(1)").attr("onclick","deleteRow('tr"+r+"')");
+            r++;
+        });
+    }
+
+    function refreshSerialEducation(){
+        var r=1;
+        $.each($(".crud-education-item"),function(key,row){
+            $(this).attr("id","tr"+r);
+            $(this).find("td:first").html(r);
+            $(this).find("td:eq(2)").find("button:eq(1)").attr("onclick","deleteRowEducation('tr"+r+"')");
+            r++;
+        });
+    }
+
+    function deleteRow(place){
+        var item=$(".crud-item").length;
+        if(item>1)
+        {
+            //var itemID=$(place).parent().parent().attr("id");
+            $("#"+place).remove()
+        }
+        refreshSerial(); 
+    }
+    
+    function deleteRowEducation(place){
+        var item=$(".crud-education-item").length;
+        if(item>1)
+        {
+            //var itemID=$(place).parent().parent().attr("id");
+            $("#"+place).remove()
+        }
+        refreshSerialEducation(); 
+    }
+
+
+    function addmore(){
+            $("tr[class^='crud-item']:last").after($("tr[class^='crud-item']:last").clone());
+            refreshSerial(); 
+    }
+
+    function addmoreEducation(){
+            $("tr[class^='crud-education-item']:last").after($("tr[class^='crud-education-item']:last").clone());
+            refreshSerialEducation(); 
+    }
     </script>
 
 @endsection

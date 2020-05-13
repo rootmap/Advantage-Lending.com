@@ -29,9 +29,6 @@ class TeamMemberController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create(){
-
-
-                   
         return view('admin.pages.teammember.teammember_create');
     }
 
@@ -60,8 +57,6 @@ class TeamMemberController extends Controller
                 'member_name'=>'required',
                 'member_designation'=>'required',
                 'member_responsible'=>'required',
-                'relevant_experience'=>'required',
-                'education'=>'required',
                 'member_image'=>'required',
                 'module_status'=>'required',
         ]);
@@ -78,14 +73,21 @@ class TeamMemberController extends Controller
             $img_teammember->move($upload_teammember, $filename_teammember_5);
         }
 
+
+
+        $relevant_experience = json_encode($request->relevant_experience);
+        $education = json_encode($request->education);
+
+
+
                 
         $tab=new TeamMember();
         
         $tab->member_name=$request->member_name;
         $tab->member_designation=$request->member_designation;
         $tab->member_responsible=$request->member_responsible;
-        $tab->relevant_experience=$request->relevant_experience;
-        $tab->education=$request->education;
+        $tab->relevant_experience= $relevant_experience;
+        $tab->education= $education;
         $tab->member_image=$filename_teammember_5;
         $tab->module_status=$request->module_status;
         $tab->save();
@@ -333,14 +335,16 @@ class TeamMemberController extends Controller
             $img_teammember->move($upload_teammember, $filename_teammember_5);
         }
 
+        $relevant_experience = json_encode($request->relevant_experience);
+        $education = json_encode($request->education);
                 
         $tab=TeamMember::find($id);
         
         $tab->member_name=$request->member_name;
         $tab->member_designation=$request->member_designation;
         $tab->member_responsible=$request->member_responsible;
-        $tab->relevant_experience=$request->relevant_experience;
-        $tab->education=$request->education;
+        $tab->relevant_experience= $relevant_experience;
+        $tab->education= $education;
         $tab->member_image=$filename_teammember_5;
         $tab->module_status=$request->module_status;
         $tab->save();

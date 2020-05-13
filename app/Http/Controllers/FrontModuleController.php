@@ -43,6 +43,32 @@ use App\Typesoffundingpresettlement;
 use App\FundingForm;
 use App\TypesOfFundCasesWeFundType;
 
+
+use App\AboutPageSetting;
+use App\AboutMilestones;
+use App\AboutWorkAtOasis;
+use App\AboutMeetOurTeamMember;
+use App\AboutMeetOurTeam;
+use App\MeetLeaderSetting;
+use App\TeamMember;
+
+use App\AboutWorkAtAdvantageLending;
+use App\AboutMediaSetting;
+use App\AboutMedia;
+
+use App\ForAttorneyPageSetting;
+use App\ForAtterneyPortalsimplify;
+use App\ForAttorneyKnownandRecognized;
+use App\ForAttorneySettlementFundingProcess;
+use App\ForAttorneyProductAndService;
+
+
+
+
+use App\ForBrokerPageSetting;
+
+
+
 use Illuminate\Http\Request;
 
 class FrontModuleController extends Controller
@@ -77,6 +103,10 @@ class FrontModuleController extends Controller
 
     }
 
+    public function dashboard(){
+        return view('admin.pages.dashboard.index');
+    }
+
     public function index()
     {
         $slider= Slider::orderBy('id','DESC')->first();
@@ -89,7 +119,6 @@ class FrontModuleController extends Controller
         $HelpOnManyCase= HelpOnManyCase::orderBy('id', 'DESC')->first();
         $NeverSettleForLess= NeverSettleForLess::orderBy('id', 'DESC')->first();
         $HelpOnManyCaseTypes= HelpOnManyCaseTypes::where('module_status','Active')->orderBy('id', 'ASC')->get();
-
 
         $GlossarySectionContent= GlossarySectionContent::orderBy('id', 'DESC')->first();
         $Glossary= Glossary::where('module_status','Active')->orderBy('id', 'ASC')->get();
@@ -154,20 +183,58 @@ class FrontModuleController extends Controller
 
     public function about()
     {
-        return view('site.pages.about');
+        /*use App\AboutMilestones;
+            use App\AboutWorkAtOasis;
+            use App\AboutMeetOurTeamMember;
+            use App\AboutMeetOurTeam;*/
+        $AboutPageSetting = AboutPageSetting::where('module_status', 'Active')->orderBy('id', 'DESC')->first();
+        $AboutMilestones = AboutMilestones::orderBy('id', 'DESC')->first();
+        $AboutMeetOurTeam = AboutMeetOurTeam::orderBy('id', 'DESC')->first();
+        $MeetLeaderSetting = MeetLeaderSetting::orderBy('id', 'DESC')->first();
+        $AboutWorkAtAdvantageLending = AboutWorkAtAdvantageLending::orderBy('id', 'DESC')->first();
+        $AboutMeetOurTeamMember = AboutMeetOurTeamMember::orderBy('id', 'DESC')->get();
+        $TeamMember = TeamMember::orderBy('id', 'DESC')->get();
+        //dd($AboutMeetOurTeamMember);
+        
+        return view('site.pages.about',
+                        compact(
+                            'AboutPageSetting',
+                            'AboutMilestones',
+                            'AboutMeetOurTeam',
+                            'AboutMeetOurTeamMember',
+                            'MeetLeaderSetting',
+                            'TeamMember',
+                            'AboutWorkAtAdvantageLending'
+                            )
+                    );
     }
 
     public function faq()
     {
         $faq = $this->faqData();
-        $faqinfo = FaqPageSetting::where('module_status','Active')->orderBy('id', 'DESC')->first();
+        $faqinfo = FaqPageSetting::orderBy('id', 'DESC')->first();
        // dd($faqinfo);
         return view('site.pages.faq',compact('faq','faqinfo'));
     }
 
     public function forattorneys()
     {
-        return view('site.pages.for-attorneys');
+
+        $ForAttorneyPageSetting= ForAttorneyPageSetting::orderBy('id', 'DESC')->first();
+        $ForAttorneySettlementFundingProcess = ForAttorneySettlementFundingProcess::where('module_status', 'Active')->orderBy('id', 'ASC')->get();
+        $ForAttorneyKnownandRecognized= ForAttorneyKnownandRecognized::orderBy('id', 'DESC')->first();
+        $ForAtterneyPortalsimplify= ForAtterneyPortalsimplify::orderBy('id', 'DESC')->first();
+        $ForAttorneyProductAndService = ForAttorneyProductAndService::where('module_status', 'Active')->orderBy('id', 'DESC')->get();
+       //dd($ForAttorneyProductAndService);
+        return view('site.pages.for-attorneys',
+                                            compact(
+                                                'ForAttorneyPageSetting',
+                                                'ForAttorneySettlementFundingProcess',
+                                                'ForAttorneyKnownandRecognized',
+                                                'ForAtterneyPortalsimplify',
+                                                'ForAttorneyProductAndService'
+                                                )
+                                            );
     }
 
     public function resources()
@@ -210,7 +277,10 @@ class FrontModuleController extends Controller
 
     public function forbrokers()
     {
-        return view('site.pages.for-brokers');
+        
+        $ForBrokerPageSetting= ForBrokerPageSetting::where('module_status','Active')->orderBy('id', 'DESC')->first();
+        //dd($ForBrokerPageSetting);
+        return view('site.pages.for-brokers',compact('ForBrokerPageSetting'));
     }
 
     public function completeapplication()
