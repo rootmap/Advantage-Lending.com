@@ -364,10 +364,10 @@ class AttorneysformController extends Controller
             return response()->json(['status'=>0, 'msg' => 'Please Enter all required (*) field','error'=> $validator->errors()->all()]);
         }
     
-        $this->SystemAdminLog("User For Attonreys Request Submitted", "Save New", "Create New");
+        $this->SystemAdminLog("User Attonreys Request Submitted", "Save New", "Create New");
     
     
-       // dd($request);
+        dd($request);
     
         $tab->contact_me_about=$request->contact_me_about;
         $tab->first_name=$request->first_name;
