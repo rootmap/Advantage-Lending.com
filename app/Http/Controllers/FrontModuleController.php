@@ -61,11 +61,16 @@ use App\ForAtterneyPortalsimplify;
 use App\ForAttorneyKnownandRecognized;
 use App\ForAttorneySettlementFundingProcess;
 use App\ForAttorneyProductAndService;
-
-
-
+use App\ContactMeAbout;
 
 use App\ForBrokerPageSetting;
+
+use App\ContactUs;
+
+use App\CareerPageSetting;
+use App\CareerPost;
+use App\USAState;
+
 
 
 
@@ -183,10 +188,7 @@ class FrontModuleController extends Controller
 
     public function about()
     {
-        /*use App\AboutMilestones;
-            use App\AboutWorkAtOasis;
-            use App\AboutMeetOurTeamMember;
-            use App\AboutMeetOurTeam;*/
+
         $AboutPageSetting = AboutPageSetting::where('module_status', 'Active')->orderBy('id', 'DESC')->first();
         $AboutMilestones = AboutMilestones::orderBy('id', 'DESC')->first();
         $AboutMeetOurTeam = AboutMeetOurTeam::orderBy('id', 'DESC')->first();
@@ -225,6 +227,7 @@ class FrontModuleController extends Controller
         $ForAttorneyKnownandRecognized= ForAttorneyKnownandRecognized::orderBy('id', 'DESC')->first();
         $ForAtterneyPortalsimplify= ForAtterneyPortalsimplify::orderBy('id', 'DESC')->first();
         $ForAttorneyProductAndService = ForAttorneyProductAndService::where('module_status', 'Active')->orderBy('id', 'DESC')->get();
+        $ContactMeAbout= ContactMeAbout::orderBy('id', 'DESC')->get();
        //dd($ForAttorneyProductAndService);
         return view('site.pages.for-attorneys',
                                             compact(
@@ -232,7 +235,8 @@ class FrontModuleController extends Controller
                                                 'ForAttorneySettlementFundingProcess',
                                                 'ForAttorneyKnownandRecognized',
                                                 'ForAtterneyPortalsimplify',
-                                                'ForAttorneyProductAndService'
+                                                'ForAttorneyProductAndService',
+                                                'ContactMeAbout'
                                                 )
                                             );
     }
@@ -264,15 +268,24 @@ class FrontModuleController extends Controller
         //dd($query);
         return view('site.pages.resource-search',compact('query'));
     }
-
+    
     public function contactus()
     {
-        return view('site.pages.contactus');
+        $USAState= USAState::all();
+        $ContactMeAbout= ContactMeAbout::all();
+        $ContactUs= ContactUs::where('module_status','Active')->orderBy('id', 'DESC')->first();
+        //dd($ContactUs);
+        return view('site.pages.contactus',compact('ContactUs', 'USAState', 'ContactMeAbout'));
     }
-
+    
     public function careers()
     {
-        return view('site.pages.careers');
+        /*use App\CareerPageSetting;
+        use App\CareerPost;*/
+        $CareerPage= CareerPageSetting::where('module_status','Active')->orderBy('id', 'DESC')->first();
+        $CareerPost= CareerPost::where('module_status','Active')->orderBy('id', 'DESC')->get();
+        //dd($CareerPost);
+        return view('site.pages.careers',compact('CareerPage','CareerPost'));
     }
 
     public function forbrokers()

@@ -26,6 +26,7 @@ Route::get('/resource', 'FrontModuleController@resources');
 Route::get('/resource-details/{id}/{title}', 'FrontModuleController@resourcesDetails');
 Route::post('/search', 'FrontModuleController@resourcesSearch');
 Route::get('/contact-us', 'FrontModuleController@contactus');
+Route::post('/contact-us', 'FrontModuleController@contactusSave');
 Route::get('/careers', 'FrontModuleController@careers');
 Route::get('/for-brokers', 'FrontModuleController@forbrokers');
 Route::get('/complete-application', 'FrontModuleController@completeapplication');
@@ -805,4 +806,33 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/contactus/datatable/ajax','ContactusController@datatable');
     Route::post('/contactus/update/{id}','ContactusController@update');
     //======================== Contactus Route End ===============================//
+
+    //======================== Careerpagesetting Route Start ===============================//
+    Route::get('/careerpagesetting/list', 'CareerpagesettingController@show');
+    Route::get('/careerpagesetting/create', 'CareerpagesettingController@create');
+    Route::get('/careerpagesetting/edit/{id}', 'CareerpagesettingController@edit');
+    Route::get('/careerpagesetting/delete/{id}', 'CareerpagesettingController@destroy');
+    Route::get('/careerpagesetting', 'CareerpagesettingController@index');
+    Route::get('/careerpagesetting/export/excel', 'CareerpagesettingController@ExportExcel');
+    Route::get('/careerpagesetting/export/pdf', 'CareerpagesettingController@ExportPDF');
+    Route::post('/careerpagesetting', 'CareerpagesettingController@store');
+    Route::post('/careerpagesetting/ajax', 'CareerpagesettingController@ajaxSave');
+    Route::post('/careerpagesetting/datatable/ajax', 'CareerpagesettingController@datatable');
+    Route::post('/careerpagesetting/update/{id}', 'CareerpagesettingController@update');
+    //======================== Careerpagesetting Route End ===============================//
+    
 });
+
+//======================== Careerpost Route Start ===============================//
+Route::get('/careerpost/list','CareerpostController@show');
+Route::get('/careerpost/create','CareerpostController@create');
+Route::get('/careerpost/edit/{id}','CareerpostController@edit');
+Route::get('/careerpost/delete/{id}','CareerpostController@destroy');
+Route::get('/careerpost','CareerpostController@index');
+Route::get('/careerpost/export/excel','CareerpostController@ExportExcel');
+Route::get('/careerpost/export/pdf','CareerpostController@ExportPDF');
+Route::post('/careerpost','CareerpostController@store');
+Route::post('/careerpost/ajax','CareerpostController@ajaxSave');
+Route::post('/careerpost/datatable/ajax','CareerpostController@datatable');
+Route::post('/careerpost/update/{id}','CareerpostController@update');
+//======================== Careerpost Route End ===============================//

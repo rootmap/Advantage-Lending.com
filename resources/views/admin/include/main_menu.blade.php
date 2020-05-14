@@ -455,6 +455,30 @@
               
             </ul>
           </li>
+          <li class="nav-item has-treeview {{ in_array(Request::path(),array('careerpagesetting','careerpost'))?'menu-open':'' }}">
+            <a href="#" class="nav-link {{ in_array(Request::path(),array('careerpagesetting','careerpost'))?'active':'' }}">
+              <i class="nav-icon fas fa-utensils"></i>
+              <p>
+                Career Info
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{url('careerpagesetting')}}" class="nav-link {{ Request::path() == 'careerpagesetting' ? 'active' : '' }}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Page Setting</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{url('careerpost')}}" class="nav-link {{ Request::path() == 'careerpost' ? 'active' : '' }}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Career Post</p>
+                </a>
+              </li>
+              
+            </ul>
+          </li>
          
           <li class="nav-item has-treeview {{ in_array(Request::path(),array('forbrokerpagesetting'))?'menu-open':'' }}">
             <a href="{{url('forbrokerpagesetting')}}" class="nav-link {{ in_array(Request::path(),array('forbrokerpagesetting'))?'active':'' }}">
@@ -526,8 +550,8 @@
               <p>Contact</p>
             </a>
           </li> --}}
-          <li class="nav-item has-treeview {{ in_array(Request::path(),array('sitesetting','pagesetting','cardpointestoresetting','websitesettings/create'))?'menu-open':'' }}">
-            <a href="#" class="nav-link {{ in_array(Request::path(),array('sitesetting','pagesetting','cardpointestoresetting','websitesettings/create'))?'active':'' }}">
+          <li class="nav-item has-treeview {{ in_array(Request::path(),array('sitesetting','contactmeabout','cardpointestoresetting','websitesettings/create'))?'menu-open':'' }}">
+            <a href="#" class="nav-link {{ in_array(Request::path(),array('sitesetting','contactmeabout','cardpointestoresetting','websitesettings/create'))?'active':'' }}">
               <i class="nav-icon fas fa-cogs"></i>
               <p>
                 Setting
@@ -539,6 +563,12 @@
                 <a href="{{url('sitesetting')}}" class="nav-link {{ Request::path() == 'sitesetting' ? 'active' : '' }}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Site Setting</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{url('contactmeabout')}}" class="nav-link {{ Request::path() == 'contactmeabout' ? 'active' : '' }}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Contact Me About</p>
                 </a>
               </li>
               

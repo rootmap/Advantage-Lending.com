@@ -319,19 +319,43 @@
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-4 col-xs-12 col-sm-12 col-lg-4">
+                                        <div class="col-md-6 col-xs-12 col-sm-12 col-lg-6">
+                                            <div class="form-group">
+                                                <label class="gfield_label" for="exampleFormControlInput1">Please contact me about:<span class="text-danger">*</span></label>
+                                                <select class="form-control">
+                                                    <option value="">Select one </option>
+                                                    @isset($ContactMeAbout)
+                                                        @foreach ($ContactMeAbout as $item)
+                                                        <option value="{{$item->name}}">{{$item->name}} </option>
+                                                        @endforeach
+                                                    @endisset
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 col-xs-12 col-sm-12 col-lg-6">
                                             <div class="form-group">
                                                 <label class="gfield_label" for="exampleFormControlInput1">First Name<span class="text-danger">*</span></label>
                                                 <input type="text" class="form-control" autocomplete="off" name="first_name" id="exampleFormControlInput1">
                                             </div>
                                         </div>
-                                        <div class="col-md-4 col-xs-12 col-sm-12 col-lg-4">
+                                        <div class="col-md-6 col-xs-12 col-sm-12 col-lg-6">
                                             <div class="form-group">
                                                 <label class="gfield_label" for="exampleFormControlInput1">Last Name<span class="text-danger">*</span></label>
                                                 <input type="text" class="form-control" autocomplete="off" name="last_name" id="exampleFormControlInput1">
                                             </div>
                                         </div>
-                                        <div class="col-md-4 col-xs-12 col-sm-12 col-lg-4">
+                                        
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 col-xs-12 col-sm-12 col-lg-6">
+                                            <div class="form-group">
+                                                <label class="gfield_label" for="exampleFormControlInput1">Phone<span class="text-danger">*</span></label>
+                                                <input type="tel" class="form-control" autocomplete="off" name="phone" id="exampleFormControlInput1">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-xs-12 col-sm-12 col-lg-6">
                                             <div class="form-group">
                                                 <label class="gfield_label" for="exampleFormControlInput1">Email<span class="text-danger">*</span></label>
                                                 <input type="email" class="form-control" autocomplete="off" name="email" id="exampleFormControlInput1">
@@ -339,42 +363,53 @@
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-4 col-xs-12 col-sm-12 col-lg-4">
+                                        <div class="col-md-6 col-xs-12 col-sm-12 col-lg-6">
                                             <div class="form-group">
-                                                <label class="gfield_label" for="exampleFormControlInput1">Phone<span class="text-danger">*</span></label>
-                                                <input type="tel" class="form-control" autocomplete="off" name="phone" id="exampleFormControlInput1">
+                                                <label class="gfield_label" for="exampleFormControlInput1">Please contact me by<span class="text-danger">*</span></label>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                                    <label class="form-check-label" for="defaultCheck1">
+                                                        Email
+                                                    </label>
+                                                  </div>
+                                                  <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                                                    <label class="form-check-label" for="defaultCheck2">
+                                                        Phone
+                                                    </label>
+                                                  </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-4 col-xs-12 col-sm-12 col-lg-4">
+                                        <div class="col-md-6 col-xs-12 col-sm-12 col-lg-6">
                                             <div class="form-group">
-                                                <label class="gfield_label" for="exampleFormControlInput1">ZIP Code<span class="text-danger">*</span></label>
-                                                <input type="text" class="form-control" autocomplete="off" name="zip_code" id="exampleFormControlInput1">
+                                                <label class="gfield_label" for="exampleFormControlInput1">Best time:<span class="text-danger">*</span></label>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
+                                                    <label class="form-check-label" for="defaultCheck3">
+                                                      AM
+                                                    </label>
+                                                  </div>
+                                                  <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck4">
+                                                    <label class="form-check-label" for="defaultCheck4">
+                                                      PM
+                                                    </label>
+                                                  </div>
+                                                  <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck5">
+                                                    <label class="form-check-label" for="defaultCheck5">
+                                                        Specific day/time
+                                                    </label>
+                                                  </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-4 col-xs-12 col-sm-12 col-lg-4">
-                                            <div class="form-group">
-                                                <label class="gfield_label" for="exampleFormControlInput1">Law Firm Name<span class="text-danger">*</span></label>
-                                                <input type="text" class="form-control" autocomplete="off" name="law_firm_name" id="exampleFormControlInput1">
-                                            </div>
-                                        </div>
+                                        
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-4 col-xs-12 col-sm-12 col-lg-4">
+                                        <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
                                             <div class="form-group">
-                                                <label class="gfield_label" for="exampleFormControlInput1">Attorney’s Name<span class="text-danger">*</span></label>
-                                                <input type="tel" class="form-control" placeholder="First Name" name="attorney__first_name" autocomplete="off" id="exampleFormControlInput1">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 col-xs-12 col-sm-12 col-lg-4">
-                                            <div class="form-group">
-                                                <label class="gfield_label" for="exampleFormControlInput1"></label>
-                                                <input type="text" class="form-control" placeholder="Last Name" name="attorney__last_name" autocomplete="off" id="exampleFormControlInput1">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 col-xs-12 col-sm-12 col-lg-4">
-                                            <div class="form-group">
-                                                <label class="gfield_label" for="exampleFormControlInput1">Law Firm Phone<span class="text-danger">*</span></label>
-                                                <input type="text" class="form-control" autocomplete="off" name="law_firm_phone" id="exampleFormControlInput1">
+                                                <label class="gfield_label" for="exampleFormControlInput1">Message</label>
+                                                <textarea class="form-control" rows="5" cols="5"></textarea>
                                             </div>
                                         </div>
                                     </div>
