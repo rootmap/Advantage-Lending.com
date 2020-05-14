@@ -311,8 +311,9 @@
                 </div>
                 <div class="col-lg-12 col-md-12">
                     <div class="appointment-col">
-                        <form method="post" enctype="multipart/form-data" id="gform_1" action="/#gf_1">
-                                <div class="col-md-12">
+                        {{-- <form method="post" enctype="multipart/form-data" id="gform_1" action="/#gf_1"> --}}
+                        <div id="gform_1">    
+                            <div class="col-md-12">
                                     <div class="row pb-3">
                                         <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
                                             <h4><strong>All fields required</strong></h4>
@@ -322,11 +323,11 @@
                                         <div class="col-md-6 col-xs-12 col-sm-12 col-lg-6">
                                             <div class="form-group">
                                                 <label class="gfield_label" for="exampleFormControlInput1">Please contact me about:<span class="text-danger">*</span></label>
-                                                <select class="form-control">
+                                                <select name="contact_me_about" class="form-control">
                                                     <option value="">Select one </option>
                                                     @isset($ContactMeAbout)
                                                         @foreach ($ContactMeAbout as $item)
-                                                        <option value="{{$item->name}}">{{$item->name}} </option>
+                                                        <option value="{{$item->id}}">{{$item->name}} </option>
                                                         @endforeach
                                                     @endisset
                                                 </select>
@@ -367,13 +368,13 @@
                                             <div class="form-group">
                                                 <label class="gfield_label" for="exampleFormControlInput1">Please contact me by<span class="text-danger">*</span></label>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                                    <label class="form-check-label" for="defaultCheck1">
+                                                    <input class="form-check-input removeLater" type="checkbox" name="contact_me_by" value="Email" id="defaultCheck1">
+                                                    <label class="form-check-label removeLater" for="defaultCheck1">
                                                         Email
                                                     </label>
                                                   </div>
                                                   <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                                                    <input class="form-check-input" type="checkbox" name="contact_me_by" value="Phone" id="defaultCheck2">
                                                     <label class="form-check-label" for="defaultCheck2">
                                                         Phone
                                                     </label>
@@ -384,19 +385,19 @@
                                             <div class="form-group">
                                                 <label class="gfield_label" for="exampleFormControlInput1">Best time:<span class="text-danger">*</span></label>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
+                                                    <input class="form-check-input" type="checkbox" name="best_time" value="AM" id="defaultCheck3">
                                                     <label class="form-check-label" for="defaultCheck3">
                                                       AM
                                                     </label>
                                                   </div>
                                                   <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck4">
+                                                    <input class="form-check-input" type="checkbox" name="best_time" value="PM" id="defaultCheck4">
                                                     <label class="form-check-label" for="defaultCheck4">
                                                       PM
                                                     </label>
                                                   </div>
                                                   <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck5">
+                                                    <input class="form-check-input" type="checkbox" name="best_time" value="Specific day/time" id="defaultCheck5">
                                                     <label class="form-check-label" for="defaultCheck5">
                                                         Specific day/time
                                                     </label>
@@ -409,36 +410,178 @@
                                         <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
                                             <div class="form-group">
                                                 <label class="gfield_label" for="exampleFormControlInput1">Message</label>
-                                                <textarea class="form-control" rows="5" cols="5"></textarea>
+                                                <textarea class="form-control" rows="5" cols="5" name="message"></textarea>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12 text-right">
-                                            <button class="btn btn-default simple-btn" type="submit">Continue <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+                                            <button class="btn btn-default simple-btn save-attorney" type="submit">Continue <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
                                         </div>
                                     </div>
                                 </div>
 
-                            </form>
-                       
+                            {{-- </form> --}}
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 @endsection
+
+@section('meta')
+    <meta name="attorney-request" content="/attorney-request">
+@endsection
 @section('js')
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script type="text/javascript">
-        $('.notAlone').slick({
-            dots: true,
-            infinite: true,
-            speed: 500,
-            fade: true,
-            cssEase: 'linear',
-            lazyLoad: 'ondemand',
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script type="text/javascript">
+    $('.notAlone').slick({
+        dots: true,
+        infinite: true,
+        speed: 500,
+        fade: true,
+        cssEase: 'linear',
+        lazyLoad: 'ondemand',
+    });
+</script>
+<script src="{{asset('module/lity/dist/lity.js')}}"></script>
+    {{-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script> --}}
+    <script>
+        var csrftLarVe = $('meta[name="csrf-token"]').attr("content"),
+        baseUrl = $('meta[name="base-url"]').attr("content");
+
+        
+
+        function swalErrorMsg(msg){
+            Swal.fire({
+                icon: 'error',
+                title: '<h3 class="text-danger">Warning</h3>',
+                html: '<h5>'+msg+'!!!</h5>'
+            });
+        }
+
+        function swalSuccessMsg(msg){
+            Swal.fire({
+                icon: 'success',
+                title: '<h3 class="text-success">Thank You</h3>',
+                html: '<h5>'+msg+'</h5>'
+            });
+        }
+
+        function makeFieldEmpty(){
+            $("select[name=contact_me_about]").val("");
+            $("input[name=first_name]").val("");
+            $("input[name=last_name]").val("");
+            $("input[name=phone]").val();
+            $("input[name=email]").val();
+            $("input[name=contact_me_by]").serialize();
+            $("input[name=best_time]").serialize();
+            $("input[name=message]").val();
+        }
+        $(document).ready(function(){
+            $.getScript("https://cdn.jsdelivr.net/npm/sweetalert2@9");
+
+            $('.save-attorney').click(function(){
+
+                var contactUs = "";
+                if($('meta[name="attorney-request"]').attr("content"))
+                {
+                    contactUs = $('meta[name="attorney-request"]').attr("content");
+                }
+
+                var contactUsURL=baseUrl+""+contactUs;
+
+                //alert(contactUsURL);
+                //return false;
+
+                var contact_me_about=$("select[name=contact_me_about]").val();
+                var first_name=$("input[name=first_name]").val();
+                var last_name   =$("input[name=last_name]").val();
+                var phone=$("input[name=phone]").val();
+                var email=$("input[name=email]").val();
+                var message=$("textarea[name=message]").val();
+
+                var contact_me_by = [];
+                $.each($("input[name='contact_me_by']:checked"), function(){
+                    contact_me_by.push($(this).val());
+                });
+                var best_time = [];
+                $.each($("input[name='best_time']:checked"), function(){
+                    best_time.push($(this).val());
+                });
+                //Swal.fire('Oops...', 'Something went wrong!', 'error')
+
+                //alert(contact_me_by);
+                //alert(best_time);
+                //return false;
+
+
+
+                Swal.showLoading ();
+                if(contact_me_about==0){ swalErrorMsg("Contact About Required"); return false; }
+                if(first_name.length==0){ swalErrorMsg("First Name Required"); return false; }
+                if(last_name.length==0){ swalErrorMsg("Last Name Required"); return false; }
+                if(phone.length==0){ swalErrorMsg("Phone Number Required"); return false; }
+                if(email.length==0){ swalErrorMsg("Email Address Required"); return false; }
+                if(message.length==0){ swalErrorMsg("Detail Message Required"); return false; }
+                // if(contact_me_by.length==0){ swalErrorMsg("Contact me by Required"); return false; }
+                // if(best_time.length==0){ swalErrorMsg("Best time Required"); return false; }
+
+                $.ajax({
+                    async: true,
+                    type: "POST",
+                    global: true,
+                    dataType: "json",
+                    url: contactUsURL,
+                    data: {
+                        contact_me_about:contact_me_about,
+                        first_name: first_name,
+                        last_name: last_name,
+                        phone: phone,
+                        email: email,
+                        contact_me_by: contact_me_by,
+                        best_time: best_time,
+                        message: message,
+                        _token: csrftLarVe
+                    },
+                    success: function(res) {
+                        console.log('Success', res);
+                        Swal.hideLoading();
+
+                        if(res.status==0){ swalErrorMsg(res.msg); return false; }
+                        if(res.status==1){ 
+                            swalSuccessMsg(res.msg); 
+                            makeFieldEmpty();
+                            return false; 
+                        }
+
+                        return false;
+                
+                    },
+                    error: function(reject) {
+                        return false;
+                
+                        console.log('Error', reject.status);
+                        /* window.location.href = window.location.href; */
+                    }
+            });
+
+       
+
+                
+                /* Swal.fire(
+                    'The Internet?',
+                    'That thing is still around?',
+                    'question'
+                    ) */
+            });
+
+            
         });
+        
     </script>
-    <script src="{{asset('module/lity/dist/lity.js')}}"></script>
+
+
+
 @endsection

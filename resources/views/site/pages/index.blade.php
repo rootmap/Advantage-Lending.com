@@ -375,7 +375,8 @@
                 </div>
                 <div class="col-lg-12 col-md-12">
                     <div class="appointment-col">
-                        <form method='post' enctype='multipart/form-data' id='gform_1' action='/#gf_1'>
+                        <form method='post' enctype='multipart/form-data' id='gform_1' action='{{url('complete-application')}}'>
+                                {{ csrf_field() }}
                                 <div class="col-md-12">
                                     <div class="row pb-3">
                                         <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
@@ -444,7 +445,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12 text-right">
-                                            <button class="btn btn-default simple-btn" type="submit">Continue <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+                                            <button class="btn btn-default simple-btn save-partial-application" type="submit">Continue <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
                                         </div>
                                     </div>
                                 </div>
@@ -583,7 +584,123 @@
     @endisset
     
 @endsection
+@section('meta')
+    <meta name="complete-application" content="/complete-application">
+@endsection
 @section('js')
+    <script>
+        var csrftLarVe = $('meta[name="csrf-token"]').attr("content"),
+        baseUrl = $('meta[name="base-url"]').attr("content");
+
+        
+
+        function swalErrorMsg(msg){
+            Swal.fire({
+                icon: 'error',
+                title: '<h3 class="text-danger">Warning</h3>',
+                html: '<h5>'+msg+'!!!</h5>'
+            });
+        }
+
+        function swalSuccessMsg(msg){
+            Swal.fire({
+                icon: 'success',
+                title: '<h3 class="text-success">Thank You</h3>',
+                html: '<h5>'+msg+'</h5>'
+            });
+        }
+
+        function makeFieldEmpty(){
+            $("input[name=first_name]").val("");
+            $("input[name=last_name]").val("");
+            $("input[name=email]").val();
+            $("input[name=phone]").val();
+            $("input[name=zip_code]").val("");
+            $("input[name=law_firm_name]").val("");
+            $("input[name=law_firm_phone]").val("");
+            $("input[name=attorney__first_name]").val("");
+            $("input[name=attorney__last_name]").val("");
+        }
+
+        $(document).ready(function(){
+            $.getScript("https://cdn.jsdelivr.net/npm/sweetalert2@9");
+
+            $('.save-partial-application').click(function(){
+
+                var contactUs = "";
+                if($('meta[name="complete-application"]').attr("content"))
+                {
+                    contactUs = $('meta[name="complete-application"]').attr("content");
+                }
+
+                var contactUsURL=baseUrl+""+contactUs;
+                var first_name=$("input[name=first_name]").val();
+                var last_name   =$("input[name=last_name]").val();
+                var email=$("input[name=email]").val();
+                var phone=$("input[name=phone]").val();
+                var zip_code=$("input[name=zip_code]").val();
+                var law_firm_name=$("input[name=law_firm_name]").val();
+                var law_firm_phone=$("input[name=law_firm_phone]").val();
+                var attorney__first_name=$("input[name=attorney__first_name]").val();
+                var attorney__last_name=$("input[name=attorney__last_name]").val();
+                //Swal.fire('Oops...', 'Something went wrong!', 'error')
+                Swal.showLoading ();
+                if(first_name.length==0){ swalErrorMsg("First Name Required"); return false; }
+                if(last_name.length==0){ swalErrorMsg("Last Name Required"); return false; }
+                if(email.length==0){ swalErrorMsg("Contact About Required"); return false; }
+                if(phone.length==0){ swalErrorMsg("State Case Required"); return false; }
+                if(zip_code.length==0){ swalErrorMsg("Zip Code Required"); return false; }
+                if(law_firm_name.length==0){ swalErrorMsg("Law Firm Name Required"); return false; }
+                if(law_firm_phone.length==0){ swalErrorMsg("Law Firm Phone Required"); return false; }
+                if(attorney__first_name.length==0){ swalErrorMsg("Attorney First Name Required"); return false; }
+                if(attorney__last_name.length==0){ swalErrorMsg("Attorney Last Name Required"); return false; }
+                return true;
+                /* $.ajax({
+                    async: true,
+                    type: "POST",
+                    global: true,
+                    dataType: "json",
+                    url: contactUsURL,
+                    data: {
+                        first_name: first_name,
+                        last_name: last_name,
+                        contact_about_id: contact_about_id,
+                        state_case_id: state_case_id,
+                        phone: phone,
+                        email: email,
+                        message: message,
+                        _token: csrftLarVe
+                    },
+                    success: function(res) {
+                        console.log('Success', res);
+                        Swal.hideLoading();
+
+                        if(res.status==0){ 
+                            swalErrorMsg(res.msg); return false; 
+                        }
+                        else if(res.status==1){ 
+                            swalSuccessMsg(res.msg); 
+                            makeFieldEmpty();
+                            return false; 
+                        }
+
+                        return false;
+                
+                    },
+                    error: function(reject) {
+                        return false;
+                
+                        console.log('Error', reject.status);
+                        window.location.href = window.location.href;
+                    }
+                }); */
+
+            });
+
+            
+        });
+        
+    </script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script type="text/javascript">
         $('.notAlone').slick({

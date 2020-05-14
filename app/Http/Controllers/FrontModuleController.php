@@ -70,6 +70,8 @@ use App\ContactUs;
 use App\CareerPageSetting;
 use App\CareerPost;
 use App\USAState;
+use App\CaseType;
+use App\HearAbout;
 
 
 
@@ -296,9 +298,22 @@ class FrontModuleController extends Controller
         return view('site.pages.for-brokers',compact('ForBrokerPageSetting'));
     }
 
-    public function completeapplication()
+    public function completeapplication(Request $request)
     {
-        return view('site.pages.complete-application');
+        
+
+        $parse_array=array();
+        if ($request->isMethod('post')) {
+            $new_array=array('req'=>$request);
+            $parse_array=array_merge($parse_array, $new_array);
+        }
+
+        $USAState = USAState::all();
+        $CaseType = CaseType::all();
+        $HearAbout = HearAbout::all();
+
+        $parse_array=array_merge($parse_array, array('USAState' => $USAState, 'CaseType'=> $CaseType, 'HearAbout'=> $HearAbout));
+        return view('site.pages.complete-application', $parse_array);
     }
 
     public function structuredsettlementapplicationform()
@@ -354,6 +369,9 @@ class FrontModuleController extends Controller
             return view('site.pages.state-specific-licenses',compact('licenses'));
         }
     }
+
+
+
 
     /**
      * Show the form for creating a new resource.

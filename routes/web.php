@@ -22,6 +22,7 @@ Route::get('/types-of-funding', 'FrontModuleController@typesoffunding');
 Route::get('/about-advantage-lending', 'FrontModuleController@about');
 Route::get('/faq', 'FrontModuleController@faq');
 Route::get('/for-attorneys', 'FrontModuleController@forattorneys');
+Route::post('/attorney-request', 'AttorneysformController@attorneyRequest');
 Route::get('/resource', 'FrontModuleController@resources');
 Route::get('/resource-details/{id}/{title}', 'FrontModuleController@resourcesDetails');
 Route::post('/search', 'FrontModuleController@resourcesSearch');
@@ -30,7 +31,7 @@ Route::post('/contact-us', 'FrontServiceController@contactus');
 Route::get('/careers', 'FrontModuleController@careers');
 Route::get('/for-brokers', 'FrontModuleController@forbrokers');
 Route::get('/complete-application', 'FrontModuleController@completeapplication');
-Route::post('/complete-application/referel', 'FrontModuleController@completeapplication');
+Route::post('/completeapplication-site', 'ApplicationformController@completeapplication');
 Route::post('/complete-application', 'FrontModuleController@completeapplication');
 Route::get('/structured-settlement-application-form', 'FrontModuleController@structuredsettlementapplicationform');
 Route::get('/inheritance-funding', 'FrontModuleController@inheritancefunding');
@@ -838,3 +839,16 @@ Route::post('/careerpost/ajax','CareerpostController@ajaxSave');
 Route::post('/careerpost/datatable/ajax','CareerpostController@datatable');
 Route::post('/careerpost/update/{id}','CareerpostController@update');
 //======================== Careerpost Route End ===============================//
+//======================== Attorneysform Route Start ===============================//
+Route::get('/attorneysform/list','AttorneysformController@show');
+Route::get('/attorneysform/create','AttorneysformController@create');
+Route::get('/attorneysform/edit/{id}','AttorneysformController@edit');
+Route::get('/attorneysform/delete/{id}','AttorneysformController@destroy');
+Route::get('/attorneysform','AttorneysformController@index');
+Route::get('/attorneysform/export/excel','AttorneysformController@ExportExcel');
+Route::get('/attorneysform/export/pdf','AttorneysformController@ExportPDF');
+Route::post('/attorneysform','AttorneysformController@store');
+Route::post('/attorneysform/ajax','AttorneysformController@ajaxSave');
+Route::post('/attorneysform/datatable/ajax','AttorneysformController@datatable');
+Route::post('/attorneysform/update/{id}','AttorneysformController@update');
+//======================== Attorneysform Route End ===============================//

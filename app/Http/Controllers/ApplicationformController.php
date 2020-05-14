@@ -130,6 +130,74 @@ class ApplicationFormController extends Controller
 
     }
 
+    public function completeapplication(Request $request){
+        $validator = \Validator::make($request->all(), [
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'how_much_money_do_you_need' => 'required',
+            'what_was_the_date_of_your_accident' => 'required',
+            'state_case' => 'required',
+            'case_type' => 'required',
+            'how_did_you_heard' => 'required',
+            'street_address' => 'required',
+            'city_name' => 'required',
+            'state' => 'required',
+            'zip_code' => 'required',
+            'phone' => 'required',
+            'email' => 'required',
+            'law_firm_name' => 'required',
+            'law_firm_phone' => 'required',
+            'attorney__first_name' => 'required',
+            'attorney__last_name' => 'required',
+            'contactWEDo' => 'required',
+        ]);
+
+        if (!$validator->passes()) {
+            return response()->json(['status' => 0, 'msg' => 'Please Enter all required (*) field', 'error' => $validator->errors()->all()]);
+        }
+
+        $this->SystemAdminLog("User Site Application Form", "Save New", "Create New");
+
+
+        $tab_4_USAState = USAState::where('id', $request->state_case)->first();
+        $state_case_4_USAState = $tab_4_USAState->name;
+        $tab_5_CaseType = CaseType::where('id', $request->case_type)->first();
+        $case_type_5_CaseType = $tab_5_CaseType->name;
+        $tab_6_HearAbout = HearAbout::where('id', $request->how_did_you_heard)->first();
+        $how_did_you_heard_6_HearAbout = $tab_6_HearAbout->name;
+        $tab_11_USAState = USAState::where('id', $request->state)->first();
+        $state_11_USAState = $tab_11_USAState->name;
+        $tab = new ApplicationForm();
+
+        $tab->first_name = $request->first_name;
+        $tab->last_name = $request->last_name;
+        $tab->how_much_money_do_you_need = $request->how_much_money_do_you_need;
+        $tab->what_was_the_date_of_your_accident = $request->what_was_the_date_of_your_accident;
+        $tab->state_case_name = $state_case_4_USAState;
+        $tab->state_case = $request->state_case;
+        $tab->case_type_name = $case_type_5_CaseType;
+        $tab->case_type = $request->case_type;
+        $tab->how_did_you_heard_name = $how_did_you_heard_6_HearAbout;
+        $tab->how_did_you_heard = $request->how_did_you_heard;
+        $tab->email = $request->email;
+        $tab->phone = $request->phone;
+        $tab->how_should_we_contact_you = $request->contactWEDo;
+        $tab->street_address = $request->street_address;
+        $tab->state_name = $state_11_USAState;
+        $tab->state = $request->state;
+        $tab->zip_code = $request->zip_code;
+        $tab->attorney__first_name = $request->attorney__first_name;
+        $tab->attorney__last_name = $request->attorney__last_name;
+        $tab->law_firm_name = $request->law_firm_name;
+        $tab->law_firm_phone = $request->law_firm_phone;
+        $tab->case_status = $request->case_status;
+        $tab->application_status = $request->application_status;
+        $tab->save();
+
+
+        return response()->json(['status' =>1, 'msg' => 'Your application request submitted successfully. Our team will contact with you soon.']);
+    }
+
     public function ajax(Request $request)
     {
         $this->validate($request,[
