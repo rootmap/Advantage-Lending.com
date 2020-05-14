@@ -151,12 +151,17 @@
             <div class="col-sm-12">
               <!-- checkbox -->
               <div class="form-group">
-              <label>Select option</label>
+              <label>Contact me By</label>
         
                         <div class="form-check">
+                          <?php
+                          if(json_decode($dataRow->contact_me_by)=="Email"){}
+                          
                             <input class="form-check-input" type="checkbox"  
+
                                 <?php 
-                                if($dataRow->contact_me_by=="Email"){
+                                
+                                if(json_decode($dataRow->contact_me_by)=="Email"){
                                     ?>
                                     checked="checked" 
                                     <?php 
@@ -169,7 +174,7 @@
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox"  
                                 <?php 
-                                if($dataRow->contact_me_by=="Phone"){
+                                if(json_decode($dataRow->contact_me_by)=="Phone"){
                                     ?>
                                     checked="checked" 
                                     <?php 
@@ -187,7 +192,7 @@
             <div class="col-sm-12">
               <!-- checkbox -->
               <div class="form-group">
-              <label>Select option</label>
+              <label>Best Time</label>
         
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox"  

@@ -655,45 +655,7 @@
                 if(attorney__first_name.length==0){ swalErrorMsg("Attorney First Name Required"); return false; }
                 if(attorney__last_name.length==0){ swalErrorMsg("Attorney Last Name Required"); return false; }
                 return true;
-                /* $.ajax({
-                    async: true,
-                    type: "POST",
-                    global: true,
-                    dataType: "json",
-                    url: contactUsURL,
-                    data: {
-                        first_name: first_name,
-                        last_name: last_name,
-                        contact_about_id: contact_about_id,
-                        state_case_id: state_case_id,
-                        phone: phone,
-                        email: email,
-                        message: message,
-                        _token: csrftLarVe
-                    },
-                    success: function(res) {
-                        console.log('Success', res);
-                        Swal.hideLoading();
-
-                        if(res.status==0){ 
-                            swalErrorMsg(res.msg); return false; 
-                        }
-                        else if(res.status==1){ 
-                            swalSuccessMsg(res.msg); 
-                            makeFieldEmpty();
-                            return false; 
-                        }
-
-                        return false;
                 
-                    },
-                    error: function(reject) {
-                        return false;
-                
-                        console.log('Error', reject.status);
-                        window.location.href = window.location.href;
-                    }
-                }); */
 
             });
 

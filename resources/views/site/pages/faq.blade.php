@@ -179,366 +179,7 @@
         </section>
         @endforeach
     @endisset
-    <!-- Appointment Start -->
-    {{-- <section class="negative-margin mb-4 d-md-block" style="padding:0px;">
-        <div class="container">
-            <div class="row">
-               <div class="col-md-2 col-md-offset-1">
-                  <a href="#faq1" class="page-scroll text-secondary faq-link bg-white py-4 px-4 d-flex flex-column justify-content-center font-family-serif font-size-24 h-100 shadow-sm text-center font-weight-bold">
-                     <p>General Questions</p>
-                  </a>
-               </div>
-               <div class="col-md-2">
-                  <a href="#faq2" class="page-scroll text-secondary faq-link bg-white py-4 px-4 d-flex flex-column justify-content-center font-family-serif font-size-24 h-100 shadow-sm text-center font-weight-bold">
-                     <p>Financial</p>
-                  </a>
-               </div>
-               <div class="col-md-2">
-                  <a href="#faq3"  class="page-scroll text-secondary faq-link bg-white py-4 px-4 d-flex flex-column justify-content-center font-family-serif font-size-24 h-100 shadow-sm text-center font-weight-bold">
-                     <p>After You Apply</p>
-                  </a>
-               </div>
-               <div class="col-md-2">
-                  <a href="#faq4"   class="page-scroll text-secondary faq-link bg-white py-4 px-4 d-flex flex-column justify-content-center font-family-serif font-size-24 h-100 shadow-sm text-center font-weight-bold">
-                     <p>Types of Funding</p>
-                  </a>
-               </div>
-               <div class="col-md-2">
-                  <a href="#faq5"  class="page-scroll text-secondary faq-link bg-white py-4 px-4 d-flex flex-column justify-content-center font-family-serif font-size-24 h-100 shadow-sm text-center font-weight-bold">
-                     <p>Case Types</p>
-                  </a>
-               </div>
-            </div>
-         </div>
-    </section> --}}
     
-    {{-- <section class="faq-area bg-md-info" id="faq2" style="padding: 40px">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                    <h1>Financial</h1>
-                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingOne_fin">
-                                <h4 class="panel-title">
-                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne_fin" aria-expanded="true" aria-controls="collapseOne_fin">
-                                        What is web design?
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapseOne_fin" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne_fin">
-                                <div class="panel-body">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl lorem, dictum id pellentesque at, vestibulum ut arcu. Curabitur erat libero, egestas eu tincidunt ac, rutrum ac justo. Vivamus condimentum laoreet lectus, blandit posuere tortor aliquam vitae. Curabitur molestie eros. </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingTwo_fin">
-                                <h4 class="panel-title">
-                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo_fin" aria-expanded="false" aria-controls="collapseTwo_fin">
-                                        What is web development?
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapseTwo_fin" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo_fin">
-                                <div class="panel-body">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl lorem, dictum id pellentesque at, vestibulum ut arcu. Curabitur erat libero, egestas eu tincidunt ac, rutrum ac justo. Vivamus condimentum laoreet lectus, blandit posuere tortor aliquam vitae. Curabitur molestie eros. </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingThree_fin">
-                                <h4 class="panel-title">
-                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree_fin" aria-expanded="false" aria-controls="collapseThree_fin">
-                                        How can I be a developer?
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapseThree_fin" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree_fin">
-                                <div class="panel-body">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl lorem, dictum id pellentesque at, vestibulum ut arcu. Curabitur erat libero, egestas eu tincidunt ac, rutrum ac justo. Vivamus condimentum laoreet lectus, blandit posuere tortor aliquam vitae. Curabitur molestie eros. </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingFour_fin">
-                                <h4 class="panel-title">
-                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour_fin" aria-expanded="false" aria-controls="collapseFour_fin">
-                                        How can I be a developer?
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapseFour_fin" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour_fin">
-                                <div class="panel-body">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl lorem, dictum id pellentesque at, vestibulum ut arcu. Curabitur erat libero, egestas eu tincidunt ac, rutrum ac justo. Vivamus condimentum laoreet lectus, blandit posuere tortor aliquam vitae. Curabitur molestie eros. </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingFive_fin">
-                                <h4 class="panel-title">
-                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive_fin" aria-expanded="false" aria-controls="collapseFive_fin">
-                                        How can I be a developer?
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapseFive_fin" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive_fin">
-                                <div class="panel-body">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl lorem, dictum id pellentesque at, vestibulum ut arcu. Curabitur erat libero, egestas eu tincidunt ac, rutrum ac justo. Vivamus condimentum laoreet lectus, blandit posuere tortor aliquam vitae. Curabitur molestie eros. </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="faq-area" id="faq3" style="padding: 40px">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                    <h1>After You Apply</h1>
-                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingOne">
-                                <h4 class="panel-title">
-                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        What is web design?
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-                                <div class="panel-body">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl lorem, dictum id pellentesque at, vestibulum ut arcu. Curabitur erat libero, egestas eu tincidunt ac, rutrum ac justo. Vivamus condimentum laoreet lectus, blandit posuere tortor aliquam vitae. Curabitur molestie eros. </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingTwo">
-                                <h4 class="panel-title">
-                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        What is web development?
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                                <div class="panel-body">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl lorem, dictum id pellentesque at, vestibulum ut arcu. Curabitur erat libero, egestas eu tincidunt ac, rutrum ac justo. Vivamus condimentum laoreet lectus, blandit posuere tortor aliquam vitae. Curabitur molestie eros. </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingThree">
-                                <h4 class="panel-title">
-                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                        How can I be a developer?
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-                                <div class="panel-body">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl lorem, dictum id pellentesque at, vestibulum ut arcu. Curabitur erat libero, egestas eu tincidunt ac, rutrum ac justo. Vivamus condimentum laoreet lectus, blandit posuere tortor aliquam vitae. Curabitur molestie eros. </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingFour">
-                                <h4 class="panel-title">
-                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                        How can I be a developer?
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
-                                <div class="panel-body">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl lorem, dictum id pellentesque at, vestibulum ut arcu. Curabitur erat libero, egestas eu tincidunt ac, rutrum ac justo. Vivamus condimentum laoreet lectus, blandit posuere tortor aliquam vitae. Curabitur molestie eros. </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingFive">
-                                <h4 class="panel-title">
-                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                                        How can I be a developer?
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
-                                <div class="panel-body">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl lorem, dictum id pellentesque at, vestibulum ut arcu. Curabitur erat libero, egestas eu tincidunt ac, rutrum ac justo. Vivamus condimentum laoreet lectus, blandit posuere tortor aliquam vitae. Curabitur molestie eros. </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="faq-area bg-md-info" id="faq4" style="padding: 40px">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                    <h1>Types of Funding</h1>
-                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingOne">
-                                <h4 class="panel-title">
-                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        What is web design?
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-                                <div class="panel-body">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl lorem, dictum id pellentesque at, vestibulum ut arcu. Curabitur erat libero, egestas eu tincidunt ac, rutrum ac justo. Vivamus condimentum laoreet lectus, blandit posuere tortor aliquam vitae. Curabitur molestie eros. </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingTwo">
-                                <h4 class="panel-title">
-                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        What is web development?
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                                <div class="panel-body">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl lorem, dictum id pellentesque at, vestibulum ut arcu. Curabitur erat libero, egestas eu tincidunt ac, rutrum ac justo. Vivamus condimentum laoreet lectus, blandit posuere tortor aliquam vitae. Curabitur molestie eros. </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingThree">
-                                <h4 class="panel-title">
-                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                        How can I be a developer?
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-                                <div class="panel-body">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl lorem, dictum id pellentesque at, vestibulum ut arcu. Curabitur erat libero, egestas eu tincidunt ac, rutrum ac justo. Vivamus condimentum laoreet lectus, blandit posuere tortor aliquam vitae. Curabitur molestie eros. </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingFour">
-                                <h4 class="panel-title">
-                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                        How can I be a developer?
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
-                                <div class="panel-body">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl lorem, dictum id pellentesque at, vestibulum ut arcu. Curabitur erat libero, egestas eu tincidunt ac, rutrum ac justo. Vivamus condimentum laoreet lectus, blandit posuere tortor aliquam vitae. Curabitur molestie eros. </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingFive">
-                                <h4 class="panel-title">
-                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                                        How can I be a developer?
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
-                                <div class="panel-body">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl lorem, dictum id pellentesque at, vestibulum ut arcu. Curabitur erat libero, egestas eu tincidunt ac, rutrum ac justo. Vivamus condimentum laoreet lectus, blandit posuere tortor aliquam vitae. Curabitur molestie eros. </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="faq-area" id="faq5" style="padding: 40px">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                    <h1>Case Types</h1>
-                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingOne">
-                                <h4 class="panel-title">
-                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        What is web design?
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-                                <div class="panel-body">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl lorem, dictum id pellentesque at, vestibulum ut arcu. Curabitur erat libero, egestas eu tincidunt ac, rutrum ac justo. Vivamus condimentum laoreet lectus, blandit posuere tortor aliquam vitae. Curabitur molestie eros. </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingTwo">
-                                <h4 class="panel-title">
-                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        What is web development?
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                                <div class="panel-body">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl lorem, dictum id pellentesque at, vestibulum ut arcu. Curabitur erat libero, egestas eu tincidunt ac, rutrum ac justo. Vivamus condimentum laoreet lectus, blandit posuere tortor aliquam vitae. Curabitur molestie eros. </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingThree">
-                                <h4 class="panel-title">
-                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                        How can I be a developer?
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-                                <div class="panel-body">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl lorem, dictum id pellentesque at, vestibulum ut arcu. Curabitur erat libero, egestas eu tincidunt ac, rutrum ac justo. Vivamus condimentum laoreet lectus, blandit posuere tortor aliquam vitae. Curabitur molestie eros. </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingFour">
-                                <h4 class="panel-title">
-                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                        How can I be a developer?
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
-                                <div class="panel-body">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl lorem, dictum id pellentesque at, vestibulum ut arcu. Curabitur erat libero, egestas eu tincidunt ac, rutrum ac justo. Vivamus condimentum laoreet lectus, blandit posuere tortor aliquam vitae. Curabitur molestie eros. </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingFive">
-                                <h4 class="panel-title">
-                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                                        How can I be a developer?
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
-                                <div class="panel-body">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nisl lorem, dictum id pellentesque at, vestibulum ut arcu. Curabitur erat libero, egestas eu tincidunt ac, rutrum ac justo. Vivamus condimentum laoreet lectus, blandit posuere tortor aliquam vitae. Curabitur molestie eros. </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> --}}
-
-
-
     <section class="appointment-area" id="appointment" style="padding:60px 0 60px;">
         <div class="container">
             <div class="row">
@@ -550,7 +191,8 @@
                 </div>
                 <div class="col-lg-12 col-md-12">
                     <div class="appointment-col">
-                        <form method="post" enctype="multipart/form-data" id="gform_1" action="/#gf_1">
+                        <form method="post" enctype="multipart/form-data" id="gform_1" action="{{url('complete-application')}}">
+                            {{ csrf_field() }}
                                 <div class="col-md-12">
                                     <div class="row pb-3">
                                         <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
@@ -619,7 +261,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12 text-right">
-                                            <button class="btn btn-default simple-btn" type="submit">{{$faqinfo->form_button_text}} <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+                                            <button class="btn btn-default simple-btn save-partial-application" type="submit">{{$faqinfo->form_button_text}} <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
                                         </div>
                                     </div>
                                 </div>
@@ -631,13 +273,95 @@
         </div>
     </section>
 @endsection
+
+
+
+@section('meta')
+    <meta name="complete-application" content="/complete-application">
+@endsection
 @section('js')
-<script>
-    $("a.page-scroll").click(function() {
-        var targetDiv = $(this).attr('href');
-        $('html, body').animate({
-            scrollTop: $(targetDiv).offset().top
-        }, 2000);
-    });
-</script>
+    <script>
+        $("a.page-scroll").click(function() {
+            var targetDiv = $(this).attr('href');
+            $('html, body').animate({
+                scrollTop: $(targetDiv).offset().top
+            }, 2000);
+        });
+    </script>
+    <script>
+        var csrftLarVe = $('meta[name="csrf-token"]').attr("content"),
+        baseUrl = $('meta[name="base-url"]').attr("content");
+
+        
+
+        function swalErrorMsg(msg){
+            Swal.fire({
+                icon: 'error',
+                title: '<h3 class="text-danger">Warning</h3>',
+                html: '<h5>'+msg+'!!!</h5>'
+            });
+        }
+
+        function swalSuccessMsg(msg){
+            Swal.fire({
+                icon: 'success',
+                title: '<h3 class="text-success">Thank You</h3>',
+                html: '<h5>'+msg+'</h5>'
+            });
+        }
+
+        function makeFieldEmpty(){
+            $("input[name=first_name]").val("");
+            $("input[name=last_name]").val("");
+            $("input[name=email]").val();
+            $("input[name=phone]").val();
+            $("input[name=zip_code]").val("");
+            $("input[name=law_firm_name]").val("");
+            $("input[name=law_firm_phone]").val("");
+            $("input[name=attorney__first_name]").val("");
+            $("input[name=attorney__last_name]").val("");
+        }
+
+        $(document).ready(function(){
+            $.getScript("https://cdn.jsdelivr.net/npm/sweetalert2@9");
+
+            $('.save-partial-application').click(function(){
+
+                var contactUs = "";
+                if($('meta[name="complete-application"]').attr("content"))
+                {
+                    contactUs = $('meta[name="complete-application"]').attr("content");
+                }
+
+                var contactUsURL=baseUrl+""+contactUs;
+                var first_name=$("input[name=first_name]").val();
+                var last_name   =$("input[name=last_name]").val();
+                var email=$("input[name=email]").val();
+                var phone=$("input[name=phone]").val();
+                var zip_code=$("input[name=zip_code]").val();
+                var law_firm_name=$("input[name=law_firm_name]").val();
+                var law_firm_phone=$("input[name=law_firm_phone]").val();
+                var attorney__first_name=$("input[name=attorney__first_name]").val();
+                var attorney__last_name=$("input[name=attorney__last_name]").val();
+                //Swal.fire('Oops...', 'Something went wrong!', 'error')
+                Swal.showLoading ();
+                if(first_name.length==0){ swalErrorMsg("First Name Required"); return false; }
+                if(last_name.length==0){ swalErrorMsg("Last Name Required"); return false; }
+                if(email.length==0){ swalErrorMsg("Contact About Required"); return false; }
+                if(phone.length==0){ swalErrorMsg("State Case Required"); return false; }
+                if(zip_code.length==0){ swalErrorMsg("Zip Code Required"); return false; }
+                if(law_firm_name.length==0){ swalErrorMsg("Law Firm Name Required"); return false; }
+                if(law_firm_phone.length==0){ swalErrorMsg("Law Firm Phone Required"); return false; }
+                if(attorney__first_name.length==0){ swalErrorMsg("Attorney First Name Required"); return false; }
+                if(attorney__last_name.length==0){ swalErrorMsg("Attorney Last Name Required"); return false; }
+                return true;
+                
+
+            });
+
+            
+        });
+        
+    </script>
+  
 @endsection

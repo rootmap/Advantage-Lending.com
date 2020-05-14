@@ -367,15 +367,16 @@ class AttorneysformController extends Controller
         $this->SystemAdminLog("User Attonreys Request Submitted", "Save New", "Create New");
     
     
-        dd($request);
-    
+        //dd($request);
+        
+        $tab=new Attorneysform();
         $tab->contact_me_about=$request->contact_me_about;
         $tab->first_name=$request->first_name;
         $tab->last_name=$request->last_name;
         $tab->phone=$request->phone;
         $tab->email=$request->email;
-        $tab->contact_me_by=$request->contact_me_by;
-        $tab->best_time=$request->best_time;
+        $tab->contact_me_by=json_encode($request->contact_me_by) ;
+        $tab->best_time=json_encode($request->best_time);
         $tab->message=$request->message;
         $tab->save();
     
