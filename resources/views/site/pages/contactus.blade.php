@@ -201,9 +201,27 @@
         function swalErrorMsg(msg){
             Swal.fire({
                 icon: 'error',
-                title: '<h5>Warning</h5>',
-                html: '<h4>'+msg+'!!!</h4>'
+                title: '<h3 class="text-danger">Warning</h3>',
+                html: '<h5>'+msg+'!!!</h5>'
             });
+        }
+
+        function swalSuccessMsg(msg){
+            Swal.fire({
+                icon: 'success',
+                title: '<h3 class="text-success">Thank You</h3>',
+                html: '<h5>'+msg+'</h5>'
+            });
+        }
+
+        function makeFieldEmpty(){
+            $("input[name=first_name]").val("");
+            $("input[name=last_name]").val("");
+            $("select[name=contact_about_id]").val();
+            $("select[name=state_case_id]").val();
+            $("input[name=phone]").val("");
+            $("input[name=email]").val("");
+            $("textarea[name=message]").val("");
         }
 
         $(document).ready(function(){
@@ -258,6 +276,14 @@
                     success: function(res) {
                         console.log('Success', res);
                         Swal.hideLoading();
+
+                        if(res.status==0){ swalErrorMsg(res.msg); return false; }
+                        if(res.status==1){ 
+                            swalSuccessMsg(res.msg); 
+                            makeFieldEmpty();
+                            return false; 
+                        }
+
                         return false;
                 
                     },

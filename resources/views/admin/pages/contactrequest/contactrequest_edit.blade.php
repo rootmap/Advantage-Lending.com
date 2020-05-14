@@ -117,12 +117,12 @@
                                         @if(count($dataRow_ContactMeAbout)>0)
                                             @foreach($dataRow_ContactMeAbout as $ContactMeAbout)
                                                 <option 
-                                        @if(isset($dataRow->Submitted))
-                                            @if($dataRow->Submitted==$ContactMeAbout->Submitted)
+                                        @if(isset($dataRow->contact_about))
+                                            @if($dataRow->contact_about==$ContactMeAbout->id)
                                                 selected="selected" 
                                             @endif
                                         @endif 
-                                         value="{{$ContactMeAbout->Submitted}}">{{$ContactMeAbout->Reviewed}}</option>
+                                         value="{{$ContactMeAbout->id}}">{{$ContactMeAbout->name}}</option>
                                                 
                                             @endforeach
                                         @endif

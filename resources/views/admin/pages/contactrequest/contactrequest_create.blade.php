@@ -84,7 +84,7 @@
                                         @if(isset($dataRow_ContactMeAbout))    
                                             @if(count($dataRow_ContactMeAbout)>0)
                                                 @foreach($dataRow_ContactMeAbout as $ContactMeAbout)
-                                                    <option value="{{$ContactMeAbout->Submitted}}">{{$ContactMeAbout->Reviewed}}</option>
+                                                    <option value="{{$ContactMeAbout->id}}">{{$ContactMeAbout->name}}</option>
                                                     
                                                 @endforeach
                                             @endif

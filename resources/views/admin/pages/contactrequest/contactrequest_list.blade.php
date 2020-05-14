@@ -64,11 +64,10 @@
                             <th class="text-center">ID</th>
                             <th class="text-center">First Name</th>
                             <th class="text-center">Last Name</th>
-                            <th class="text-center">Contact About Reviewed</th>
-                            <th class="text-center">State Case Name</th>
+                            <th class="text-center">Contact About</th>
+                            <th class="text-center">State Case</th>
                             <th class="text-center">Phone</th>
                             <th class="text-center">Email</th>
-                            <th class="text-center">Message</th>
                             <th class="text-center">Created At</th>
                             <th class="text-center">Actions</th>
 
@@ -78,7 +77,14 @@
                         @if(count($dataRow))
                             @foreach($dataRow as $row)  
                                 <tr>
-                                    <td class="text-center">{{$row->id}}</td><td class="text-center">{{$row->first_name}}</td><td class="text-center">{{$row->last_name}}</td><td class="text-center">{{$row->contact_about_Reviewed}}</td><td class="text-center">{{$row->state_case_name}}</td><td class="text-center">{{$row->phone}}</td><td class="text-center">{{$row->email}}</td><td class="text-center">{{$row->message}}</td>
+                                    <td class="text-center">{{$row->id}}</td>
+                                    <td class="text-center">{{$row->first_name}}</td>
+                                    <td class="text-center">{{$row->last_name}}</td>
+                                    <td class="text-center">{{$row->contact_about_Reviewed}}</td>
+                                    <td class="text-center">{{$row->state_case_name}}</td>
+                                    <td class="text-center">{{$row->phone}}</td>
+                                    <td class="text-center">{{$row->email}}</td>
+
                                     <td>{{formatDate($row->created_at)}}</td>
                                     <td>
                                         <div class="btn-group">
@@ -103,11 +109,10 @@
                         <th class="text-center">ID</th>
                         <th class="text-center">First Name</th>
                         <th class="text-center">Last Name</th>
-                        <th class="text-center">Contact About Reviewed</th>
-                        <th class="text-center">State Case Name</th>
+                        <th class="text-center">Contact About</th>
+                            <th class="text-center">State Case</th>
                         <th class="text-center">Phone</th>
                         <th class="text-center">Email</th>
-                        <th class="text-center">Message</th>
                         <th class="text-center">Created At</th>
                         <th class="text-center">Actions</th>
 
