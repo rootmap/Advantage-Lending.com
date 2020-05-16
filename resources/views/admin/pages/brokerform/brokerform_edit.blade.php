@@ -1,17 +1,17 @@
 
 @extends("admin.layout.master")
-@section("title","Edit Attorneys form")
+@section("title","Edit Broker Form")
 @section("content")
 <section class="content-header">
   <div class="container-fluid">
     <div class="row mb-2">
       <div class="col-sm-6">
-        <h1>Attorneys form</h1>
+        <h1>Broker Form</h1>
       </div>
       <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="{{url('attorneysform/list')}}">Datatable </a></li>
-              <li class="breadcrumb-item"><a href="{{url('attorneysform/create')}}">Create New </a></li>
+              <li class="breadcrumb-item"><a href="{{url('brokerform/list')}}">Datatable </a></li>
+              <li class="breadcrumb-item"><a href="{{url('brokerform/create')}}">Create New </a></li>
               <li class="breadcrumb-item active">Edit / Modify</li>
             </ol>
       </div>
@@ -32,28 +32,28 @@
         <!-- general form elements -->
         <div class="card card-primary">
           <div class="card-header">
-            <h3 class="card-title">Edit / Modify Attorneys form</h3>
+            <h3 class="card-title">Edit / Modify Broker Form</h3>
             <div class="card-tools">
               <ul class="pagination pagination-sm float-right">
                 <li class="page-item">
-                    <a class="page-link bg-primary" href="{{url('attorneysform/create')}}"> 
+                    <a class="page-link bg-primary" href="{{url('brokerform/create')}}"> 
                         Create 
                         <i class="fas fa-plus"></i>
                     </a>
                 </li>
                 <li class="page-item">
-                    <a class="page-link bg-primary" href="{{url('attorneysform/list')}}"> 
+                    <a class="page-link bg-primary" href="{{url('brokerform/list')}}"> 
                         Data 
                         <i class="fas fa-table"></i>
                     </a>
                 </li>
                 <li class="page-item">
-                  <a class="page-link  bg-primary" target="_blank" href="{{url('attorneysform/export/pdf')}}">
+                  <a class="page-link  bg-primary" target="_blank" href="{{url('brokerform/export/pdf')}}">
                     <i class="fas fa-file-pdf" data-toggle="tooltip" data-html="true"title="Pdf"></i>
                   </a>
                 </li>
                 <li class="page-item">
-                  <a class="page-link  bg-primary" target="_blank" href="{{url('attorneysform/export/excel')}}">
+                  <a class="page-link  bg-primary" target="_blank" href="{{url('brokerform/export/excel')}}">
                     <i class="fas fa-file-excel" data-toggle="tooltip" data-html="true"title="Excel"></i>
                   </a>
                 </li>
@@ -62,7 +62,7 @@
         </div>
           <!-- /.card-header -->
           <!-- form start -->
-          <form action="{{url('attorneysform/update/'.$dataRow->id)}}" method="post" enctype="multipart/form-data">
+          <form action="{{url('brokerform/update/'.$dataRow->id)}}" method="post" enctype="multipart/form-data">
           {{csrf_field()}}
           
             <div class="card-body">
@@ -122,7 +122,7 @@
                         }
                         ?>
                         
-                        class="form-control" placeholder="Enter Phone" id="phone" name="phone">
+                        class="form-control" placeholder="Enter Phone Number" id="phone" name="phone">
                       </div>
                     </div>
                 </div>
@@ -142,110 +142,31 @@
                         }
                         ?>
                         
-                        class="form-control" placeholder="Enter Email" id="email" name="email">
+                        class="form-control" placeholder="Enter Email Address" id="email" name="email">
                       </div>
                     </div>
                 </div>
                 
-        <div class="row">
-            <div class="col-sm-12">
-              <!-- checkbox -->
-              <div class="form-group">
-              <label>Contact me By</label>
-        
-                        <div class="form-check">
-                          <?php
-                          $dataJson = json_decode($dataRow->contact_me_by);
-                          $dataEmail = $dataJson[0];
-                          $dataPhone = $dataJson[1];
-                          //echo $dataJson;
-                          ?>
-                            <input class="form-check-input" type="checkbox"  
-
-                                <?php 
-                                
-                                if($dataEmail=="Email"){
-                                    ?>
-                                    checked="checked" 
-                                    <?php 
-                                }
-                                ?>
-                          id="contact_me_by_0" name="contact_me_by" value="Email">
-                          <label class="form-check-label">Email</label>
-                        </div>
-                
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox"  
-                                <?php 
-                                if($dataPhone=="Phone"){
-                                    ?>
-                                    checked="checked" 
-                                    <?php 
-                                }
-                                ?>
-                          id="contact_me_by_1" name="contact_me_by" value="Phone">
-                          <label class="form-check-label">Phone</label>
-                        </div>
-                
+                <div class="row">
+                    <div class="col-sm-12">
+                      <!-- text input -->
+                      <div class="form-group">
+                        <label for="zip_code">ZIP Code</label>
+                        <input type="text" 
+                            
+                        <?php 
+                        if(isset($dataRow->zip_code)){
+                            ?>
+                            value="{{$dataRow->zip_code}}" 
+                            <?php 
+                        }
+                        ?>
+                        
+                        class="form-control" placeholder="Enter ZIP Code" id="zip_code" name="zip_code">
+                      </div>
                     </div>
                 </div>
-            </div>
-            
-        <div class="row">
-            <div class="col-sm-12">
-              <!-- checkbox -->
-              <div class="form-group">
-              <label>Best Time</label>
-                <?php
-                  $dataJsons = json_decode($dataRow->best_time);
-                  $dataAm = $dataJsons[0];
-                  $dataPm = $dataJsons[1];
-                  $dataSpecific = $dataJsons[2];
-                  //echo $data;
-                ?>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox"  
-                                <?php 
-                                if($dataAm=="AM"){
-                                    ?>
-                                    checked="checked" 
-                                    <?php 
-                                }
-                                ?>
-                          id="best_time_0" name="best_time" value="AM">
-                          <label class="form-check-label">AM</label>
-                        </div>
                 
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox"  
-                                <?php 
-                                if($dataPm=="PM"){
-                                    ?>
-                                    checked="checked" 
-                                    <?php 
-                                }
-                                ?>
-                          id="best_time_1" name="best_time" value="PM">
-                          <label class="form-check-label">PM</label>
-                        </div>
-                
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox"  
-                                <?php 
-                                if($dataSpecific=="Specific day/time"){
-                                    ?>
-                                    checked="checked" 
-                                    <?php 
-                                }
-                                ?>
-                          id="best_time_2" name="best_time" value="Specific day/time">
-                          <label class="form-check-label">Specific day/time</label>
-                        </div>
-                
-                    </div>
-                </div>
-            </div>
-            
                 <div class="row">
                     <div class="col-sm-12">
                       <!-- text input -->
@@ -270,7 +191,7 @@
                 <i class="fas fa-save"></i> 
                 Update
               </button>
-              <a class="btn btn-danger" href="{{url('attorneysform/edit/'.$dataRow->id)}}">
+              <a class="btn btn-danger" href="{{url('brokerform/edit/'.$dataRow->id)}}">
                 <i class="far fa-times-circle"></i> 
                 Reset
               </a>

@@ -30,6 +30,7 @@ Route::get('/contact-us', 'FrontModuleController@contactus');
 Route::post('/contact-us', 'FrontServiceController@contactus');
 Route::get('/careers', 'FrontModuleController@careers');
 Route::get('/for-brokers', 'FrontModuleController@forbrokers');
+Route::post('/brokers-request', 'BrokerFormController@brokerRequest');
 Route::get('/complete-application', 'FrontModuleController@completeapplication');
 Route::post('/completeapplication-site', 'ApplicationformController@completeapplication');
 Route::post('/complete-application', 'FrontModuleController@completeapplication');
@@ -41,8 +42,8 @@ Route::get('/privacy-policy', 'FrontModuleController@privacyPolicy');
 Route::get('/state-specific-licenses', 'FrontModuleController@stateSpecificLicenses');
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('/home', 'FrontModuleController@dashboard')->name('home');
-    Route::get('/dashboard', 'FrontModuleController@dashboard')->name('dashboard');
+    Route::get('/home', 'FrontServiceController@dashboard')->name('home');
+    Route::get('/dashboard', 'FrontServiceController@dashboard')->name('dashboard');
     Route::get('/crud', 'CrudController@crud')->name('crud');
     Route::post('/crud', 'CrudController@crudgenarate')->name('crudgenarate');
 
@@ -823,32 +824,60 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/careerpagesetting/datatable/ajax', 'CareerpagesettingController@datatable');
     Route::post('/careerpagesetting/update/{id}', 'CareerpagesettingController@update');
     //======================== Careerpagesetting Route End ===============================//
+
+
+    //======================== Careerpost Route Start ===============================//
+    Route::get('/careerpost/list', 'CareerpostController@show');
+    Route::get('/careerpost/create', 'CareerpostController@create');
+    Route::get('/careerpost/edit/{id}', 'CareerpostController@edit');
+    Route::get('/careerpost/delete/{id}', 'CareerpostController@destroy');
+    Route::get('/careerpost', 'CareerpostController@index');
+    Route::get('/careerpost/export/excel', 'CareerpostController@ExportExcel');
+    Route::get('/careerpost/export/pdf', 'CareerpostController@ExportPDF');
+    Route::post('/careerpost', 'CareerpostController@store');
+    Route::post('/careerpost/ajax', 'CareerpostController@ajaxSave');
+    Route::post('/careerpost/datatable/ajax', 'CareerpostController@datatable');
+    Route::post('/careerpost/update/{id}', 'CareerpostController@update');
+    //======================== Careerpost Route End ===============================//
+    //======================== Attorneysform Route Start ===============================//
+    Route::get('/attorneysform/list', 'AttorneysformController@show');
+    Route::get('/attorneysform/create', 'AttorneysformController@create');
+    Route::get('/attorneysform/edit/{id}', 'AttorneysformController@edit');
+    Route::get('/attorneysform/delete/{id}', 'AttorneysformController@destroy');
+    Route::get('/attorneysform', 'AttorneysformController@index');
+    Route::get('/attorneysform/export/excel', 'AttorneysformController@ExportExcel');
+    Route::get('/attorneysform/export/pdf', 'AttorneysformController@ExportPDF');
+    Route::post('/attorneysform', 'AttorneysformController@store');
+    Route::post('/attorneysform/ajax', 'AttorneysformController@ajaxSave');
+    Route::post('/attorneysform/datatable/ajax', 'AttorneysformController@datatable');
+    Route::post('/attorneysform/update/{id}', 'AttorneysformController@update');
+    //======================== Attorneysform Route End ===============================//
+    //======================== Brokerform Route Start ===============================//
+    Route::get('/brokerform/list', 'BrokerformController@show');
+    Route::get('/brokerform/create', 'BrokerformController@create');
+    Route::get('/brokerform/edit/{id}', 'BrokerformController@edit');
+    Route::get('/brokerform/delete/{id}', 'BrokerformController@destroy');
+    Route::get('/brokerform', 'BrokerformController@index');
+    Route::get('/brokerform/export/excel', 'BrokerformController@ExportExcel');
+    Route::get('/brokerform/export/pdf', 'BrokerformController@ExportPDF');
+    Route::post('/brokerform', 'BrokerformController@store');
+    Route::post('/brokerform/ajax', 'BrokerformController@ajaxSave');
+    Route::post('/brokerform/datatable/ajax', 'BrokerformController@datatable');
+    Route::post('/brokerform/update/{id}', 'BrokerformController@update');
+    //======================== Brokerform Route End ===============================//
+    //======================== Applicationpagesetting Route Start ===============================//
+    Route::get('/applicationpagesetting/list', 'ApplicationpagesettingController@show');
+    Route::get('/applicationpagesetting/create', 'ApplicationpagesettingController@create');
+    Route::get('/applicationpagesetting/edit/{id}', 'ApplicationpagesettingController@edit');
+    Route::get('/applicationpagesetting/delete/{id}', 'ApplicationpagesettingController@destroy');
+    Route::get('/applicationpagesetting', 'ApplicationpagesettingController@index');
+    Route::get('/applicationpagesetting/export/excel', 'ApplicationpagesettingController@ExportExcel');
+    Route::get('/applicationpagesetting/export/pdf', 'ApplicationpagesettingController@ExportPDF');
+    Route::post('/applicationpagesetting', 'ApplicationpagesettingController@store');
+    Route::post('/applicationpagesetting/ajax', 'ApplicationpagesettingController@ajaxSave');
+    Route::post('/applicationpagesetting/datatable/ajax', 'ApplicationpagesettingController@datatable');
+    Route::post('/applicationpagesetting/update/{id}', 'ApplicationpagesettingController@update');
+//======================== Applicationpagesetting Route End ===============================//
     
 });
 
-//======================== Careerpost Route Start ===============================//
-Route::get('/careerpost/list','CareerpostController@show');
-Route::get('/careerpost/create','CareerpostController@create');
-Route::get('/careerpost/edit/{id}','CareerpostController@edit');
-Route::get('/careerpost/delete/{id}','CareerpostController@destroy');
-Route::get('/careerpost','CareerpostController@index');
-Route::get('/careerpost/export/excel','CareerpostController@ExportExcel');
-Route::get('/careerpost/export/pdf','CareerpostController@ExportPDF');
-Route::post('/careerpost','CareerpostController@store');
-Route::post('/careerpost/ajax','CareerpostController@ajaxSave');
-Route::post('/careerpost/datatable/ajax','CareerpostController@datatable');
-Route::post('/careerpost/update/{id}','CareerpostController@update');
-//======================== Careerpost Route End ===============================//
-//======================== Attorneysform Route Start ===============================//
-Route::get('/attorneysform/list','AttorneysformController@show');
-Route::get('/attorneysform/create','AttorneysformController@create');
-Route::get('/attorneysform/edit/{id}','AttorneysformController@edit');
-Route::get('/attorneysform/delete/{id}','AttorneysformController@destroy');
-Route::get('/attorneysform','AttorneysformController@index');
-Route::get('/attorneysform/export/excel','AttorneysformController@ExportExcel');
-Route::get('/attorneysform/export/pdf','AttorneysformController@ExportPDF');
-Route::post('/attorneysform','AttorneysformController@store');
-Route::post('/attorneysform/ajax','AttorneysformController@ajaxSave');
-Route::post('/attorneysform/datatable/ajax','AttorneysformController@datatable');
-Route::post('/attorneysform/update/{id}','AttorneysformController@update');
-//======================== Attorneysform Route End ===============================//

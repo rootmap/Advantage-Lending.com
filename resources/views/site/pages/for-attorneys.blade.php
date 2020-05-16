@@ -473,11 +473,11 @@
             $("select[name=contact_me_about]").val("");
             $("input[name=first_name]").val("");
             $("input[name=last_name]").val("");
-            $("input[name=phone]").val();
-            $("input[name=email]").val();
-            $("input[name=contact_me_by]").serialize();
-            $("input[name=best_time]").serialize();
-            $("input[name=message]").val();
+            $("input[name=phone]").val("");
+            $("input[name=email]").val("");
+            $("input[name='contact_me_by']:checked]").val("");
+            $("input[name='best_time']:checked]").val("");
+            $("textarea[name=message]").val(" ");
         }
         $(document).ready(function(){
             $.getScript("https://cdn.jsdelivr.net/npm/sweetalert2@9");

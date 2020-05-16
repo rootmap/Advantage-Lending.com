@@ -1,17 +1,17 @@
 
 @extends("admin.layout.master")
-@section("title","Attorneys form")
+@section("title","Broker Form")
 @section("content")
         <section class="content-header">
           <div class="container-fluid">
             <div class="row mb-2">
               <div class="col-sm-6">
-                <h1>Attorneys form</h1>
+                <h1>Broker Form</h1>
               </div>
               <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                  <li class="breadcrumb-item"><a href="{{url('attorneysform/create')}}">Create New </a></li>
-                  <li class="breadcrumb-item active">Attorneys form Data</li>
+                  <li class="breadcrumb-item"><a href="{{url('brokerform/create')}}">Create New </a></li>
+                  <li class="breadcrumb-item active">Broker Form Data</li>
                 </ol>
               </div>
             </div>
@@ -30,23 +30,23 @@
               <div class="card">
 
                 <div class="card-header">
-                  <h3 class="card-title">Attorneys form Data</h3>
+                  <h3 class="card-title">Broker Form Data</h3>
 
                     <div class="card-tools">
                       <ul class="pagination pagination-sm float-right">
                         <li class="page-item">
-                            <a class="page-link bg-primary" href="{{url('attorneysform/create')}}"> 
+                            <a class="page-link bg-primary" href="{{url('brokerform/create')}}"> 
                                 Add New 
                                 <i class="fas fa-plus"></i> 
                             </a>
                         </li>
                         <li class="page-item">
-                          <a class="page-link" target="_blank" href="{{url('attorneysform/export/pdf')}}">
+                          <a class="page-link" target="_blank" href="{{url('brokerform/export/pdf')}}">
                             <i class="fas fa-file-pdf" data-toggle="tooltip" data-html="true"title="Pdf"></i>
                           </a>
                         </li>
                         <li class="page-item">
-                          <a class="page-link" target="_blank" href="{{url('attorneysform/export/excel')}}">
+                          <a class="page-link" target="_blank" href="{{url('brokerform/export/excel')}}">
                             <i class="fas fa-file-excel" data-toggle="tooltip" data-html="true"title="Excel"></i>
                           </a>
                         </li>
@@ -62,70 +62,30 @@
                     <thead>
                         <tr>
                             <th class="text-center">ID</th>
-                            <th class="text-center">Contact me about</th>
                             <th class="text-center">First Name</th>
                             <th class="text-center">Last Name</th>
                             <th class="text-center">Phone</th>
                             <th class="text-center">Email</th>
-                            <th class="text-center">Contact me by</th>
-                            <th class="text-center">Best time</th>
+                            <th class="text-center">State</th>
+                            <th class="text-center">ZIP Code</th>
                             <th class="text-center">Created At</th>
                             <th class="text-center">Actions</th>
 
                         </tr>
                     </thead>
                     <tbody>
-                   
                         @if(count($dataRow))
                             @foreach($dataRow as $row)  
                                 <tr>
-                                    <td class="text-center">{{$row->id}}</td>
-                                    <td class="text-center">{{$row->contact_me_about}}</td>
-                                    <td class="text-center">{{$row->first_name}}</td>
-                                    <td class="text-center">{{$row->last_name}}</td>
-                                    <td class="text-center">{{$row->phone}}</td>
-                                    <td class="text-center">{{$row->email}}</td>
-                                    <td class="text-center">
-                                      
-                                      <?php
-                                      $dataJson = json_decode($row->contact_me_by);
-                                      if(count($dataJson)>0)
-                                      {
-                                          foreach($dataJson as $key=>$itm){
-                                            if($key>0)
-                                            {
-                                               echo ", ";
-                                            }
-                                            echo $itm;
-                                          }
-                                      }
-                                      ?>
-                                    </td>
-                                    <td class="text-center">
-                                     
-                                      <?php
-                                      $dataJson = json_decode($row->best_time);
-                                      if(count($dataJson)>0)
-                                      {
-                                          foreach($dataJson as $key=>$itm){
-                                            if($key>0)
-                                            {
-                                               echo ", ";
-                                            }
-                                            echo $itm;
-                                          }
-                                      }
-                                     // echo $dataJson[0] .',<br>'.$dataJson[1].',<br>'.$dataJson[2]; 
-                                      ?>
-                                      </td>
+                                    <td class="text-center">{{$row->id}}</td><td class="text-center">{{$row->first_name}}</td><td class="text-center">{{$row->last_name}}</td><td class="text-center">{{$row->phone}}</td><td class="text-center">{{$row->email}}</td><td class="text-center">{{$row->state}}</td><td class="text-center">{{$row->zip_code}}</td>
                                     <td>{{formatDate($row->created_at)}}</td>
                                     <td>
                                         <div class="btn-group">
-                                            <a href="{{url('attorneysform/edit/'.$row->id)}}" type="button" class="btn btn-default">
+                                            <a href="{{url('brokerform/edit/'.$row->id)}}" type="button" class="btn btn-default">
                                                 Edit 
                                                 <i class="fas fa-edit"></i>
                                             </a>
-                                            <a href="{{url('attorneysform/delete/'.$row->id)}}" type="button" class="btn btn-default">
+                                            <a href="{{url('brokerform/delete/'.$row->id)}}" type="button" class="btn btn-default">
                                                 Delete 
                                                 <i class="fas fa-trash-alt"></i>
                                             </a>
@@ -140,13 +100,12 @@
                     <tfoot>
                     <tr>
                         <th class="text-center">ID</th>
-                        <th class="text-center">Contact me about</th>
                         <th class="text-center">First Name</th>
                         <th class="text-center">Last Name</th>
                         <th class="text-center">Phone</th>
                         <th class="text-center">Email</th>
-                        <th class="text-center">Contact me by</th>
-                        <th class="text-center">Best time</th>
+                        <th class="text-center">State</th>
+                        <th class="text-center">ZIP Code</th>
                         <th class="text-center">Created At</th>
                         <th class="text-center">Actions</th>
 

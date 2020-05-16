@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTypesOfFundingPreSettlementsTable extends Migration
+class CreateApplicationPageSettingsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,19 +13,17 @@ class CreateTypesOfFundingPreSettlementsTable extends Migration
      */
     public function up()
     {
-        Schema::create('types_of_funding_pre_settlements', function (Blueprint $table) {
+        Schema::create('application_page_settings', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
-            $table->string('detail');
-            $table->string('icon_image_one');
-            $table->string('icon_one_heading');
-            $table->string('icon_image_two');
-            $table->string('icon_two_heading');
-            $table->string('icon_image_three');
-            $table->string('icon_three_heading');
-            $table->string('button_text');
-            $table->string('button_url');
+            $table->string('background_image');
             $table->string('background_forecolor');
+            $table->string('form_title');
+            $table->string('form_state_your_case_below_text');
+            $table->string('form_phone_below_text');
+            $table->string('form_how_contact_you_below_text');
+            $table->string('form_footer_below_text');
+            $table->string('form_button_text');
             $table->string('module_status');
             $table->integer('store_id');
             $table->integer('created_by');
@@ -43,6 +41,6 @@ class CreateTypesOfFundingPreSettlementsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('types_of_funding_pre_settlements');
+        Schema::dropIfExists('application_page_settings');
     }
 }

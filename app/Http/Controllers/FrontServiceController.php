@@ -7,6 +7,7 @@ use App\ContactMeAbout;
 use App\ContactRequest;
 use App\USAState;
 use App\AdminLog;
+use App\ApplicationForm;
 use Illuminate\Http\Request;
 
 class FrontServiceController extends Controller
@@ -23,6 +24,14 @@ class FrontServiceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function dashboard(){
+        $ConReqList= ContactRequest::whereDate('created_at',date('Y-m-d'))->get();
+
+        $ContactRequestTotal= ContactRequest::count();
+        $ApplicationForm= ApplicationForm::count();
+        return view('admin.pages.dashboard.index',compact('ContactRequestTotal', 'ApplicationForm', 'ConReqList'));
+    }
 
     private function SystemAdminLog($module_name = "", $action = "", $details = "")
     {

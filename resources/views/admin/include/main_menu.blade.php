@@ -389,8 +389,8 @@
               
             </ul>
           </li>
-          <li class="nav-item has-treeview {{ in_array(Request::path(),array('forattorneypagesetting','foratterneyportalsimplify','forattorneyknownandrecognized','forattorneysettlementfundingprocess','forattorneyproductandservice'))?'menu-open':'' }}">
-            <a href="#" class="nav-link {{ in_array(Request::path(),array('forattorneypagesetting','foratterneyportalsimplify','forattorneyknownandrecognized','forattorneysettlementfundingprocess','forattorneyproductandservice'))?'active':'' }}">
+          <li class="nav-item has-treeview {{ in_array(Request::path(),array('attorneysform/list','forattorneypagesetting','foratterneyportalsimplify','forattorneyknownandrecognized','forattorneysettlementfundingprocess','forattorneyproductandservice'))?'menu-open':'' }}">
+            <a href="#" class="nav-link {{ in_array(Request::path(),array('attorneysform/list','forattorneypagesetting','foratterneyportalsimplify','forattorneyknownandrecognized','forattorneysettlementfundingprocess','forattorneyproductandservice'))?'active':'' }}">
               <i class="nav-icon fas fa-book-open"></i>
               <p>
                 For Attorneys Page
@@ -404,6 +404,14 @@
                   <p>Page Detail</p>
                 </a>
               </li>
+              
+              <li class="nav-item">
+                <a href="{{url('attorneysform/list')}}" class="nav-link {{ Request::path() == 'attorneysform/list' ? 'active' : '' }}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Attorney Request List</p>
+                </a>
+              </li>
+
               <li class="nav-item">
                 <a href="{{url('foratterneyportalsimplify')}}" class="nav-link {{ Request::path() == 'foratterneyportalsimplify' ? 'active' : '' }}">
                   <i class="far fa-circle nav-icon"></i>
@@ -455,6 +463,30 @@
               
             </ul>
           </li>
+          <li class="nav-item has-treeview {{ in_array(Request::path(),array('applicationform','applicationpagesetting'))?'menu-open':'' }}">
+            <a href="#" class="nav-link {{ in_array(Request::path(),array('applicationform','applicationpagesetting'))?'active':'' }}">
+              <i class="nav-icon fas fa-utensils"></i>
+              <p>
+                Application Request
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{url('applicationpagesetting')}}" class="nav-link {{ Request::path() == 'applicationpagesetting' ? 'active' : '' }}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Page Setting</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{url('applicationform')}}" class="nav-link {{ Request::path() == 'applicationform' ? 'active' : '' }}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Application Request List</p>
+                </a>
+              </li>
+              
+            </ul>
+          </li>
           <li class="nav-item has-treeview {{ in_array(Request::path(),array('careerpagesetting','careerpost'))?'menu-open':'' }}">
             <a href="#" class="nav-link {{ in_array(Request::path(),array('careerpagesetting','careerpost'))?'active':'' }}">
               <i class="nav-icon fas fa-utensils"></i>
@@ -479,15 +511,33 @@
               
             </ul>
           </li>
-         
-          <li class="nav-item has-treeview {{ in_array(Request::path(),array('forbrokerpagesetting'))?'menu-open':'' }}">
-            <a href="{{url('forbrokerpagesetting')}}" class="nav-link {{ in_array(Request::path(),array('forbrokerpagesetting'))?'active':'' }}">
-              <i class="nav-icon fas fa-images"></i>
+
+          <li class="nav-item has-treeview {{ in_array(Request::path(),array('forbrokerpagesetting','brokerform'))?'menu-open':'' }}">
+            <a href="#" class="nav-link {{ in_array(Request::path(),array('forbrokerpagesetting','brokerform'))?'active':'' }}">
+              <i class="nav-icon fas fa-utensils"></i>
               <p>
                 For Brokers
+                <i class="right fas fa-angle-left"></i>
               </p>
             </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{url('forbrokerpagesetting')}}" class="nav-link {{ Request::path() == 'forbrokerpagesetting' ? 'active' : '' }}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Page Setting</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{url('brokerform')}}" class="nav-link {{ Request::path() == 'brokerform' ? 'active' : '' }}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Broker Request List</p>
+                </a>
+              </li>
+              
+            </ul>
           </li>
+         
+          
           <li class="nav-item has-treeview {{ in_array(Request::path(),array('privacypolicypage','termsofuse','statespecificlicenses'))?'menu-open':'' }}">
             <a href="#" class="nav-link {{ in_array(Request::path(),array('privacypolicypage','termsofuse','statespecificlicenses'))?'active':'' }}">
               <i class="nav-icon fas fa-images"></i>
@@ -550,8 +600,8 @@
               <p>Contact</p>
             </a>
           </li> --}}
-          <li class="nav-item has-treeview {{ in_array(Request::path(),array('sitesetting','contactmeabout','cardpointestoresetting','websitesettings/create'))?'menu-open':'' }}">
-            <a href="#" class="nav-link {{ in_array(Request::path(),array('sitesetting','contactmeabout','cardpointestoresetting','websitesettings/create'))?'active':'' }}">
+          <li class="nav-item has-treeview {{ in_array(Request::path(),array('sitesetting','contactmeabout','hearabout','casetype'))?'menu-open':'' }}">
+            <a href="#" class="nav-link {{ in_array(Request::path(),array('sitesetting','contactmeabout','hearabout','casetype'))?'active':'' }}">
               <i class="nav-icon fas fa-cogs"></i>
               <p>
                 Setting
@@ -569,6 +619,18 @@
                 <a href="{{url('contactmeabout')}}" class="nav-link {{ Request::path() == 'contactmeabout' ? 'active' : '' }}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Contact Me About</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{url('hearabout')}}" class="nav-link {{ Request::path() == 'hearabout' ? 'active' : '' }}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>How Did You Heard About Us</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{url('casetype')}}" class="nav-link {{ Request::path() == 'casetype' ? 'active' : '' }}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Case Type</p>
                 </a>
               </li>
               

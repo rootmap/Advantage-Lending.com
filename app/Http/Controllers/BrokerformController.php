@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Attorneysform;
+use App\BrokerForm;
 use App\AdminLog;
 use Illuminate\Http\Request;
 
-class AttorneysformController extends Controller
+class BrokerFormController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,13 +14,13 @@ class AttorneysformController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    private $moduleName="Attorneys form";
+    private $moduleName="Broker Form";
     private $sdc;
     public function __construct(){ $this->sdc = new CoreCustomController(); }
     
     public function index(){
-        $tab=Attorneysform::all();
-        return view('admin.pages.attorneysform.attorneysform_list',['dataRow'=>$tab]);
+        $tab=BrokerForm::all();
+        return view('admin.pages.brokerform.brokerform_list',['dataRow'=>$tab]);
     }
 
     /**
@@ -32,7 +32,7 @@ class AttorneysformController extends Controller
 
 
                    
-        return view('admin.pages.attorneysform.attorneysform_create');
+        return view('admin.pages.brokerform.brokerform_create');
     }
 
     /**
@@ -61,26 +61,25 @@ class AttorneysformController extends Controller
                 'last_name'=>'required',
                 'phone'=>'required',
                 'email'=>'required',
-                'contact_me_by'=>'required',
-                'best_time'=>'required',
+                'state'=>'required',
+                'zip_code'=>'required',
         ]);
 
-        $this->SystemAdminLog("Attorneys form","Save New","Create New");
+        $this->SystemAdminLog("Broker Form","Save New","Create New");
 
         
-        $tab=new Attorneysform();
+        $tab=new BrokerForm();
         
-        $tab->contact_me_about=$request->contact_me_about;
         $tab->first_name=$request->first_name;
         $tab->last_name=$request->last_name;
         $tab->phone=$request->phone;
         $tab->email=$request->email;
-        $tab->contact_me_by=json_encode($request->contact_me_by) ;
-        $tab->best_time=json_encode($request->best_time);
+        $tab->state=$request->state;
+        $tab->zip_code=$request->zip_code;
         $tab->message=$request->message;
         $tab->save();
 
-        return redirect('attorneysform')->with('status','Added Successfully !');
+        return redirect('brokerform')->with('status','Added Successfully !');
 
     }
 
@@ -92,19 +91,18 @@ class AttorneysformController extends Controller
                 'last_name'=>'required',
                 'phone'=>'required',
                 'email'=>'required',
-                'contact_me_by'=>'required',
-                'best_time'=>'required',
+                'state'=>'required',
+                'zip_code'=>'required',
         ]);
 
-        $tab=new Attorneysform();
+        $tab=new BrokerForm();
         
-        $tab->contact_me_about=$request->contact_me_about;
         $tab->first_name=$request->first_name;
         $tab->last_name=$request->last_name;
         $tab->phone=$request->phone;
         $tab->email=$request->email;
-        $tab->contact_me_by=$request->contact_me_by;
-        $tab->best_time=$request->best_time;
+        $tab->state=$request->state;
+        $tab->zip_code=$request->zip_code;
         $tab->message=$request->message;
         $tab->save();
 
@@ -115,7 +113,7 @@ class AttorneysformController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Attorneysform  $attorneysform
+     * @param  \App\BrokerForm  $brokerform
      * @return \Illuminate\Http\Response
      */
 
@@ -125,13 +123,12 @@ class AttorneysformController extends Controller
                      ->where('store_id',$this->sdc->storeID())->orderBy('id','DESC')
                      ->when($search, function ($query) use ($search) {
                         $query->where('id','LIKE','%'.$search.'%');
-                            $query->orWhere('contact_me_about','LIKE','%'.$search.'%');
                             $query->orWhere('first_name','LIKE','%'.$search.'%');
                             $query->orWhere('last_name','LIKE','%'.$search.'%');
                             $query->orWhere('phone','LIKE','%'.$search.'%');
                             $query->orWhere('email','LIKE','%'.$search.'%');
-                            $query->orWhere('contact_me_by','LIKE','%'.$search.'%');
-                            $query->orWhere('best_time','LIKE','%'.$search.'%');
+                            $query->orWhere('state','LIKE','%'.$search.'%');
+                            $query->orWhere('zip_code','LIKE','%'.$search.'%');
                             $query->orWhere('message','LIKE','%'.$search.'%');
                             $query->orWhere('created_at','LIKE','%'.$search.'%');
 
@@ -148,13 +145,12 @@ class AttorneysformController extends Controller
                      ->where('store_id',$this->sdc->storeID())->orderBy('id','DESC')
                      ->when($search, function ($query) use ($search) {
                         $query->where('id','LIKE','%'.$search.'%');
-                            $query->orWhere('contact_me_about','LIKE','%'.$search.'%');
                             $query->orWhere('first_name','LIKE','%'.$search.'%');
                             $query->orWhere('last_name','LIKE','%'.$search.'%');
                             $query->orWhere('phone','LIKE','%'.$search.'%');
                             $query->orWhere('email','LIKE','%'.$search.'%');
-                            $query->orWhere('contact_me_by','LIKE','%'.$search.'%');
-                            $query->orWhere('best_time','LIKE','%'.$search.'%');
+                            $query->orWhere('state','LIKE','%'.$search.'%');
+                            $query->orWhere('zip_code','LIKE','%'.$search.'%');
                             $query->orWhere('message','LIKE','%'.$search.'%');
                             $query->orWhere('created_at','LIKE','%'.$search.'%');
 
@@ -188,11 +184,11 @@ class AttorneysformController extends Controller
     }
 
     
-    public function AttorneysformQuery($request)
+    public function BrokerFormQuery($request)
     {
-        $Attorneysform_data=Attorneysform::orderBy('id','DESC')->get();
+        $BrokerForm_data=BrokerForm::orderBy('id','DESC')->get();
 
-        return $Attorneysform_data;
+        return $BrokerForm_data;
     }
     
    
@@ -202,18 +198,18 @@ class AttorneysformController extends Controller
          $dataDateTimeIns=formatDateTime(date('d-M-Y H:i:s a'));
         $data=array();
         $array_column=array(
-                                'ID','Contact me about','First Name','Last Name','Phone','Email','Contact me by','Best time','Message','Created Date');
+                                'ID','First Name','Last Name','Phone','Email','State','ZIP Code','Message','Created Date');
         array_push($data, $array_column);
-        $inv=$this->AttorneysformQuery($request);
+        $inv=$this->BrokerFormQuery($request);
         foreach($inv as $voi):
             $inv_arry=array(
-                                $voi->id,$voi->contact_me_about,$voi->first_name,$voi->last_name,$voi->phone,$voi->email,$voi->contact_me_by,$voi->best_time,$voi->message,formatDate($voi->created_at));
+                                $voi->id,$voi->first_name,$voi->last_name,$voi->phone,$voi->email,$voi->state,$voi->zip_code,$voi->message,formatDate($voi->created_at));
             array_push($data, $inv_arry);
         endforeach;
 
         $excelArray=array(
-            'report_name'=>'Attorneys form Report',
-            'report_title'=>'Attorneys form Report',
+            'report_name'=>'Broker Form Report',
+            'report_title'=>'Broker Form Report',
             'report_description'=>'Report Genarated : '.$dataDateTimeIns,
             'data'=>$data
         );
@@ -229,8 +225,6 @@ class AttorneysformController extends Controller
                 <thead>
                 <tr>
                 <th class='text-center' style='font-size:12px;'>ID</th>
-                            <th class='text-center' style='font-size:12px;' >Contact me about</th>
-                        
                             <th class='text-center' style='font-size:12px;' >First Name</th>
                         
                             <th class='text-center' style='font-size:12px;' >Last Name</th>
@@ -239,9 +233,9 @@ class AttorneysformController extends Controller
                         
                             <th class='text-center' style='font-size:12px;' >Email</th>
                         
-                            <th class='text-center' style='font-size:12px;' >Contact me by</th>
+                            <th class='text-center' style='font-size:12px;' >State</th>
                         
-                            <th class='text-center' style='font-size:12px;' >Best time</th>
+                            <th class='text-center' style='font-size:12px;' >ZIP Code</th>
                         
                             <th class='text-center' style='font-size:12px;' >Message</th>
                         
@@ -250,17 +244,16 @@ class AttorneysformController extends Controller
                 </thead>
                 <tbody>";
 
-                    $inv=$this->AttorneysformQuery($request);
+                    $inv=$this->BrokerFormQuery($request);
                     foreach($inv as $voi):
                         $html .="<tr>
                         <td style='font-size:12px;' class='text-center'>".$voi->id."</td>
-                        <td style='font-size:12px;' class='text-center'>".$voi->contact_me_about."</td>
                         <td style='font-size:12px;' class='text-center'>".$voi->first_name."</td>
                         <td style='font-size:12px;' class='text-center'>".$voi->last_name."</td>
                         <td style='font-size:12px;' class='text-center'>".$voi->phone."</td>
                         <td style='font-size:12px;' class='text-center'>".$voi->email."</td>
-                        <td style='font-size:12px;' class='text-center'>".$voi->contact_me_by."</td>
-                        <td style='font-size:12px;' class='text-center'>".$voi->best_time."</td>
+                        <td style='font-size:12px;' class='text-center'>".$voi->state."</td>
+                        <td style='font-size:12px;' class='text-center'>".$voi->zip_code."</td>
                         <td style='font-size:12px;' class='text-center'>".$voi->message."</td>
                         <td style='font-size:12px; text-align:center;' class='text-center'>".formatDate($voi->created_at)."</td>
                         </tr>";
@@ -275,36 +268,36 @@ class AttorneysformController extends Controller
 
                 ";
 
-                $this->sdc->PDFLayout('Attorneys form Report',$html);
+                $this->sdc->PDFLayout('Broker Form Report',$html);
 
 
     }
-    public function show(Attorneysform $attorneysform)
+    public function show(BrokerForm $brokerform)
     {
         
-        $tab=Attorneysform::all();return view('admin.pages.attorneysform.attorneysform_list',['dataRow'=>$tab]);
+        $tab=BrokerForm::all();return view('admin.pages.brokerform.brokerform_list',['dataRow'=>$tab]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Attorneysform  $attorneysform
+     * @param  \App\BrokerForm  $brokerform
      * @return \Illuminate\Http\Response
      */
-    public function edit(Attorneysform $attorneysform,$id=0)
+    public function edit(BrokerForm $brokerform,$id=0)
     {
-        $tab=Attorneysform::find($id);      
-        return view('admin.pages.attorneysform.attorneysform_edit',['dataRow'=>$tab,'edit'=>true]);  
+        $tab=BrokerForm::find($id);      
+        return view('admin.pages.brokerform.brokerform_edit',['dataRow'=>$tab,'edit'=>true]);  
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Attorneysform  $attorneysform
+     * @param  \App\BrokerForm  $brokerform
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Attorneysform $attorneysform,$id=0)
+    public function update(Request $request, BrokerForm $brokerform,$id=0)
     {
         $this->validate($request,[
                 
@@ -312,74 +305,71 @@ class AttorneysformController extends Controller
                 'last_name'=>'required',
                 'phone'=>'required',
                 'email'=>'required',
-                'contact_me_by'=>'required',
-                'best_time'=>'required',
+                'state'=>'required',
+                'zip_code'=>'required',
         ]);
 
-        $this->SystemAdminLog("Attorneys form","Update","Edit / Modify");
+        $this->SystemAdminLog("Broker Form","Update","Edit / Modify");
 
         
-        $tab=Attorneysform::find($id);
+        $tab=BrokerForm::find($id);
         
-        $tab->contact_me_about=$request->contact_me_about;
         $tab->first_name=$request->first_name;
         $tab->last_name=$request->last_name;
         $tab->phone=$request->phone;
         $tab->email=$request->email;
-        $tab->contact_me_by=json_encode($request->contact_me_by) ;
-        $tab->best_time=json_encode($request->best_time);
+        $tab->state=$request->state;
+        $tab->zip_code=$request->zip_code;
         $tab->message=$request->message;
         $tab->save();
 
-        return redirect('attorneysform')->with('status','Updated Successfully !');
+        return redirect('brokerform')->with('status','Updated Successfully !');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Attorneysform  $attorneysform
+     * @param  \App\BrokerForm  $brokerform
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Attorneysform $attorneysform,$id=0)
+    public function destroy(BrokerForm $brokerform,$id=0)
     {
-        $this->SystemAdminLog("Attorneys form","Destroy","Delete");
+        $this->SystemAdminLog("Broker Form","Destroy","Delete");
 
-        $tab=Attorneysform::find($id);
+        $tab=BrokerForm::find($id);
         $tab->delete();
-        return redirect('attorneysform')->with('status','Deleted Successfully !');
+        return redirect('brokerform')->with('status','Deleted Successfully !');
     }
-    public function attorneyRequest(Request $request){
+    public function brokerRequest(Request $request){
         $validator = \Validator::make($request->all(), [
-            'contact_me_about' => 'required',
             'first_name' => 'required',
             'last_name' => 'required',
             'phone' => 'required',
             'email' => 'required',
-            'message' => 'required',
-            'contact_me_by' => 'required',
-            'best_time' => 'required',
+            'state' => 'required',
+            'zip_code' => 'required',
         ]);
     
         if (!$validator->passes()) {
             return response()->json(['status'=>0, 'msg' => 'Please Enter all required (*) field','error'=> $validator->errors()->all()]);
         }
     
-        $this->SystemAdminLog("User Attonreys Request Submitted", "Save New", "Create New");
+        $this->SystemAdminLog("User Broker Request Submitted", "Save New", "Create New");
     
     
         //dd($request);
         
-        $tab=new Attorneysform();
-        $tab->contact_me_about=$request->contact_me_about;
+        $tab=new BrokerForm();
+        
         $tab->first_name=$request->first_name;
         $tab->last_name=$request->last_name;
         $tab->phone=$request->phone;
         $tab->email=$request->email;
-        $tab->contact_me_by=json_encode($request->contact_me_by) ;
-        $tab->best_time=json_encode($request->best_time);
+        $tab->state=$request->state;
+        $tab->zip_code=$request->zip_code;
         $tab->message=$request->message;
         $tab->save();
     
-        return response()->json(['status' => 1, 'msg' => 'Your Attorneys request submitted successfully.']);
+        return response()->json(['status' => 1, 'msg' => 'Your Broker request submitted successfully.']);
     } 
 }

@@ -112,22 +112,13 @@
         </div>
       </li> --}}
       <li class="nav-item">
-        <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" style="padding-top: 4px">
-          <i class="fas fa-user-circle fa-2x"></i>
+        <a class="nav-link"  onclick="event.preventDefault();
+                                 document.getElementById('logout-form').submit();" href="javascript:void(0);" style="padding-top: 4px; font-size:20px;">
+          <i class="fas fa-lock"></i> Logout
         </a>
       </li>
     </ul>
   </nav>
 
-   <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-    <div class="p-3 control-sidebar-content">
-       <h5>System log</h5>
-       <hr class="mb-2">
-       {{-- <div class="mb-1"><input type="checkbox" value="1" class="mr-1"><span>No Navbar border</span></div>
-       <div class="mb-1"><input type="checkbox" value="1" class="mr-1"><span>Body small text</span></div> --}}
-       
-    </div>
-  </aside>
+   
   <!-- /.control-sidebar -->
