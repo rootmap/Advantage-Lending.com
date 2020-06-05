@@ -521,7 +521,7 @@ input:-moz-placeholder {
 }
 
 .herader-topbar-col {
-    margin-bottom: 10px;
+    margin-bottom: 0px;
 }
 
 .herader-topbar-col.tobar-leftside span {
@@ -671,7 +671,7 @@ input:-moz-placeholder {
 }
 
 .header-navbar .navbar-brand img {
-    width: 220px;
+    width: 268px;
     height: auto;
 }
 
@@ -3463,7 +3463,7 @@ input:-moz-placeholder {
     font-variant: small-caps;
     font-family: initial;
     color: #fff;
-    z-index: 9999999999999999;
+    /* z-index: 11; */
     position: relative;
     margin: 0 auto;
     text-align: center;

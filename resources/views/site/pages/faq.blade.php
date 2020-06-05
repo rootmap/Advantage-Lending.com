@@ -23,6 +23,26 @@
             -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
             box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
         }
+
+        a.arrow-right {
+            color: #bc560b;
+            border-color: #bc560b;
+        }
+        
+        a.arrow-right {
+            display: inline-block;
+            background-image: url({{ url('module/images/arrow.svg') }});
+            background-repeat: no-repeat;
+            background-position: right 7px;
+            padding-right: 2.5rem;
+            font-weight: 600;
+            font-size: 18px;
+            padding-bottom: .5rem;
+            border-bottom: solid 2px #f47820;
+            -webkit-transition: all linear .15s;
+            transition: all linear .15s;
+        }
+
         @media (min-width: 768px){
             .negative-margin {
                 z-index: 999;
@@ -147,6 +167,7 @@
         </section>
 
         @foreach ($faq as $key=>$item) 
+        
         <section class="faq-area" id="{{preg_replace('/[^A-Za-z0-9\-]/', '',str_replace(" ","",$item['name']))}}" style="padding: 40px">
             <div class="container">
                 <div class="row">
@@ -165,7 +186,7 @@
                                         </div>
                                         <div id="collapseTwo{{preg_replace('/[^A-Za-z0-9\-]/', '',str_replace(" ","",$item['name']))}}{{$keyd}}" class="panel-collapse collapse {{$keyd==0?'in':''}}" aria-expanded="{{$keyd==0?'true':'false'}}" role="tabpanel" aria-labelledby="headingTwo{{preg_replace('/[^A-Za-z0-9\-]/', '',str_replace(" ","",$item['name']))}}{{$keyd}}">
                                             <div class="panel-body">
-                                                <p>{{$roteen->content_detail}} </p>
+                                                <p>{!!$roteen->content_detail!!} </p>
                                             </div>
                                         </div>
                                     </div>
@@ -177,6 +198,20 @@
                 </div>
             </div>
         </section>
+        {{-- @if ($key==0)
+            <section class="appointment-area" id="appointment" style="padding:60px 0 60px;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="about-col text-center">
+                                <h1 id="getstarted" class="color_blue">I don't have an attorney. What should I do?</h1>
+                                <a href="{{url('need-an-attorney')}}" class="arrow-right">Click here to learn more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        @endif --}}
         @endforeach
     @endisset
     

@@ -147,7 +147,7 @@ svg {
     font-variant: small-caps;
     font-family: initial;
     color: #fff;
-    z-index: 9999999999999999;
+    /* z-index: 11; */
     position: relative;
     margin: 0 auto;
     text-align: center;

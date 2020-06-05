@@ -47,6 +47,52 @@ $site=CoreCustomController::SiteSetting();
 
     @include('site.include.header-footer.footer',compact('site'))
     @include('site.include.header-footer.footerjs')
+    <style type="text/css">
+        .heightNone{
+            height: 0px !important;
+            overflow: hidden;
+        }
+    </style>
+
     @yield('js')
+    <script>
+        $(document).find('section:eq(0)').css("margin-top","-40px;");
+        $(document).find('.fix-barcum-head').css("z-index","11");
+        
+        // $(window).bind('mousewheel', function(event) {
+        //     if (event.originalEvent.wheelDelta >= 0) {
+               
+        //     }
+        //     else {
+        //         $(document).find('.header-topbar').fadeOut();
+        //         $(document).find('.header-topbar').fadeIn();
+        //     }
+        // });
+        var fadeIN = 0;
+        $(window).on("scroll", function() {
+            var scrollPos = $(window).scrollTop();
+            
+
+            if (scrollPos <= 0) {
+                fadeIN = 0;
+                //$(document).find('.header-topbar').fadeOut();
+            } else {
+                if(fadeIN==0)
+                {
+                    $(document).find('.header-topbar').fadeOut('slow');
+                    $(document).find('.header-topbar').addClass('heightNone');
+                    
+                    fadeIN = 1;
+
+                }
+                setTimeout(() => {
+                    
+                    $(document).find('.header-topbar').removeClass('heightNone');
+                    $(document).find('.header-topbar').fadeIn('slow');
+                }, 500);
+               
+            }
+        });
+    </script>
 </body>
 </html>

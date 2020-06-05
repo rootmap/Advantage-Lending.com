@@ -161,16 +161,17 @@
     <section class="faq-area" style="padding: 0px">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 col-md-6" style="padding-top:50px;">
+                <div class="col-lg-12 col-md-12" style="padding-top:50px;">
                     <div class="about-col">
                         <h2 class="separator-left" style="color: #FF741A; font-weight: bolder; font-size: 34px;">{{$ForAttorneyPageSetting->page_title}}</h2>
                     </div>
                     <div class="" style="margin-bottom: 1px">
                         <p style="font-size:14px; font-weight: 600;">{!!$ForAttorneyPageSetting->page_detail!!}</p>
                     </div>
+                    <p>&nbsp;</p>
                     {{-- <div class="bg-light p-4 text-center font-size-24 text-dark font-family-serif mt-4">Founded in 2003 by attorneys who saw a specific need, Oasis helps bridge the gap between your client’s current financial struggles and future settlement.</div> --}}
                 </div>
-                <div class="col-lg-6 col-md-6">
+                {{-- <div class="col-lg-6 col-md-6">
                    <div class="about-col ">
                         <div class="about-image negative-margin">
                             <div>
@@ -191,7 +192,7 @@
                             </div>    
                         </div>
                    </div>
-                </div>
+                </div> --}}
             </div>
         </div>
         @isset($ForAtterneyPortalsimplify)

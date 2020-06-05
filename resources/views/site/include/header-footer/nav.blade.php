@@ -1,25 +1,19 @@
-<header class="main-herader">
+<header class="main-herader  fixed-header">
     <!-- Header topbar start -->
-    <div class="header-topbar center991">
+    <div class="header-topbar center991" style="padding: 0px;">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-sm-12 col-xs-12">
-                    <div class="herader-topbar-col tobar-leftside">
+                    <div class="herader-topbar-col tobar-leftside" style="margin-bottom: 0px;">
                         <i class="fa fa-phone" aria-hidden="true"></i>
                         <span class="after-bdr">{{$site->contact_number}}</span>
                         <i class="fa fa-envelope-o" aria-hidden="true"></i>
                         <span>{{$site->email}}</span>
                     </div>
                 </div>
-                <div class="col-md-6 col-sm-12 col-xs-12">
+                <div class="col-md-6 col-sm-12 col-xs-12" style="margin-bottom: 0px;">
                     <div class="herader-topbar-col tobar-rightside center991">
                         <span class="ml0-991">{{$site->top_toll_free_call_message}}</span>
-                        {{-- <span class="after-bdr ml0-991"><a href="account.html">Contact Us</a></span> --}}
-                        {{-- <span class="ml0">
-                            <span class="s-icon ml0">
-                                <a href="#" id="addClass"><span class="glyphicon glyphicon-search"></span></a>
-                            </span>
-                        </span> --}}
                         <p><a href="{{Request::path() == '/' ? '#appointment' :url('/').'#appointment'}}" id="scroll"><span>{{$site->top_apply_button_text}}</span></a></p>
                     </div>
                 </div>
@@ -28,7 +22,7 @@
     </div>
 
     <!-- Header navbar start -->
-    <div class="header-navbar fixed-header">
+    <div class="header-navbar">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">

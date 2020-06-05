@@ -206,12 +206,12 @@
                   
                 </ul>
               </li>
-              <li class="nav-item">
+              {{-- <li class="nav-item">
                 <a href="{{url('howitworkcaseswefund')}}" class="nav-link {{ Request::path() == 'howitworkcaseswefund' ? 'active' : '' }}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Case We Fund</p>
                 </a>
-              </li>
+              </li> --}}
               <li class="nav-item">
                 <a href="{{url('howitworksecuringthemoney')}}" class="nav-link {{ Request::path() == 'howitworksecuringthemoney' ? 'active' : '' }}">
                   <i class="far fa-circle nav-icon"></i>
@@ -271,12 +271,12 @@
                   <p>Page Detail</p>
                 </a>
               </li>
-              <li class="nav-item">
+              {{-- <li class="nav-item">
                 <a href="{{url('aboutmilestones')}}" class="nav-link {{ Request::path() == 'aboutmilestones' ? 'active' : '' }}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Milestones</p>
                 </a>
-              </li>
+              </li> --}}
               
               <li class="nav-item has-treeview  {{ in_array(Request::path(),array('meetleadersetting','teammember'))?'menu-open':'' }}">
                 <a href="javascript:void(0);" class="nav-link  {{ in_array(Request::path(),array('meetleadersetting','teammember'))?'active':'' }}">
@@ -418,24 +418,24 @@
                   <p>Portal Simplify</p>
                 </a>
               </li>
-              <li class="nav-item">
+              {{-- <li class="nav-item">
                 <a href="{{url('forattorneyknownandrecognized')}}" class="nav-link {{ Request::path() == 'forattorneyknownandrecognized' ? 'active' : '' }}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Known &amp; Recognized</p>
                 </a>
-              </li>
+              </li> --}}
               <li class="nav-item">
                 <a href="{{url('forattorneysettlementfundingprocess')}}" class="nav-link {{ Request::path() == 'forattorneysettlementfundingprocess' ? 'active' : '' }}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Settlement Funding Process</p>
                 </a>
               </li>
-              <li class="nav-item">
+              {{-- <li class="nav-item">
                 <a href="{{url('forattorneyproductandservice')}}" class="nav-link {{ Request::path() == 'forattorneyproductandservice' ? 'active' : '' }}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Product &amp; Service</p>
                 </a>
-              </li>
+              </li> --}}
               
             </ul>
           </li>
@@ -529,6 +529,31 @@
               </li>
               <li class="nav-item">
                 <a href="{{url('brokerform')}}" class="nav-link {{ Request::path() == 'brokerform' ? 'active' : '' }}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Broker Request List</p>
+                </a>
+              </li>
+              
+            </ul>
+          </li>
+
+          <li class="nav-item has-treeview {{ in_array(Request::path(),array('needatterneypagesetting','needanattorney'))?'menu-open':'' }}">
+            <a href="#" class="nav-link {{ in_array(Request::path(),array('needatterneypagesetting','needanattorney'))?'active':'' }}">
+              <i class="nav-icon fas fa-utensils"></i>
+              <p>
+                Need An Attorney
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{url('needatterneypagesetting')}}" class="nav-link {{ Request::path() == 'needatterneypagesetting' ? 'active' : '' }}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Page Setting</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{url('needanattorney')}}" class="nav-link {{ Request::path() == 'needanattorney' ? 'active' : '' }}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Broker Request List</p>
                 </a>

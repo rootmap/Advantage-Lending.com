@@ -74,7 +74,7 @@ use App\CaseType;
 use App\HearAbout;
 use App\ApplicationPageSetting;
 
-
+use App\NeedAtterneyPageSetting;
 
 
 use Illuminate\Http\Request;
@@ -340,7 +340,10 @@ class FrontModuleController extends Controller
 
     public function needanattorney()
     {
-        return view('site.pages.need-an-attorney');
+        $state = USAState::all();
+        $casetype = CaseType::all();
+        $page = NeedAtterneyPageSetting::orderBy('id', 'DESC')->first();
+        return view('site.pages.need-an-attorney',compact('page', 'state', 'casetype'));
     }
     public function termsOfUse()
     {

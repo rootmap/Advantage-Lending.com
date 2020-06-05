@@ -683,6 +683,7 @@
         @endif
     @endisset
     
+    @if($AboutMilestones->module_status=="Active")
     <div class="bg-light pt-5 pb-5 pt-md-8 pb-md-7 mt-md-n miles">
         <div class="container">
             <div class="row justify-content-center ">
@@ -705,7 +706,7 @@
             </div>
         </div>
     </div> 
-        
+    @endif
     @isset($MeetLeaderSetting)
         @if ($MeetLeaderSetting->module_status=="Active")
             <div class="data-pull-overlay leaders" style="background-image: url({{asset('upload/meetleadersetting/'.$MeetLeaderSetting->background_image)}}); background-color:{{$MeetLeaderSetting->background_forecolor}};">

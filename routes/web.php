@@ -37,6 +37,7 @@ Route::post('/complete-application', 'FrontModuleController@completeapplication'
 Route::get('/structured-settlement-application-form', 'FrontModuleController@structuredsettlementapplicationform');
 Route::get('/inheritance-funding', 'FrontModuleController@inheritancefunding');
 Route::get('/need-an-attorney', 'FrontModuleController@needanattorney');
+Route::post('/need-an-attorney', 'FrontServiceController@needAnAttorNey');
 Route::get('/terms-of-use', 'FrontModuleController@termsOfUse');
 Route::get('/privacy-policy', 'FrontModuleController@privacyPolicy');
 Route::get('/state-specific-licenses', 'FrontModuleController@stateSpecificLicenses');
@@ -878,6 +879,34 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/applicationpagesetting/datatable/ajax', 'ApplicationpagesettingController@datatable');
     Route::post('/applicationpagesetting/update/{id}', 'ApplicationpagesettingController@update');
 //======================== Applicationpagesetting Route End ===============================//
+
+    //======================== Needatterneypagesetting Route Start ===============================//
+    Route::get('/needatterneypagesetting/list','NeedatterneypagesettingController@show');
+    Route::get('/needatterneypagesetting/create','NeedatterneypagesettingController@create');
+    Route::get('/needatterneypagesetting/edit/{id}','NeedatterneypagesettingController@edit');
+    Route::get('/needatterneypagesetting/delete/{id}','NeedatterneypagesettingController@destroy');
+    Route::get('/needatterneypagesetting','NeedatterneypagesettingController@index');
+    Route::get('/needatterneypagesetting/export/excel','NeedatterneypagesettingController@ExportExcel');
+    Route::get('/needatterneypagesetting/export/pdf','NeedatterneypagesettingController@ExportPDF');
+    Route::post('/needatterneypagesetting','NeedatterneypagesettingController@store');
+    Route::post('/needatterneypagesetting/ajax','NeedatterneypagesettingController@ajaxSave');
+    Route::post('/needatterneypagesetting/datatable/ajax','NeedatterneypagesettingController@datatable');
+    Route::post('/needatterneypagesetting/update/{id}','NeedatterneypagesettingController@update');
+    //======================== Needatterneypagesetting Route End ===============================//
     
 });
 
+
+//======================== Needanatterneysettings Route Start ===============================//
+Route::get('/needanatterneysettings/list','NeedanatterneysettingsController@show');
+Route::get('/needanatterneysettings/create','NeedanatterneysettingsController@create');
+Route::get('/needanatterneysettings/edit/{id}','NeedanatterneysettingsController@edit');
+Route::get('/needanatterneysettings/delete/{id}','NeedanatterneysettingsController@destroy');
+Route::get('/needanatterneysettings','NeedanatterneysettingsController@index');
+Route::get('/needanatterneysettings/export/excel','NeedanatterneysettingsController@ExportExcel');
+Route::get('/needanatterneysettings/export/pdf','NeedanatterneysettingsController@ExportPDF');
+Route::post('/needanatterneysettings','NeedanatterneysettingsController@store');
+Route::post('/needanatterneysettings/ajax','NeedanatterneysettingsController@ajaxSave');
+Route::post('/needanatterneysettings/datatable/ajax','NeedanatterneysettingsController@datatable');
+Route::post('/needanatterneysettings/update/{id}','NeedanatterneysettingsController@update');
+//======================== Needanatterneysettings Route End ===============================//

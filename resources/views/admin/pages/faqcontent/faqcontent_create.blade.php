@@ -90,7 +90,7 @@
                       <!-- text input -->
                       <div class="form-group">
                         <label for="content_detail">Content Detail</label>
-                        <textarea class="form-control" rows="3"  placeholder="Enter Detail" id="content_detail" name="content_detail"></textarea>
+                        <textarea class="form-control textarea" rows="3"  placeholder="Enter Detail" id="content_detail" name="content_detail"></textarea>
                       </div>
                     </div>
                 </div>
@@ -135,19 +135,51 @@
   </div><!-- /.container-fluid -->
 </section>
 @endsection
-@section("css")
-    
-    <link rel="stylesheet" href="{{url('admin/plugins/select2/css/select2.min.css')}}">
-    
+@section('css')
+<link rel="stylesheet" href="{{url('admin/plugins/select2/css/select2.min.css')}}">
+    <link rel="stylesheet" href="{{url('admin/plugins/summernote/summernote-bs4.css')}}">
 @endsection
-        
 @section("js")
 
-    <script src="{{url('admin/plugins/select2/js/select2.full.min.js')}}"></script>
+      <script src="{{url('admin/plugins/select2/js/select2.full.min.js')}}"></script>
     <script>
     $(document).ready(function(){
         $(".select2").select2();
     });
+    </script>
+
+    <script src="{{url('admin/plugins/bs-custom-file-input/bs-custom-file-input.min.js')}}"></script>
+    <script>
+    $(document).ready(function(){
+        bsCustomFileInput.init();
+    });
+    </script>
+
+
+    <script src="{{url('admin/plugins/summernote/summernote-bs4.min.js')}}"></script>
+    <script>
+      $(function () {
+        // Summernote
+        $('.textarea').summernote({
+          height: 450,
+          toolbar: [
+                    ['font', ['bold', 'italic', 'underline', 'clear']],
+                    ['insert', ['link', 'hr']],
+                    ['view', ['fullscreen', 'codeview']],
+                  ],
+        });
+
+        $('.textareadescription').summernote({
+          height: 100,
+          toolbar: [
+                    
+                    ['font', ['bold', 'italic', 'underline', 'clear']],
+                    ['para', ['ul', 'ol', 'paragraph']],
+                    ['table', ['table']],
+                    ['view', ['fullscreen', 'codeview']],
+                  ],
+        });
+      });
     </script>
 
 @endsection
